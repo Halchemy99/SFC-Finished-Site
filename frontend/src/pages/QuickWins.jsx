@@ -3,6 +3,7 @@ import { Check, ArrowRight, Zap, Clock, Target } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
+import ServiceCTA from '../components/ServiceCTA';
 
 const QuickWins = () => {
   const packages = [
@@ -137,6 +138,9 @@ const QuickWins = () => {
             </div>
           </div>
         </div>
+
+        {/* Prominent CTA for Pricing and Case Studies */}
+        <ServiceCTA className="mb-16" />
 
         {/* CTA */}
         <div className="mt-16 text-center">

@@ -3,6 +3,7 @@ import { Check, ArrowRight, BookOpen, Video, Users, Award, Target } from 'lucide
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
+import ServiceCTA from '../components/ServiceCTA';
 
 const AmazonAcademy = () => {
   const courses = [
@@ -185,6 +186,9 @@ const AmazonAcademy = () => {
             </div>
           </div>
         </div>
+
+        {/* Prominent CTA for Pricing and Case Studies */}
+        <ServiceCTA className="mb-16" />
 
         <div className="mt-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl p-12 text-center text-white">
           <h2 className="text-4xl font-bold mb-4">Ready to Build Internal Expertise?</h2>

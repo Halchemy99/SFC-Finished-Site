@@ -3,6 +3,7 @@ import { Check, ArrowRight, TrendingUp, Target, Award, DollarSign } from 'lucide
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
+import ServiceCTA from '../components/ServiceCTA';
 
 const GrowthPartnership = () => {
   const benefits = [
@@ -195,6 +196,9 @@ const GrowthPartnership = () => {
             </div>
           </div>
         </div>
+
+        {/* Prominent CTA for Pricing and Case Studies */}
+        <ServiceCTA className="mb-16" />
 
         {/* CTA */}
         <div className="mt-16 bg-gradient-to-r from-[#22C55E] to-[#16A34A] rounded-3xl p-12 text-center text-white">

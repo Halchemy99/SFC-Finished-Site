@@ -14,6 +14,9 @@ from datetime import datetime, timezone
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
+# Import routes AFTER loading .env
+from routes import newsletter
+
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
@@ -68,6 +71,7 @@ async def get_status_checks():
 
 # Include the router in the main app
 app.include_router(api_router)
+app.include_router(newsletter.router)
 
 app.add_middleware(
     CORSMiddleware,

@@ -16,34 +16,27 @@ const Newsletter = () => {
     setIsLoading(true);
 
     try {
-      // TODO: Replace with actual Mailchimp/ConvertKit API endpoint
-      // For now, we'll simulate the submission
-      
-      // Recommended integration:
-      // 1. Mailchimp - Most popular, great automation ($0-20/month)
-      // 2. ConvertKit - Best for creators ($0-29/month)
-      // 3. Brevo (Sendinblue) - Generous free tier (300/day free)
-      
-      // Example Mailchimp integration:
-      // const response = await fetch('/api/newsletter/subscribe', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email })
-      // });
-
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      toast({
-        title: t('toast.subscribed'),
-        description: t('toast.subscribeSuccess'),
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/newsletter/subscribe`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
       });
-      
-      setEmail('');
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: t('toast.subscribed'),
+          description: data.message || t('toast.subscribeSuccess'),
+        });
+        setEmail('');
+      } else {
+        throw new Error(data.detail || 'Subscription failed');
+      }
     } catch (error) {
       toast({
         title: "Subscription Failed",
-        description: "Please try again later.",
+        description: error.message || "Please try again later.",
         variant: "destructive"
       });
     } finally {
