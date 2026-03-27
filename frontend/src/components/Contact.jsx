@@ -6,9 +6,11 @@ import { Textarea } from './ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '../hooks/use-toast';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,8 +23,8 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     toast({
-      title: "Form Submitted!",
-      description: "We'll get back to you soon.",
+      title: t('toast.formSubmitted'),
+      description: t('toast.formSuccess'),
     });
     setFormData({
       name: '',
@@ -42,10 +44,10 @@ const Contact = () => {
   };
 
   const benefits = [
-    'Free Amazon account assessment',
-    'Performance-based retainer options',
-    'Sustainability discount assessment',
-    'Charitable impact breakdown'
+    t('contact.benefit1'),
+    t('contact.benefit2'),
+    t('contact.benefit3'),
+    t('contact.benefit4')
   ];
 
   return (
@@ -55,13 +57,13 @@ const Contact = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-green-100 text-[#22C55E] rounded-full px-4 py-2 mb-6">
             <Globe className="w-4 h-4" />
-            <span className="text-sm font-medium">Partner With Us</span>
+            <span className="text-sm font-medium">{t('contact.badge')}</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Ready to Grow Sustainably?
+            {t('contact.title')}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Book a discovery call to explore performance-based retainers and sustainability discounts. No sales pitch—just honest advice about sustainable Amazon growth.
+            {t('contact.description')}
           </p>
         </div>
 
@@ -73,8 +75,8 @@ const Contact = () => {
                 <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-3">
                   <Calendar className="w-6 h-6 text-[#22C55E]" />
                 </div>
-                <CardTitle className="text-xl">Book Discovery Call</CardTitle>
-                <CardDescription className="text-sm">Schedule via Calendly</CardDescription>
+                <CardTitle className="text-xl">{t('contact.card1Title')}</CardTitle>
+                <CardDescription className="text-sm">{t('contact.card1Desc')}</CardDescription>
               </CardHeader>
             </Card>
 
@@ -83,7 +85,7 @@ const Contact = () => {
                 <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-3">
                   <Phone className="w-6 h-6 text-[#22C55E]" />
                 </div>
-                <CardTitle className="text-xl">WhatsApp Us</CardTitle>
+                <CardTitle className="text-xl">{t('contact.card2Title')}</CardTitle>
                 <CardDescription className="text-sm">+44 7969 614703</CardDescription>
               </CardHeader>
             </Card>
@@ -93,7 +95,7 @@ const Contact = () => {
                 <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-3">
                   <Mail className="w-6 h-6 text-[#22C55E]" />
                 </div>
-                <CardTitle className="text-xl">Email Us</CardTitle>
+                <CardTitle className="text-xl">{t('contact.card3Title')}</CardTitle>
                 <CardDescription className="text-sm">harry@superflycommerce.com</CardDescription>
               </CardHeader>
             </Card>
@@ -103,8 +105,8 @@ const Contact = () => {
                 <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-3">
                   <MapPin className="w-6 h-6 text-[#22C55E]" />
                 </div>
-                <CardTitle className="text-xl">Location</CardTitle>
-                <CardDescription className="text-sm">Global Amazon Specialists</CardDescription>
+                <CardTitle className="text-xl">{t('contact.card4Title')}</CardTitle>
+                <CardDescription className="text-sm">{t('contact.card4Desc')}</CardDescription>
               </CardHeader>
             </Card>
           </div>
@@ -113,15 +115,15 @@ const Contact = () => {
           <div className="lg:col-span-2">
             <Card className="border border-gray-200 shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl">Book Your Discovery Call</CardTitle>
+                <CardTitle className="text-2xl">{t('contact.formTitle')}</CardTitle>
                 <CardDescription>
-                  Tell us about your Amazon business and we'll design a performance-based partnership for sustainable growth.
+                  {t('contact.formDesc')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 {/* Benefits */}
                 <div className="mb-8 p-4 bg-green-50 rounded-lg">
-                  <h3 className="font-semibold text-gray-900 mb-3">What You'll Get on Our Call</h3>
+                  <h3 className="font-semibold text-gray-900 mb-3">{t('contact.benefitsTitle')}</h3>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {benefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-start gap-2">
@@ -137,7 +139,7 @@ const Contact = () => {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Name <span className="text-red-500">*</span>
+                        {t('contact.nameLabel')} <span className="text-red-500">*</span>
                       </label>
                       <Input
                         type="text"
@@ -145,13 +147,13 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="Your name"
+                        placeholder={t('contact.placeholders.name')}
                         className="w-full"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email <span className="text-red-500">*</span>
+                        {t('contact.emailLabel')} <span className="text-red-500">*</span>
                       </label>
                       <Input
                         type="email"
@@ -159,7 +161,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        placeholder="your@email.com"
+                        placeholder={t('contact.placeholders.email')}
                         className="w-full"
                       />
                     </div>
@@ -167,76 +169,76 @@ const Contact = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Company Name
+                      {t('contact.companyLabel')}
                     </label>
                     <Input
                       type="text"
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      placeholder="Your company"
+                      placeholder={t('contact.placeholders.company')}
                       className="w-full"
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Interested in Working With
+                      {t('contact.specialistLabel')}
                     </label>
                     <Select onValueChange={(value) => setFormData({...formData, specialist: value})}>
                       <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Any specialist (we'll match you)" />
+                        <SelectValue placeholder={t('contact.specialists.any')} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="any">Any specialist (we'll match you)</SelectItem>
-                        <SelectItem value="sarah">Sarah (PPC & Campaign Expert)</SelectItem>
-                        <SelectItem value="marcus">Marcus (Listing & SEO Expert)</SelectItem>
-                        <SelectItem value="elena">Elena (Global Expansion Expert)</SelectItem>
-                        <SelectItem value="james">James (Photography & Video Expert)</SelectItem>
-                        <SelectItem value="priya">Priya (Analytics & Data Expert)</SelectItem>
-                        <SelectItem value="alex">Alex (Launch & Strategy Expert)</SelectItem>
+                        <SelectItem value="any">{t('contact.specialists.any')}</SelectItem>
+                        <SelectItem value="sarah">{t('contact.specialists.sarah')}</SelectItem>
+                        <SelectItem value="marcus">{t('contact.specialists.marcus')}</SelectItem>
+                        <SelectItem value="elena">{t('contact.specialists.elena')}</SelectItem>
+                        <SelectItem value="james">{t('contact.specialists.james')}</SelectItem>
+                        <SelectItem value="priya">{t('contact.specialists.priya')}</SelectItem>
+                        <SelectItem value="alex">{t('contact.specialists.alex')}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Service Interest
+                      {t('contact.serviceLabel')}
                     </label>
                     <Select onValueChange={(value) => setFormData({...formData, service: value})}>
                       <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select service" />
+                        <SelectValue placeholder={t('contact.services.guidance')} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="sprints">Amazon Sprint Packages (Fixed-Price)</SelectItem>
-                        <SelectItem value="team">Amazon Dream Team (Curated Specialists)</SelectItem>
-                        <SelectItem value="partnership">Growth Share Partnership (Performance-Based)</SelectItem>
-                        <SelectItem value="academy">Amazon Mastery Academy (Training & Advisory)</SelectItem>
-                        <SelectItem value="guidance">Not sure - need guidance</SelectItem>
+                        <SelectItem value="sprints">{t('contact.services.sprints')}</SelectItem>
+                        <SelectItem value="team">{t('contact.services.team')}</SelectItem>
+                        <SelectItem value="partnership">{t('contact.services.partnership')}</SelectItem>
+                        <SelectItem value="academy">{t('contact.services.academy')}</SelectItem>
+                        <SelectItem value="guidance">{t('contact.services.guidance')}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Tell Us About Your Amazon Goals
+                      {t('contact.messageLabel')}
                     </label>
                     <Textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      placeholder="Share your goals and challenges..."
+                      placeholder={t('contact.placeholders.message')}
                       className="w-full"
                     />
                   </div>
 
                   <Button type="submit" className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-6 text-lg font-semibold">
-                    Book Discovery Call
+                    {t('contact.submitButton')}
                   </Button>
 
                   <p className="text-sm text-gray-500 text-center">
-                    Free consultation • Performance-based options • Sustainability discounts available
+                    {t('contact.formFooter')}
                   </p>
                 </form>
               </CardContent>

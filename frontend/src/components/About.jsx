@@ -1,14 +1,16 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
-import { Button } from './ui/button';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
+
   const features = [
-    'Global collective of Amazon specialists',
-    'Performance-based retainers',
-    'Transparent pricing with no hidden fees',
-    'Sustainability discounts',
-    '10% of profits donated'
+    t('about.feature1'),
+    t('about.feature2'),
+    t('about.feature3'),
+    t('about.feature4'),
+    t('about.feature5')
   ];
 
   return (
@@ -20,18 +22,18 @@ const About = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-green-100 text-[#22C55E] rounded-full px-4 py-2 mb-6">
               <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">Sustainable Amazon Collective</span>
+              <span className="text-sm font-medium">{t('about.badge')}</span>
             </div>
 
             {/* Heading */}
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              We're Not an Agency.{' '}
-              <span className="text-[#22C55E]">We're a Collective.</span>
+              {t('about.title')}{' '}
+              <span className="text-[#22C55E]">{t('about.titleGreen')}</span>
             </h2>
 
             {/* Description */}
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              We're Amazon specialists who cut through heavy agency fees with transparent, performance-based partnerships.
+              {t('about.description')}
             </p>
 
             {/* Features List */}

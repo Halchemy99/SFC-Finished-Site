@@ -3,22 +3,25 @@ import { Rocket, Users, TrendingUp, GraduationCap, CheckCircle, ArrowRight } fro
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation();
+
   const services = [
     {
       id: 1,
       icon: Rocket,
       iconBg: 'bg-blue-100',
       iconColor: 'text-blue-600',
-      title: 'Quick Win Packages',
-      subtitle: 'Fixed-Price Amazon Sprints',
-      badge: 'MOST POPULAR',
+      title: t('services.service1Title'),
+      subtitle: t('services.service1Subtitle'),
+      badge: t('services.popular'),
       features: [
-        'Listing Optimization Sprint',
-        'A+ Content Package'
+        t('services.service1Feature1'),
+        t('services.service1Feature2')
       ],
-      buttonText: 'View Quick Wins',
+      buttonText: t('services.service1Button'),
       buttonVariant: 'default'
     },
     {
@@ -26,13 +29,13 @@ const Services = () => {
       icon: Users,
       iconBg: 'bg-purple-100',
       iconColor: 'text-purple-600',
-      title: 'Expert Matching',
-      subtitle: 'Hand-Picked Specialists',
+      title: t('services.service2Title'),
+      subtitle: t('services.service2Subtitle'),
       features: [
-        'Vetted specialist network',
-        'Project scoping included'
+        t('services.service2Feature1'),
+        t('services.service2Feature2')
       ],
-      buttonText: 'Meet Specialists',
+      buttonText: t('services.service2Button'),
       buttonVariant: 'default'
     },
     {
@@ -40,13 +43,13 @@ const Services = () => {
       icon: TrendingUp,
       iconBg: 'bg-green-100',
       iconColor: 'text-green-600',
-      title: 'Growth Share Partnership',
-      subtitle: 'Performance-Based Model',
+      title: t('services.service3Title'),
+      subtitle: t('services.service3Subtitle'),
       features: [
-        'Revenue-share retainers',
-        'Aligned incentives'
+        t('services.service3Feature1'),
+        t('services.service3Feature2')
       ],
-      buttonText: 'Explore Partnership',
+      buttonText: t('services.service3Button'),
       buttonVariant: 'default'
     },
     {
@@ -54,13 +57,13 @@ const Services = () => {
       icon: GraduationCap,
       iconBg: 'bg-orange-100',
       iconColor: 'text-orange-600',
-      title: 'Amazon Mastery Academy',
-      subtitle: 'Training & Advisory',
+      title: t('services.service4Title'),
+      subtitle: t('services.service4Subtitle'),
       features: [
-        'Expert-led workshops',
-        'Ongoing support'
+        t('services.service4Feature1'),
+        t('services.service4Feature2')
       ],
-      buttonText: 'Start Learning',
+      buttonText: t('services.service4Button'),
       buttonVariant: 'default'
     }
   ];
@@ -71,8 +74,8 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            Four Ways to Grow{' '}
-            <span className="text-[#22C55E]">Your Amazon Business</span>
+            {t('services.title')}{' '}
+            <span className="text-[#22C55E]">{t('services.titleGreen')}</span>
           </h2>
         </div>
 
