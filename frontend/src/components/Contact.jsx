@@ -70,24 +70,28 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Information Cards */}
           <div className="space-y-6">
-            <Card className="border border-gray-200 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-3">
-                  <Calendar className="w-6 h-6 text-[#22C55E]" />
-                </div>
-                <CardTitle className="text-xl">{t('contact.card1Title')}</CardTitle>
-                <CardDescription className="text-sm">{t('contact.card1Desc')}</CardDescription>
-              </CardHeader>
+            <Card className="border border-gray-200 hover:shadow-lg transition-shadow cursor-pointer">
+              <a href="https://calendly.com/superflycommerce" target="_blank" rel="noopener noreferrer">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-3">
+                    <Calendar className="w-6 h-6 text-[#22C55E]" />
+                  </div>
+                  <CardTitle className="text-xl">{t('contact.card1Title')}</CardTitle>
+                  <CardDescription className="text-sm">{t('contact.card1Desc')}</CardDescription>
+                </CardHeader>
+              </a>
             </Card>
 
-            <Card className="border border-gray-200 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-3">
-                  <Phone className="w-6 h-6 text-[#22C55E]" />
-                </div>
-                <CardTitle className="text-xl">{t('contact.card2Title')}</CardTitle>
-                <CardDescription className="text-sm">+44 7969 614703</CardDescription>
-              </CardHeader>
+            <Card className="border border-gray-200 hover:shadow-lg transition-shadow cursor-pointer">
+              <a href="https://wa.me/447969614703" target="_blank" rel="noopener noreferrer">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-3">
+                    <Phone className="w-6 h-6 text-[#22C55E]" />
+                  </div>
+                  <CardTitle className="text-xl">{t('contact.card2Title')}</CardTitle>
+                  <CardDescription className="text-sm">+44 7969 614703</CardDescription>
+                </CardHeader>
+              </a>
             </Card>
 
             <Card className="border border-gray-200 hover:shadow-lg transition-shadow">

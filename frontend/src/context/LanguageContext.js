@@ -30,39 +30,41 @@ export const LanguageProvider = ({ children }) => {
   }, [i18n]);
 
   const changeLanguage = async (langCode) => {
+    if (langCode === currentLanguage) return;
+    
     setIsTranslating(true);
     
     try {
-      // Change i18n language
+      // Immediately change language for instant UI update
+      setCurrentLanguage(langCode);
+      localStorage.setItem('selectedLanguage', langCode);
       await i18n.changeLanguage(langCode);
       
-      // If not English, trigger translation of dynamic content
+      // If not English, load translations in background
       if (langCode !== 'en') {
-        // Get current translation resources
-        const enResources = i18n.getResourceBundle('en', 'translation');
-        
-        // Check if we already have translations for this language
         const existingResources = i18n.getResourceBundle(langCode, 'translation');
         
         if (!existingResources || Object.keys(existingResources).length === 0) {
-          // Translate the resources
-          const translatedResources = await translationService.translateObject(
-            enResources,
-            langCode,
-            'en'
-          );
-          
-          // Add translated resources to i18n
-          i18n.addResourceBundle(langCode, 'translation', translatedResources, true, true);
+          // Load translations in background without blocking UI
+          setTimeout(async () => {
+            try {
+              const enResources = i18n.getResourceBundle('en', 'translation');
+              const translatedResources = await translationService.translateObject(
+                enResources,
+                langCode,
+                'en'
+              );
+              i18n.addResourceBundle(langCode, 'translation', translatedResources, true, true);
+            } catch (error) {
+              console.error('Background translation error:', error);
+            }
+          }, 100);
         }
       }
-      
-      setCurrentLanguage(langCode);
-      localStorage.setItem('selectedLanguage', langCode);
     } catch (error) {
       console.error('Language change error:', error);
     } finally {
-      setIsTranslating(false);
+      setTimeout(() => setIsTranslating(false), 300);
     }
   };
 

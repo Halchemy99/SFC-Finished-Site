@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="Superfly Commerce" className="h-8" />
+            <img src="/logo.png" alt="Superfly Commerce" className="h-12 md:h-14" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -93,9 +93,11 @@ const Navbar = () => {
             </DropdownMenu>
 
             {/* CTA Buttons */}
-            <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-6">
-              {t('nav.bookCall')}
-            </Button>
+            <a href="/#contact">
+              <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-6">
+                {t('nav.bookCall')}
+              </Button>
+            </a>
             <a href="https://www.tiktok.com/@superflycollective" target="_blank" rel="noopener noreferrer">
               <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full px-6">
                 TikTok

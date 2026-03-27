@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Check, ArrowRight, Star } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import ServiceCheckout from '../components/ServiceCheckout';
 
 const Pricing = () => {
   const { t } = useTranslation();
+  const [selectedService, setSelectedService] = useState(null);
 
   const tiers = [
     {
@@ -43,7 +45,7 @@ const Pricing = () => {
     },
     {
       name: 'Performance Retainer',
-      price: '£2,500',
+      price: '£750',
       period: '/month',
       description: 'Performance-based monthly management',
       features: [
@@ -82,31 +84,76 @@ const Pricing = () => {
       name: 'A+ Content Design',
       price: '£300',
       description: 'Professional A+ content for one product',
-      icon: '🎨'
+      detailedDescription: 'Complete A+ content module design for a single Amazon product listing.',
+      icon: '🎨',
+      scope: [
+        '1 product A+ content only',
+        '5 custom modules maximum',
+        'Up to 2 design revisions',
+        'Mobile-optimized layout',
+        '7-10 business days delivery',
+        'Source files included'
+      ]
     },
     {
       name: 'Product Photography',
       price: '£500',
       description: 'Professional product shoot (up to 10 images)',
-      icon: '📸'
+      detailedDescription: 'Studio product photography session with professional editing.',
+      icon: '📸',
+      scope: [
+        'Up to 10 edited images',
+        'White background shots only',
+        '1 product, multiple angles',
+        'High-resolution files (300 DPI)',
+        'Amazon-compliant formatting',
+        '14 business days turnaround'
+      ]
     },
     {
       name: 'Listing Copywriting',
       price: '£150',
       description: 'SEO-optimized title, bullets, and description',
-      icon: '✍️'
+      detailedDescription: 'Comprehensive listing copy for one product with keyword optimization.',
+      icon: '✍️',
+      scope: [
+        '1 product listing only',
+        'Title optimization (200 chars)',
+        '5 bullet points',
+        'Product description',
+        'Backend search terms',
+        '3-5 business days delivery'
+      ]
     },
     {
       name: 'PPC Audit & Setup',
       price: '£400',
       description: 'Complete PPC audit with campaign setup',
-      icon: '🎯'
+      detailedDescription: 'Comprehensive PPC audit and initial campaign configuration.',
+      icon: '🎯',
+      scope: [
+        'Current campaign audit',
+        'Up to 3 new campaigns setup',
+        'Keyword research (50 keywords)',
+        'Bid strategy recommendations',
+        'Does NOT include ad spend',
+        '5-7 business days delivery'
+      ]
     },
     {
       name: 'Brand Storefront',
       price: '£800',
       description: 'Custom Amazon Storefront design',
-      icon: '🏪'
+      detailedDescription: 'Complete Amazon Brand Store design with up to 5 pages.',
+      icon: '🏪',
+      scope: [
+        'Up to 5 storefront pages',
+        'Custom page layouts',
+        'Brand story integration',
+        'Product category sections',
+        '2 rounds of revisions',
+        '14-21 business days delivery'
+      ]
     }
   ];
 
@@ -190,8 +237,11 @@ const Pricing = () => {
                   <CardDescription className="text-sm">{service.description}</CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  <Button className="w-full bg-white border border-[#22C55E] text-[#22C55E] hover:bg-green-50 rounded-full">
-                    Add to Cart
+                  <Button 
+                    onClick={() => setSelectedService(service)}
+                    className="w-full bg-white border border-[#22C55E] text-[#22C55E] hover:bg-green-50 rounded-full"
+                  >
+                    Order Now
                   </Button>
                 </CardFooter>
               </Card>
@@ -205,11 +255,21 @@ const Pricing = () => {
           <p className="text-xl mb-8 opacity-90">
             Book a free discovery call and we'll help you choose the best option for your business.
           </p>
-          <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
-            Book Free Discovery Call <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          <a href="/#contact">
+            <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
+              Book Free Discovery Call <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </a>
         </div>
       </div>
+      
+      {/* Checkout Modal */}
+      {selectedService && (
+        <ServiceCheckout 
+          service={selectedService} 
+          onClose={() => setSelectedService(null)} 
+        />
+      )}
     </div>
   );
 };
