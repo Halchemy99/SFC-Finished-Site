@@ -1,0 +1,45 @@
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom styles for the app */
+.App {
+    min-height: 100vh;
+}
+
+/* Button hover effects */
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Card hover effects */
+.hover\:shadow-xl {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hover\:shadow-xl:hover {
+    transform: translateY(-4px);
+}
+
+/* Link transitions */
+a {
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Input focus effects */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #22C55E;
+}
