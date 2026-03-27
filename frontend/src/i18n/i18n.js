@@ -9,11 +9,10 @@ const resources = {
       nav: {
         services: 'Services',
         about: 'About',
-        philosophy: 'Philosophy',
+        caseStudies: 'Case Studies',
         pricing: 'Pricing',
         login: 'Login',
-        bookCall: 'Book Discovery Call',
-        tiktok: 'TikTok'
+        bookCall: 'Book Discovery Call'
       },
       hero: {
         badge: 'Sustainable Amazon Collective',
@@ -26,7 +25,6 @@ const resources = {
         cta2: 'View Pricing',
         stat1: 'Global Specialists',
         stat2: 'Revenue Driven',
-        stat3: 'Profits to Charity',
         badge2: 'AMAZON GROWTH',
         badge3: 'Sustainable & Fair'
       },
@@ -64,7 +62,7 @@ const resources = {
         feature2: 'Performance-based retainers',
         feature3: 'Transparent pricing with no hidden fees',
         feature4: 'Sustainability discounts',
-        feature5: '10% of profits donated'
+        feature5: 'Low-cost, Low-Friction, Fractional Management'
       },
       contact: {
         badge: 'Partner With Us',
@@ -82,7 +80,7 @@ const resources = {
         benefit1: 'Free Amazon account assessment',
         benefit2: 'Performance-based retainer options',
         benefit3: 'Sustainability discount assessment',
-        benefit4: 'Charitable impact breakdown',
+        benefit4: 'Growth strategy roadmap',
         nameLabel: 'Name',
         emailLabel: 'Email',
         companyLabel: 'Company Name',
@@ -130,7 +128,7 @@ const resources = {
         companyTitle: 'Company',
         contactTitle: 'Get in Touch',
         aboutUs: 'About Us',
-        philosophy: 'Philosophy',
+        caseStudies: 'Case Studies',
         pricing: 'Pricing',
         contact: 'Contact',
         copyright: 'Superfly Commerce. All rights reserved.',

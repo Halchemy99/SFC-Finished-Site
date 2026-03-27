@@ -22,39 +22,37 @@ const Navbar = () => {
     changeLanguage(langCode);
   };
 
+  const scrollToAbout = (e) => {
+    e.preventDefault();
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="flex items-center">
-              <span className="text-[#22C55E] font-bold text-lg">SUPERFLY</span>
-              <div className="w-6 h-6 ml-1 border-2 border-[#22C55E] rounded-full flex items-center justify-center">
-                <Globe className="w-3 h-3 text-[#22C55E]" />
-              </div>
-            </div>
-            <span className="text-gray-700 font-semibold text-sm">COMMERCE</span>
+          <Link to="/" className="flex items-center">
+            <img src="/logo.png" alt="Superfly Commerce" className="h-8" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            <a href="#services" className="text-gray-700 hover:text-[#22C55E] transition-colors flex items-center gap-1 text-sm">
-              <Globe className="w-4 h-4" />
+            <Link to="/#services" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
               {t('nav.services')}
-            </a>
-            <a href="#about" className="text-gray-700 hover:text-[#22C55E] transition-colors flex items-center gap-1 text-sm">
-              <User className="w-4 h-4" />
+            </Link>
+            <a href="#about" onClick={scrollToAbout} className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
               {t('nav.about')}
             </a>
-            <a href="#philosophy" className="text-gray-700 hover:text-[#22C55E] transition-colors flex items-center gap-1 text-sm">
-              <Globe className="w-4 h-4" />
-              {t('nav.philosophy')}
-            </a>
-            <a href="#pricing" className="text-gray-700 hover:text-[#22C55E] transition-colors flex items-center gap-1 text-sm">
-              <ShoppingCart className="w-4 h-4" />
+            <Link to="/case-studies" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
+              {t('nav.caseStudies')}
+            </Link>
+            <Link to="/pricing" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
               {t('nav.pricing')}
-            </a>
+            </Link>
 
             {/* Language Selector */}
             <DropdownMenu>
@@ -98,9 +96,11 @@ const Navbar = () => {
             <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-6">
               {t('nav.bookCall')}
             </Button>
-            <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full px-6">
-              {t('nav.tiktok')}
-            </Button>
+            <a href="https://www.tiktok.com/@superflycollective" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full px-6">
+                TikTok
+              </Button>
+            </a>
             <button className="text-gray-700 hover:text-[#22C55E] transition-colors flex items-center gap-1">
               <User className="w-5 h-5" />
               <span className="text-sm">{t('nav.login')}</span>
@@ -124,18 +124,18 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100">
           <div className="px-4 py-4 space-y-3">
-            <a href="#services" className="block text-gray-700 hover:text-[#22C55E] py-2">
+            <Link to="/#services" className="block text-gray-700 hover:text-[#22C55E] py-2">
               {t('nav.services')}
-            </a>
-            <a href="#about" className="block text-gray-700 hover:text-[#22C55E] py-2">
+            </Link>
+            <a href="#about" onClick={scrollToAbout} className="block text-gray-700 hover:text-[#22C55E] py-2">
               {t('nav.about')}
             </a>
-            <a href="#philosophy" className="block text-gray-700 hover:text-[#22C55E] py-2">
-              {t('nav.philosophy')}
-            </a>
-            <a href="#pricing" className="block text-gray-700 hover:text-[#22C55E] py-2">
+            <Link to="/case-studies" className="block text-gray-700 hover:text-[#22C55E] py-2">
+              {t('nav.caseStudies')}
+            </Link>
+            <Link to="/pricing" className="block text-gray-700 hover:text-[#22C55E] py-2">
               {t('nav.pricing')}
-            </a>
+            </Link>
             
             {/* Mobile Language Selector */}
             <div className="py-2">

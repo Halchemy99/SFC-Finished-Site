@@ -75,7 +75,7 @@ const Hero = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 mt-20 max-w-3xl">
+        <div className="grid grid-cols-2 gap-8 mt-20 max-w-3xl">
           <div>
             <div className="text-4xl font-bold text-white mb-2">50+</div>
             <div className="text-white/90">{t('hero.stat1')}</div>
@@ -83,10 +83,6 @@ const Hero = () => {
           <div>
             <div className="text-4xl font-bold text-white mb-2">£1M+</div>
             <div className="text-white/90">{t('hero.stat2')}</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-white mb-2">10%</div>
-            <div className="text-white/90">{t('hero.stat3')}</div>
           </div>
         </div>
       </div>

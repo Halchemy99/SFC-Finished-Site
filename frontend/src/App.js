@@ -9,6 +9,9 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
+import Pricing from './pages/Pricing';
+import CaseStudies from './pages/CaseStudies';
+import QuickWins from './pages/QuickWins';
 import { Toaster } from './components/ui/toaster';
 import './App.css';
 
@@ -26,6 +29,16 @@ const Home = () => {
   );
 };
 
+const PageLayout = ({ children }) => {
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      {children}
+      <Footer />
+    </div>
+  );
+};
+
 function App() {
   return (
     <LanguageProvider>
@@ -33,6 +46,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/pricing" element={<PageLayout><Pricing /></PageLayout>} />
+            <Route path="/case-studies" element={<PageLayout><CaseStudies /></PageLayout>} />
+            <Route path="/services/quick-wins" element={<PageLayout><QuickWins /></PageLayout>} />
           </Routes>
         </BrowserRouter>
         <Toaster />

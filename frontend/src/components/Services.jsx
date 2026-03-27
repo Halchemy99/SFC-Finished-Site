@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const { t } = useTranslation();
@@ -113,9 +114,11 @@ const Services = () => {
                 </CardContent>
 
                 <CardFooter>
-                  <Button className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-6 text-lg font-semibold">
-                    {service.buttonText} <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
+                  <Link to="/services/quick-wins" className="w-full">
+                    <Button className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-6 text-lg font-semibold">
+                      {service.buttonText} <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
             );
