@@ -81,9 +81,10 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <p>&copy; {currentYear} {t('footer.copyright')}</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-[#22C55E] transition-colors">{t('footer.privacy')}</a>
-              <a href="#" className="hover:text-[#22C55E] transition-colors">{t('footer.terms')}</a>
-              <a href="#" className="hover:text-[#22C55E] transition-colors">{t('footer.cookies')}</a>
+              <a href="/privacy" className="hover:text-[#22C55E] transition-colors">{t('footer.privacy')}</a>
+              <a href="/terms" className="hover:text-[#22C55E] transition-colors">{t('footer.terms')}</a>
+              <a href="/cookies" className="hover:text-[#22C55E] transition-colors">{t('footer.cookies')}</a>
+              <a href="/faq" className="hover:text-[#22C55E] transition-colors">FAQ</a>
             </div>
           </div>
         </div>

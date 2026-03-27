@@ -12,7 +12,14 @@ import Footer from './components/Footer';
 import Pricing from './pages/Pricing';
 import CaseStudies from './pages/CaseStudies';
 import QuickWins from './pages/QuickWins';
+import ExpertMatching from './pages/ExpertMatching';
+import GrowthPartnership from './pages/GrowthPartnership';
+import AmazonAcademy from './pages/AmazonAcademy';
 import TikTokOffer from './pages/TikTokOffer';
+import FAQ from './pages/FAQ';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Cookies from './pages/Cookies';
 import { Toaster } from './components/ui/toaster';
 import './App.css';
 
@@ -50,7 +57,14 @@ function App() {
             <Route path="/pricing" element={<PageLayout><Pricing /></PageLayout>} />
             <Route path="/case-studies" element={<PageLayout><CaseStudies /></PageLayout>} />
             <Route path="/services/quick-wins" element={<PageLayout><QuickWins /></PageLayout>} />
+            <Route path="/services/expert-matching" element={<PageLayout><ExpertMatching /></PageLayout>} />
+            <Route path="/services/growth-partnership" element={<PageLayout><GrowthPartnership /></PageLayout>} />
+            <Route path="/services/amazon-academy" element={<PageLayout><AmazonAcademy /></PageLayout>} />
             <Route path="/tiktok-offer" element={<PageLayout><TikTokOffer /></PageLayout>} />
+            <Route path="/faq" element={<PageLayout><FAQ /></PageLayout>} />
+            <Route path="/privacy" element={<PageLayout><Privacy /></PageLayout>} />
+            <Route path="/terms" element={<PageLayout><Terms /></PageLayout>} />
+            <Route path="/cookies" element={<PageLayout><Cookies /></PageLayout>} />
           </Routes>
         </BrowserRouter>
         <Toaster />
