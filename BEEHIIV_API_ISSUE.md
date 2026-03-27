@@ -1,6 +1,14 @@
 # Beehiiv API Integration Issue
 
-## Status: ⚠️ PENDING USER VERIFICATION
+## Status: ⚠️ USER IDENTITY VERIFICATION REQUIRED
+
+### User Update (Latest)
+**User reported**: "I need to do identity verification to start"
+
+**Action Required**: 
+1. Complete identity verification in Beehiiv dashboard
+2. Once verified, ensure API key is fully activated
+3. Provide updated/new API key if needed
 
 ### Issue Description
 The Beehiiv newsletter integration has been fully implemented in the backend and frontend, but the API is returning a 401 Unauthorized error.

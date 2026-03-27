@@ -15,7 +15,7 @@ ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 # Import routes AFTER loading .env
-from routes import newsletter
+from routes import newsletter, contact
 
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
@@ -72,6 +72,7 @@ async def get_status_checks():
 # Include the router in the main app
 app.include_router(api_router)
 app.include_router(newsletter.router)
+app.include_router(contact.router)
 
 app.add_middleware(
     CORSMiddleware,
