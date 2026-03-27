@@ -44,11 +44,14 @@ const Navbar = () => {
             <Link to="/#services" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
               {t('nav.services')}
             </Link>
-            <a href="#about" onClick={scrollToAbout} className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
-              {t('nav.about')}
-            </a>
+            <Link to="/team" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
+              Team
+            </Link>
             <Link to="/case-studies" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
               {t('nav.caseStudies')}
+            </Link>
+            <Link to="/blog" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
+              Blog
             </Link>
             <Link to="/pricing" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
               {t('nav.pricing')}
@@ -129,11 +132,14 @@ const Navbar = () => {
             <Link to="/#services" className="block text-gray-700 hover:text-[#22C55E] py-2">
               {t('nav.services')}
             </Link>
-            <a href="#about" onClick={scrollToAbout} className="block text-gray-700 hover:text-[#22C55E] py-2">
-              {t('nav.about')}
-            </a>
+            <Link to="/team" className="block text-gray-700 hover:text-[#22C55E] py-2">
+              Team
+            </Link>
             <Link to="/case-studies" className="block text-gray-700 hover:text-[#22C55E] py-2">
               {t('nav.caseStudies')}
+            </Link>
+            <Link to="/blog" className="block text-gray-700 hover:text-[#22C55E] py-2">
+              Blog
             </Link>
             <Link to="/pricing" className="block text-gray-700 hover:text-[#22C55E] py-2">
               {t('nav.pricing')}

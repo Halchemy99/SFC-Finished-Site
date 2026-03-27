@@ -20,6 +20,8 @@ import FAQ from './pages/FAQ';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
+import Team from './pages/Team';
+import Blog from './pages/Blog';
 import { Toaster } from './components/ui/toaster';
 import './App.css';
 
@@ -56,6 +58,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/pricing" element={<PageLayout><Pricing /></PageLayout>} />
             <Route path="/case-studies" element={<PageLayout><CaseStudies /></PageLayout>} />
+            <Route path="/team" element={<PageLayout><Team /></PageLayout>} />
+            <Route path="/blog" element={<PageLayout><Blog /></PageLayout>} />
             <Route path="/services/quick-wins" element={<PageLayout><QuickWins /></PageLayout>} />
             <Route path="/services/expert-matching" element={<PageLayout><ExpertMatching /></PageLayout>} />
             <Route path="/services/growth-partnership" element={<PageLayout><GrowthPartnership /></PageLayout>} />
