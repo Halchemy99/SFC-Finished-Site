@@ -1,5 +1,4 @@
 import React from 'react';
-import { ChevronDown } from 'lucide-react';
 import { Badge } from '../components/ui/badge';
 import {
   Accordion,
@@ -18,7 +17,7 @@ const FAQ = () => {
           a: 'We offer transparent, flexible pricing: Fixed-price packages from £150-£1,800, Performance retainers starting at £700/month + revenue share, and custom enterprise solutions. No hidden fees, no long-term contracts on most services.'
         },
         {
-          q: 'What\'s the difference between performance retainer and fixed pricing?',
+          q: 'What is the difference between performance retainer and fixed pricing?',
           a: 'Fixed pricing is one-time projects with set deliverables (e.g., listing optimization). Performance retainers are ongoing partnerships where we charge a base fee + percentage of growth we generate. You only pay more when you make more.'
         },
         {
@@ -31,7 +30,7 @@ const FAQ = () => {
         },
         {
           q: 'Is there a refund policy?',
-          a: 'For fixed-price services, we offer a 100% satisfaction guarantee. If you\'re not happy with deliverables, we\'ll revise or refund. Performance retainers are results-based - you only pay the revenue share when we grow your sales.'
+          a: 'For fixed-price services, we offer a 100% satisfaction guarantee. If you are not happy with deliverables, we will revise or refund. Performance retainers are results-based - you only pay the revenue share when we grow your sales.'
         }
       ]
     },
@@ -43,7 +42,7 @@ const FAQ = () => {
           a: 'Timeline varies: Listing copywriting (3-5 days), Infographics (7-10 days), A+ Content (7-10 days), Photography (14 days), Brand Video (10-14 days), PPC Audit (5-7 days), Full Business Analysis (14-21 days). Rush delivery available for +50% fee.'
         },
         {
-          q: 'What\'s included vs what\'s NOT included?',
+          q: 'What is included vs what is NOT included?',
           a: 'Our scopes are crystal clear. E.g., Photography includes 10 edited images, white background ONLY - lifestyle shots extra. PPC Audit includes campaign setup but NOT ad spend. Brand Video includes editing only - filming/content creation separate. Check each service page for exact scope.'
         },
         {
@@ -65,7 +64,7 @@ const FAQ = () => {
       questions: [
         {
           q: 'How do I get started?',
-          a: 'Book a free discovery call via Calendly, WhatsApp us, or fill out our contact form. We\'ll discuss your needs, recommend the best solution, and can start within 3-5 business days.'
+          a: 'Book a free discovery call via Calendly, WhatsApp us, or fill out our contact form. We will discuss your needs, recommend the best solution, and can start within 3-5 business days.'
         },
         {
           q: 'Will I have a dedicated contact?',
@@ -77,11 +76,11 @@ const FAQ = () => {
         },
         {
           q: 'What access do you need to my Amazon account?',
-          a: 'We need Seller Central access (user permissions, not your login). For PPC, we need Campaign Manager access. We\'ll guide you through secure permission setup.'
+          a: 'We need Seller Central access (user permissions, not your login). For PPC, we need Campaign Manager access. We will guide you through secure permission setup.'
         },
         {
           q: 'Do you sign NDAs?',
-          a: 'Yes, we\'re happy to sign NDAs before discussing your business. All client data is confidential by default.'
+          a: 'Yes, we are happy to sign NDAs before discussing your business. All client data is confidential by default.'
         }
       ]
     },
@@ -94,10 +93,10 @@ const FAQ = () => {
         },
         {
           q: 'Do you guarantee results?',
-          a: 'We guarantee quality deliverables and effort, not specific outcomes (Amazon\'s algorithm changes constantly). However, our performance-based model means we only earn more when you earn more - total alignment.'
+          a: 'We guarantee quality deliverables and effort, not specific outcomes (Amazon algorithm changes constantly). However, our performance-based model means we only earn more when you earn more - total alignment.'
         },
         {
-          q: 'What if I\'m not happy with results?',
+          q: 'What if I am not happy with results?',
           a: 'For fixed services: revise or refund. For retainers: cancel anytime after initial period with 30 days notice. We track everything so you can see our impact clearly.'
         },
         {
@@ -119,14 +118,14 @@ const FAQ = () => {
         },
         {
           q: 'Can you help with Amazon suspensions?',
-          a: 'We don\'t specialize in reinstatements, but can recommend trusted partners. We focus on prevention through compliant operations.'
+          a: 'We do not specialize in reinstatements, but can recommend trusted partners. We focus on prevention through compliant operations.'
         },
         {
           q: 'Do you handle product sourcing?',
           a: 'No, we focus on marketing and optimization. We can recommend sourcing partners in our network.'
         },
         {
-          q: 'What about Amazon\'s Brand Registry?',
+          q: 'What about Amazon Brand Registry?',
           a: 'We help with enrollment if you have a trademark. We also optimize brand stores and A+ content for registered brands.'
         }
       ]
@@ -140,42 +139,40 @@ const FAQ = () => {
         },
         {
           q: 'What happens after the 4 months?',
-          a: 'No obligation to continue. If you want to keep going, standard TikTok management is £750/month. Most clients continue because they\'re seeing strong ROI by month 3.'
+          a: 'No obligation to continue. If you want to keep going, standard TikTok management is £750/month. Most clients continue because they are seeing strong ROI by month 3.'
         },
         {
-          q: 'What\'s the catch with the free offer?',
-          a: 'No catch. It\'s a limited pilot program to build TikTok case studies. We limit intake to 5 brands per quarter. You must commit to the £1,000/month ad+content budget and be willing to test & iterate.'
+          q: 'What is the catch with the free offer?',
+          a: 'No catch. It is a limited pilot program to build TikTok case studies. We limit intake to 5 brands per quarter. You must commit to the £1,000/month ad+content budget and be willing to test and iterate.'
         }
       ]
     }
   ];
 
   return (
-    <div className=\"min-h-screen bg-gray-50 pt-24 pb-20\">
-      <div className=\"max-w-4xl mx-auto px-4 sm:px-6 lg:px-8\">
-        {/* Header */}
-        <div className=\"text-center mb-16\">
-          <Badge className=\"bg-green-100 text-[#22C55E] mb-4\">FAQ</Badge>
-          <h1 className=\"text-5xl font-bold mb-6\">
-            Frequently Asked <span className=\"text-[#22C55E]\">Questions</span>
+    <div className="min-h-screen bg-gray-50 pt-24 pb-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <Badge className="bg-green-100 text-[#22C55E] mb-4">FAQ</Badge>
+          <h1 className="text-5xl font-bold mb-6">
+            Frequently Asked <span className="text-[#22C55E]">Questions</span>
           </h1>
-          <p className=\"text-xl text-gray-600\">
+          <p className="text-xl text-gray-600">
             Everything you need to know about working with Superfly Commerce
           </p>
         </div>
 
-        {/* FAQ Sections */}
-        <div className=\"space-y-8\">
+        <div className="space-y-8">
           {faqSections.map((section, sIdx) => (
-            <div key={sIdx} className=\"bg-white rounded-2xl p-8 shadow-sm\">
-              <h2 className=\"text-2xl font-bold mb-6 text-gray-900\">{section.category}</h2>
-              <Accordion type=\"single\" collapsible className=\"w-full\">
+            <div key={sIdx} className="bg-white rounded-2xl p-8 shadow-sm">
+              <h2 className="text-2xl font-bold mb-6 text-gray-900">{section.category}</h2>
+              <Accordion type="single" collapsible className="w-full">
                 {section.questions.map((faq, qIdx) => (
-                  <AccordionItem key={qIdx} value={`item-${sIdx}-${qIdx}`} className=\"border-b border-gray-200\">
-                    <AccordionTrigger className=\"text-left font-semibold text-gray-900 hover:text-[#22C55E] transition-colors\">
+                  <AccordionItem key={qIdx} value={`item-${sIdx}-${qIdx}`} className="border-b border-gray-200">
+                    <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-[#22C55E] transition-colors">
                       {faq.q}
                     </AccordionTrigger>
-                    <AccordionContent className=\"text-gray-600 leading-relaxed\">
+                    <AccordionContent className="text-gray-600 leading-relaxed">
                       {faq.a}
                     </AccordionContent>
                   </AccordionItem>
@@ -185,20 +182,19 @@ const FAQ = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className=\"mt-16 bg-gradient-to-r from-[#22C55E] to-[#16A34A] rounded-3xl p-12 text-center text-white\">
-          <h2 className=\"text-3xl font-bold mb-4\">Still Have Questions?</h2>
-          <p className=\"text-lg mb-8 opacity-90\">
-            Book a free discovery call and we'll answer everything specific to your business.
+        <div className="mt-16 bg-gradient-to-r from-[#22C55E] to-[#16A34A] rounded-3xl p-12 text-center text-white">
+          <h2 className="text-3xl font-bold mb-4">Still Have Questions?</h2>
+          <p className="text-lg mb-8 opacity-90">
+            Book a free discovery call and we will answer everything specific to your business.
           </p>
-          <div className=\"flex flex-col sm:flex-row gap-4 justify-center\">
-            <a href=\"/#contact\">
-              <button className=\"bg-white text-[#22C55E] hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition-colors\">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/#contact">
+              <button className="bg-white text-[#22C55E] hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition-colors">
                 Book Discovery Call
               </button>
             </a>
-            <a href=\"https://wa.me/447969614703\" target=\"_blank\" rel=\"noopener noreferrer\">
-              <button className=\"bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold transition-colors\">
+            <a href="https://wa.me/447969614703" target="_blank" rel="noopener noreferrer">
+              <button className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold transition-colors">
                 WhatsApp Us
               </button>
             </a>
