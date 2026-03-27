@@ -9,14 +9,46 @@ const Newsletter = () => {
   const { toast } = useToast();
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast({
-      title: t('toast.subscribed'),
-      description: t('toast.subscribeSuccess'),
-    });
-    setEmail('');
+    setIsLoading(true);
+
+    try {
+      // TODO: Replace with actual Mailchimp/ConvertKit API endpoint
+      // For now, we'll simulate the submission
+      
+      // Recommended integration:
+      // 1. Mailchimp - Most popular, great automation ($0-20/month)
+      // 2. ConvertKit - Best for creators ($0-29/month)
+      // 3. Brevo (Sendinblue) - Generous free tier (300/day free)
+      
+      // Example Mailchimp integration:
+      // const response = await fetch('/api/newsletter/subscribe', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email })
+      // });
+
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      toast({
+        title: t('toast.subscribed'),
+        description: t('toast.subscribeSuccess'),
+      });
+      
+      setEmail('');
+    } catch (error) {
+      toast({
+        title: "Subscription Failed",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -58,10 +90,22 @@ const Newsletter = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder={t('newsletter.placeholder')}
               required
+              disabled={isLoading}
               className="flex-1 bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:bg-white/20"
             />
-            <Button type="submit" className="bg-white text-[#22C55E] hover:bg-gray-100 px-8">
-              {t('newsletter.joinButton')}
+            <Button 
+              type="submit" 
+              disabled={isLoading}
+              className="bg-white text-[#22C55E] hover:bg-gray-100 px-8"
+            >
+              {isLoading ? (
+                <>
+                  <Send className="animate-spin mr-2 w-4 h-4" />
+                  Joining...
+                </>
+              ) : (
+                t('newsletter.joinButton')
+              )}
             </Button>
           </form>
         </div>

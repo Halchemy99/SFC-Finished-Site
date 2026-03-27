@@ -14,8 +14,8 @@ const Pricing = () => {
   const tiers = [
     {
       name: 'Starter Sprint',
-      price: '£500',
-      period: 'one-time',
+      price: 'From £800',
+      period: '',
       description: 'Perfect for getting your first listing optimized',
       features: [
         '1 product listing optimization',
@@ -29,31 +29,32 @@ const Pricing = () => {
     },
     {
       name: 'Growth Package',
-      price: '£1,500',
+      price: '£1,800',
       period: 'one-time',
-      description: 'Comprehensive optimization for serious sellers',
+      description: 'Full month of explosive growth',
       features: [
-        'Up to 5 product listings',
-        'Advanced A+ content design',
-        'PPC campaign setup',
-        'Brand storefront design',
-        'Monthly performance report',
-        '4 weeks delivery'
+        'Full month PPC & account audit',
+        'Campaign optimization & changes',
+        '30 infographic images included',
+        'A+ content revamp',
+        'Brand story revamp',
+        'SEO listing optimization (up to 5 products)',
+        'Ongoing support during month'
       ],
       cta: 'Start Growing',
       popular: true
     },
     {
       name: 'Performance Retainer',
-      price: '£750',
-      period: '/month',
-      description: 'Performance-based monthly management',
+      price: 'From £700',
+      period: '/month + % growth',
+      description: 'Base price + % of incremental sales growth',
       features: [
         'Full account management',
         'Unlimited listing optimization',
         'PPC management & optimization',
         'Monthly strategy sessions',
-        'Revenue-share model available',
+        'Revenue-share on growth only',
         'Dedicated specialist',
         'Weekly reporting'
       ],
@@ -81,6 +82,36 @@ const Pricing = () => {
 
   const oneOffServices = [
     {
+      name: 'Product Photography',
+      price: '£500',
+      description: 'Professional product shoot',
+      detailedDescription: 'Studio product photography session with professional editing.',
+      icon: '📸',
+      scope: [
+        'Up to 10 edited images',
+        'White background shots only',
+        '1 product, multiple angles',
+        'High-resolution files (300 DPI)',
+        'Amazon-compliant formatting',
+        '14 business days turnaround'
+      ]
+    },
+    {
+      name: 'Amazon Infographic Set',
+      price: '£175',
+      description: 'Up to 6 custom infographics',
+      detailedDescription: 'Professional infographic design for Amazon listings (not photography).',
+      icon: '📊',
+      scope: [
+        'Up to 6 custom infographics',
+        'Product feature highlights',
+        'Comparison charts',
+        'Lifestyle mockups',
+        'Amazon size requirements',
+        '7-10 business days delivery'
+      ]
+    },
+    {
       name: 'A+ Content Design',
       price: '£300',
       description: 'Professional A+ content for one product',
@@ -96,18 +127,33 @@ const Pricing = () => {
       ]
     },
     {
-      name: 'Product Photography',
-      price: '£500',
-      description: 'Professional product shoot (up to 10 images)',
-      detailedDescription: 'Studio product photography session with professional editing.',
-      icon: '📸',
+      name: 'Brand Story Element',
+      price: '£125',
+      description: 'Goes above A+ content',
+      detailedDescription: 'Premium brand story module that sits above your A+ content.',
+      icon: '📖',
       scope: [
-        'Up to 10 edited images',
-        'White background shots only',
-        '1 product, multiple angles',
-        'High-resolution files (300 DPI)',
-        'Amazon-compliant formatting',
-        '14 business days turnaround'
+        '1 brand story module',
+        'Custom brand narrative',
+        'Professional design',
+        'Mobile-optimized',
+        '5-7 business days delivery',
+        'Includes copywriting'
+      ]
+    },
+    {
+      name: 'Brand Video',
+      price: '£400',
+      description: 'Up to 45 seconds',
+      detailedDescription: 'Professional video editing from your supplied files (non-studio).',
+      icon: '🎬',
+      scope: [
+        'Up to 45 seconds final video',
+        'Editing from YOUR supplied files',
+        'No studio filming included',
+        'Music & transitions',
+        'Amazon video specs',
+        '10-14 business days delivery'
       ]
     },
     {
@@ -152,6 +198,21 @@ const Pricing = () => {
         'Brand story integration',
         'Product category sections',
         '2 rounds of revisions',
+        '14-21 business days delivery'
+      ]
+    },
+    {
+      name: 'Full Business Analysis',
+      price: '£1,500',
+      description: 'Deloitte-level strategic report',
+      detailedDescription: 'Comprehensive business analysis with detailed report and strategy call.',
+      icon: '📈',
+      scope: [
+        '15-20 page detailed report',
+        '3-hour strategy process call',
+        'Market analysis & insights',
+        'Growth opportunities',
+        'Competitive benchmarking',
         '14-21 business days delivery'
       ]
     }

@@ -98,9 +98,9 @@ const Navbar = () => {
                 {t('nav.bookCall')}
               </Button>
             </a>
-            <a href="https://www.tiktok.com/@superflycollective" target="_blank" rel="noopener noreferrer">
+            <a href="/tiktok-offer">
               <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full px-6">
-                TikTok
+                TikTok Offer
               </Button>
             </a>
             <button className="text-gray-700 hover:text-[#22C55E] transition-colors flex items-center gap-1">

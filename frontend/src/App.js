@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Pricing from './pages/Pricing';
 import CaseStudies from './pages/CaseStudies';
 import QuickWins from './pages/QuickWins';
+import TikTokOffer from './pages/TikTokOffer';
 import { Toaster } from './components/ui/toaster';
 import './App.css';
 
@@ -49,6 +50,7 @@ function App() {
             <Route path="/pricing" element={<PageLayout><Pricing /></PageLayout>} />
             <Route path="/case-studies" element={<PageLayout><CaseStudies /></PageLayout>} />
             <Route path="/services/quick-wins" element={<PageLayout><QuickWins /></PageLayout>} />
+            <Route path="/tiktok-offer" element={<PageLayout><TikTokOffer /></PageLayout>} />
           </Routes>
         </BrowserRouter>
         <Toaster />
