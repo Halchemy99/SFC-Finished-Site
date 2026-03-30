@@ -23,7 +23,8 @@ const Services = () => {
         t('services.service1Feature2')
       ],
       buttonText: t('services.service1Button'),
-      buttonVariant: 'default'
+      buttonVariant: 'default',
+      link: '/services/growth-partnership'
     },
     {
       id: 2,
@@ -37,7 +38,8 @@ const Services = () => {
         t('services.service2Feature2')
       ],
       buttonText: t('services.service2Button'),
-      buttonVariant: 'default'
+      buttonVariant: 'default',
+      link: '/services/expert-matching'
     },
     {
       id: 3,
@@ -51,7 +53,8 @@ const Services = () => {
         t('services.service3Feature2')
       ],
       buttonText: t('services.service3Button'),
-      buttonVariant: 'default'
+      buttonVariant: 'default',
+      link: '/services/quick-wins'
     },
     {
       id: 4,
@@ -65,7 +68,8 @@ const Services = () => {
         t('services.service4Feature2')
       ],
       buttonText: t('services.service4Button'),
-      buttonVariant: 'default'
+      buttonVariant: 'default',
+      link: '/services/amazon-academy'
     }
   ];
 
@@ -114,7 +118,7 @@ const Services = () => {
                 </CardContent>
 
                 <CardFooter>
-                  <Link to="/services/quick-wins" className="w-full">
+                  <Link to={service.link} className="w-full">
                     <Button className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-6 text-lg font-semibold">
                       {service.buttonText} <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>

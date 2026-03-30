@@ -18,6 +18,21 @@ const Navbar = () => {
 
   const currentLangData = languages.find(lang => lang.code === currentLanguage);
 
+  // Localized loading messages
+  const loadingMessages = {
+    'en': 'Loading...',
+    'zh': '加载中...',
+    'ar': 'جار التحميل...',
+    'hi': 'लोड हो रहा है...',
+    'es': 'Cargando...',
+    'pt': 'Carregando...',
+    'nl': 'Laden...',
+    'de': 'Wird geladen...',
+    'it': 'Caricamento...',
+    'fr': 'Chargement...',
+    'ru': 'Загрузка...'
+  };
+
   const handleLanguageChange = (langCode) => {
     changeLanguage(langCode);
   };
@@ -34,12 +49,12 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo - Smaller size */}
           <Link to="/" className="flex items-center">
             <img 
               src="/logo.png" 
               alt="Superfly Commerce" 
-              className="h-16 md:h-20 lg:h-24 w-auto object-contain"
+              className="h-12 md:h-14 lg:h-16 w-auto object-contain"
             />
           </Link>
 
@@ -157,10 +172,13 @@ const Navbar = () => {
         </div>
       )}
       
-      {/* Translation Loading Overlay */}
+      {/* Translation Loading Overlay with localized message */}
       {isTranslating && (
-        <div className="absolute top-0 left-0 right-0 h-1 bg-green-100">
-          <div className="h-full bg-[#22C55E] animate-pulse"></div>
+        <div className="fixed top-0 left-0 right-0 z-50 bg-[#22C55E] text-white py-2 text-center font-semibold shadow-lg">
+          <div className="flex items-center justify-center gap-2">
+            <Loader2 className="w-4 h-4 animate-spin" />
+            <span>{loadingMessages[currentLanguage] || 'Loading...'}</span>
+          </div>
         </div>
       )}
     </nav>

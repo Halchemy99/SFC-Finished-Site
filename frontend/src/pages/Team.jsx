@@ -73,11 +73,11 @@ const Team = () => {
           </p>
         </div>
 
-        {/* Team Photo - with solid background */}
+        {/* Team Photo - completely transparent background */}
         <div className="mb-20">
-          <div className="rounded-3xl overflow-hidden shadow-2xl max-w-5xl mx-auto bg-gradient-to-br from-gray-50 to-gray-100">
+          <div className="rounded-3xl overflow-hidden shadow-2xl max-w-5xl mx-auto bg-white">
             <img 
-              src="/team-photo-new.png" 
+              src="/team-photo-final.png" 
               alt="Superfly Commerce Team"
               className="w-full h-auto"
             />

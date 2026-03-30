@@ -42,9 +42,32 @@ const AmazonAcademy = () => {
           <h1 className="text-5xl font-bold mb-6">
             Master Amazon <span className="text-[#22C55E]">In-House</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Learn from experts, implement with confidence, and scale with support. Training + advisory for teams who want to own their Amazon success.
           </p>
+          
+          {/* Skool Community + Private Training Options */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+            <a 
+              href="https://www.skool.com/@superfly-commerce" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#22C55E] hover:bg-[#16A34A] text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl"
+            >
+              <Users className="w-5 h-5" />
+              Join Skool Community
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            
+            <a 
+              href="/#contact"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl"
+            >
+              <Target className="w-5 h-5" />
+              Enquire About Private Training
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
         </div>
 
         <div className="mb-20">
