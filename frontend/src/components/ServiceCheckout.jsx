@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check, Loader2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -8,6 +8,7 @@ import { useToast } from '../hooks/use-toast';
 
 const ServiceCheckout = ({ service, onClose }) => {
   const { toast } = useToast();
+  const [isProcessing, setIsProcessing] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,33 +16,40 @@ const ServiceCheckout = ({ service, onClose }) => {
     requirements: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsProcessing(true);
     
-    // Send email (in production, this would call an API)
-    const emailBody = `
-New Service Purchase Request
+    try {
+      // Call backend to create Stripe checkout session
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/stripe/create-checkout`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          package_id: service.packageId,
+          customer_email: formData.email,
+          customer_name: formData.name,
+          origin_url: window.location.origin
+        })
+      });
 
-Service: ${service.name}
-Price: ${service.price}
+      const data = await response.json();
 
-Customer Details:
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company}
-
-Requirements:
-${formData.requirements}
-    `;
-
-    console.log('Email to send:', emailBody);
-    
-    toast({
-      title: "Request Submitted!",
-      description: "We'll contact you within 24 hours to confirm your order.",
-    });
-    
-    onClose();
+      if (response.ok && data.url) {
+        // Redirect to Stripe checkout
+        window.location.href = data.url;
+      } else {
+        throw new Error(data.detail || 'Failed to create checkout session');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      toast({
+        title: "Checkout Failed",
+        description: error.message || "Please try again or contact support.",
+        variant: "destructive"
+      });
+      setIsProcessing(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -144,7 +152,7 @@ ${formData.requirements}
 
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
               <p className="text-sm text-gray-700">
-                <strong>Next Steps:</strong> After submitting, we'll review your requirements and send you a detailed quote with timeline within 24 hours.
+                <strong>Secure Payment:</strong> You'll be redirected to Stripe's secure checkout page to complete your payment.
               </p>
             </div>
 
@@ -152,15 +160,24 @@ ${formData.requirements}
               <Button
                 type="button"
                 onClick={onClose}
-                className="flex-1 bg-gray-200 text-gray-700 hover:bg-gray-300 rounded-full"
+                disabled={isProcessing}
+                className="flex-1 bg-gray-200 text-gray-700 hover:bg-gray-300 rounded-full disabled:opacity-50"
               >
                 Cancel
               </Button>
               <Button
                 type="submit"
-                className="flex-1 bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full"
+                disabled={isProcessing}
+                className="flex-1 bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full disabled:opacity-50"
               >
-                Submit Request
+                {isProcessing ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Processing...
+                  </>
+                ) : (
+                  'Proceed to Payment'
+                )}
               </Button>
             </div>
           </form>

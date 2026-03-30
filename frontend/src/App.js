@@ -22,6 +22,7 @@ import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
 import Team from './pages/Team';
 import Blog from './pages/Blog';
+import PaymentSuccess from './pages/PaymentSuccess';
 import { Toaster } from './components/ui/toaster';
 import './App.css';
 
@@ -66,6 +67,7 @@ function App() {
             <Route path="/services/amazon-academy" element={<PageLayout><AmazonAcademy /></PageLayout>} />
             <Route path="/tiktok-offer" element={<PageLayout><TikTokOffer /></PageLayout>} />
             <Route path="/faq" element={<PageLayout><FAQ /></PageLayout>} />
+            <Route path="/payment/success" element={<PageLayout><PaymentSuccess /></PageLayout>} />
             <Route path="/privacy" element={<PageLayout><Privacy /></PageLayout>} />
             <Route path="/terms" element={<PageLayout><Terms /></PageLayout>} />
             <Route path="/cookies" element={<PageLayout><Cookies /></PageLayout>} />

@@ -82,8 +82,41 @@ const Pricing = () => {
 
   const oneOffServices = [
     {
+      name: 'Listing Optimization Sprint',
+      price: '£200',
+      packageId: 'listing-optimization',
+      description: 'Listing optimization for up to 5 listings',
+      detailedDescription: 'Complete listing optimization for up to 5 Amazon product listings with keyword research and SEO.',
+      icon: '🚀',
+      scope: [
+        'Up to 5 product listings',
+        'Keyword research & SEO',
+        'Title optimization',
+        'Bullet point optimization',
+        'Backend search terms',
+        '7-10 business days delivery'
+      ]
+    },
+    {
+      name: 'A+ Content Design',
+      price: '£300',
+      packageId: 'a-plus-content',
+      description: 'Professional A+ content for one product',
+      detailedDescription: 'Complete A+ content module design for a single Amazon product listing.',
+      icon: '🎨',
+      scope: [
+        '1 product A+ content only',
+        '5 custom modules maximum',
+        'Up to 2 design revisions',
+        'Mobile-optimized layout',
+        '7-10 business days delivery',
+        'Source files included'
+      ]
+    },
+    {
       name: 'Product Photography',
       price: '£500',
+      packageId: 'product-photography',
       description: 'Professional product shoot',
       detailedDescription: 'Studio product photography session with professional editing.',
       icon: '📸',
@@ -99,6 +132,7 @@ const Pricing = () => {
     {
       name: 'Amazon Infographic Set',
       price: '£175',
+      packageId: 'infographic-set',
       description: 'Up to 6 custom infographics',
       detailedDescription: 'Professional infographic design for Amazon listings (not photography).',
       icon: '📊',
@@ -112,23 +146,9 @@ const Pricing = () => {
       ]
     },
     {
-      name: 'A+ Content Design',
-      price: '£300',
-      description: 'Professional A+ content for one product',
-      detailedDescription: 'Complete A+ content module design for a single Amazon product listing.',
-      icon: '🎨',
-      scope: [
-        '1 product A+ content only',
-        '5 custom modules maximum',
-        'Up to 2 design revisions',
-        'Mobile-optimized layout',
-        '7-10 business days delivery',
-        'Source files included'
-      ]
-    },
-    {
       name: 'Brand Story Element',
       price: '£125',
+      packageId: 'brand-story',
       description: 'Goes above A+ content',
       detailedDescription: 'Premium brand story module that sits above your A+ content.',
       icon: '📖',
@@ -144,6 +164,7 @@ const Pricing = () => {
     {
       name: 'Brand Video',
       price: '£400',
+      packageId: 'brand-video',
       description: 'Up to 45 seconds',
       detailedDescription: 'Professional video editing from your supplied files (non-studio).',
       icon: '🎬',
@@ -159,6 +180,7 @@ const Pricing = () => {
     {
       name: 'Listing Copywriting',
       price: '£150',
+      packageId: 'listing-copywriting',
       description: 'SEO-optimized title, bullets, and description',
       detailedDescription: 'Comprehensive listing copy for one product with keyword optimization.',
       icon: '✍️',
@@ -174,6 +196,7 @@ const Pricing = () => {
     {
       name: 'PPC Audit & Setup',
       price: '£400',
+      packageId: 'ppc-audit',
       description: 'Complete PPC audit with campaign setup',
       detailedDescription: 'Comprehensive PPC audit and initial campaign configuration.',
       icon: '🎯',
@@ -189,6 +212,7 @@ const Pricing = () => {
     {
       name: 'Brand Storefront',
       price: '£800',
+      packageId: 'brand-storefront',
       description: 'Custom Amazon Storefront design',
       detailedDescription: 'Complete Amazon Brand Store design with up to 5 pages.',
       icon: '🏪',
@@ -204,6 +228,7 @@ const Pricing = () => {
     {
       name: 'Full Business Analysis',
       price: '£1,500',
+      packageId: 'business-analysis',
       description: 'Deloitte-level strategic report',
       detailedDescription: 'Comprehensive business analysis with detailed report and strategy call.',
       icon: '📈',
