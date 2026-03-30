@@ -4,12 +4,25 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import ServiceCTA from '../components/ServiceCTA';
+import { useNavigate } from 'react-router-dom';
 
 const AmazonAcademy = () => {
+  const navigate = useNavigate();
+  
   // Scroll to top when page loads
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const scrollToContact = () => {
+    navigate('/');
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
   const courses = [
     {
       title: 'Amazon Fundamentals',
@@ -63,24 +76,14 @@ const AmazonAcademy = () => {
               <ArrowRight className="w-5 h-5" />
             </a>
             
-            <a 
-              href="/#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/#contact';
-                setTimeout(() => {
-                  const contactSection = document.getElementById('contact');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }, 100);
-              }}
+            <button 
+              onClick={scrollToContact}
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl"
             >
               <Target className="w-5 h-5" />
               Enquire About Private Training
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </button>
           </div>
         </div>
 

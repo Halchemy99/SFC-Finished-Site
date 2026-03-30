@@ -3,8 +3,20 @@ import { Check, TrendingUp, Users, Video, Zap } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
+import { useNavigate } from 'react-router-dom';
 
 const TikTokOffer = () => {
+  const navigate = useNavigate();
+
+  const scrollToContact = () => {
+    navigate('/');
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
   const benefits = [
     'Full TikTok account management',
     'Content strategy & planning',
@@ -147,23 +159,12 @@ const TikTokOffer = () => {
             Limited spots available. This offer is for serious brands ready to invest in TikTok growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/#contact';
-                setTimeout(() => {
-                  const contactSection = document.getElementById('contact');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }, 200);
-              }}
+            <Button 
+              onClick={scrollToContact}
+              className="bg-white text-purple-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold"
             >
-              <Button className="bg-white text-purple-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
-                Apply Now - Free Management
-              </Button>
-            </a>
+              Apply Now - Free Management
+            </Button>
             <a href="https://www.tiktok.com/@superflycollective" target="_blank" rel="noopener noreferrer">
               <Button className="bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg font-semibold">
                 View Our TikTok
