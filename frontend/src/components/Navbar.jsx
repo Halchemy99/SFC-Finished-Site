@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="Superfly Commerce" className="h-12 md:h-14" />
+            <img src="/logo.png" alt="Superfly Commerce" className="h-16 md:h-20 lg:h-24" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -57,7 +57,7 @@ const Navbar = () => {
               {t('nav.pricing')}
             </Link>
 
-            {/* Language Selector */}
+            {/* Language Selector - Simple text-only */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-2 text-gray-700 hover:text-[#22C55E] transition-colors outline-none">
                 {isTranslating ? (
@@ -65,27 +65,17 @@ const Navbar = () => {
                 ) : (
                   <Globe className="w-4 h-4" />
                 )}
-                <img 
-                  src={`https://flagcdn.com/w20/${currentLangData.flag}.png`} 
-                  alt={currentLangData.name}
-                  className="w-5 h-4"
-                />
-                <span className="text-sm">{currentLangData.name}</span>
+                <span className="text-sm font-medium">{currentLangData.name}</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="max-h-96 overflow-y-auto">
                 {languages.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
-                    className={`flex items-center gap-2 cursor-pointer ${
-                      currentLanguage === lang.code ? 'bg-green-50' : ''
+                    className={`cursor-pointer ${
+                      currentLanguage === lang.code ? 'bg-green-50 font-semibold' : ''
                     }`}
                   >
-                    <img 
-                      src={`https://flagcdn.com/w20/${lang.flag}.png`} 
-                      alt={lang.name}
-                      className="w-5 h-4"
-                    />
                     <span>{lang.name}</span>
                     {currentLanguage === lang.code && (
                       <span className="ml-auto text-[#22C55E]">✓</span>
@@ -106,13 +96,6 @@ const Navbar = () => {
                 TikTok Offer
               </Button>
             </a>
-            <button className="text-gray-700 hover:text-[#22C55E] transition-colors flex items-center gap-1">
-              <User className="w-5 h-5" />
-              <span className="text-sm">{t('nav.login')}</span>
-            </button>
-            <button className="text-gray-700 hover:text-[#22C55E] transition-colors">
-              <ShoppingCart className="w-5 h-5" />
-            </button>
           </div>
 
           {/* Mobile Menu Button */}

@@ -1,7 +1,8 @@
 import React from 'react';
-import { CheckCircle, ArrowRight, Zap } from 'lucide-react';
+import { CheckCircle, ArrowRight, Zap, Globe } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -46,12 +47,16 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
-                {t('hero.cta1')} <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button className="bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg font-semibold">
-                <Zap className="mr-2 w-5 h-5" /> {t('hero.cta2')}
-              </Button>
+              <a href="/#contact">
+                <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
+                  {t('hero.cta1')} <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </a>
+              <Link to="/pricing">
+                <Button className="bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg font-semibold">
+                  <Zap className="mr-2 w-5 h-5" /> {t('hero.cta2')}
+                </Button>
+              </Link>
             </div>
           </div>
 

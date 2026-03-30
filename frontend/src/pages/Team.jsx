@@ -77,7 +77,7 @@ const Team = () => {
         <div className="mb-20">
           <div className="rounded-3xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
             <img 
-              src="/team-photo.png" 
+              src="/team-photo-new.png" 
               alt="Superfly Commerce Team"
               className="w-full h-auto"
             />
