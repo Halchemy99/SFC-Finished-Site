@@ -4,6 +4,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import './i18n/i18n';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import BrandSlider from './components/BrandSlider';
 import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -31,6 +32,7 @@ const Home = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <BrandSlider />
       <Services />
       <About />
       <Contact />
