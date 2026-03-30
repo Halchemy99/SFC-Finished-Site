@@ -36,7 +36,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="Superfly Commerce" className="h-16 md:h-20 lg:h-24" />
+            <img 
+              src="/logo.png" 
+              alt="Superfly Commerce" 
+              className="h-16 md:h-20 lg:h-24 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -57,7 +61,7 @@ const Navbar = () => {
               {t('nav.pricing')}
             </Link>
 
-            {/* Language Selector - Simple text-only */}
+            {/* Language Selector - Modern emoji flags */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-2 text-gray-700 hover:text-[#22C55E] transition-colors outline-none">
                 {isTranslating ? (
@@ -65,6 +69,7 @@ const Navbar = () => {
                 ) : (
                   <Globe className="w-4 h-4" />
                 )}
+                <span className="text-xl">{currentLangData.emoji}</span>
                 <span className="text-sm font-medium">{currentLangData.name}</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="max-h-96 overflow-y-auto">
@@ -72,10 +77,11 @@ const Navbar = () => {
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
-                    className={`cursor-pointer ${
+                    className={`cursor-pointer flex items-center gap-2 ${
                       currentLanguage === lang.code ? 'bg-green-50 font-semibold' : ''
                     }`}
                   >
+                    <span className="text-xl">{lang.emoji}</span>
                     <span>{lang.name}</span>
                     {currentLanguage === lang.code && (
                       <span className="ml-auto text-[#22C55E]">✓</span>
