@@ -92,51 +92,11 @@ async def send_email_notification(submission: ContactFormSubmission) -> bool:
 
 async def send_to_perspective_crm(submission: ContactFormSubmission) -> bool:
     """
-    Send contact form data to Perspective CRM
-    Documentation: https://www.perspective.co/
-    
-    NOTE: Requires API credentials to be configured in .env:
-    - PERSPECTIVE_API_KEY
-    - PERSPECTIVE_API_URL
+    Perspective CRM integration removed per user request.
+    User reported: "Perspective not allowing me to integrate contact form"
     """
-    if not PERSPECTIVE_API_KEY:
-        logger.info("Perspective CRM not configured. Skipping CRM sync.")
-        return False
-    
-    try:
-        async with httpx.AsyncClient(timeout=10.0) as client:
-            # Perspective API endpoint structure (to be confirmed with actual API docs)
-            response = await client.post(
-                f"{PERSPECTIVE_API_URL}/contacts",
-                headers={
-                    "Authorization": f"Bearer {PERSPECTIVE_API_KEY}",
-                    "Content-Type": "application/json"
-                },
-                json={
-                    "name": submission.name,
-                    "email": submission.email,
-                    "phone": submission.phone,
-                    "company": submission.company,
-                    "notes": submission.message,
-                    "source": "website_contact_form",
-                    "form_type": submission.form_type,
-                    "created_at": datetime.now().isoformat()
-                }
-            )
-            
-            if response.status_code in [200, 201]:
-                logger.info(f"Successfully synced contact to Perspective CRM: {submission.email}")
-                return True
-            else:
-                logger.error(f"Perspective CRM API error: {response.status_code} - {response.text}")
-                return False
-                
-    except httpx.TimeoutException:
-        logger.error("Perspective CRM API timeout")
-        return False
-    except Exception as e:
-        logger.error(f"Failed to sync with Perspective CRM: {str(e)}")
-        return False
+    # CRM integration disabled
+    return False
 
 @router.post("/submit")
 async def submit_contact_form(submission: ContactFormSubmission):
