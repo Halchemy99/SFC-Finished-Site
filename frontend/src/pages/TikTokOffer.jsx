@@ -147,7 +147,19 @@ const TikTokOffer = () => {
             Limited spots available. This offer is for serious brands ready to invest in TikTok growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/#contact">
+            <a 
+              href="/#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/#contact';
+                setTimeout(() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }, 200);
+              }}
+            >
               <Button className="bg-white text-purple-600 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
                 Apply Now - Free Management
               </Button>
