@@ -21,7 +21,10 @@ const ServiceCTA = ({
       
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
         {showPricing && (
-          <Link to="/pricing">
+          <Link 
+            to="/pricing"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <Button 
               size="lg"
               className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto"
@@ -34,7 +37,10 @@ const ServiceCTA = ({
         )}
         
         {showCaseStudies && (
-          <Link to="/case-studies">
+          <Link 
+            to="/case-studies"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <Button 
               size="lg"
               variant="outline"

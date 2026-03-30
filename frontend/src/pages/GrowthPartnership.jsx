@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Check, ArrowRight, TrendingUp, Target, Award, DollarSign } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
@@ -6,6 +6,9 @@ import { Badge } from '../components/ui/badge';
 import ServiceCTA from '../components/ServiceCTA';
 
 const GrowthPartnership = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const benefits = [
     { title: 'Aligned Incentives', desc: 'We only win when you win', icon: '🤝' },
     { title: 'Zero Risk Start', desc: 'Low base fee, pay for results', icon: '🛡️' },

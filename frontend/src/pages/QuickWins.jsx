@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Check, ArrowRight, Zap, Clock, Target } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
@@ -6,6 +6,9 @@ import { Badge } from '../components/ui/badge';
 import ServiceCTA from '../components/ServiceCTA';
 
 const QuickWins = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const packages = [
     {
       name: 'Listing Optimization Sprint',

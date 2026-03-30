@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Check, ArrowRight, BookOpen, Video, Users, Award, Target } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
@@ -6,6 +6,10 @@ import { Badge } from '../components/ui/badge';
 import ServiceCTA from '../components/ServiceCTA';
 
 const AmazonAcademy = () => {
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const courses = [
     {
       title: 'Amazon Fundamentals',
@@ -61,6 +65,16 @@ const AmazonAcademy = () => {
             
             <a 
               href="/#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/#contact';
+                setTimeout(() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl"
             >
               <Target className="w-5 h-5" />

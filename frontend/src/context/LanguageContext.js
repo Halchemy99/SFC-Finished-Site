@@ -47,19 +47,17 @@ export const LanguageProvider = ({ children }) => {
     if (langCode === currentLanguage) return;
     
     setIsTranslating(true);
+    setCurrentLanguage(langCode);
+    localStorage.setItem('selectedLanguage', langCode);
     
     try {
-      // Instant UI update
-      setCurrentLanguage(langCode);
-      localStorage.setItem('selectedLanguage', langCode);
       await i18n.changeLanguage(langCode);
       
-      // Load translations instantly if available, otherwise show English while loading
+      // Load translations for non-English languages
       if (langCode !== 'en') {
         const existingResources = i18n.getResourceBundle(langCode, 'translation');
         
         if (!existingResources || Object.keys(existingResources).length === 0) {
-          // Load translations
           const enResources = i18n.getResourceBundle('en', 'translation');
           const translatedResources = await translationService.translateObject(
             enResources,
@@ -71,6 +69,8 @@ export const LanguageProvider = ({ children }) => {
       }
     } catch (error) {
       console.error('Language change error:', error);
+      // Revert to previous language on error
+      setCurrentLanguage(currentLanguage);
     } finally {
       setIsTranslating(false);
     }
