@@ -26,11 +26,11 @@ const Hero = () => {
                 <span className="text-sm font-semibold tracking-wide">Sustainable Amazon Collective</span>
               </div>
               {/* Amazon Smile Logo */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-full p-3">
+              <div className="flex items-center">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_design-75/artifacts/i1ti1phn_Amazons-innovative-logo.png" 
                   alt="Amazon"
-                  className="w-8 h-8 object-contain"
+                  className="w-10 h-10 object-contain opacity-90"
                 />
               </div>
             </div>

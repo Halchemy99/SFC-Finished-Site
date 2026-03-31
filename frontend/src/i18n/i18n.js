@@ -18,7 +18,7 @@ const resources = {
         badge: 'Sustainable Amazon Collective',
         title: 'Amazon Growth Without The Agency Tax',
         subtitle: "Performance-based partnerships. Transparent pricing. Real specialists who actually know Amazon—not account managers reading from playbooks.",
-        feature1: 'Pay for results, not retainers',
+        feature1: 'Pay for high results, not high retainers',
         feature2: 'Direct access to Amazon specialists',
         feature3: 'Built for sustainable, long-term growth',
         cta1: 'Start Growing Today',
@@ -358,12 +358,13 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
+    lng: 'en', // Force English as default
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false
     },
     detection: {
-      order: ['localStorage', 'navigator'],
+      order: ['localStorage'], // Only check localStorage (user's explicit choice)
       caches: ['localStorage']
     }
   });
