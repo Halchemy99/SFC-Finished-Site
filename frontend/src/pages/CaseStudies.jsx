@@ -8,68 +8,70 @@ import { Link } from 'react-router-dom';
 const CaseStudies = () => {
   const caseStudies = [
     {
-      id: 'quick-wins',
-      category: 'Quick Win Package',
-      client: 'EcoHome Essentials',
-      industry: 'Home & Kitchen',
-      challenge: 'Poor listing visibility and low conversion rates',
-      solution: 'Complete listing optimization with A+ content redesign',
+      id: 'pachakuti',
+      category: 'Amazon Launch',
+      client: 'Pachakuti',
+      industry: 'Ceremonial Cacao',
+      challenge: 'Entering Amazon UK with no sales history, low review count, and premium pricing in a highly competitive cacao category dominated by established brands. Ceremonial cacao straight from the Ecuadorian Amazon needed to stand out.',
+      solution: 'Structured UK launch via FBA, keyword-driven listing build, A+ content creation, brand store creation, and controlled PPC testing to validate conversion before scaling. Strategically focused on ranking for under-appreciated keywords.',
       results: [
-        { metric: 'Sales Increase', value: '156%', period: '60 days' },
-        { metric: 'Conversion Rate', value: '+8.2%', period: '30 days' },
-        { metric: 'Organic Ranking', value: 'Top 5', period: 'keywords' }
+        { metric: 'Revenue', value: '£50k', period: '60 days' },
+        { metric: 'Category Ranking', value: 'Top 4', period: 'Cacao' },
+        { metric: 'CTR Increase', value: '5x', period: 'post-optimization' },
+        { metric: 'TROAS', value: '13.00', period: '2.5 months' }
       ],
-      image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800',
-      testimonial: "Superfly's quick win package delivered results faster than we imagined. Our sales doubled within two months!",
-      author: 'Sarah Mitchell, Founder'
+      image: 'https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=800',
+      testimonial: 'Superfly helped us launch our ceremonial cacao from the Ecuadorian Amazon and hit Top 4 in one of the most competitive categories on Amazon UK.',
+      author: 'Pachakuti Team'
     },
     {
-      id: 'expert-matching',
-      category: 'Expert Matching',
-      client: 'FitGear Pro',
-      industry: 'Sports & Fitness',
-      challenge: 'Needed PPC expertise to scale advertising profitably',
-      solution: 'Matched with PPC specialist for campaign optimization',
+      id: 'hair-guru',
+      category: 'Brand Rebrand & Recovery',
+      client: 'Hair Guru',
+      industry: 'Hair Fibres',
+      challenge: 'EU competitors were being outspent by non-EU brands on content and advertising, leading to erosion of market share in the high-competition haircare category. Hair fibres for men and women needed a complete repositioning.',
+      solution: 'Full listing rebuild, keyword strategy overhaul, A+ content creation, and aggressive PPC structure designed to reclaim category visibility and regain market share. Initiated a full brand rebrand that inspired their website and packaging.',
       results: [
-        { metric: 'ROAS', value: '11.4x', period: 'avg' },
-        { metric: 'Ad Spend Efficiency', value: '+35%', period: '90 days' },
-        { metric: 'New Customer Growth', value: '243%', period: 'quarter' }
+        { metric: 'Revenue', value: '£25k', period: '30 days' },
+        { metric: 'CTR Improvement', value: '5x', period: 'immediate' },
+        { metric: 'Category Ranking', value: 'Top 4', period: 'haircare' }
       ],
-      image: 'https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg?auto=compress&cs=tinysrgb&w=800',
-      testimonial: 'Working with a dedicated PPC expert transformed our advertising. We finally have profitable campaigns at scale.',
-      author: 'Marcus Chen, CEO'
+      image: 'https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg?auto=compress&cs=tinysrgb&w=800',
+      testimonial: 'Superfly initiated a full brand rebrand that has even inspired our website and packaging. So much for little Amazon agencies!',
+      author: 'Hair Guru Team'
     },
     {
-      id: 'growth-partnership',
-      category: 'Growth Share Partnership',
-      client: 'Pure Wellness Co',
-      industry: 'Health & Personal Care',
-      challenge: 'Needed full-service management with aligned incentives',
-      solution: 'Revenue-share partnership with dedicated account manager',
+      id: 'leon',
+      category: 'Amazon Fresh Launch',
+      client: 'LEON',
+      industry: 'Restaurant Ready Meals',
+      challenge: 'Launching a restaurant brand\'s ambient product range on Amazon Fresh UK, which operates with different rules, buy box dynamics, and consumer expectations compared to standard Amazon.',
+      solution: 'Vendor Central onboarding, product categorization, and content optimization tailored for Amazon Fresh\'s unique search behavior. Used data to inform next steps and create new products for seller accounts.',
       results: [
-        { metric: 'Revenue Growth', value: '£1.3M', period: 'annual' },
-        { metric: 'Product Launches', value: '12', period: 'successful' },
-        { metric: 'Market Share', value: '+45%', period: 'category' }
+        { metric: 'Fresh Trial', value: 'Sold Out', period: '3 weeks' },
+        { metric: 'Planned Duration', value: '12 weeks', period: 'exceeded' },
+        { metric: 'Next Phase', value: 'New Products', period: 'ready meals' }
       ],
-      image: 'https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg?auto=compress&cs=tinysrgb&w=800',
-      testimonial: 'The performance-based model meant Superfly was as invested in our success as we were. Game changer.',
-      author: 'Elena Rodriguez, Co-Founder'
+      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
+      testimonial: 'Fresh trial proved so successful that Superfly are now helping us create new products to launch on our seller accounts. They found a way and used data to inform our next steps.',
+      author: 'LEON Team'
     },
     {
-      id: 'amazon-academy',
-      category: 'Amazon Mastery Academy',
-      client: 'Artisan Craft Collective',
-      industry: 'Handmade & Crafts',
-      challenge: 'Small team needed to learn Amazon best practices',
-      solution: 'Comprehensive training program with ongoing advisory',
+      id: 'reborn',
+      category: 'Buy Box Recovery & Sustainability',
+      client: 'ReBorn',
+      industry: 'Sustainable Homeware',
+      challenge: 'Resellers had hijacked key listings, eroding margin and brand perception. Lost Buy Box control (down to 65%) and lacked visibility over which SKUs were profitable under FBA versus FBM. Homeware made from recycled materials needed protection.',
+      solution: 'Comprehensive FBA/FBM inventory audit, Buy Box tracking and recapture strategy, full listing rebuild (copy, images, A+ content, infographic briefs), 3-month sprint plan with phased US market setup, and Climate Pledge Friendly certification via ClimatePartner.',
       results: [
-        { metric: 'Team Efficiency', value: '+200%', period: 'output' },
-        { metric: 'Sales Growth', value: '85%', period: '6 months' },
-        { metric: 'Return Rate', value: '-40%', period: 'improvement' }
+        { metric: 'Buy Box Share', value: '99%', period: 'from 65%' },
+        { metric: 'FBA/FBM', value: 'Optimized', period: 'by SKU' },
+        { metric: 'US Market', value: 'Ready', period: 'roadmap built' },
+        { metric: 'Sustainability', value: 'Certified', period: 'Climate Pledge' }
       ],
-      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
-      testimonial: 'The academy gave our team the skills to manage Amazon in-house while having expert support when needed.',
-      author: 'James Patterson, Operations Director'
+      image: 'https://images.pexels.com/photos/6585760/pexels-photo-6585760.jpeg?auto=compress&cs=tinysrgb&w=800',
+      testimonial: 'Superfly recaptured our Buy Box share from a flagging 65% to 99%, optimized our FBA/FBM strategy, and helped us achieve Climate Pledge Friendly certification.',
+      author: 'ReBorn Homes Team'
     }
   ];
 
@@ -129,7 +131,7 @@ const CaseStudies = () => {
                 </div>
 
                 {/* Results */}
-                <div className="mt-8 grid grid-cols-3 gap-4">
+                <div className={`mt-8 grid ${study.results.length === 4 ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-3'} gap-4`}>
                   {study.results.map((result, ridx) => (
                     <div key={ridx} className="bg-green-50 p-4 rounded-xl text-center">
                       <div className="text-3xl font-bold text-[#22C55E] mb-1">{result.value}</div>
@@ -145,11 +147,11 @@ const CaseStudies = () => {
                   <p className="text-sm font-semibold text-gray-900">— {study.author}</p>
                 </div>
 
-                <Link to={`/services/${study.id}`}>
+                <a href="/#contact">
                   <Button className="mt-6 bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full">
-                    View Full Case Study <ArrowRight className="ml-2 w-4 h-4" />
+                    Get Similar Results <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           ))}
@@ -161,9 +163,11 @@ const CaseStudies = () => {
           <p className="text-xl mb-8 opacity-90">
             Let's discuss how we can help you achieve similar results for your Amazon business.
           </p>
-          <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
-            Book Discovery Call <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          <a href="/#contact">
+            <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
+              Book Discovery Call <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </a>
         </div>
       </div>
     </div>
