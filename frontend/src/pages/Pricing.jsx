@@ -17,73 +17,73 @@ const Pricing = () => {
 
   const partnershipTiers = [
     {
-      name: 'Startup',
+      name: t('pricing.startup.name'),
       price: '£700',
-      period: '/month',
-      description: 'Perfect for new Amazon sellers finding their feet',
+      period: t('pricing.perMonth'),
+      description: t('pricing.startup.description'),
       features: [
-        'Full account management',
-        'Basic listing optimization',
-        'PPC management & setup',
-        'Monthly strategy session',
-        'Email support',
-        'Weekly reporting'
+        t('pricing.startup.feature1'),
+        t('pricing.startup.feature2'),
+        t('pricing.startup.feature3'),
+        t('pricing.startup.feature4'),
+        t('pricing.startup.feature5'),
+        t('pricing.startup.feature6')
       ],
-      cta: 'Start Partnership',
+      cta: t('pricing.startup.cta'),
       popular: false,
       badge: null
     },
     {
-      name: 'Growing',
+      name: t('pricing.growing.name'),
       price: '£1,000',
-      period: '/month',
-      description: 'For brands scaling their Amazon presence',
+      period: t('pricing.perMonth'),
+      description: t('pricing.growing.description'),
       features: [
-        'Everything in Startup',
-        'Advanced listing optimization',
-        'A+ Content management',
-        'Competitive analysis',
-        'Bi-weekly strategy calls',
-        'Dedicated specialist',
-        'Priority support'
+        t('pricing.growing.feature1'),
+        t('pricing.growing.feature2'),
+        t('pricing.growing.feature3'),
+        t('pricing.growing.feature4'),
+        t('pricing.growing.feature5'),
+        t('pricing.growing.feature6'),
+        t('pricing.growing.feature7')
       ],
-      cta: 'Start Growing',
+      cta: t('pricing.growing.cta'),
       popular: true,
-      badge: 'Most Popular'
+      badge: t('pricing.growing.badge')
     },
     {
-      name: 'Scaling',
+      name: t('pricing.scaling.name'),
       price: '£1,200',
-      period: '/month',
-      description: '7-figure brands ready to dominate',
+      period: t('pricing.perMonth'),
+      description: t('pricing.scaling.description'),
       features: [
-        'Everything in Growing',
-        'International expansion support',
-        'Brand Store design',
-        'Video & photography coordination',
-        'Weekly strategy calls',
-        'Multi-specialist team',
-        '24/7 priority support'
+        t('pricing.scaling.feature1'),
+        t('pricing.scaling.feature2'),
+        t('pricing.scaling.feature3'),
+        t('pricing.scaling.feature4'),
+        t('pricing.scaling.feature5'),
+        t('pricing.scaling.feature6'),
+        t('pricing.scaling.feature7')
       ],
-      cta: 'Scale Faster',
+      cta: t('pricing.scaling.cta'),
       popular: false,
       badge: null
     },
     {
-      name: 'Enterprise',
+      name: t('pricing.enterprise.name'),
       price: '£1,500',
-      period: '/month',
-      description: 'Full-service collective for market leaders',
+      period: t('pricing.perMonth'),
+      description: t('pricing.enterprise.description'),
       features: [
-        'Everything in Scaling',
-        'Custom growth strategy',
-        'Analytics & BI dashboard',
-        'Quarterly business reviews',
-        'Direct founder access',
-        'White-glove service',
-        'Guaranteed response times'
+        t('pricing.enterprise.feature1'),
+        t('pricing.enterprise.feature2'),
+        t('pricing.enterprise.feature3'),
+        t('pricing.enterprise.feature4'),
+        t('pricing.enterprise.feature5'),
+        t('pricing.enterprise.feature6'),
+        t('pricing.enterprise.feature7')
       ],
-      cta: 'Contact Us',
+      cta: t('pricing.enterprise.cta'),
       popular: false,
       badge: null
     }
@@ -91,19 +91,19 @@ const Pricing = () => {
 
   const oneOffServices = [
     {
-      name: 'Listing Optimization Sprint',
+      name: t('pricing.services.listingOptimization.name'),
       price: '£200',
       packageId: 'listing-optimization',
-      description: 'Listing optimization for up to 5 listings',
-      detailedDescription: 'Complete listing optimization for up to 5 Amazon product listings with keyword research and SEO.',
+      description: t('pricing.services.listingOptimization.description'),
+      detailedDescription: t('pricing.services.listingOptimization.detailedDescription'),
       icon: '🚀',
       scope: [
-        'Up to 5 product listings',
-        'Keyword research & SEO',
-        'Title optimization',
-        'Bullet point optimization',
-        'Backend search terms',
-        '7-10 business days delivery'
+        t('pricing.services.listingOptimization.scope1'),
+        t('pricing.services.listingOptimization.scope2'),
+        t('pricing.services.listingOptimization.scope3'),
+        t('pricing.services.listingOptimization.scope4'),
+        t('pricing.services.listingOptimization.scope5'),
+        t('pricing.services.listingOptimization.scope6')
       ]
     },
     {
@@ -257,24 +257,24 @@ const Pricing = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge className="bg-green-100 text-[#22C55E] mb-4">Transparent Pricing</Badge>
+          <Badge className="bg-green-100 text-[#22C55E] mb-4">{t('pricing.badge')}</Badge>
           <h1 className="text-5xl font-bold mb-6">
-            Choose Your <span className="text-[#22C55E]">Growth Path</span>
+            {t('pricing.title')} <span className="text-[#22C55E]">{t('pricing.titleGreen')}</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Clear pricing, no hidden fees. Pick what works for your business stage.
+            {t('pricing.subtitle')}
           </p>
         </div>
 
         {/* Ongoing Partnerships Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Ongoing Partnerships</h2>
+            <h2 className="text-4xl font-bold mb-4">{t('pricing.partnershipsTitle')}</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Monthly retainer for full-service Amazon management. Cancel anytime.
+              {t('pricing.partnershipsSubtitle')}
             </p>
             <Badge className="bg-orange-100 text-orange-600 mt-4 px-4 py-2 text-sm">
-              💡 Best for brands committed to long-term growth
+              {t('pricing.partnershipsBadge')}
             </Badge>
           </div>
 
@@ -326,12 +326,12 @@ const Pricing = () => {
         {/* One-Off Services Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">One-Off Services</h2>
+            <h2 className="text-4xl font-bold mb-4">{t('pricing.oneOffTitle')}</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Quick wins and specific improvements. Pay once, no commitment.
+              {t('pricing.oneOffSubtitle')}
             </p>
             <Badge className="bg-blue-100 text-blue-600 mt-4 px-4 py-2 text-sm">
-              ⚡ Perfect for immediate needs or testing our services
+              {t('pricing.oneOffBadge')}
             </Badge>
           </div>
 

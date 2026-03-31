@@ -194,7 +194,160 @@ const resources = {
       },
       pricing: {
         urgencyAcademy: 'Currently FULL until May 2026 - Join Waiting List',
-        urgencyExpert: 'Coming Soon - Bringing Talent Closer Within Reach'
+        urgencyExpert: 'Coming Soon - Bringing Talent Closer Within Reach',
+        badge: 'Transparent Pricing',
+        title: 'Choose Your',
+        titleGreen: 'Growth Path',
+        subtitle: 'Clear pricing, no hidden fees. Pick what works for your business stage.',
+        partnershipsTitle: 'Ongoing Partnerships',
+        partnershipsSubtitle: 'Monthly retainer for full-service Amazon management. Cancel anytime.',
+        partnershipsBadge: '💡 Best for brands committed to long-term growth',
+        oneOffTitle: 'One-Off Services',
+        oneOffSubtitle: 'No commitment. Pay once, get results.',
+        oneOffBadge: '🎯 Perfect for specific needs or testing our work',
+        slotsLeft: 'partnership slots left this quarter',
+        perMonth: '/month',
+        getStarted: 'Get Started',
+        contactUs: 'Contact Us',
+        whatsIncluded: "What's Included",
+        startup: {
+          name: 'Startup',
+          description: 'Perfect for new Amazon sellers finding their feet',
+          feature1: 'Full account management',
+          feature2: 'Basic listing optimization',
+          feature3: 'PPC management & setup',
+          feature4: 'Monthly strategy session',
+          feature5: 'Email support',
+          feature6: 'Weekly reporting',
+          cta: 'Start Partnership'
+        },
+        growing: {
+          name: 'Growing',
+          description: 'For brands scaling their Amazon presence',
+          badge: 'Most Popular',
+          feature1: 'Everything in Startup',
+          feature2: 'Advanced listing optimization',
+          feature3: 'A+ Content management',
+          feature4: 'Competitive analysis',
+          feature5: 'Bi-weekly strategy calls',
+          feature6: 'Dedicated specialist',
+          feature7: 'Priority support',
+          cta: 'Start Growing'
+        },
+        scaling: {
+          name: 'Scaling',
+          description: '7-figure brands ready to dominate',
+          feature1: 'Everything in Growing',
+          feature2: 'International expansion support',
+          feature3: 'Brand Store design',
+          feature4: 'Video & photography coordination',
+          feature5: 'Weekly strategy calls',
+          feature6: 'Multi-specialist team',
+          feature7: '24/7 priority support',
+          cta: 'Scale Faster'
+        },
+        enterprise: {
+          name: 'Enterprise',
+          description: 'Full-service collective for market leaders',
+          feature1: 'Everything in Scaling',
+          feature2: 'Custom growth strategy',
+          feature3: 'Analytics & BI dashboard',
+          feature4: 'Quarterly business reviews',
+          feature5: 'Direct founder access',
+          feature6: 'White-glove service',
+          feature7: 'Guaranteed response times',
+          cta: 'Contact Us'
+        },
+        services: {
+          listingOptimization: {
+            name: 'Listing Optimization Sprint',
+            description: 'Listing optimization for up to 5 listings',
+            detailedDescription: 'Complete listing optimization for up to 5 Amazon product listings with keyword research and SEO.',
+            scope1: 'Up to 5 product listings',
+            scope2: 'Keyword research & SEO',
+            scope3: 'Title optimization',
+            scope4: 'Bullet point optimization',
+            scope5: 'Backend search terms',
+            scope6: '7-10 business days delivery'
+          },
+          aPlusContent: {
+            name: 'A+ Content Package',
+            description: 'Professional A+ content for one product',
+            detailedDescription: 'Complete A+ content module design for a single Amazon product listing.',
+            scope1: '1 product A+ content only',
+            scope2: '5 custom modules maximum',
+            scope3: 'Up to 2 design revisions',
+            scope4: 'Mobile-optimized layout',
+            scope5: '7-10 business days delivery',
+            scope6: 'Source files included'
+          },
+          photography: {
+            name: 'Product Photography',
+            description: 'Professional product shoot',
+            detailedDescription: 'Studio product photography session with professional editing.',
+            scope1: 'Up to 10 edited images',
+            scope2: 'White background shots only',
+            scope3: '1 product, multiple angles',
+            scope4: 'High-resolution files (300 DPI)',
+            scope5: 'Amazon-compliant formatting',
+            scope6: '14 business days turnaround'
+          },
+          infographics: {
+            name: 'Amazon Infographic Set',
+            description: 'Up to 6 custom infographics',
+            detailedDescription: 'Professional infographic design for Amazon listings (not photography).',
+            scope1: 'Up to 6 custom infographics',
+            scope2: 'Product feature highlights',
+            scope3: 'Comparison charts',
+            scope4: 'Amazon-ready dimensions',
+            scope5: 'Source files included',
+            scope6: '5-7 business days delivery'
+          },
+          copywriting: {
+            name: 'Expert Copywriting',
+            description: 'Conversion-focused copy for 1 listing',
+            detailedDescription: 'Professional Amazon listing copywriting focused on conversion.',
+            scope1: '1 product listing only',
+            scope2: 'SEO keyword integration',
+            scope3: 'Title & bullet points',
+            scope4: 'Product description',
+            scope5: 'Backend search terms',
+            scope6: '3-5 business days delivery'
+          },
+          ppcAudit: {
+            name: 'PPC Audit & Setup',
+            description: 'Complete PPC audit with campaign setup',
+            detailedDescription: 'Comprehensive PPC audit and initial campaign configuration.',
+            scope1: 'Current campaign audit',
+            scope2: 'Up to 3 new campaigns setup',
+            scope3: 'Keyword research (50 keywords)',
+            scope4: 'Bid strategy recommendations',
+            scope5: 'Does NOT include ad spend',
+            scope6: '5-7 business days delivery'
+          },
+          brandStorefront: {
+            name: 'Brand Storefront',
+            description: 'Custom Amazon Storefront design',
+            detailedDescription: 'Complete Amazon Brand Store design with up to 5 pages.',
+            scope1: 'Up to 5 storefront pages',
+            scope2: 'Custom page layouts',
+            scope3: 'Brand story integration',
+            scope4: 'Product category sections',
+            scope5: '2 rounds of revisions',
+            scope6: '14-21 business days delivery'
+          },
+          businessAnalysis: {
+            name: 'Full Business Analysis',
+            description: 'Deloitte-level strategic report',
+            detailedDescription: 'Comprehensive business analysis with detailed report and strategy call.',
+            scope1: '15-20 page detailed report',
+            scope2: '3-hour strategy process call',
+            scope3: 'Market analysis & insights',
+            scope4: 'Growth opportunities',
+            scope5: 'Competitive benchmarking',
+            scope6: '14-21 business days delivery'
+          }
+        }
       }
     }
   }
