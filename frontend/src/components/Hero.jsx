@@ -60,19 +60,45 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Circular Badge */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Outer circles */}
-              <div className="w-96 h-96 rounded-full border-8 border-white/20 flex items-center justify-center">
-                <div className="w-80 h-80 rounded-full border-8 border-white/30 flex items-center justify-center">
-                  <div className="w-64 h-64 rounded-full border-4 border-white/40 flex items-center justify-center bg-[#22C55E]">
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-white mb-2">{t('hero.badge2')}</div>
-                      <div className="text-2xl font-semibold text-white mb-2">GROWTH</div>
-                      <div className="text-sm text-white/90">{t('hero.badge3')}</div>
-                    </div>
-                  </div>
+          {/* Right Content - Amazon Logo */}
+          <div className="flex justify-center lg:justify-end items-center">
+            <div className="flex flex-col items-center gap-6">
+              {/* Amazon Logo */}
+              <div className="w-64 h-32 flex items-center justify-center">
+                <svg viewBox="0 0 200 80" className="w-full h-full">
+                  {/* Amazon smile/arrow */}
+                  <path
+                    d="M80 50 Q 100 55, 120 50"
+                    stroke="white"
+                    strokeWidth="4"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                  {/* Arrow tip */}
+                  <polygon points="120,50 115,45 115,55" fill="white" />
+                  
+                  {/* Amazon text */}
+                  <text
+                    x="100"
+                    y="35"
+                    fontSize="28"
+                    fontWeight="bold"
+                    fill="white"
+                    textAnchor="middle"
+                    fontFamily="Arial, sans-serif"
+                  >
+                    amazon
+                  </text>
+                </svg>
+              </div>
+              
+              {/* Scroll for more text */}
+              <div className="flex items-center gap-3 text-white/90 animate-bounce">
+                <div className="flex flex-col items-center">
+                  <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                  <span className="text-sm font-medium uppercase tracking-wider">Scroll for More</span>
                 </div>
               </div>
             </div>
