@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Check, ArrowRight, Star } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Check, ArrowRight, Star, Zap, AlertCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -11,72 +11,81 @@ const Pricing = () => {
   const { t } = useTranslation();
   const [selectedService, setSelectedService] = useState(null);
 
-  const tiers = [
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const partnershipTiers = [
     {
-      name: 'Starter Sprint',
-      price: 'From £800',
-      period: '',
-      description: 'Perfect for getting your first listing optimized',
-      features: [
-        '1 product listing optimization',
-        'Keyword research & SEO',
-        'Basic A+ content',
-        'Competitor analysis',
-        '2 weeks delivery'
-      ],
-      cta: 'Get Started',
-      popular: false
-    },
-    {
-      name: 'Growth Package',
-      price: '£1,800',
-      period: 'one-time',
-      description: 'Full month of explosive growth',
-      features: [
-        'Full month PPC & account audit',
-        'Campaign optimization & changes',
-        '30 infographic images included',
-        'A+ content revamp',
-        'Brand story revamp',
-        'SEO listing optimization (up to 5 products)',
-        'Ongoing support during month'
-      ],
-      cta: 'Start Growing',
-      popular: true
-    },
-    {
-      name: 'Performance Retainer',
-      price: 'From £700',
-      period: '/month + % growth',
-      description: 'Base price + % of incremental sales growth',
+      name: 'Startup',
+      price: '£700',
+      period: '/month',
+      description: 'Perfect for new Amazon sellers finding their feet',
       features: [
         'Full account management',
-        'Unlimited listing optimization',
-        'PPC management & optimization',
-        'Monthly strategy sessions',
-        'Revenue-share on growth only',
-        'Dedicated specialist',
+        'Basic listing optimization',
+        'PPC management & setup',
+        'Monthly strategy session',
+        'Email support',
         'Weekly reporting'
       ],
-      cta: 'Book Discovery Call',
-      popular: false
+      cta: 'Start Partnership',
+      popular: false,
+      badge: null
     },
     {
-      name: 'Enterprise Collective',
-      price: 'Custom',
-      period: 'pricing',
-      description: 'Full-service collective for scaling brands',
+      name: 'Growing',
+      price: '£1,000',
+      period: '/month',
+      description: 'For brands scaling their Amazon presence',
       features: [
+        'Everything in Startup',
+        'Advanced listing optimization',
+        'A+ Content management',
+        'Competitive analysis',
+        'Bi-weekly strategy calls',
+        'Dedicated specialist',
+        'Priority support'
+      ],
+      cta: 'Start Growing',
+      popular: true,
+      badge: 'Most Popular'
+    },
+    {
+      name: 'Scaling',
+      price: '£1,200',
+      period: '/month',
+      description: '7-figure brands ready to dominate',
+      features: [
+        'Everything in Growing',
+        'International expansion support',
+        'Brand Store design',
+        'Video & photography coordination',
+        'Weekly strategy calls',
         'Multi-specialist team',
+        '24/7 priority support'
+      ],
+      cta: 'Scale Faster',
+      popular: false,
+      badge: null
+    },
+    {
+      name: 'Enterprise',
+      price: '£1,500',
+      period: '/month',
+      description: 'Full-service collective for market leaders',
+      features: [
+        'Everything in Scaling',
         'Custom growth strategy',
-        'International expansion',
-        'Video & photography',
         'Analytics & BI dashboard',
-        'Priority support',
-        'Quarterly business reviews'
+        'Quarterly business reviews',
+        'Direct founder access',
+        'White-glove service',
+        'Guaranteed response times'
       ],
       cta: 'Contact Us',
-      popular: false
+      popular: false,
+      badge: null
     }
   ];
 
@@ -98,7 +107,7 @@ const Pricing = () => {
       ]
     },
     {
-      name: 'A+ Content Design',
+      name: 'A+ Content Package',
       price: '£300',
       packageId: 'a-plus-content',
       description: 'Professional A+ content for one product',
@@ -250,84 +259,109 @@ const Pricing = () => {
         <div className="text-center mb-16">
           <Badge className="bg-green-100 text-[#22C55E] mb-4">Transparent Pricing</Badge>
           <h1 className="text-5xl font-bold mb-6">
-            Simple, <span className="text-[#22C55E]">Transparent</span> Pricing
+            Choose Your <span className="text-[#22C55E]">Growth Path</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            No hidden fees. No long-term contracts. Just honest pricing for real results.
+            Clear pricing, no hidden fees. Pick what works for your business stage.
           </p>
         </div>
 
-        {/* Pricing Tiers */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {tiers.map((tier, idx) => (
-            <Card key={idx} className={`relative border-2 ${
-              tier.popular ? 'border-[#22C55E] shadow-xl' : 'border-gray-200'
-            }`}>
-              {tier.popular && (
-                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#22C55E] text-white">
-                  MOST POPULAR
-                </Badge>
-              )}
-              
-              <CardHeader className="pt-8">
-                <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold">{tier.price}</span>
-                  <span className="text-gray-500 ml-2">{tier.period}</span>
-                </div>
-                <CardDescription>{tier.description}</CardDescription>
-              </CardHeader>
-
-              <CardContent>
-                <ul className="space-y-3">
-                  {tier.features.map((feature, fidx) => (
-                    <li key={fidx} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-
-              <CardFooter>
-                <Button className={`w-full rounded-full ${
-                  tier.popular 
-                    ? 'bg-[#22C55E] hover:bg-[#16A34A] text-white' 
-                    : 'bg-white border-2 border-[#22C55E] text-[#22C55E] hover:bg-green-50'
-                }`}>
-                  {tier.cta} <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-
-        {/* One-Off Services */}
-        <div className="mt-20">
+        {/* Ongoing Partnerships Section */}
+        <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">
-              One-Off <span className="text-[#22C55E]">Services</span>
-            </h2>
-            <p className="text-lg text-gray-600">
-              Need something specific? Choose from our à la carte services.
+            <h2 className="text-4xl font-bold mb-4">Ongoing Partnerships</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Monthly retainer for full-service Amazon management. Cancel anytime.
             </p>
+            <Badge className="bg-orange-100 text-orange-600 mt-4 px-4 py-2 text-sm">
+              💡 Best for brands committed to long-term growth
+            </Badge>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {partnershipTiers.map((tier, idx) => (
+              <Card key={idx} className={`relative hover:shadow-2xl transition-all ${
+                tier.popular ? 'border-2 border-[#22C55E] shadow-xl scale-105' : ''
+              }`}>
+                {tier.badge && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <Badge className="bg-[#22C55E] text-white px-4 py-1">
+                      <Star className="w-3 h-3 inline mr-1" />
+                      {tier.badge}
+                    </Badge>
+                  </div>
+                )}
+                <CardHeader>
+                  <CardTitle className="text-2xl">{tier.name}</CardTitle>
+                  <div className="mt-4">
+                    <span className="text-4xl font-bold">{tier.price}</span>
+                    <span className="text-gray-500">{tier.period}</span>
+                  </div>
+                  <CardDescription className="mt-4">{tier.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {tier.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-600">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <a href="/#contact" className="w-full">
+                    <Button className={`w-full rounded-full py-6 text-lg font-semibold ${
+                      tier.popular ? 'bg-[#22C55E] hover:bg-[#16A34A]' : 'bg-gray-900 hover:bg-gray-800'
+                    } text-white`}>
+                      {tier.cta} <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </a>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* One-Off Services Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">One-Off Services</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Quick wins and specific improvements. Pay once, no commitment.
+            </p>
+            <Badge className="bg-blue-100 text-blue-600 mt-4 px-4 py-2 text-sm">
+              ⚡ Perfect for immediate needs or testing our services
+            </Badge>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {oneOffServices.map((service, idx) => (
-              <Card key={idx} className="border border-gray-200 hover:shadow-lg transition-shadow text-center">
+              <Card key={idx} className="hover:shadow-xl transition-shadow">
                 <CardHeader>
                   <div className="text-5xl mb-4">{service.icon}</div>
-                  <CardTitle className="text-lg mb-2">{service.name}</CardTitle>
-                  <div className="text-2xl font-bold text-[#22C55E] mb-2">{service.price}</div>
-                  <CardDescription className="text-sm">{service.description}</CardDescription>
+                  <CardTitle className="text-xl">{service.name}</CardTitle>
+                  <div className="mt-2">
+                    <span className="text-3xl font-bold text-[#22C55E]">{service.price}</span>
+                  </div>
+                  <CardDescription className="mt-4">{service.description}</CardDescription>
                 </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {service.scope.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-1" />
+                        <span className="text-sm text-gray-600">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
                 <CardFooter>
-                  <Button 
+                  <Button
                     onClick={() => setSelectedService(service)}
-                    className="w-full bg-white border border-[#22C55E] text-[#22C55E] hover:bg-green-50 rounded-full"
+                    className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-6 font-semibold"
                   >
-                    Order Now
+                    Book Now <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </CardFooter>
               </Card>
@@ -335,26 +369,67 @@ const Pricing = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-20 bg-gradient-to-r from-[#22C55E] to-[#16A34A] rounded-3xl p-12 text-center text-white">
-          <h2 className="text-4xl font-bold mb-4">Not sure which package is right for you?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Book a free discovery call and we'll help you choose the best option for your business.
+        {/* Availability Status */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <Card className="bg-orange-50 border-orange-200">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-orange-600">
+                <AlertCircle className="w-5 h-5" />
+                Amazon Academy
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700">Currently <strong>FULL</strong> until May 2026. Join waiting list for next cohort.</p>
+              <Link to="/services/amazon-academy">
+                <Button variant="outline" className="mt-4 border-orange-300 text-orange-600 hover:bg-orange-100">
+                  Join Waiting List
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-blue-50 border-blue-200">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-blue-600">
+                <Zap className="w-5 h-5" />
+                Expert Matching
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700"><strong>Coming Soon</strong> - Bringing specialized Amazon talent closer within reach.</p>
+              <Link to="/services/expert-matching">
+                <Button variant="outline" className="mt-4 border-blue-300 text-blue-600 hover:bg-blue-100">
+                  Learn More
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* CTA */}
+        <div className="bg-gradient-to-r from-[#22C55E] to-[#16A34A] rounded-3xl p-12 text-center text-white">
+          <h2 className="text-4xl font-bold mb-4">Not Sure Which to Choose?</h2>
+          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+            Book a free 30-minute discovery call and we'll recommend the best path for your business.
           </p>
           <a href="/#contact">
-            <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
-              Book Free Discovery Call <ArrowRight className="ml-2 w-5 h-5" />
+            <Button size="lg" className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-12 py-6 text-xl font-semibold">
+              Book Free Discovery Call
             </Button>
           </a>
         </div>
       </div>
-      
+
       {/* Checkout Modal */}
       {selectedService && (
-        <ServiceCheckout 
-          service={selectedService} 
-          onClose={() => setSelectedService(null)} 
-        />
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <ServiceCheckout
+              service={selectedService}
+              onClose={() => setSelectedService(null)}
+            />
+          </div>
+        </div>
       )}
     </div>
   );
