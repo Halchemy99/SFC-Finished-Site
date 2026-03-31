@@ -30,7 +30,8 @@ const Hero = () => {
                 <img 
                   src="https://customer-assets.emergentagent.com/job_design-75/artifacts/i1ti1phn_Amazons-innovative-logo.png" 
                   alt="Amazon"
-                  className="w-10 h-10 object-contain opacity-90"
+                  className="w-10 h-10 object-contain"
+                  style={{ mixBlendMode: 'multiply' }}
                 />
               </div>
             </div>

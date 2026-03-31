@@ -172,17 +172,109 @@ const Team = () => {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="mt-16 text-center">
-          <h2 className="text-3xl font-bold mb-6">Want to Join the Collective?</h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            We're always looking for talented Amazon specialists who share our values.
-          </p>
-          <a href="mailto:harry@superflycommerce.com?subject=Career Opportunity">
-            <button className="bg-[#22C55E] hover:bg-[#16A34A] text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors">
-              Get in Touch
-            </button>
-          </a>
+        {/* CTA with Career Application Form */}
+        <div className="mt-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-6">Want to Join the Collective?</h2>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              We're always looking for talented Amazon specialists who share our values.
+            </p>
+          </div>
+          
+          {/* Simple Career Application Form */}
+          <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+            <form 
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const data = {
+                  name: formData.get('name'),
+                  email: formData.get('email'),
+                  message: `LinkedIn: ${formData.get('linkedin') || 'Not provided'}\n\n${formData.get('message')}`,
+                  form_type: 'career_application'
+                };
+                
+                try {
+                  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact/submit`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                  });
+                  
+                  if (response.ok) {
+                    alert('Application submitted! We\'ll be in touch soon.');
+                    e.target.reset();
+                  } else {
+                    alert('Something went wrong. Please try again or email harry@superflycommerce.com');
+                  }
+                } catch (error) {
+                  alert('Something went wrong. Please try again or email harry@superflycommerce.com');
+                }
+              }}
+              className="space-y-6"
+            >
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#22C55E] focus:border-transparent"
+                    placeholder="Your full name"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#22C55E] focus:border-transparent"
+                    placeholder="your@email.com"
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  LinkedIn Profile URL (we'll check your profile instead of CV)
+                </label>
+                <input
+                  type="url"
+                  name="linkedin"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#22C55E] focus:border-transparent"
+                  placeholder="https://linkedin.com/in/yourprofile"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Why do you want to join Superfly? <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  name="message"
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#22C55E] focus:border-transparent"
+                  placeholder="Tell us about your Amazon experience, what you specialize in (PPC, listings, creative, etc.), and why you'd be a great fit for the collective..."
+                />
+              </div>
+              
+              <button
+                type="submit"
+                className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors"
+              >
+                Submit Application
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

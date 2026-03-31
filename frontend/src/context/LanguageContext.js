@@ -24,21 +24,10 @@ export const LanguageProvider = ({ children }) => {
   const [isTranslating, setIsTranslating] = useState(false);
 
   useEffect(() => {
-    // Detect browser language or default to English
-    const detectLanguage = () => {
-      const savedLang = localStorage.getItem('selectedLanguage');
-      if (savedLang) return savedLang;
-      
-      // Get browser language
-      const browserLang = navigator.language || navigator.userLanguage;
-      const langCode = browserLang.split('-')[0]; // 'en-US' -> 'en'
-      
-      // Check if we support this language
-      const supportedLang = languages.find(lang => lang.code === langCode);
-      return supportedLang ? langCode : 'en';
-    };
+    // Always default to English, only change if user explicitly selected a language
+    const savedLang = localStorage.getItem('selectedLanguage');
+    const initialLang = savedLang || 'en'; // Always default to 'en' if no saved preference
     
-    const initialLang = detectLanguage();
     setCurrentLanguage(initialLang);
     i18n.changeLanguage(initialLang);
   }, [i18n]);
