@@ -60,46 +60,192 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Amazon Logo */}
+          {/* Right Content - Doughnut Economics Style Visualization */}
           <div className="flex justify-center lg:justify-end items-center">
-            <div className="flex flex-col items-center gap-6">
-              {/* Amazon Logo */}
-              <div className="w-64 h-32 flex items-center justify-center">
-                <svg viewBox="0 0 200 80" className="w-full h-full">
-                  {/* Amazon smile/arrow */}
-                  <path
-                    d="M80 50 Q 100 55, 120 50"
-                    stroke="white"
-                    strokeWidth="4"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                  {/* Arrow tip */}
-                  <polygon points="120,50 115,45 115,55" fill="white" />
-                  
-                  {/* Amazon text */}
-                  <text
-                    x="100"
-                    y="35"
-                    fontSize="28"
-                    fontWeight="bold"
-                    fill="white"
-                    textAnchor="middle"
-                    fontFamily="Arial, sans-serif"
-                  >
-                    amazon
-                  </text>
-                </svg>
-              </div>
+            <div className="relative w-[500px] h-[500px]">
+              {/* SVG Doughnut Visualization */}
+              <svg viewBox="0 0 500 500" className="w-full h-full transform hover:scale-105 transition-transform duration-500">
+                {/* Outer Ring - Sustainable Growth */}
+                <circle
+                  cx="250"
+                  cy="250"
+                  r="220"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.15)"
+                  strokeWidth="35"
+                  className="animate-pulse"
+                  style={{ animationDuration: '4s' }}
+                />
+                
+                {/* Ring 4 - Brand & Strategy */}
+                <circle
+                  cx="250"
+                  cy="250"
+                  r="185"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.25)"
+                  strokeWidth="30"
+                />
+                
+                {/* Ring 3 - Content & Creative */}
+                <circle
+                  cx="250"
+                  cy="250"
+                  r="155"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.35)"
+                  strokeWidth="25"
+                />
+                
+                {/* Ring 2 - PPC & Advertising */}
+                <circle
+                  cx="250"
+                  cy="250"
+                  r="130"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.45)"
+                  strokeWidth="20"
+                />
+                
+                {/* Ring 1 - Listing Optimization */}
+                <circle
+                  cx="250"
+                  cy="250"
+                  r="110"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.55)"
+                  strokeWidth="15"
+                />
+                
+                {/* Center Circle - Your Brand */}
+                <circle
+                  cx="250"
+                  cy="250"
+                  r="95"
+                  fill="rgba(255,255,255,0.2)"
+                  className="animate-pulse"
+                  style={{ animationDuration: '3s' }}
+                />
+                
+                {/* Center Text */}
+                <text
+                  x="250"
+                  y="240"
+                  fontSize="20"
+                  fontWeight="bold"
+                  fill="white"
+                  textAnchor="middle"
+                  fontFamily="system-ui, -apple-system, sans-serif"
+                >
+                  YOUR
+                </text>
+                <text
+                  x="250"
+                  y="265"
+                  fontSize="28"
+                  fontWeight="bold"
+                  fill="white"
+                  textAnchor="middle"
+                  fontFamily="system-ui, -apple-system, sans-serif"
+                >
+                  BRAND
+                </text>
+                
+                {/* Ring Labels */}
+                {/* Listing Optimization */}
+                <text
+                  x="250"
+                  y="145"
+                  fontSize="11"
+                  fontWeight="600"
+                  fill="white"
+                  textAnchor="middle"
+                  opacity="0.9"
+                >
+                  LISTING OPTIMIZATION
+                </text>
+                
+                {/* PPC & Advertising */}
+                <text
+                  x="420"
+                  y="255"
+                  fontSize="11"
+                  fontWeight="600"
+                  fill="white"
+                  textAnchor="end"
+                  opacity="0.9"
+                >
+                  PPC &
+                </text>
+                <text
+                  x="420"
+                  y="270"
+                  fontSize="11"
+                  fontWeight="600"
+                  fill="white"
+                  textAnchor="end"
+                  opacity="0.9"
+                >
+                  ADVERTISING
+                </text>
+                
+                {/* Content & Creative */}
+                <text
+                  x="250"
+                  y="365"
+                  fontSize="11"
+                  fontWeight="600"
+                  fill="white"
+                  textAnchor="middle"
+                  opacity="0.9"
+                >
+                  CONTENT & CREATIVE
+                </text>
+                
+                {/* Brand & Strategy */}
+                <text
+                  x="80"
+                  y="255"
+                  fontSize="11"
+                  fontWeight="600"
+                  fill="white"
+                  textAnchor="start"
+                  opacity="0.9"
+                >
+                  BRAND &
+                </text>
+                <text
+                  x="80"
+                  y="270"
+                  fontSize="11"
+                  fontWeight="600"
+                  fill="white"
+                  textAnchor="start"
+                  opacity="0.9"
+                >
+                  STRATEGY
+                </text>
+                
+                {/* Sustainable Growth - Outer Label */}
+                <text
+                  x="250"
+                  y="480"
+                  fontSize="13"
+                  fontWeight="700"
+                  fill="white"
+                  textAnchor="middle"
+                  letterSpacing="2"
+                >
+                  SUSTAINABLE GROWTH
+                </text>
+              </svg>
               
-              {/* Scroll for more text */}
-              <div className="flex items-center gap-3 text-white/90 animate-bounce">
-                <div className="flex flex-col items-center">
-                  <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                  <span className="text-sm font-medium uppercase tracking-wider">Scroll for More</span>
-                </div>
+              {/* Connecting dots for visual interest */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
+                <div className="absolute top-[10%] left-1/2 w-2 h-2 bg-white rounded-full opacity-60 animate-ping" style={{ animationDuration: '2s' }}></div>
+                <div className="absolute bottom-[10%] left-1/2 w-2 h-2 bg-white rounded-full opacity-60 animate-ping" style={{ animationDuration: '2.5s' }}></div>
+                <div className="absolute top-1/2 right-[10%] w-2 h-2 bg-white rounded-full opacity-60 animate-ping" style={{ animationDuration: '3s' }}></div>
+                <div className="absolute top-1/2 left-[10%] w-2 h-2 bg-white rounded-full opacity-60 animate-ping" style={{ animationDuration: '3.5s' }}></div>
               </div>
             </div>
           </div>
