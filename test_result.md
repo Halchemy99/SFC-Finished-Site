@@ -140,6 +140,42 @@ frontend:
         - working: true
           agent: "testing"
           comment: "Verified all 10 one-off services have 'Book Now' buttons that open ServiceCheckout modal (Stripe integration). These buttons do NOT navigate to contact form, maintaining the correct separation between partnership inquiries and one-off service purchases."
+  
+  - task: "Navbar Tagline Implementation"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/Navbar.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Verified navbar tagline 'We grow brands on other marketplaces too' displays correctly next to logo on desktop (visible on lg screens and above). Correctly hidden on mobile devices. Tested on multiple pages (home, pricing, growth-partnership, case-studies) - working consistently across all pages."
+  
+  - task: "Marketplace Banner Site-wide Implementation"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/MarketplaceBanner.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Verified marketplace banner appears site-wide below navbar with dark navy background (#1a2332). Banner displays 'Also active on' heading and all 14 platforms: Walmart, Temu, Shopify, OnBuy, Wayfair, Blinkit, Ocado, Flipkart, Bol.com, Holland & Barrett, Noon, Faire, Mercado Libre, TikTok Shop. Desktop: pills wrap to multiple rows correctly. Mobile (375px): horizontal scroll working perfectly. Tested on Home, Pricing, Growth Partnership, and Case Studies pages - banner appears consistently on all pages."
+  
+  - task: "Growth Partnership Pricing Update"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/GrowthPartnership.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Verified Growth Partnership page displays updated 'Performance-Based Pricing' section with 3 tiers: Starter Partnership (£650/month), Growth Partnership (£1,100/month with 'MOST POPULAR' badge), Scale Partnership (£1,800/month). All pricing amounts correct and match Pricing page structure. All 3 buttons display 'Discuss This Plan' and correctly navigate to /#contact. Contact form visible after navigation. Mobile responsiveness working correctly."
 
 metadata:
   created_by: "testing_agent"
@@ -152,6 +188,9 @@ test_plan:
     - "Performance-Based Partnerships Section"
     - "Partnership Tier Buttons Navigation"
     - "One-Off Services Stripe Integration"
+    - "Navbar Tagline Implementation"
+    - "Marketplace Banner Site-wide Implementation"
+    - "Growth Partnership Pricing Update"
   stuck_tasks: []
   test_all: true
   test_priority: "high_first"
@@ -159,3 +198,5 @@ test_plan:
 agent_communication:
     - agent: "testing"
       message: "Completed comprehensive testing of Performance-Based Pricing implementation. All features working as expected: 4 partnership tiers display correctly with proper badges, all partnership buttons navigate to /#contact, contact form is accessible, and one-off services maintain Stripe checkout functionality. No issues found."
+    - agent: "testing"
+      message: "Completed comprehensive testing of three new implementations: (1) Navbar Tagline - displays correctly on desktop, hidden on mobile as expected. (2) Marketplace Banner - appears site-wide on all tested pages (Home, Pricing, Growth Partnership, Case Studies) with all 14 platforms visible. Desktop shows wrapping pills, mobile shows horizontal scroll. (3) Growth Partnership Pricing Update - displays 3 tiers with correct pricing (£650, £1,100, £1,800), 'MOST POPULAR' badge on Growth tier, all buttons say 'Discuss This Plan' and navigate to /#contact correctly. All implementations working perfectly with no issues found. Mobile responsiveness verified on 375px viewport."

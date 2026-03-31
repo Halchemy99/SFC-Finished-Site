@@ -18,23 +18,49 @@ const GrowthPartnership = () => {
 
   const pricingTiers = [
     {
-      revenue: 'Under £50k/month',
-      base: '£700',
-      share: '15%',
-      features: ['1 specialist', 'Monthly reports', 'Email support']
+      name: 'Starter Partnership',
+      base: '£650',
+      period: '/month',
+      revenue: 'Perfect for testing performance-based growth',
+      features: [
+        'Base retainer: £650/month',
+        '+ % of monthly revenue growth',
+        'Full Amazon account management',
+        'Listing optimization & PPC',
+        'Monthly strategy calls',
+        'Performance reporting'
+      ]
     },
     {
-      revenue: '£50k-£150k/month',
-      base: '£1,200',
-      share: '12%',
-      features: ['2 specialists', 'Weekly reports', 'Priority support'],
+      name: 'Growth Partnership',
+      base: '£1,100',
+      period: '/month',
+      revenue: 'For established brands scaling with skin in the game',
+      features: [
+        'Base retainer: £1,100/month',
+        '+ % of monthly revenue growth',
+        'Everything in Starter, plus:',
+        'A+ Content & Brand Store',
+        'Advanced PPC strategies',
+        'Quarterly business reviews',
+        'Priority support'
+      ],
       popular: true
     },
     {
-      revenue: '£150k+/month',
-      base: '£2,000',
-      share: '10%',
-      features: ['Full team', 'Daily reports', '24/7 support']
+      name: 'Scale Partnership',
+      base: '£1,800',
+      period: '/month',
+      revenue: 'Aggressive growth for brands doing £50k+ monthly',
+      features: [
+        'Base retainer: £1,800/month',
+        '+ % of monthly revenue growth',
+        'Everything in Growth, plus:',
+        'Dedicated account manager',
+        'International expansion support',
+        'Custom analytics & automation',
+        'White-glove service'
+      ]
     }
   ];
 
@@ -91,20 +117,19 @@ const GrowthPartnership = () => {
                   </Badge>
                 )}
                 <CardHeader className="pt-8">
-                  <CardDescription className="text-sm text-gray-500 mb-2">{tier.revenue}</CardDescription>
-                  <CardTitle className="text-3xl mb-2">
-                    {tier.base}<span className="text-base text-gray-500">/month</span>
-                  </CardTitle>
-                  <div className="text-2xl font-bold text-[#22C55E]">
-                    + {tier.share} <span className="text-base text-gray-600">of growth</span>
+                  <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
+                  <div className="mb-4">
+                    <span className="text-4xl font-bold">{tier.base}</span>
+                    <span className="text-gray-500">{tier.period}</span>
                   </div>
+                  <CardDescription className="text-sm text-gray-600">{tier.revenue}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 mb-6">
                     {tier.features.map((feature, fidx) => (
-                      <li key={fidx} className="flex items-center gap-2">
-                        <Check className="w-5 h-5 text-[#22C55E]" />
-                        <span className="text-gray-700">{feature}</span>
+                      <li key={fidx} className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -114,7 +139,7 @@ const GrowthPartnership = () => {
                         ? 'bg-[#22C55E] hover:bg-[#16A34A] text-white'
                         : 'bg-white border-2 border-[#22C55E] text-[#22C55E] hover:bg-green-50'
                     }`}>
-                      Get Started
+                      Discuss This Plan
                     </Button>
                   </a>
                 </CardContent>
