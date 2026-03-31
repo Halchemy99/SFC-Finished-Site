@@ -24,7 +24,7 @@ const Services = () => {
       ],
       buttonText: t('services.service1Button'),
       buttonVariant: 'default',
-      link: '/services/growth-partnership'
+      link: '/services/quick-wins'
     },
     {
       id: 2,
@@ -55,7 +55,7 @@ const Services = () => {
       ],
       buttonText: t('services.service3Button'),
       buttonVariant: 'default',
-      link: '/services/quick-wins'
+      link: '/services/growth-partnership'
     },
     {
       id: 4,
