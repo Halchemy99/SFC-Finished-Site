@@ -3,9 +3,15 @@
 ## Current Issue
 The frontend (`REACT_APP_BACKEND_URL`) points to `https://design-75.preview.emergentagent.com` which is an Emergent preview URL that won't work after deploying to Vercel.
 
-## Solution: Deploy Backend to Railway/Render
+## Solution: Deploy Backend to Railway
 
-### Option 1: Railway (Recommended - Easiest)
+**Recommended:** Use Railway (easier setup, auto-detection)
+
+👉 **See `/app/RAILWAY_DEPLOYMENT_GUIDE.md` for complete step-by-step guide!**
+
+---
+
+## Quick Start: Railway (10 minutes)
 
 1. **Go to Railway.app**
    - Sign up with GitHub: https://railway.app
