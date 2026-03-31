@@ -105,10 +105,15 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Primary CTA */}
+            {/* CTA Buttons */}
             <a href="/#contact">
               <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-6 text-sm">
                 {t('nav.bookCall')}
+              </Button>
+            </a>
+            <a href="/tiktok-offer">
+              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full px-5 text-sm">
+                TikTok Offer
               </Button>
             </a>
           </div>

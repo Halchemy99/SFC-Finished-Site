@@ -51,7 +51,11 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="/team" className="hover:text-[#22C55E] transition-colors">Team</a></li>
               <li><a href="/case-studies" className="hover:text-[#22C55E] transition-colors">{t('footer.caseStudies')}</a></li>
-              <li><a href="/blog" className="hover:text-[#22C55E] transition-colors">Blog</a></li>
+              <li>
+                <a href="/blog" className="inline-flex items-center gap-2 bg-gradient-to-r from-[#22C55E] to-[#16A34A] text-white font-bold px-4 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all">
+                  📝 Blog
+                </a>
+              </li>
               <li><a href="/pricing" className="hover:text-[#22C55E] transition-colors">{t('footer.pricing')}</a></li>
               <li><a href="/#contact" className="hover:text-[#22C55E] transition-colors">{t('footer.contact')}</a></li>
             </ul>
