@@ -1,5 +1,7 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, EmailStr
+from slowapi import Limiter
+from slowapi.util import get_remote_address
 import os
 import logging
 import httpx
@@ -10,6 +12,9 @@ from email.mime.multipart import MIMEMultipart
 
 router = APIRouter(prefix="/api/contact", tags=["contact"])
 logger = logging.getLogger(__name__)
+
+# Rate limiter
+limiter = Limiter(key_func=get_remote_address)
 
 class ContactFormSubmission(BaseModel):
     name: str
@@ -99,7 +104,8 @@ async def send_to_perspective_crm(submission: ContactFormSubmission) -> bool:
     return False
 
 @router.post("/submit")
-async def submit_contact_form(submission: ContactFormSubmission):
+@limiter.limit("5/hour")  # 5 submissions per hour per IP
+async def submit_contact_form(request: Request, submission: ContactFormSubmission):
     """
     Handle contact form submission
     
