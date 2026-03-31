@@ -66,8 +66,8 @@ const Navbar = () => {
             <Link to="/team" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
               Team
             </Link>
-            <Link to="/case-studies" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
-              {t('nav.caseStudies')}
+            <Link to="/case-studies" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm font-semibold bg-green-50 px-4 py-2 rounded-full">
+              {t('nav.caseStudies')} ✨
             </Link>
             <Link to="/blog" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
               Blog
@@ -139,8 +139,8 @@ const Navbar = () => {
             <Link to="/team" className="block text-gray-700 hover:text-[#22C55E] py-2">
               Team
             </Link>
-            <Link to="/case-studies" className="block text-gray-700 hover:text-[#22C55E] py-2">
-              {t('nav.caseStudies')}
+            <Link to="/case-studies" className="block text-gray-700 hover:text-[#22C55E] py-2 font-semibold bg-green-50 px-4 rounded-lg">
+              {t('nav.caseStudies')} ✨
             </Link>
             <Link to="/blog" className="block text-gray-700 hover:text-[#22C55E] py-2">
               Blog

@@ -19,10 +19,20 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="text-white">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2.5 mb-8">
-              <Globe className="w-4 h-4" />
-              <span className="text-sm font-semibold tracking-wide">Sustainable Amazon Collective</span>
+            {/* Badge with Amazon Logo */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2.5">
+                <Globe className="w-4 h-4" />
+                <span className="text-sm font-semibold tracking-wide">Sustainable Amazon Collective</span>
+              </div>
+              {/* Amazon Smile Logo */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-full p-3">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_design-75/artifacts/i1ti1phn_Amazons-innovative-logo.png" 
+                  alt="Amazon"
+                  className="w-8 h-8 object-contain"
+                />
+              </div>
             </div>
 
             {/* Main Heading - Stronger */}
