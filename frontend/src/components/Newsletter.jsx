@@ -22,21 +22,29 @@ const Newsletter = () => {
         body: JSON.stringify({ email })
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        toast({
-          title: t('toast.subscribed'),
-          description: data.message || t('toast.subscribeSuccess'),
-        });
-        setEmail('');
-      } else {
-        throw new Error(data.detail || 'Subscription failed');
+      if (!response.ok) {
+        // Try to parse JSON, but handle cases where response is not JSON
+        let errorMessage = 'Subscription failed';
+        try {
+          const data = await response.json();
+          errorMessage = data.detail || data.message || errorMessage;
+        } catch {
+          // Response was not JSON (likely HTML 404)
+          errorMessage = 'Unable to reach subscription service. Please email harry@superflycommerce.com';
+        }
+        throw new Error(errorMessage);
       }
+
+      const data = await response.json();
+      toast({
+        title: t('toast.subscribed'),
+        description: data.message || t('toast.subscribeSuccess'),
+      });
+      setEmail('');
     } catch (error) {
       toast({
         title: "Subscription Failed",
-        description: error.message || "Please try again later.",
+        description: error.message || "Please email harry@superflycommerce.com to subscribe",
         variant: "destructive"
       });
     } finally {

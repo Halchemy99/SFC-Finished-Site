@@ -33,25 +33,33 @@ const Contact = () => {
         })
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        toast({
-          title: t('toast.formSubmitted'),
-          description: data.message || t('toast.formSuccess'),
-        });
-        setFormData({
-          name: '',
-          email: '',
-          message: ''
-        });
-      } else {
-        throw new Error(data.detail || 'Submission failed');
+      if (!response.ok) {
+        // Try to parse JSON, but handle cases where response is not JSON
+        let errorMessage = 'Submission failed';
+        try {
+          const data = await response.json();
+          errorMessage = data.detail || data.message || errorMessage;
+        } catch {
+          // Response was not JSON (likely HTML 404)
+          errorMessage = 'Unable to reach contact service. Please email harry@superflycommerce.com directly';
+        }
+        throw new Error(errorMessage);
       }
+
+      const data = await response.json();
+      toast({
+        title: t('toast.formSubmitted'),
+        description: data.message || t('toast.formSuccess'),
+      });
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
     } catch (error) {
       toast({
         title: "Submission Failed",
-        description: error.message || "Please try again or email harry@superflycommerce.com",
+        description: error.message || "Please email harry@superflycommerce.com directly",
         variant: "destructive"
       });
     } finally {
