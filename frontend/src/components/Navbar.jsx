@@ -57,7 +57,7 @@ const Navbar = () => {
               className="h-12 md:h-14 lg:h-16 w-auto object-contain"
             />
             <span className="hidden lg:block text-xs text-gray-500 border-l pl-3 border-gray-300">
-              We grow brands on other marketplaces too
+              Sustainable Amazon Solutions
             </span>
           </Link>
 
