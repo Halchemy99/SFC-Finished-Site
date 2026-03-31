@@ -78,8 +78,8 @@ const QuickWins = () => {
           ))}
         </div>
 
-        {/* Case Study */}
-        <div className="bg-white rounded-3xl p-12 shadow-xl">
+        {/* Case Study - Hidden (placeholder data) */}
+        {/* <div className="bg-white rounded-3xl p-12 shadow-xl">
           <Badge className="bg-green-100 text-[#22C55E] mb-6">Case Study</Badge>
           <h2 className="text-4xl font-bold mb-6">EcoHome Essentials: 156% Sales Increase</h2>
           
@@ -140,7 +140,7 @@ const QuickWins = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Prominent CTA for Pricing and Case Studies */}
         <ServiceCTA className="mb-16" />

@@ -23,7 +23,8 @@ const CaseStudies = () => {
         { metric: 'CTR Increase', value: '5x', period: 'post-optimization' },
         { metric: 'TROAS', value: '13.00', period: '2.5 months' }
       ],
-      image: 'https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://customer-assets.emergentagent.com/job_design-75/artifacts/mt1i9td5_Pachakuti.jpg',
+      pressLink: 'https://www.confectioneryproduction.com/news/57201/ecuadorian-and-uk-cacao-firm-pachakuti-reports-online-success/',
       testimonial: t('caseStudies.pachakuti.testimonial'),
       author: t('caseStudies.pachakuti.author')
     },
@@ -39,7 +40,8 @@ const CaseStudies = () => {
         { metric: 'CTR Improvement', value: '5x', period: 'immediate' },
         { metric: 'Category Ranking', value: 'Top 4', period: 'haircare' }
       ],
-      image: 'https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://customer-assets.emergentagent.com/job_design-75/artifacts/orz3hp50_Jamie%20Shepard%20hair%20Guru.jpg',
+      pressLink: null,
       testimonial: t('caseStudies.hairGuru.testimonial'),
       author: t('caseStudies.hairGuru.author')
     },
@@ -55,7 +57,8 @@ const CaseStudies = () => {
         { metric: 'Planned Duration', value: '12 weeks', period: 'exceeded' },
         { metric: 'Next Phase', value: 'New Products', period: 'ready meals' }
       ],
-      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://customer-assets.emergentagent.com/job_design-75/artifacts/vdymt266_LEON.jpg',
+      pressLink: null,
       testimonial: t('caseStudies.leon.testimonial'),
       author: t('caseStudies.leon.author')
     },
@@ -72,7 +75,8 @@ const CaseStudies = () => {
         { metric: 'US Market', value: 'Ready', period: 'roadmap built' },
         { metric: 'Sustainability', value: 'Certified', period: 'Climate Pledge' }
       ],
-      image: 'https://images.pexels.com/photos/6585760/pexels-photo-6585760.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://customer-assets.emergentagent.com/job_design-75/artifacts/i714ugcm_Reborn%20Team.jpeg',
+      pressLink: 'https://www.housewaresnews.net/amazon-selects-reborn-for-its-sustainability-accelerator/',
       testimonial: t('caseStudies.reborn.testimonial'),
       author: t('caseStudies.reborn.author')
     }
@@ -100,13 +104,28 @@ const CaseStudies = () => {
             } gap-12 items-center`}>
               {/* Image */}
               <div className="lg:w-1/2">
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <img 
-                    src={study.image} 
-                    alt={study.client}
-                    className="w-full h-96 object-cover"
-                  />
-                </div>
+                {study.pressLink ? (
+                  <a 
+                    href={study.pressLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300"
+                  >
+                    <img 
+                      src={study.image} 
+                      alt={study.client}
+                      className="w-full h-96 object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </a>
+                ) : (
+                  <div className="rounded-2xl overflow-hidden shadow-2xl">
+                    <img 
+                      src={study.image} 
+                      alt={study.client}
+                      className="w-full h-96 object-cover"
+                    />
+                  </div>
+                )}
               </div>
 
               {/* Content */}
