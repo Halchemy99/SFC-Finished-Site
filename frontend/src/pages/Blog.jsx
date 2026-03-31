@@ -18,7 +18,7 @@ const Blog = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
-              href="https://superflycommerce.substack.com" 
+              href="https://harry901.substack.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#22C55E] hover:bg-[#16A34A] text-white px-6 py-3 rounded-full font-semibold transition-colors"
@@ -27,7 +27,7 @@ const Blog = () => {
               Read on Substack
             </a>
             <a 
-              href="https://superflycommerce.substack.com/feed" 
+              href="https://harry901.substack.com/feed" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white border-2 border-[#22C55E] text-[#22C55E] hover:bg-green-50 px-6 py-3 rounded-full font-semibold transition-colors"
@@ -43,7 +43,7 @@ const Blog = () => {
           <div className="max-w-4xl mx-auto">
             {/* Substack embed widget */}
             <iframe 
-              src="https://superflycommerce.substack.com/embed" 
+              src="https://harry901.substack.com/embed" 
               width="100%" 
               height="600"
               style={{ border: '1px solid #EEE', background: 'white' }}

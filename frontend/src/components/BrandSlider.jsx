@@ -8,12 +8,14 @@ const BrandSlider = () => {
     { name: 'LEON', logo: '/brands/leon.png' },
     { name: 'Hair Guru', logo: '/brands/hair-guru.png' },
     { name: 'Six Pack', logo: '/brands/six-pack.png' },
+    { name: 'co2you', logo: '/brands/co2you.png' },
     { name: 'Reborn', logo: '/brands/reborn.png' },
     { name: 'Presto Coffee', logo: '/brands/presto-coffee.png' },
     // Duplicate for seamless loop
     { name: 'LEON', logo: '/brands/leon.png' },
     { name: 'Hair Guru', logo: '/brands/hair-guru.png' },
     { name: 'Six Pack', logo: '/brands/six-pack.png' },
+    { name: 'co2you', logo: '/brands/co2you.png' },
     { name: 'Reborn', logo: '/brands/reborn.png' },
     { name: 'Presto Coffee', logo: '/brands/presto-coffee.png' }
   ];
