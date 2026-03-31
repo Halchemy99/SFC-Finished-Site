@@ -8,63 +8,77 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-[#22C55E] pt-32 pb-20 px-4 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="bg-[#22C55E] pt-32 pb-24 px-4 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="text-white">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2.5 mb-8">
               <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">{t('hero.badge')}</span>
+              <span className="text-sm font-semibold tracking-wide">Sustainable Amazon Collective</span>
             </div>
 
-            {/* Main Heading */}
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              {t('hero.title')}
+            {/* Main Heading - Stronger */}
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              Amazon Growth<br/>
+              <span className="text-white/90">Without The</span><br/>
+              Agency Tax
             </h1>
 
-            {/* Subheading */}
-            <p className="text-lg lg:text-xl mb-8 text-white/90 leading-relaxed">
-              {t('hero.subtitle')}
+            {/* Subheading - More impactful */}
+            <p className="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed font-medium">
+              Performance-based partnerships. Transparent pricing. Real specialists who actually know Amazon—not account managers reading from playbooks.
             </p>
 
-            {/* Features */}
-            <div className="flex flex-wrap gap-6 mb-10">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">{t('hero.feature1')}</span>
+            {/* Features - More compelling */}
+            <div className="grid grid-cols-1 gap-4 mb-12">
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3">
+                <div className="bg-white/20 rounded-full p-1.5">
+                  <CheckCircle className="w-5 h-5" />
+                </div>
+                <span className="font-semibold text-lg">Pay for results, not retainers</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">{t('hero.feature2')}</span>
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3">
+                <div className="bg-white/20 rounded-full p-1.5">
+                  <CheckCircle className="w-5 h-5" />
+                </div>
+                <span className="font-semibold text-lg">Direct access to Amazon specialists</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">{t('hero.feature3')}</span>
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3">
+                <div className="bg-white/20 rounded-full p-1.5">
+                  <CheckCircle className="w-5 h-5" />
+                </div>
+                <span className="font-semibold text-lg">Built for sustainable, long-term growth</span>
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
+            {/* CTA Buttons - More prominent */}
+            <div className="flex flex-wrap gap-5">
               <a href="/#contact">
-                <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
-                  {t('hero.cta1')} <ArrowRight className="ml-2 w-5 h-5" />
+                <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-10 py-7 text-lg font-bold shadow-2xl hover:shadow-3xl transition-all">
+                  Start Growing Today <ArrowRight className="ml-2 w-6 h-6" />
                 </Button>
               </a>
               <Link to="/pricing">
-                <Button className="bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg font-semibold">
-                  <Zap className="mr-2 w-5 h-5" /> {t('hero.cta2')}
+                <Button className="bg-transparent border-3 border-white text-white hover:bg-white/20 rounded-full px-10 py-7 text-lg font-bold backdrop-blur-sm">
+                  <Zap className="mr-2 w-6 h-6" /> See Transparent Pricing
                 </Button>
               </Link>
             </div>
           </div>
 
-          {/* Right Content - Doughnut Economics Style Visualization */}
+          {/* Right Content - Doughnut Economics Style Visualization - BIGGER */}
           <div className="flex justify-center lg:justify-end items-center">
-            <div className="relative w-[500px] h-[500px]">
+            <div className="relative w-[600px] h-[600px]">
               {/* SVG Doughnut Visualization */}
-              <svg viewBox="0 0 500 500" className="w-full h-full transform hover:scale-105 transition-transform duration-500">
+              <svg viewBox="0 0 500 500" className="w-full h-full transform hover:scale-105 transition-transform duration-700">
                 {/* Outer Ring - Sustainable Growth */}
                 <circle
                   cx="250"
@@ -251,15 +265,23 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 gap-8 mt-20 max-w-3xl">
-          <div>
-            <div className="text-4xl font-bold text-white mb-2">50+</div>
-            <div className="text-white/90">{t('hero.stat1')}</div>
+        {/* Stats - More prominent */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 max-w-5xl mx-auto">
+          <div className="text-center">
+            <div className="text-5xl font-bold text-white mb-3">50+</div>
+            <div className="text-white/90 text-lg font-medium">Amazon Specialists</div>
           </div>
-          <div>
-            <div className="text-4xl font-bold text-white mb-2">£1M+</div>
-            <div className="text-white/90">{t('hero.stat2')}</div>
+          <div className="text-center">
+            <div className="text-5xl font-bold text-white mb-3">£1M+</div>
+            <div className="text-white/90 text-lg font-medium">Revenue Driven</div>
+          </div>
+          <div className="text-center">
+            <div className="text-5xl font-bold text-white mb-3">99%</div>
+            <div className="text-white/90 text-lg font-medium">Client Retention</div>
+          </div>
+          <div className="text-center">
+            <div className="text-5xl font-bold text-white mb-3">13x</div>
+            <div className="text-white/90 text-lg font-medium">Avg TROAS</div>
           </div>
         </div>
       </div>
