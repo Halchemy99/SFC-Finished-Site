@@ -268,20 +268,20 @@ const Hero = () => {
         {/* Stats - More prominent */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 max-w-5xl mx-auto">
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">50+</div>
+            <div className="text-5xl font-bold text-white mb-3">5+</div>
             <div className="text-white/90 text-lg font-medium">Amazon Specialists</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">£1M+</div>
-            <div className="text-white/90 text-lg font-medium">Revenue Driven</div>
+            <div className="text-5xl font-bold text-white mb-3">£3M</div>
+            <div className="text-white/90 text-lg font-medium">Annual Revenue Driven</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">99%</div>
+            <div className="text-5xl font-bold text-white mb-3">94%</div>
             <div className="text-white/90 text-lg font-medium">Client Retention</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">13x</div>
-            <div className="text-white/90 text-lg font-medium">Avg TROAS</div>
+            <div className="text-5xl font-bold text-white mb-3">600+</div>
+            <div className="text-white/90 text-lg font-medium">Tickets Resolved</div>
           </div>
         </div>
       </div>
