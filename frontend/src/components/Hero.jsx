@@ -28,10 +28,10 @@ const Hero = () => {
               {/* Amazon Smile Logo */}
               <div className="flex items-center">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_design-75/artifacts/i1ti1phn_Amazons-innovative-logo.png" 
+                  src="https://customer-assets.emergentagent.com/job_design-75/artifacts/wdflto9v_Amazons-innovative-logo%20-%20Editado.png" 
                   alt="Amazon"
-                  className="w-10 h-10 object-contain"
-                  style={{ mixBlendMode: 'multiply' }}
+                  className="w-12 h-12 object-contain"
+                  style={{ filter: 'brightness(1.1)' }}
                 />
               </div>
             </div>
