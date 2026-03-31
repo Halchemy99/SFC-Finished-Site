@@ -19,21 +19,53 @@ const Contact = () => {
     service: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast({
-      title: t('toast.formSubmitted'),
-      description: t('toast.formSuccess'),
-    });
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      specialist: '',
-      service: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.specialist, // Using specialist field as phone
+          company: formData.company,
+          message: formData.message,
+          form_type: 'discovery_call'
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: t('toast.formSubmitted'),
+          description: data.message || t('toast.formSuccess'),
+        });
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          specialist: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        throw new Error(data.detail || 'Submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: error.message || "Please try again or email harry@superflycommerce.com",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -237,8 +269,12 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-6 text-lg font-semibold">
-                    {t('contact.submitButton')}
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-6 text-lg font-semibold disabled:opacity-50"
+                  >
+                    {isSubmitting ? 'Sending...' : t('contact.submitButton')}
                   </Button>
 
                   <p className="text-sm text-gray-500 text-center">
