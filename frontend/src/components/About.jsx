@@ -47,13 +47,14 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Content - Image */}
-          <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
+          {/* Right Content - Founder Image */}
+          <div className="relative flex items-center justify-center">
+            <div className="rounded-3xl overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Team collaboration"
-                className="w-full h-full object-cover"
+                src="https://customer-assets.emergentagent.com/job_design-75/artifacts/wc0xevb7_IMG_8323.png"
+                alt="Harry - Founder of Superfly Commerce"
+                className="w-full h-auto object-contain"
+                style={{ maxHeight: '600px' }}
               />
             </div>
           </div>
