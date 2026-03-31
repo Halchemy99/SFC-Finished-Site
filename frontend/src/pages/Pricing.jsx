@@ -17,75 +17,74 @@ const Pricing = () => {
 
   const partnershipTiers = [
     {
-      name: t('pricing.startup.name'),
-      price: '£700',
-      period: t('pricing.perMonth'),
-      description: t('pricing.startup.description'),
+      name: 'Starter Partnership',
+      basePrice: '£650',
+      period: '/month',
+      description: 'Perfect for brands ready to test performance-based growth',
       features: [
-        t('pricing.startup.feature1'),
-        t('pricing.startup.feature2'),
-        t('pricing.startup.feature3'),
-        t('pricing.startup.feature4'),
-        t('pricing.startup.feature5'),
-        t('pricing.startup.feature6')
+        'Base retainer: £650/month',
+        '+ % of monthly revenue growth',
+        'Full Amazon account management',
+        'Listing optimization & PPC',
+        'Monthly strategy calls',
+        'Performance reporting'
       ],
-      cta: t('pricing.startup.cta'),
+      cta: 'Discuss This Plan',
       popular: false,
       badge: null
     },
     {
-      name: t('pricing.growing.name'),
-      price: '£1,000',
-      period: t('pricing.perMonth'),
-      description: t('pricing.growing.description'),
+      name: 'Growth Partnership',
+      basePrice: '£1,100',
+      period: '/month',
+      description: 'For established brands scaling with skin in the game',
       features: [
-        t('pricing.growing.feature1'),
-        t('pricing.growing.feature2'),
-        t('pricing.growing.feature3'),
-        t('pricing.growing.feature4'),
-        t('pricing.growing.feature5'),
-        t('pricing.growing.feature6'),
-        t('pricing.growing.feature7')
+        'Base retainer: £1,100/month',
+        '+ % of monthly revenue growth',
+        'Everything in Starter, plus:',
+        'A+ Content & Brand Store',
+        'Advanced PPC strategies',
+        'Quarterly business reviews',
+        'Priority support'
       ],
-      cta: t('pricing.growing.cta'),
+      cta: 'Discuss This Plan',
       popular: true,
-      badge: t('pricing.growing.badge')
+      badge: 'Most Popular'
     },
     {
-      name: t('pricing.scaling.name'),
-      price: '£1,200',
-      period: t('pricing.perMonth'),
-      description: t('pricing.scaling.description'),
+      name: 'Scale Partnership',
+      basePrice: '£1,800',
+      period: '/month',
+      description: 'Aggressive growth for brands doing £50k+ monthly revenue',
       features: [
-        t('pricing.scaling.feature1'),
-        t('pricing.scaling.feature2'),
-        t('pricing.scaling.feature3'),
-        t('pricing.scaling.feature4'),
-        t('pricing.scaling.feature5'),
-        t('pricing.scaling.feature6'),
-        t('pricing.scaling.feature7')
+        'Base retainer: £1,800/month',
+        '+ % of monthly revenue growth',
+        'Everything in Growth, plus:',
+        'Dedicated account manager',
+        'International expansion support',
+        'Custom analytics & automation',
+        'White-glove service'
       ],
-      cta: t('pricing.scaling.cta'),
+      cta: 'Discuss This Plan',
       popular: false,
       badge: null
     },
     {
-      name: t('pricing.enterprise.name'),
-      price: '£1,500',
-      period: t('pricing.perMonth'),
-      description: t('pricing.enterprise.description'),
+      name: 'Pure Revenue Share',
+      basePrice: '£0',
+      period: 'base fee',
+      description: 'High risk, high reward - we only win when you win',
       features: [
-        t('pricing.enterprise.feature1'),
-        t('pricing.enterprise.feature2'),
-        t('pricing.enterprise.feature3'),
-        t('pricing.enterprise.feature4'),
-        t('pricing.enterprise.feature5'),
-        t('pricing.enterprise.feature6'),
-        t('pricing.enterprise.feature7')
+        'No monthly retainer',
+        '10% of all revenue above £10,000/month',
+        'Full-service Amazon management',
+        'We eat what we kill mentality',
+        'Perfect for ambitious startups',
+        'Subject to application approval'
       ],
-      cta: t('pricing.enterprise.cta'),
+      cta: 'Apply for Revenue Share',
       popular: false,
-      badge: null
+      badge: 'High Risk/Reward'
     }
   ];
 
@@ -266,15 +265,15 @@ const Pricing = () => {
           </p>
         </div>
 
-        {/* Ongoing Partnerships Section */}
+        {/* Performance-Based Partnerships Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">{t('pricing.partnershipsTitle')}</h2>
+            <h2 className="text-4xl font-bold mb-4">Performance-Based Partnerships</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {t('pricing.partnershipsSubtitle')}
+              We grow when you grow. Choose a partnership model that aligns our success with yours.
             </p>
             <Badge className="bg-orange-100 text-orange-600 mt-4 px-4 py-2 text-sm">
-              {t('pricing.partnershipsBadge')}
+              Skin in the Game Pricing
             </Badge>
           </div>
 
@@ -294,7 +293,7 @@ const Pricing = () => {
                 <CardHeader>
                   <CardTitle className="text-2xl">{tier.name}</CardTitle>
                   <div className="mt-4">
-                    <span className="text-4xl font-bold">{tier.price}</span>
+                    <span className="text-4xl font-bold">{tier.basePrice}</span>
                     <span className="text-gray-500">{tier.period}</span>
                   </div>
                   <CardDescription className="mt-4">{tier.description}</CardDescription>

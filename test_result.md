@@ -101,3 +101,61 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Test the new Performance-Based Pricing implementation on the Superfly Commerce website"
+
+frontend:
+  - task: "Performance-Based Partnerships Section"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Pricing.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Verified Performance-Based Partnerships section displays correctly with 4 tiers: Starter Partnership (£650/month), Growth Partnership (£1,100/month with 'Most Popular' badge), Scale Partnership (£1,800/month), and Pure Revenue Share (£0 base fee with 'High Risk/Reward' badge). All pricing and descriptions are accurate."
+  
+  - task: "Partnership Tier Buttons Navigation"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Pricing.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "All partnership tier buttons correctly display 'Discuss This Plan' (3 buttons) or 'Apply for Revenue Share' (1 button). Clicking Growth Partnership button successfully navigates to /#contact and auto-scrolls to contact form. Contact form is visible with Name, Email, and Message fields."
+  
+  - task: "One-Off Services Stripe Integration"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Pricing.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Verified all 10 one-off services have 'Book Now' buttons that open ServiceCheckout modal (Stripe integration). These buttons do NOT navigate to contact form, maintaining the correct separation between partnership inquiries and one-off service purchases."
+
+metadata:
+  created_by: "testing_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: true
+
+test_plan:
+  current_focus:
+    - "Performance-Based Partnerships Section"
+    - "Partnership Tier Buttons Navigation"
+    - "One-Off Services Stripe Integration"
+  stuck_tasks: []
+  test_all: true
+  test_priority: "high_first"
+
+agent_communication:
+    - agent: "testing"
+      message: "Completed comprehensive testing of Performance-Based Pricing implementation. All features working as expected: 4 partnership tiers display correctly with proper badges, all partnership buttons navigate to /#contact, contact form is accessible, and one-off services maintain Stripe checkout functionality. No issues found."
