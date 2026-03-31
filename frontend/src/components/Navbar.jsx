@@ -72,23 +72,19 @@ const Navbar = () => {
             <Link to="/case-studies" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm font-semibold bg-green-50 px-4 py-2 rounded-full">
               {t('nav.caseStudies')} ✨
             </Link>
-            <Link to="/blog" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
-              Blog
-            </Link>
             <Link to="/pricing" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
               {t('nav.pricing')}
             </Link>
 
-            {/* Language Selector - Modern emoji flags */}
+            {/* Language Selector - Icon only */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-2 text-gray-700 hover:text-[#22C55E] transition-colors outline-none">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-gray-700 hover:text-[#22C55E] transition-colors outline-none">
                 {isTranslating ? (
                   <Loader2 className="w-4 h-4 animate-spin" />
                 ) : (
                   <Globe className="w-4 h-4" />
                 )}
-                <span className="text-xl">{currentLangData.emoji}</span>
-                <span className="text-sm font-medium">{currentLangData.name}</span>
+                <span className="text-lg">{currentLangData.emoji}</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="max-h-96 overflow-y-auto">
                 {languages.map((lang) => (
@@ -109,15 +105,10 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* CTA Buttons */}
+            {/* Primary CTA */}
             <a href="/#contact">
-              <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-6">
+              <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-6 text-sm">
                 {t('nav.bookCall')}
-              </Button>
-            </a>
-            <a href="/tiktok-offer">
-              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full px-6">
-                TikTok Offer
               </Button>
             </a>
           </div>
