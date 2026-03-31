@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Check, ArrowRight, BookOpen, Video, Users, Award, Target, AlertCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -7,6 +8,7 @@ import ServiceCTA from '../components/ServiceCTA';
 import { useNavigate } from 'react-router-dom';
 
 const AmazonAcademy = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   
   // Scroll to top when page loads

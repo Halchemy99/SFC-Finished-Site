@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import { Check, ArrowRight, Users, Target, Award, TrendingUp, Zap } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import ServiceCTA from '../components/ServiceCTA';
 
 const ExpertMatching = () => {
+  const { t } = useTranslation();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
