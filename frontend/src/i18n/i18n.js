@@ -142,7 +142,59 @@ const resources = {
         formSubmitted: 'Form Submitted!',
         formSuccess: "We'll get back to you soon.",
         subscribed: 'Subscribed!',
-        subscribeSuccess: "You'll receive our growth tips soon."
+        subscribeSuccess: "You will receive our growth tips soon."
+      },
+      caseStudies: {
+        badge: 'Success Stories',
+        title: 'Real Results from',
+        titleGreen: 'Real Brands',
+        subtitle: 'See how we have helped Amazon sellers achieve sustainable growth through our transparent, performance-based approach.',
+        challenge: 'Challenge',
+        solution: 'Solution',
+        getResults: 'Get Similar Results',
+        ctaTitle: 'Ready to Write Your Success Story?',
+        ctaSubtitle: 'Let us discuss how we can help you achieve similar results for your Amazon business.',
+        ctaButton: 'Book Discovery Call',
+        pachakuti: {
+          category: 'Amazon Launch',
+          client: 'Pachakuti',
+          industry: 'Ceremonial Cacao',
+          challenge: 'Entering Amazon UK with no sales history, low review count, and premium pricing in a highly competitive cacao category dominated by established brands. Ceremonial cacao straight from the Ecuadorian Amazon needed to stand out.',
+          solution: 'Structured UK launch via FBA, keyword-driven listing build, A+ content creation, brand store creation, and controlled PPC testing to validate conversion before scaling. Strategically focused on ranking for under-appreciated keywords.',
+          testimonial: 'Superfly helped us launch our ceremonial cacao from the Ecuadorian Amazon and hit Top 4 in one of the most competitive categories on Amazon UK.',
+          author: 'Pachakuti Team'
+        },
+        hairGuru: {
+          category: 'Brand Rebrand & Recovery',
+          client: 'Hair Guru',
+          industry: 'Hair Fibres',
+          challenge: 'EU competitors were being outspent by non-EU brands on content and advertising, leading to erosion of market share in the high-competition haircare category. Hair fibres for men and women needed a complete repositioning.',
+          solution: 'Full listing rebuild, keyword strategy overhaul, A+ content creation, and aggressive PPC structure designed to reclaim category visibility and regain market share. Initiated a full brand rebrand that inspired their website and packaging.',
+          testimonial: 'Superfly initiated a full brand rebrand that has even inspired our website and packaging. So much for little Amazon agencies!',
+          author: 'Hair Guru Team'
+        },
+        leon: {
+          category: 'Amazon Fresh Launch',
+          client: 'LEON',
+          industry: 'Restaurant Ready Meals',
+          challenge: 'Launching a restaurant brand\'s ambient product range on Amazon Fresh UK, which operates with different rules, buy box dynamics, and consumer expectations compared to standard Amazon.',
+          solution: 'Vendor Central onboarding, product categorization, and content optimization tailored for Amazon Fresh\'s unique search behavior. Used data to inform next steps and create new products for seller accounts.',
+          testimonial: 'Fresh trial proved so successful that Superfly are now helping us create new products to launch on our seller accounts. They found a way and used data to inform our next steps.',
+          author: 'LEON Team'
+        },
+        reborn: {
+          category: 'Buy Box Recovery & Sustainability',
+          client: 'ReBorn',
+          industry: 'Sustainable Homeware',
+          challenge: 'Resellers had hijacked key listings, eroding margin and brand perception. Lost Buy Box control (down to 65%) and lacked visibility over which SKUs were profitable under FBA versus FBM. Homeware made from recycled materials needed protection.',
+          solution: 'Comprehensive FBA/FBM inventory audit, Buy Box tracking and recapture strategy, full listing rebuild (copy, images, A+ content, infographic briefs), 3-month sprint plan with phased US market setup, and Climate Pledge Friendly certification via ClimatePartner.',
+          testimonial: 'Superfly recaptured our Buy Box share from a flagging 65% to 99%, optimized our FBA/FBM strategy, and helped us achieve Climate Pledge Friendly certification.',
+          author: 'ReBorn Homes Team'
+        }
+      },
+      pricing: {
+        urgencyAcademy: 'Currently FULL until May 2026 - Join Waiting List',
+        urgencyExpert: 'Coming Soon - Bringing Talent Closer Within Reach'
       }
     }
   }

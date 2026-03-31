@@ -60,7 +60,7 @@ const AmazonAcademy = () => {
           {/* Urgency Banner */}
           <div className="bg-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-6 font-semibold">
             <AlertCircle className="w-5 h-5" />
-            Currently FULL until May 2026 - Join Waiting List
+            {t('pricing.urgencyAcademy')}
           </div>
           
           <h1 className="text-5xl font-bold mb-6">

@@ -35,7 +35,7 @@ const ExpertMatching = () => {
           {/* Coming Soon Banner */}
           <div className="bg-blue-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-6 font-semibold">
             <Zap className="w-5 h-5" />
-            Coming Soon - Bringing Talent Closer Within Reach
+            {t('pricing.urgencyExpert')}
           </div>
           
           <h1 className="text-5xl font-bold mb-6">
