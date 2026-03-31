@@ -27,14 +27,12 @@ const Hero = () => {
 
             {/* Main Heading - Stronger */}
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Amazon Growth<br/>
-              <span className="text-white/90">Without The</span><br/>
-              Agency Tax
+              {t('hero.title')}
             </h1>
 
             {/* Subheading - More impactful */}
             <p className="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed font-medium">
-              Performance-based partnerships. Transparent pricing. Real specialists who actually know Amazon—not account managers reading from playbooks.
+              {t('hero.subtitle')}
             </p>
 
             {/* Features - More compelling */}
@@ -43,19 +41,19 @@ const Hero = () => {
                 <div className="bg-white/20 rounded-full p-1.5">
                   <CheckCircle className="w-5 h-5" />
                 </div>
-                <span className="font-semibold text-lg">Pay for results, not retainers</span>
+                <span className="font-semibold text-lg">{t('hero.feature1')}</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3">
                 <div className="bg-white/20 rounded-full p-1.5">
                   <CheckCircle className="w-5 h-5" />
                 </div>
-                <span className="font-semibold text-lg">Direct access to Amazon specialists</span>
+                <span className="font-semibold text-lg">{t('hero.feature2')}</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3">
                 <div className="bg-white/20 rounded-full p-1.5">
                   <CheckCircle className="w-5 h-5" />
                 </div>
-                <span className="font-semibold text-lg">Built for sustainable, long-term growth</span>
+                <span className="font-semibold text-lg">{t('hero.feature3')}</span>
               </div>
             </div>
 
@@ -63,12 +61,12 @@ const Hero = () => {
             <div className="flex flex-wrap gap-5">
               <a href="/#contact">
                 <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-10 py-7 text-lg font-bold shadow-2xl hover:shadow-3xl transition-all">
-                  Start Growing Today <ArrowRight className="ml-2 w-6 h-6" />
+                  {t('hero.cta1')} <ArrowRight className="ml-2 w-6 h-6" />
                 </Button>
               </a>
               <Link to="/pricing">
                 <Button className="bg-transparent border-3 border-white text-white hover:bg-white/20 rounded-full px-10 py-7 text-lg font-bold backdrop-blur-sm">
-                  <Zap className="mr-2 w-6 h-6" /> See Transparent Pricing
+                  <Zap className="mr-2 w-6 h-6" /> {t('hero.cta2')}
                 </Button>
               </Link>
             </div>
@@ -268,20 +266,20 @@ const Hero = () => {
         {/* Stats - More prominent */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 max-w-5xl mx-auto">
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">5+</div>
-            <div className="text-white/90 text-lg font-medium">Amazon Specialists</div>
+            <div className="text-5xl font-bold text-white mb-3">45+</div>
+            <div className="text-white/90 text-lg font-medium">{t('hero.stat1')}</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">£3M</div>
-            <div className="text-white/90 text-lg font-medium">Annual Revenue Driven</div>
+            <div className="text-5xl font-bold text-white mb-3">£13M</div>
+            <div className="text-white/90 text-lg font-medium">{t('hero.stat2')}</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">94%</div>
-            <div className="text-white/90 text-lg font-medium">Client Retention</div>
+            <div className="text-5xl font-bold text-white mb-3">96%</div>
+            <div className="text-white/90 text-lg font-medium">{t('hero.stat3')}</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">600+</div>
-            <div className="text-white/90 text-lg font-medium">Tickets Resolved</div>
+            <div className="text-5xl font-bold text-white mb-3">999x</div>
+            <div className="text-white/90 text-lg font-medium">{t('hero.stat4')}</div>
           </div>
         </div>
       </div>
