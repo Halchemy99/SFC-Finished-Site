@@ -153,7 +153,7 @@ async def get_checkout_status(session_id: str):
     """
     
     try:
-        host_url = os.environ.get('REACT_APP_BACKEND_URL', 'http://localhost:8001')
+        host_url = os.environ.get('BACKEND_URL', 'http://localhost:8001')
         webhook_url = f"{host_url}/api/stripe/webhook"
         
         stripe_checkout = StripeCheckout(
@@ -189,7 +189,7 @@ async def stripe_webhook(request: Request):
         body = await request.body()
         signature = request.headers.get("Stripe-Signature", "")
         
-        host_url = os.environ.get('REACT_APP_BACKEND_URL', 'http://localhost:8001')
+        host_url = os.environ.get('BACKEND_URL', 'http://localhost:8001')
         webhook_url = f"{host_url}/api/stripe/webhook"
         
         stripe_checkout = StripeCheckout(
