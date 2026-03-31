@@ -4,7 +4,6 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '../hooks/use-toast';
 import { useTranslation } from 'react-i18next';
 
@@ -14,9 +13,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
-    specialist: '',
-    service: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,8 +28,6 @@ const Contact = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.specialist, // Using specialist field as phone
-          company: formData.company,
           message: formData.message,
           form_type: 'discovery_call'
         })
@@ -49,9 +43,6 @@ const Contact = () => {
         setFormData({
           name: '',
           email: '',
-          company: '',
-          specialist: '',
-          service: '',
           message: ''
         });
       } else {
@@ -172,87 +163,34 @@ const Contact = () => {
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('contact.nameLabel')} <span className="text-red-500">*</span>
-                      </label>
-                      <Input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        placeholder={t('contact.placeholders.name')}
-                        className="w-full"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('contact.emailLabel')} <span className="text-red-500">*</span>
-                      </label>
-                      <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder={t('contact.placeholders.email')}
-                        className="w-full"
-                      />
-                    </div>
-                  </div>
-
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('contact.companyLabel')}
+                      {t('contact.nameLabel')} <span className="text-red-500">*</span>
                     </label>
                     <Input
                       type="text"
-                      name="company"
-                      value={formData.company}
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
-                      placeholder={t('contact.placeholders.company')}
+                      required
+                      placeholder={t('contact.placeholders.name')}
                       className="w-full"
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('contact.specialistLabel')}
+                      {t('contact.emailLabel')} <span className="text-red-500">*</span>
                     </label>
-                    <Select onValueChange={(value) => setFormData({...formData, specialist: value})}>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder={t('contact.specialists.any')} />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="any">{t('contact.specialists.any')}</SelectItem>
-                        <SelectItem value="sarah">{t('contact.specialists.sarah')}</SelectItem>
-                        <SelectItem value="marcus">{t('contact.specialists.marcus')}</SelectItem>
-                        <SelectItem value="elena">{t('contact.specialists.elena')}</SelectItem>
-                        <SelectItem value="james">{t('contact.specialists.james')}</SelectItem>
-                        <SelectItem value="priya">{t('contact.specialists.priya')}</SelectItem>
-                        <SelectItem value="alex">{t('contact.specialists.alex')}</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('contact.serviceLabel')}
-                    </label>
-                    <Select onValueChange={(value) => setFormData({...formData, service: value})}>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder={t('contact.services.guidance')} />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="sprints">{t('contact.services.sprints')}</SelectItem>
-                        <SelectItem value="team">{t('contact.services.team')}</SelectItem>
-                        <SelectItem value="partnership">{t('contact.services.partnership')}</SelectItem>
-                        <SelectItem value="academy">{t('contact.services.academy')}</SelectItem>
-                        <SelectItem value="guidance">{t('contact.services.guidance')}</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <Input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      placeholder={t('contact.placeholders.email')}
+                      className="w-full"
+                    />
                   </div>
 
                   <div>
@@ -263,7 +201,7 @@ const Contact = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      rows={4}
+                      rows={6}
                       placeholder={t('contact.placeholders.message')}
                       className="w-full"
                     />

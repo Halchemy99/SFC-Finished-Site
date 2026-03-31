@@ -14,8 +14,8 @@ logger = logging.getLogger(__name__)
 class ContactFormSubmission(BaseModel):
     name: str
     email: EmailStr
-    phone: str = None
-    company: str = None
+    phone: str = ""
+    company: str = ""
     message: str
     form_type: str = "contact"  # "contact", "discovery_call", "service_inquiry"
 

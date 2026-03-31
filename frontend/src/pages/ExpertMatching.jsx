@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Check, ArrowRight, Users, Target, Award, TrendingUp } from 'lucide-react';
+import { Check, ArrowRight, Users, Target, Award, TrendingUp, Zap } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -31,6 +31,13 @@ const ExpertMatching = () => {
         {/* Hero */}
         <div className="text-center mb-16">
           <Badge className="bg-purple-100 text-purple-600 mb-4">Expert Matching</Badge>
+          
+          {/* Coming Soon Banner */}
+          <div className="bg-blue-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-6 font-semibold">
+            <Zap className="w-5 h-5" />
+            Coming Soon - Bringing Talent Closer Within Reach
+          </div>
+          
           <h1 className="text-5xl font-bold mb-6">
             Work with Hand-Picked <span className="text-[#22C55E]">Amazon Specialists</span>
           </h1>

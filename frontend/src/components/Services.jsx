@@ -48,6 +48,7 @@ const Services = () => {
       iconColor: 'text-green-600',
       title: t('services.service3Title'),
       subtitle: t('services.service3Subtitle'),
+      badge: t('services.popular'),
       features: [
         t('services.service3Feature1'),
         t('services.service3Feature2')

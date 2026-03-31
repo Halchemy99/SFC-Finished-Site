@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Check, ArrowRight, BookOpen, Video, Users, Award, Target } from 'lucide-react';
+import { Check, ArrowRight, BookOpen, Video, Users, Award, Target, AlertCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -56,6 +56,13 @@ const AmazonAcademy = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge className="bg-orange-100 text-orange-600 mb-4">Amazon Mastery Academy</Badge>
+          
+          {/* Urgency Banner */}
+          <div className="bg-orange-500 text-white py-3 px-6 rounded-full inline-flex items-center gap-2 mb-6 font-semibold">
+            <AlertCircle className="w-5 h-5" />
+            Currently FULL until May 2026 - Join Waiting List
+          </div>
+          
           <h1 className="text-5xl font-bold mb-6">
             Master Amazon <span className="text-[#22C55E]">In-House</span>
           </h1>
