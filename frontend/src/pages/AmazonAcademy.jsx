@@ -230,7 +230,7 @@ const AmazonAcademy = () => {
                 <p className="text-gray-700 italic mb-3">
                   The academy gave our team the skills to manage Amazon in-house while having expert support when needed.
                 </p>
-                <p className="text-sm font-semibold">— James Patterson, Operations Director</p>
+                <p className="text-sm font-semibold">James Patterson, Operations Director</p>
               </div>
             </div>
           </div>

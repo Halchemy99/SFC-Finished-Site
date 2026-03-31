@@ -174,7 +174,7 @@ const ExpertMatching = () => {
                 <p className="text-gray-700 italic mb-3">
                   "Working with a dedicated PPC expert transformed our advertising. We finally have profitable campaigns at scale."
                 </p>
-                <p className="text-sm font-semibold">— Marcus Chen, CEO</p>
+                <p className="text-sm font-semibold">Marcus Chen, CEO</p>
               </div>
             </div>
           </div>

@@ -166,7 +166,7 @@ const CaseStudies = () => {
                 {/* Testimonial */}
                 <div className="mt-8 bg-white p-6 rounded-xl border-l-4 border-[#22C55E]">
                   <p className="text-gray-700 italic mb-3">"{study.testimonial}"</p>
-                  <p className="text-sm font-semibold text-gray-900">— {study.author}</p>
+                  <p className="text-sm font-semibold text-gray-900">{study.author}</p>
                 </div>
 
                 <a href="/#contact">

@@ -219,7 +219,7 @@ const GrowthPartnership = () => {
                 <p className="text-gray-700 italic mb-3">
                   "The performance-based model meant Superfly was as invested in our success as we were. Game changer."
                 </p>
-                <p className="text-sm font-semibold">— Elena Rodriguez, Co-Founder</p>
+                <p className="text-sm font-semibold">Elena Rodriguez, Co-Founder</p>
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@ const resources = {
       hero: {
         badge: 'Sustainable Amazon Collective',
         title: 'Amazon Growth Without The Agency Tax',
-        subtitle: "Performance-based partnerships. Transparent pricing. Real specialists who actually know Amazon—not account managers reading from playbooks.",
+        subtitle: "Performance-based partnerships. Transparent pricing. Real specialists who actually know Amazon, not account managers reading from playbooks.",
         feature1: 'Pay for high results, not high retainers',
         feature2: 'Direct access to Amazon specialists',
         feature3: 'Built for sustainable, long-term growth',
@@ -69,7 +69,7 @@ const resources = {
       contact: {
         badge: 'Partner With Us',
         title: 'Ready to Grow Sustainably?',
-        description: 'Book a discovery call to explore performance-based retainers and sustainability discounts. No sales pitch—just honest advice about sustainable Amazon growth.',
+        description: 'Book a discovery call to explore performance-based retainers and sustainability discounts. No sales pitch, just honest advice about sustainable Amazon growth.',
         card1Title: 'Book Discovery Call',
         card1Desc: 'Schedule via Calendly',
         card2Title: 'WhatsApp Us',
