@@ -3,10 +3,9 @@ from pydantic import BaseModel, EmailStr
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
+import asyncio
+import resend
 from datetime import datetime, timezone
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 
 router = APIRouter(prefix="/api/newsletter", tags=["newsletter"])
 logger = logging.getLogger(__name__)
@@ -19,21 +18,18 @@ mongo_url = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ.get('DB_NAME', 'test_database')]
 
-# SMTP configuration (same as contact form)
-CONTACT_EMAIL = "harry@superflycommerce.com"
-SMTP_HOST = os.environ.get('SMTP_HOST', 'smtp.gmail.com')
-SMTP_PORT = int(os.environ.get('SMTP_PORT', 587))
-SMTP_USER = os.environ.get('SMTP_USER', '')
-SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
+# Resend configuration
+CONTACT_EMAIL = "superflycommerce@gmail.com"  # Resend test mode requirement
+RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev')
+
+# Set Resend API key
+if RESEND_API_KEY:
+    resend.api_key = RESEND_API_KEY
 
 async def send_newsletter_notification(email: str) -> bool:
-    """Send email notification for new newsletter subscriber"""
+    """Send email notification for new newsletter subscriber using Resend"""
     try:
-        msg = MIMEMultipart('alternative')
-        msg['Subject'] = f"New Newsletter Subscriber: {email}"
-        msg['From'] = SMTP_USER
-        msg['To'] = CONTACT_EMAIL
-        
         html_body = f"""
         <html>
           <body style="font-family: Arial, sans-serif; color: #333;">
@@ -53,19 +49,20 @@ async def send_newsletter_notification(email: str) -> bool:
         </html>
         """
         
-        html_part = MIMEText(html_body, 'html')
-        msg.attach(html_part)
-        
-        if SMTP_USER and SMTP_PASSWORD:
-            server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
-            server.starttls()
-            server.login(SMTP_USER, SMTP_PASSWORD)
-            server.send_message(msg)
-            server.quit()
-            logger.info(f"Newsletter notification sent to {CONTACT_EMAIL}")
+        if RESEND_API_KEY:
+            params = {
+                "from": SENDER_EMAIL,
+                "to": [CONTACT_EMAIL],
+                "subject": f"New Newsletter Subscriber: {email}",
+                "html": html_body
+            }
+            
+            # Run sync SDK in thread to keep FastAPI non-blocking
+            email_response = await asyncio.to_thread(resend.Emails.send, params)
+            logger.info(f"Newsletter notification sent to {CONTACT_EMAIL} (ID: {email_response.get('id')})")
             return True
         else:
-            logger.warning("SMTP credentials not configured. Email notification not sent.")
+            logger.warning("Resend API key not configured. Email notification not sent.")
             return False
             
     except Exception as e:

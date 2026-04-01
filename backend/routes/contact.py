@@ -4,11 +4,9 @@ from slowapi import Limiter
 from slowapi.util import get_remote_address
 import os
 import logging
-import httpx
+import asyncio
+import resend
 from datetime import datetime
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 
 router = APIRouter(prefix="/api/contact", tags=["contact"])
 logger = logging.getLogger(__name__)
@@ -25,27 +23,19 @@ class ContactFormSubmission(BaseModel):
     form_type: str = "contact"  # "contact", "discovery_call", "service_inquiry"
 
 # Email configuration
-CONTACT_EMAIL = "harry@superflycommerce.com"
-SMTP_HOST = os.environ.get('SMTP_HOST', 'smtp.gmail.com')
-SMTP_PORT = int(os.environ.get('SMTP_PORT', 587))
-SMTP_USER = os.environ.get('SMTP_USER', '')
-SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')
+CONTACT_EMAIL = "superflycommerce@gmail.com"  # Resend test mode requirement
+RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev')
 
-# Perspective CRM configuration (to be added later)
-PERSPECTIVE_API_KEY = os.environ.get('PERSPECTIVE_API_KEY', '')
-PERSPECTIVE_API_URL = os.environ.get('PERSPECTIVE_API_URL', 'https://api.perspective.co/v1')
+# Set Resend API key
+if RESEND_API_KEY:
+    resend.api_key = RESEND_API_KEY
 
 async def send_email_notification(submission: ContactFormSubmission) -> bool:
     """
-    Send email notification to harry@superflycommerce.com
+    Send email notification to harry@superflycommerce.com using Resend
     """
     try:
-        # Create message
-        msg = MIMEMultipart('alternative')
-        msg['Subject'] = f"New {submission.form_type.replace('_', ' ').title()} - {submission.name}"
-        msg['From'] = SMTP_USER
-        msg['To'] = CONTACT_EMAIL
-        
         # Create HTML email body
         html_body = f"""
         <html>
@@ -74,34 +64,25 @@ async def send_email_notification(submission: ContactFormSubmission) -> bool:
         </html>
         """
         
-        # Attach HTML body
-        html_part = MIMEText(html_body, 'html')
-        msg.attach(html_part)
-        
-        # Send email
-        if SMTP_USER and SMTP_PASSWORD:
-            server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
-            server.starttls()
-            server.login(SMTP_USER, SMTP_PASSWORD)
-            server.send_message(msg)
-            server.quit()
-            logger.info(f"Email sent successfully to {CONTACT_EMAIL}")
+        if RESEND_API_KEY:
+            params = {
+                "from": SENDER_EMAIL,
+                "to": [CONTACT_EMAIL],
+                "subject": f"New {submission.form_type.replace('_', ' ').title()} - {submission.name}",
+                "html": html_body
+            }
+            
+            # Run sync SDK in thread to keep FastAPI non-blocking
+            email = await asyncio.to_thread(resend.Emails.send, params)
+            logger.info(f"Email sent successfully to {CONTACT_EMAIL} (ID: {email.get('id')})")
             return True
         else:
-            logger.warning("SMTP credentials not configured. Email not sent.")
+            logger.warning("Resend API key not configured. Email not sent.")
             return False
             
     except Exception as e:
         logger.error(f"Failed to send email: {str(e)}")
         return False
-
-async def send_to_perspective_crm(submission: ContactFormSubmission) -> bool:
-    """
-    Perspective CRM integration removed per user request.
-    User reported: "Perspective not allowing me to integrate contact form"
-    """
-    # CRM integration disabled
-    return False
 
 @router.post("/submit")
 @limiter.limit("5/hour")  # 5 submissions per hour per IP
@@ -111,27 +92,21 @@ async def submit_contact_form(request: Request, submission: ContactFormSubmissio
     
     Actions:
     1. Send email notification to harry@superflycommerce.com
-    2. Sync with Perspective CRM (if configured)
-    3. Store in database (optional - can be added later)
     
-    Returns success even if CRM sync fails (email is primary notification method)
+    Returns success even if email fails (graceful degradation)
     """
     
     logger.info(f"Contact form submission received from: {submission.email}")
     
-    # Send email notification (primary method)
+    # Send email notification
     email_sent = await send_email_notification(submission)
     
-    # Sync with Perspective CRM (secondary method, non-blocking)
-    crm_synced = await send_to_perspective_crm(submission)
-    
-    # Return success if at least email was sent
+    # Return success if email was sent
     if email_sent:
         return {
             "success": True,
             "message": "Thank you for your message! We'll get back to you soon.",
-            "email_sent": email_sent,
-            "crm_synced": crm_synced
+            "email_sent": email_sent
         }
     else:
         # If email fails, raise error
