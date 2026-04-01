@@ -8,7 +8,7 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-[#22C55E] pt-24 pb-16 px-4 relative overflow-hidden">
+    <section className="bg-[#22C55E] pt-8 pb-12 px-4 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute top-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -20,7 +20,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className="text-white">
             {/* Badge with Amazon Logo */}
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-4">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2.5">
                 <Globe className="w-4 h-4" />
                 <span className="text-sm font-semibold tracking-wide">Sustainable Amazon Collective</span>
@@ -37,12 +37,12 @@ const Hero = () => {
             </div>
 
             {/* Main Heading - Stronger */}
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
               {t('hero.title')}
             </h1>
 
             {/* Subheading - More impactful */}
-            <p className="text-xl lg:text-2xl mb-10 text-white/95 leading-relaxed font-medium">
+            <p className="text-xl lg:text-2xl mb-6 text-white/95 leading-relaxed font-medium">
               {t('hero.subtitle')}
             </p>
 
