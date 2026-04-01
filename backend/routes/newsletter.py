@@ -19,9 +19,9 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ.get('DB_NAME', 'test_database')]
 
 # Resend configuration
-CONTACT_EMAIL = "harry@superfly-commerce.com"
+CONTACT_EMAIL = "harry@superflycommerce.com"  # Where you receive emails
 RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
-SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'harry@superfly-commerce.com')
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'noreply@superfly-commerce.com')  # Verified domain
 
 # Set Resend API key
 if RESEND_API_KEY:
