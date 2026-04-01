@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { useToast } from '../hooks/use-toast';
 import { useTranslation } from 'react-i18next';
+import { trackNewsletterSignup } from '../utils/analytics';
 
 const Newsletter = () => {
   const { toast } = useToast();
@@ -36,6 +37,10 @@ const Newsletter = () => {
       }
 
       const data = await response.json();
+      
+      // Track successful newsletter signup in GA4
+      trackNewsletterSignup();
+      
       toast({
         title: t('toast.subscribed'),
         description: data.message || t('toast.subscribeSuccess'),

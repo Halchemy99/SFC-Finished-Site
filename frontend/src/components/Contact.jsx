@@ -6,6 +6,7 @@ import { Textarea } from './ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { useToast } from '../hooks/use-toast';
 import { useTranslation } from 'react-i18next';
+import { trackContactFormSubmit } from '../utils/analytics';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -47,6 +48,10 @@ const Contact = () => {
       }
 
       const data = await response.json();
+      
+      // Track successful form submission in GA4
+      trackContactFormSubmit('discovery_call');
+      
       toast({
         title: t('toast.formSubmitted'),
         description: data.message || t('toast.formSuccess'),
