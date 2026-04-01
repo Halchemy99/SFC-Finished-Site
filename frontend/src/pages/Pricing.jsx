@@ -260,10 +260,10 @@ const Pricing = () => {
         keywords="amazon ppc pricing, amazon agency cost, performance based pricing, amazon ppc management rates, amazon advertising pricing 2026"
         canonical="https://www.superfly-commerce.com/pricing"
       />
-      <div className="min-h-screen bg-gray-50 pt-24 pb-20">
+      <div className="min-h-screen bg-gray-50 pt-20 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <Badge className="bg-green-100 text-[#22C55E] mb-4">{t('pricing.badge')}</Badge>
           <h1 className="text-5xl font-bold mb-6">
             {t('pricing.title')} <span className="text-[#22C55E]">{t('pricing.titleGreen')}</span>
@@ -274,7 +274,7 @@ const Pricing = () => {
         </div>
 
         {/* Performance-Based Partnerships Section */}
-        <div className="mb-20">
+        <div className="mb-12">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Performance-Based Partnerships</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -331,7 +331,7 @@ const Pricing = () => {
         </div>
 
         {/* One-Off Services Section */}
-        <div className="mb-20">
+        <div className="mb-12">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">{t('pricing.oneOffTitle')}</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
