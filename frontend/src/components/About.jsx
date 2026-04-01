@@ -42,7 +42,7 @@ const About = () => {
               {features.map((feature, idx) => (
                 <div key={idx} className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700 text-lg">{feature}</span>
+                  <span className={`text-gray-700 text-lg ${idx === 5 ? 'font-bold' : ''}`}>{feature}</span>
                 </div>
               ))}
             </div>
@@ -57,13 +57,12 @@ const About = () => {
                 className="w-full h-auto object-contain"
                 style={{ maxHeight: '600px' }}
               />
-              {/* Signature - Top Right */}
-              <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+              {/* Signature - Transparent, hovering on image */}
+              <div className="absolute top-6 right-6">
                 <img
-                  src="https://customer-assets.emergentagent.com/job_design-75/artifacts/azwqe0t2_getsitecontrol__generate-calligraphy-text__free.png"
+                  src="https://customer-assets.emergentagent.com/job_design-75/artifacts/3df8dumb_getsitecontrol__generate-calligraphy-text__free%20-%20Editado.png"
                   alt="Harry's Signature"
-                  className="h-12 w-auto"
-                  style={{ filter: 'brightness(0.3)' }}
+                  className="h-16 w-auto drop-shadow-lg"
                 />
               </div>
             </div>
