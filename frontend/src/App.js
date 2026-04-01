@@ -18,7 +18,7 @@ import ExpertMatching from './pages/ExpertMatching';
 import GrowthPartnership from './pages/GrowthPartnership';
 import AmazonAcademy from './pages/AmazonAcademy';
 import TikTokOffer from './pages/TikTokOffer';
-import FAQ from './pages/FAQ';
+import FAQ from './pages/FAQPage';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
