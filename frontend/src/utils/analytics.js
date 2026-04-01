@@ -22,19 +22,40 @@ export const trackPageView = (path) => {
   }
 };
 
+// Meta Pixel event tracking
+export const trackMetaEvent = (eventName, eventParams = {}) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('track', eventName, eventParams);
+  }
+};
+
 // Predefined event tracking functions
 export const trackContactFormSubmit = (formType = 'contact') => {
+  // GA4 tracking
   trackEvent('contact_form_submit', {
     form_type: formType,
     event_category: 'engagement',
     event_label: 'Contact Form'
   });
+  
+  // Meta Pixel tracking (Lead event)
+  trackMetaEvent('Lead', {
+    content_name: 'Contact Form',
+    content_category: formType
+  });
 };
 
 export const trackNewsletterSignup = () => {
+  // GA4 tracking
   trackEvent('newsletter_signup', {
     event_category: 'engagement',
     event_label: 'Newsletter Subscription'
+  });
+  
+  // Meta Pixel tracking (CompleteRegistration event)
+  trackMetaEvent('CompleteRegistration', {
+    content_name: 'Newsletter',
+    status: 'subscribed'
   });
 };
 
@@ -51,6 +72,12 @@ export const trackPricingView = (tier) => {
     pricing_tier: tier,
     event_category: 'engagement',
     event_label: 'Pricing Page'
+  });
+  
+  // Meta Pixel tracking (ViewContent event)
+  trackMetaEvent('ViewContent', {
+    content_name: 'Pricing',
+    content_type: tier
   });
 };
 
