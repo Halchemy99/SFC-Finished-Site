@@ -9,4 +9,5 @@ echo "Installing other dependencies..."
 python -m pip install -r requirements.txt
 
 echo "Starting server..."
-uvicorn server:app --host 0.0.0.0 --port ${PORT:-8000}
+echo "PORT is set to: $PORT"
+uvicorn server:app --host 0.0.0.0 --port $PORT
