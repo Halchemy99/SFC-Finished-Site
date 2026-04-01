@@ -23,9 +23,9 @@ class ContactFormSubmission(BaseModel):
     form_type: str = "contact"  # "contact", "discovery_call", "service_inquiry"
 
 # Email configuration
-CONTACT_EMAIL = "superflycommerce@gmail.com"  # Resend test mode requirement
+CONTACT_EMAIL = "harry@superfly-commerce.com"
 RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
-SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev')
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'harry@superfly-commerce.com')
 
 # Set Resend API key
 if RESEND_API_KEY:
