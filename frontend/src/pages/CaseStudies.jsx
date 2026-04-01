@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 import { Badge } from '../components/ui/badge';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 
 const CaseStudies = () => {
   const { t } = useTranslation();
@@ -83,7 +84,14 @@ const CaseStudies = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 pb-20">
+    <>
+      <SEO 
+        title="Amazon Marketing Case Studies | Proven Client Results & Success Stories"
+        description="Real Amazon PPC & SEO case studies showing 3-5x ROI, 240% sales growth, and international expansion success. See how we grow e-commerce brands."
+        keywords="amazon case study, amazon ppc results, amazon seo case study, ecommerce success stories, amazon agency results 2026"
+        canonical="https://www.superfly-commerce.com/case-studies"
+      />
+      <div className="min-h-screen bg-gray-50 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -193,6 +201,7 @@ const CaseStudies = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
 import { useState } from 'react';
-import { Helmet } from 'react-helmet';
 
 const FAQPage = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -110,33 +109,32 @@ const FAQPage = () => {
   // Flatten all questions for schema
   const allQuestions = faqs.flatMap(category => category.questions);
 
-  return (
-    <>
-      <Helmet>
-        <title>FAQ - Superfly Commerce | Amazon Agency Questions Answered</title>
-        <meta name="description" content="Get answers to common questions about Superfly Commerce's Amazon PPC management, pricing, services, and performance-based partnerships. Learn how we help e-commerce brands grow." />
-        <meta name="keywords" content="amazon agency faq, amazon ppc pricing, performance-based agency, amazon marketing questions" />
-        <link rel="canonical" href="https://www.superfly-commerce.com/faq" />
-        
-        {/* FAQ Schema Markup */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": allQuestions.map(faq => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
-          })}
-        </script>
-      </Helmet>
+  // Create schema markup
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": allQuestions.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    });
+    document.head.appendChild(script);
 
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-        {/* Hero Section */}
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Hero Section */}
         <section className="bg-gradient-to-r from-[#22C55E] to-[#16A34A] text-white py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -206,7 +204,6 @@ const FAQPage = () => {
           </div>
         </section>
       </div>
-    </>
   );
 };
 

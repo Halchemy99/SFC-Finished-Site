@@ -2,6 +2,7 @@ import React from 'react';
 import { Linkedin, Mail, MapPin } from 'lucide-react';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import SEO from '../components/SEO';
 
 const Team = () => {
   const teamMembers = [
@@ -59,7 +60,14 @@ const Team = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 pb-20">
+    <>
+      <SEO 
+        title="Meet Our Team | Superfly Commerce Amazon Marketing Experts"
+        description="Meet the Amazon marketing experts behind Superfly Commerce. Our team specializes in PPC management, SEO optimization, and international marketplace expansion."
+        keywords="amazon marketing team, ecommerce experts, amazon ppc specialists, marketplace management experts"
+        canonical="https://www.superfly-commerce.com/team"
+      />
+      <div className="min-h-screen bg-gray-50 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -278,6 +286,7 @@ const Team = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

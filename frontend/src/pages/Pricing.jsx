@@ -6,6 +6,7 @@ import { Badge } from '../components/ui/badge';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ServiceCheckout from '../components/ServiceCheckout';
+import SEO from '../components/SEO';
 
 const Pricing = () => {
   const { t } = useTranslation();
@@ -252,7 +253,14 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 pb-20">
+    <>
+      <SEO 
+        title="Amazon PPC Pricing | Performance-Based Agency Rates 2026"
+        description="Transparent Amazon PPC management pricing from £650/month. Performance-based revenue-share options. No hidden fees. Free consultation included."
+        keywords="amazon ppc pricing, amazon agency cost, performance based pricing, amazon ppc management rates, amazon advertising pricing 2026"
+        canonical="https://www.superfly-commerce.com/pricing"
+      />
+      <div className="min-h-screen bg-gray-50 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -431,6 +439,7 @@ const Pricing = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
