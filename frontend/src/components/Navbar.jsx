@@ -49,36 +49,36 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-200 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo - Smaller size */}
-          <Link to="/" className="flex items-center gap-3">
+          {/* Logo - Enhanced */}
+          <Link to="/" className="flex items-center gap-3 group">
             <img 
               src="/logo.png" 
               alt="Superfly Commerce" 
-              className="h-12 md:h-14 lg:h-16 w-auto object-contain"
+              className="h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform group-hover:scale-105"
             />
-            <span className="hidden lg:block text-xs text-gray-500 border-l pl-3 border-gray-300">
-              Sustainable Amazon Solutions
+            <span className="hidden lg:block text-sm font-bold text-gray-800 border-l pl-3 border-gray-300">
+              Superfly Commerce
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Enhanced */}
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/#services" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
+            <Link to="/#services" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
               {t('nav.services')}
             </Link>
-            <Link to="/team" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
+            <Link to="/team" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
               Team
             </Link>
-            <Link to="/case-studies" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm font-semibold bg-green-50 px-4 py-2 rounded-full">
+            <Link to="/case-studies" className="text-gray-800 hover:text-[#22C55E] transition-all text-sm font-bold bg-gradient-to-r from-green-50 to-emerald-50 px-5 py-2.5 rounded-full shadow-sm hover:shadow-md border border-green-100">
               {t('nav.caseStudies')} ✨
             </Link>
-            <Link to="/pricing" className="text-gray-700 hover:text-[#22C55E] transition-colors text-sm">
+            <Link to="/pricing" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
               {t('nav.pricing')}
             </Link>
 
-            {/* Language Selector - Icon only */}
+            {/* Language Selector - Enhanced */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-gray-700 hover:text-[#22C55E] transition-colors outline-none">
+              <DropdownMenuTrigger className="flex items-center gap-1.5 text-gray-800 hover:text-[#22C55E] transition-colors outline-none bg-gray-50 px-3 py-2 rounded-full hover:bg-gray-100">
                 {isTranslating ? (
                   <Loader2 className="w-4 h-4 animate-spin" />
                 ) : (
@@ -105,15 +105,15 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Enhanced */}
             <a href="/#contact">
-              <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-6 text-sm">
+              <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-7 py-2.5 text-sm font-bold shadow-md hover:shadow-lg transition-all hover:scale-105">
                 {t('nav.bookCall')}
               </Button>
             </a>
             <a href="/tiktok-offer">
-              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full px-5 text-sm">
-                TikTok Offer
+              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full px-6 py-2.5 text-sm font-bold shadow-md hover:shadow-lg transition-all hover:scale-105 animate-pulse">
+                TikTok Offer 🔥
               </Button>
             </a>
           </div>
