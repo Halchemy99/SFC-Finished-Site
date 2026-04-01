@@ -10,7 +10,8 @@ const About = () => {
     t('about.feature2'),
     t('about.feature3'),
     t('about.feature4'),
-    t('about.feature5')
+    t('about.feature5'),
+    t('about.feature6')
   ];
 
   return (
@@ -47,15 +48,24 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Content - Founder Image */}
+          {/* Right Content - Founder Image with Signature */}
           <div className="relative flex items-center justify-center">
-            <div className="rounded-3xl overflow-hidden">
+            <div className="rounded-3xl overflow-hidden relative">
               <img
                 src="https://customer-assets.emergentagent.com/job_design-75/artifacts/wc0xevb7_IMG_8323.png"
                 alt="Harry - Founder of Superfly Commerce"
                 className="w-full h-auto object-contain"
                 style={{ maxHeight: '600px' }}
               />
+              {/* Signature - Top Right */}
+              <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_design-75/artifacts/azwqe0t2_getsitecontrol__generate-calligraphy-text__free.png"
+                  alt="Harry's Signature"
+                  className="h-12 w-auto"
+                  style={{ filter: 'brightness(0.3)' }}
+                />
+              </div>
             </div>
           </div>
         </div>

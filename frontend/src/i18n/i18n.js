@@ -60,11 +60,12 @@ const resources = {
         title: "We're Not an Agency.",
         titleGreen: "We're a Collective.",
         description: "We're Amazon specialists who cut through heavy agency fees with transparent, performance-based partnerships.",
-        feature1: 'Global collective of Amazon specialists',
-        feature2: 'Performance-based retainers',
-        feature3: 'Transparent pricing with no hidden fees',
-        feature4: 'Sustainability discounts',
-        feature5: 'Low-cost, Low-Friction, Fractional Management'
+        feature1: 'A global collective of Amazon specialists, part of your team',
+        feature2: 'Retainers tied to results. We grow when you grow',
+        feature3: 'Discounted fees for verified sustainable brands',
+        feature4: '360 Amazon management at a fraction of the cost. No bloated teams, no ultra-long contracts',
+        feature5: 'Fractional account operators embedded in your business',
+        feature6: 'We choose who we work with. We don't work with brands that profit from genocide, exploitation, or human rights abuses'
       },
       contact: {
         badge: 'Partner With Us',
