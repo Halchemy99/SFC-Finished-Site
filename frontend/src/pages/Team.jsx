@@ -67,10 +67,10 @@ const Team = () => {
         keywords="amazon marketing team, ecommerce experts, amazon ppc specialists, marketplace management experts"
         canonical="https://www.superfly-commerce.com/team"
       />
-      <div className="min-h-screen bg-gray-50 pt-20 pb-16">
+      <div className="min-h-screen bg-gray-50 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <Badge className="bg-green-100 text-[#22C55E] mb-4">Our Team</Badge>
           <h1 className="text-5xl font-bold mb-6">
             Meet the <span className="text-[#22C55E]">Collective</span>
