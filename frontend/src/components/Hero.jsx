@@ -19,19 +19,21 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-white">
-            {/* Badge with Amazon Logo */}
+            {/* Badge with Amazon Logo - Enhanced */}
             <div className="flex items-center gap-4 mb-4">
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2.5">
-                <Globe className="w-4 h-4" />
-                <span className="text-sm font-semibold tracking-wide">Sustainable Amazon Collective</span>
+              <div className="inline-flex items-center gap-2 bg-white/30 backdrop-blur-md rounded-full px-6 py-3 border border-white/40 shadow-lg">
+                <Globe className="w-5 h-5" />
+                <span className="text-sm font-bold tracking-wide">
+                  Sustainable <span className="text-[#FF9900]">Amazon</span> Solutions
+                </span>
               </div>
-              {/* Amazon Smile Logo */}
-              <div className="flex items-center">
+              {/* Amazon Smile Logo - Larger */}
+              <div className="flex items-center bg-white/20 rounded-full p-2 backdrop-blur-sm">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_design-75/artifacts/wdflto9v_Amazons-innovative-logo%20-%20Editado.png" 
                   alt="Amazon"
-                  className="w-12 h-12 object-contain"
-                  style={{ filter: 'brightness(1.1)' }}
+                  className="w-14 h-14 object-contain"
+                  style={{ filter: 'brightness(1.2) drop-shadow(0 2px 4px rgba(0,0,0,0.1))' }}
                 />
               </div>
             </div>
