@@ -1,0 +1,17 @@
+# Superfly Commerce - robots.txt
+# Updated: April 1, 2026
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.superfly-commerce.com/sitemap.xml
+
+# Block specific paths (if needed in future)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Crawl-delay for aggressive bots (optional)
+# User-agent: *
+# Crawl-delay: 1

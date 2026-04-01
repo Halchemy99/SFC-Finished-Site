@@ -37,25 +37,149 @@
         <meta name="distribution" content="Global" />
         <meta name="rating" content="General" />
         
-        <!-- Structured Data for AI Understanding -->
+        <!-- Google Search Console Verification -->
+        <meta name="google-site-verification" content="GOOGLE_VERIFICATION_CODE" />
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://www.superfly-commerce.com/" />
+        
+        <!-- Enhanced Structured Data for SEO & AI -->
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          "name": "Superfly Commerce",
-          "description": "Transparent Amazon growth agency specializing in performance-based partnerships, PPC management, SEO optimization, and international expansion.",
-          "url": "https://www.superfly-commerce.com",
-          "logo": "https://www.superfly-commerce.com/logo.png",
-          "image": "https://www.superfly-commerce.com/logo.png",
-          "priceRange": "$$",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "Global"
-          },
-          "areaServed": "Worldwide",
-          "serviceType": ["Amazon PPC Management", "Amazon SEO", "Brand Management", "International Expansion", "Training & Academy"],
-          "knowsAbout": ["Amazon Marketplace", "E-commerce Growth", "Performance Marketing", "International Trade"],
-          "slogan": "Cutting through heavy fees with transparent, performance-based partnerships"
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://www.superfly-commerce.com/#organization",
+              "name": "Superfly Commerce",
+              "alternateName": "Superfly",
+              "url": "https://www.superfly-commerce.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.superfly-commerce.com/logo.png",
+                "width": 512,
+                "height": 512
+              },
+              "description": "Transparent Amazon growth agency specializing in performance-based partnerships, PPC management, SEO optimization, and international expansion.",
+              "slogan": "Cutting through heavy fees with transparent, performance-based partnerships",
+              "foundingDate": "2024",
+              "areaServed": {
+                "@type": "Place",
+                "name": "Worldwide"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/superfly-commerce",
+                "https://www.facebook.com/superflycommerce",
+                "https://twitter.com/superflycommerce"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Sales",
+                "email": "harry@superflycommerce.com",
+                "availableLanguage": ["English"]
+              }
+            },
+            {
+              "@type": "ProfessionalService",
+              "@id": "https://www.superfly-commerce.com/#service",
+              "name": "Superfly Commerce - Amazon Growth Agency",
+              "provider": {
+                "@id": "https://www.superfly-commerce.com/#organization"
+              },
+              "serviceType": "Digital Marketing Agency",
+              "areaServed": "Worldwide",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Amazon Growth Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Amazon PPC Management",
+                      "description": "Performance-based Amazon advertising management with transparent pricing"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Amazon SEO Optimization",
+                      "description": "Listing optimization and keyword strategy for Amazon marketplace"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Brand Management",
+                      "description": "Complete Amazon brand presence management and strategy"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "International Expansion",
+                      "description": "Global Amazon marketplace expansion and localization"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://www.superfly-commerce.com/#website",
+              "url": "https://www.superfly-commerce.com",
+              "name": "Superfly Commerce",
+              "publisher": {
+                "@id": "https://www.superfly-commerce.com/#organization"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.superfly-commerce.com/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://www.superfly-commerce.com/#faq",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What makes Superfly Commerce different from other Amazon agencies?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Superfly Commerce operates on transparent, performance-based pricing models, cutting through traditional heavy agency fees. We focus on sustainable growth using doughnut economics principles."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How does performance-based pricing work?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our pricing is tied to your success. We offer tiered partnerships based on your revenue growth, ensuring our incentives are aligned with your business goals."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you work with international Amazon marketplaces?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we specialize in international Amazon expansion across North America, Europe, and Asia-Pacific marketplaces."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is your typical client ROI?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our clients typically see 3-5x ROI on Amazon advertising spend within the first 6 months, with sustained growth through our performance-based approach."
+                  }
+                }
+              ]
+            }
+          ]
         }
         </script>
         
