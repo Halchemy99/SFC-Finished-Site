@@ -58,16 +58,19 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* Desktop Navigation - Services removed */}
+          {/* Desktop Navigation - Reordered */}
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/team" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
-              Team
-            </Link>
+            <a href="/#about" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
+              What we do
+            </a>
             <Link to="/case-studies" className="text-gray-800 hover:text-[#22C55E] transition-all text-sm font-bold bg-gradient-to-r from-green-50 to-emerald-50 px-5 py-2.5 rounded-full shadow-sm hover:shadow-md border border-green-100">
-              {t('nav.caseStudies')} ✨
+              Case Studies ✨
             </Link>
             <Link to="/pricing" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
-              {t('nav.pricing')}
+              Pricing
+            </Link>
+            <Link to="/team" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
+              Our Team
             </Link>
 
             {/* Language Selector - Enhanced */}
@@ -126,14 +129,17 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100">
           <div className="px-4 py-4 space-y-3">
-            <Link to="/team" className="block text-gray-700 hover:text-[#22C55E] py-2">
-              Team
-            </Link>
+            <a href="/#about" className="block text-gray-700 hover:text-[#22C55E] py-2 font-semibold">
+              What we do
+            </a>
             <Link to="/case-studies" className="block text-gray-700 hover:text-[#22C55E] py-2 font-semibold bg-green-50 px-4 rounded-lg">
-              {t('nav.caseStudies')} ✨
+              Case Studies ✨
             </Link>
-            <Link to="/pricing" className="block text-gray-700 hover:text-[#22C55E] py-2">
-              {t('nav.pricing')}
+            <Link to="/pricing" className="block text-gray-700 hover:text-[#22C55E] py-2 font-semibold">
+              Pricing
+            </Link>
+            <Link to="/team" className="block text-gray-700 hover:text-[#22C55E] py-2 font-semibold">
+              Our Team
             </Link>
             
             {/* Mobile Language Selector */}
