@@ -5,8 +5,7 @@ const MarketplaceBanner = () => {
     { name: 'Walmart', color: '#0071CE', textColor: '#FFC220' },
     { name: 'Temu', color: '#FF6E30', textColor: '#FFFFFF' },
     { name: 'Shopify', color: '#96BF48', textColor: '#FFFFFF' },
-    { name: 'OnBuy', color: '#FF6B00', textColor: '#FFFFFF' },
-    { name: 'Wayfair', color: '#7C2B82', textColor: '#FFFFFF' },
+    { name: 'Mercado Libre', color: '#FFE600', textColor: '#000000' },
     { name: 'Blinkit', color: '#F8CB46', textColor: '#000000' },
     { name: 'Ocado', color: '#70146C', textColor: '#FFFFFF' },
     { name: 'Flipkart', color: '#2874F0', textColor: '#FFFFFF' },
@@ -14,13 +13,12 @@ const MarketplaceBanner = () => {
     { name: 'H&B', color: '#1E824C', textColor: '#FFFFFF' },
     { name: 'Noon', color: '#FED141', textColor: '#000000' },
     { name: 'Faire', color: '#000000', textColor: '#FFFFFF' },
-    { name: 'Mercado Libre', color: '#FFE600', textColor: '#000000' },
     { name: 'TikTok Shop', color: '#000000', textColor: '#FE2C55' }
   ];
 
   return (
-    <div className="bg-gray-50 border-b border-gray-200 mt-[65px]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+    <div className="bg-gray-50 border-b border-gray-100 mt-[65px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5">
         <div className="flex items-center gap-4">
           {/* Label */}
           <div className="flex-shrink-0 hidden lg:block">
@@ -30,11 +28,11 @@ const MarketplaceBanner = () => {
           </div>
           
           {/* Desktop: Horizontal logos with brand colors on hover */}
-          <div className="hidden md:flex items-center gap-4 flex-1 overflow-x-auto scrollbar-hide">
+          <div className="hidden md:flex items-center gap-3 flex-1 overflow-x-auto scrollbar-hide">
             {platforms.map((platform, idx) => (
               <div
                 key={idx}
-                className="flex-shrink-0 px-3 py-1 bg-white rounded border border-gray-200 transition-all cursor-pointer"
+                className="flex-shrink-0 px-3 py-1 bg-white rounded border border-gray-100 transition-all cursor-pointer"
                 title={platform.name}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = platform.color;
@@ -44,7 +42,7 @@ const MarketplaceBanner = () => {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'white';
-                  e.currentTarget.style.borderColor = '#e5e7eb';
+                  e.currentTarget.style.borderColor = '#f3f4f6';
                   const span = e.currentTarget.querySelector('span');
                   if (span) span.style.color = '#374151';
                 }}

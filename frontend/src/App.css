@@ -3,6 +3,31 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Reduce border thickness across the site for a more seamless feel */
+.border {
+    border-width: 0.5px !important;
+}
+
+.border-2 {
+    border-width: 1px !important;
+}
+
+/* Lighter borders */
+.border-gray-200 {
+    border-color: #f3f4f6 !important;
+}
+
+/* Tighter spacing */
+.py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.py-24 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
 /* Custom styles for the app */
 .App {
     min-height: 100vh;

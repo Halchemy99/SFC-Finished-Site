@@ -8,7 +8,7 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-[#22C55E] pt-32 pb-24 px-4 relative overflow-hidden">
+    <section className="bg-[#22C55E] pt-24 pb-16 px-4 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute top-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -16,7 +16,7 @@ const Hero = () => {
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-white">
             {/* Badge with Amazon Logo */}
