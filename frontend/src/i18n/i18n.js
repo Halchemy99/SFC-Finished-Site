@@ -65,7 +65,7 @@ const resources = {
         feature3: 'Discounted fees for verified sustainable brands',
         feature4: '360 Amazon management at a fraction of the cost. No bloated teams, no ultra-long contracts',
         feature5: 'Fractional account operators embedded in your business',
-        feature6: 'We choose who we work with. We don't work with brands that profit from genocide, exploitation, or human rights abuses'
+        feature6: "We choose who we work with. We don't work with brands that profit from genocide, exploitation, or human rights abuses"
       },
       contact: {
         badge: 'Partner With Us',
