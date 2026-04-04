@@ -8,7 +8,7 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-[#22C55E] pt-8 pb-12 px-4 relative overflow-hidden">
+    <section className="bg-[#22C55E] pt-6 md:pt-8 pb-8 md:pb-12 px-4 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute top-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -16,77 +16,77 @@ const Hero = () => {
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
           <div className="text-white">
-            {/* Badge with Amazon Logo - Enhanced */}
-            <div className="flex items-center gap-4 mb-4">
-              <div className="inline-flex items-center gap-2 bg-white/30 backdrop-blur-md rounded-full px-6 py-3 border border-white/40 shadow-lg">
-                <Globe className="w-5 h-5" />
-                <span className="text-sm font-bold tracking-wide">
+            {/* Badge with Amazon Logo - Mobile Optimized */}
+            <div className="flex items-center gap-2 md:gap-4 mb-3 md:mb-4">
+              <div className="inline-flex items-center gap-1.5 md:gap-2 bg-white/30 backdrop-blur-md rounded-full px-3 md:px-6 py-2 md:py-3 border border-white/40 shadow-lg">
+                <Globe className="w-4 h-4 md:w-5 md:h-5" />
+                <span className="text-xs md:text-sm font-bold tracking-wide">
                   Sustainable <span className="text-[#FF9900]">Amazon</span> Solutions
                 </span>
               </div>
-              {/* Amazon Smile Logo - Larger */}
-              <div className="flex items-center bg-white/20 rounded-full p-2 backdrop-blur-sm">
+              {/* Amazon Smile Logo - Responsive */}
+              <div className="flex items-center bg-white/20 rounded-full p-1.5 md:p-2 backdrop-blur-sm">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_design-75/artifacts/wdflto9v_Amazons-innovative-logo%20-%20Editado.png" 
                   alt="Amazon"
-                  className="w-14 h-14 object-contain"
+                  className="w-10 h-10 md:w-14 md:h-14 object-contain"
                   style={{ filter: 'brightness(1.2) drop-shadow(0 2px 4px rgba(0,0,0,0.1))' }}
                 />
               </div>
             </div>
 
-            {/* Main Heading - Stronger */}
-            <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
+            {/* Main Heading - Mobile Optimized */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3 md:mb-4 leading-tight">
               {t('hero.title')}
             </h1>
 
-            {/* Subheading - More impactful */}
-            <p className="text-xl lg:text-2xl mb-6 text-white/95 leading-relaxed font-medium">
+            {/* Subheading - Mobile Optimized */}
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-6 text-white/95 leading-relaxed font-medium">
               {t('hero.subtitle')}
             </p>
 
-            {/* Features - More compelling */}
-            <div className="grid grid-cols-1 gap-4 mb-12">
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3">
-                <div className="bg-white/20 rounded-full p-1.5">
-                  <CheckCircle className="w-5 h-5" />
+            {/* Features - Compact on mobile */}
+            <div className="grid grid-cols-1 gap-2 md:gap-4 mb-6 md:mb-12">
+              <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-sm rounded-lg md:rounded-xl px-3 md:px-5 py-2 md:py-3">
+                <div className="bg-white/20 rounded-full p-1 md:p-1.5">
+                  <CheckCircle className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
-                <span className="font-semibold text-lg">{t('hero.feature1')}</span>
+                <span className="font-semibold text-sm md:text-lg">{t('hero.feature1')}</span>
               </div>
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3">
-                <div className="bg-white/20 rounded-full p-1.5">
-                  <CheckCircle className="w-5 h-5" />
+              <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-sm rounded-lg md:rounded-xl px-3 md:px-5 py-2 md:py-3">
+                <div className="bg-white/20 rounded-full p-1 md:p-1.5">
+                  <CheckCircle className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
-                <span className="font-semibold text-lg">{t('hero.feature2')}</span>
+                <span className="font-semibold text-sm md:text-lg">{t('hero.feature2')}</span>
               </div>
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3">
-                <div className="bg-white/20 rounded-full p-1.5">
-                  <CheckCircle className="w-5 h-5" />
+              <div className="flex items-center gap-2 md:gap-3 bg-white/10 backdrop-blur-sm rounded-lg md:rounded-xl px-3 md:px-5 py-2 md:py-3">
+                <div className="bg-white/20 rounded-full p-1 md:p-1.5">
+                  <CheckCircle className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
-                <span className="font-semibold text-lg">{t('hero.feature3')}</span>
+                <span className="font-semibold text-sm md:text-lg">{t('hero.feature3')}</span>
               </div>
             </div>
 
-            {/* CTA Buttons - More prominent */}
-            <div className="flex flex-wrap gap-5">
-              <a href="/#contact">
-                <Button className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-10 py-7 text-lg font-bold shadow-2xl hover:shadow-3xl transition-all">
-                  {t('hero.cta1')} <ArrowRight className="ml-2 w-6 h-6" />
+            {/* CTA Buttons - Mobile Optimized */}
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-5">
+              <a href="/#contact" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-6 md:px-10 py-4 md:py-7 text-base md:text-lg font-bold shadow-2xl hover:shadow-3xl transition-all">
+                  {t('hero.cta1')} <ArrowRight className="ml-2 w-5 h-5 md:w-6 md:h-6" />
                 </Button>
               </a>
-              <Link to="/pricing">
-                <Button className="bg-transparent border-3 border-white text-white hover:bg-white/20 rounded-full px-10 py-7 text-lg font-bold backdrop-blur-sm">
-                  <Zap className="mr-2 w-6 h-6" /> {t('hero.cta2')}
+              <Link to="/pricing" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto bg-transparent border-2 md:border-3 border-white text-white hover:bg-white/20 rounded-full px-6 md:px-10 py-4 md:py-7 text-base md:text-lg font-bold backdrop-blur-sm">
+                  <Zap className="mr-2 w-5 h-5 md:w-6 md:h-6" /> {t('hero.cta2')}
                 </Button>
               </Link>
             </div>
           </div>
 
-          {/* Right Content - Doughnut Economics Style Visualization - BIGGER */}
-          <div className="flex justify-center lg:justify-end items-center">
+          {/* Right Content - Hide on mobile, show on tablet+ */}
+          <div className="hidden lg:flex justify-center lg:justify-end items-center">
             <div className="relative w-[600px] h-[600px]">
               {/* SVG Doughnut Visualization */}
               <svg viewBox="0 0 500 500" className="w-full h-full transform hover:scale-105 transition-transform duration-700">
@@ -276,23 +276,23 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Stats - More prominent */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 max-w-5xl mx-auto">
+        {/* Stats - Mobile: 2 columns, Tablet: 4 columns */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-8 md:mt-24 max-w-5xl mx-auto">
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">45+</div>
-            <div className="text-white/90 text-lg font-medium">{t('hero.stat1')}</div>
+            <div className="text-3xl md:text-5xl font-bold text-white mb-1 md:mb-3">45+</div>
+            <div className="text-white/90 text-sm md:text-lg font-medium">{t('hero.stat1')}</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">£13M</div>
-            <div className="text-white/90 text-lg font-medium">{t('hero.stat2')}</div>
+            <div className="text-3xl md:text-5xl font-bold text-white mb-1 md:mb-3">£13M</div>
+            <div className="text-white/90 text-sm md:text-lg font-medium">{t('hero.stat2')}</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">96%</div>
-            <div className="text-white/90 text-lg font-medium">{t('hero.stat3')}</div>
+            <div className="text-3xl md:text-5xl font-bold text-white mb-1 md:mb-3">96%</div>
+            <div className="text-white/90 text-sm md:text-lg font-medium">{t('hero.stat3')}</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-white mb-3">999x</div>
-            <div className="text-white/90 text-lg font-medium">{t('hero.stat4')}</div>
+            <div className="text-3xl md:text-5xl font-bold text-white mb-1 md:mb-3">999x</div>
+            <div className="text-white/90 text-sm md:text-lg font-medium">{t('hero.stat4')}</div>
           </div>
         </div>
       </div>

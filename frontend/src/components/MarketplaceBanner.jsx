@@ -54,20 +54,12 @@ const MarketplaceBanner = () => {
             ))}
           </div>
 
-          {/* Mobile: Show brand colors always */}
-          <div className="md:hidden overflow-x-auto scrollbar-hide flex-1">
-            <div className="flex items-center gap-3" style={{ minWidth: 'max-content' }}>
-              {platforms.map((platform, idx) => (
-                <div
-                  key={idx}
-                  className="flex-shrink-0 px-2.5 py-0.5 rounded border"
-                  style={{ backgroundColor: platform.color, borderColor: platform.color }}
-                >
-                  <span className="text-xs font-bold whitespace-nowrap" style={{ color: platform.textColor }}>
-                    {platform.name}
-                  </span>
-                </div>
-              ))}
+          {/* Mobile: Compact pill showing platform count */}
+          <div className="md:hidden flex-1 flex justify-center">
+            <div className="px-3 py-1 bg-white rounded-full border border-gray-200 shadow-sm">
+              <span className="text-xs font-bold text-gray-700">
+                12+ Marketplaces 🌍
+              </span>
             </div>
           </div>
         </div>
