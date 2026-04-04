@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Check, ArrowRight, Star, Zap, AlertCircle } from 'lucide-react';
+import { Check, ArrowRight, Star, Zap, AlertCircle, Eye } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ServiceCheckout from '../components/ServiceCheckout';
+import ServiceCaseStudyModal from '../components/ServiceCaseStudyModal';
 import SEO from '../components/SEO';
 
 const Pricing = () => {
   const { t } = useTranslation();
   const [selectedService, setSelectedService] = useState(null);
+  const [caseStudyModal, setCaseStudyModal] = useState({ isOpen: false, service: null });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -252,6 +254,59 @@ const Pricing = () => {
     }
   ];
 
+  // Case Studies for each service (YOU WILL FILL THESE IN ONE BY ONE)
+  const caseStudies = {
+    'listing-optimization': {
+      clientName: '[Client Name - TBD]',
+      industry: '[Industry - TBD]',
+      productType: '[Product Type - TBD]',
+      challenge: '[Describe the challenge this client faced before using this service - TBD]',
+      solution: [
+        '[What we did step 1 - TBD]',
+        '[What we did step 2 - TBD]',
+        '[What we did step 3 - TBD]'
+      ],
+      results: [
+        { metric: 'Conversion Rate', value: '[+X%]', timeframe: '[timeframe]' },
+        { metric: 'Sales Increase', value: '[+X%]', timeframe: '[timeframe]' },
+        { metric: 'Ranking', value: '[Position X to Y]', timeframe: '[timeframe]' }
+      ],
+      testimonial: {
+        quote: '[Client testimonial quote - TBD]',
+        author: '[Client Name]',
+        role: '[Client Role/Company]'
+      },
+      images: [
+        // { url: '[before image URL]', label: 'Before' },
+        // { url: '[after image URL]', label: 'After' }
+      ]
+    },
+    'a-plus-content': null, // Add case study data here
+    'product-photography': null,
+    'infographic-set': null,
+    'brand-story': null,
+    'brand-video': null,
+    'listing-copywriting': null,
+    'ppc-audit': null,
+    'brand-storefront': null,
+    'business-analysis': null
+  };
+
+  const handleViewExample = (service) => {
+    const caseStudy = caseStudies[service.packageId];
+    if (caseStudy) {
+      setCaseStudyModal({ isOpen: true, service, caseStudy });
+    } else {
+      // No case study available yet
+      alert('Case study coming soon! Contact us to see examples.');
+    }
+  };
+
+  const handleBuyFromModal = (service) => {
+    setCaseStudyModal({ isOpen: false, service: null, caseStudy: null });
+    setSelectedService(service);
+  };
+
   return (
     <>
       <SEO 
@@ -363,12 +418,20 @@ const Pricing = () => {
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="flex-col gap-3">
+                  <Button
+                    onClick={() => handleViewExample(service)}
+                    variant="outline"
+                    className="w-full border-2 border-[#22C55E] text-[#22C55E] hover:bg-green-50 rounded-full py-5 font-semibold"
+                  >
+                    <Eye className="mr-2 w-5 h-5" />
+                    See Examples
+                  </Button>
                   <Button
                     onClick={() => setSelectedService(service)}
                     className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-6 font-semibold"
                   >
-                    Book Now <ArrowRight className="ml-2 w-5 h-5" />
+                    Buy Now <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </CardFooter>
               </Card>
@@ -438,6 +501,15 @@ const Pricing = () => {
           </div>
         </div>
       )}
+
+      {/* Case Study Modal */}
+      <ServiceCaseStudyModal
+        isOpen={caseStudyModal.isOpen}
+        onClose={() => setCaseStudyModal({ isOpen: false, service: null, caseStudy: null })}
+        service={caseStudyModal.service}
+        caseStudy={caseStudyModal.caseStudy}
+        onBuyNow={handleBuyFromModal}
+      />
     </div>
     </>
   );
