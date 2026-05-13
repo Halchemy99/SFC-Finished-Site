@@ -317,66 +317,66 @@ const Pricing = () => {
       />
       <div className="min-h-screen bg-gray-50 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* Header - Mobile Optimized */}
         <div className="text-center mb-6">
-          <Badge className="bg-green-100 text-[#22C55E] mb-4">{t('pricing.badge')}</Badge>
-          <h1 className="text-5xl font-bold mb-6">
+          <Badge className="bg-green-100 text-[#22C55E] mb-4 text-xs sm:text-sm">{t('pricing.badge')}</Badge>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             {t('pricing.title')} <span className="text-[#22C55E]">{t('pricing.titleGreen')}</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             {t('pricing.subtitle')}
           </p>
         </div>
 
-        {/* Performance-Based Partnerships Section */}
+        {/* Performance-Based Partnerships Section - Mobile Optimized */}
         <div className="mb-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Performance-Based Partnerships</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Performance-Based Partnerships</h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-2">
               We grow when you grow. Choose a partnership model that aligns our success with yours.
             </p>
-            <Badge className="bg-orange-100 text-orange-600 mt-4 px-4 py-2 text-sm">
+            <Badge className="bg-orange-100 text-orange-600 mt-4 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm">
               Skin in the Game Pricing
             </Badge>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {partnershipTiers.map((tier, idx) => (
               <Card key={idx} className={`relative hover:shadow-2xl transition-all ${
-                tier.popular ? 'border-2 border-[#22C55E] shadow-xl scale-105' : ''
+                tier.popular ? 'border-2 border-[#22C55E] shadow-xl md:scale-105' : ''
               }`}>
                 {tier.badge && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-[#22C55E] text-white px-4 py-1">
+                  <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
+                    <Badge className="bg-[#22C55E] text-white px-3 sm:px-4 py-1 text-xs sm:text-sm">
                       <Star className="w-3 h-3 inline mr-1" />
                       {tier.badge}
                     </Badge>
                   </div>
                 )}
-                <CardHeader>
-                  <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold">{tier.basePrice}</span>
-                    <span className="text-gray-500">{tier.period}</span>
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl sm:text-2xl">{tier.name}</CardTitle>
+                  <div className="mt-3 sm:mt-4">
+                    <span className="text-3xl sm:text-4xl font-bold">{tier.basePrice}</span>
+                    <span className="text-sm sm:text-base text-gray-500">{tier.period}</span>
                   </div>
-                  <CardDescription className="mt-4">{tier.description}</CardDescription>
+                  <CardDescription className="mt-3 sm:mt-4 text-sm sm:text-base">{tier.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
+                <CardContent className="pb-4">
+                  <ul className="space-y-2 sm:space-y-3">
                     {tier.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">{feature}</span>
+                        <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm text-gray-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="pt-4">
                   <a href="/#contact" className="w-full">
-                    <Button className={`w-full rounded-full py-6 text-lg font-semibold ${
+                    <Button className={`w-full rounded-full py-4 sm:py-6 text-base sm:text-lg font-semibold ${
                       tier.popular ? 'bg-[#22C55E] hover:bg-[#16A34A]' : 'bg-gray-900 hover:bg-gray-800'
                     } text-white`}>
-                      {tier.cta} <ArrowRight className="ml-2 w-5 h-5" />
+                      {tier.cta} <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                     </Button>
                   </a>
                 </CardFooter>
@@ -385,53 +385,53 @@ const Pricing = () => {
           </div>
         </div>
 
-        {/* One-Off Services Section */}
+        {/* One-Off Services Section - Mobile Optimized */}
         <div className="mb-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">{t('pricing.oneOffTitle')}</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">{t('pricing.oneOffTitle')}</h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-2">
               {t('pricing.oneOffSubtitle')}
             </p>
-            <Badge className="bg-blue-100 text-blue-600 mt-4 px-4 py-2 text-sm">
+            <Badge className="bg-blue-100 text-blue-600 mt-4 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm">
               {t('pricing.oneOffBadge')}
             </Badge>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {oneOffServices.map((service, idx) => (
               <Card key={idx} className="hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <div className="text-5xl mb-4">{service.icon}</div>
-                  <CardTitle className="text-xl">{service.name}</CardTitle>
+                <CardHeader className="pb-3 sm:pb-4">
+                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{service.icon}</div>
+                  <CardTitle className="text-lg sm:text-xl">{service.name}</CardTitle>
                   <div className="mt-2">
-                    <span className="text-3xl font-bold text-[#22C55E]">{service.price}</span>
+                    <span className="text-2xl sm:text-3xl font-bold text-[#22C55E]">{service.price}</span>
                   </div>
-                  <CardDescription className="mt-4">{service.description}</CardDescription>
+                  <CardDescription className="mt-3 sm:mt-4 text-sm sm:text-base">{service.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pb-3">
                   <ul className="space-y-2">
                     {service.scope.map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-1" />
-                        <span className="text-sm text-gray-600">{item}</span>
+                        <Check className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5 sm:mt-1" />
+                        <span className="text-xs sm:text-sm text-gray-600">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter className="flex-col gap-3">
+                <CardFooter className="flex-col gap-2 sm:gap-3 pt-3">
                   <Button
                     onClick={() => handleViewExample(service)}
                     variant="outline"
-                    className="w-full border-2 border-[#22C55E] text-[#22C55E] hover:bg-green-50 rounded-full py-5 font-semibold"
+                    className="w-full border-2 border-[#22C55E] text-[#22C55E] hover:bg-green-50 rounded-full py-4 sm:py-5 text-sm sm:text-base font-semibold"
                   >
-                    <Eye className="mr-2 w-5 h-5" />
+                    <Eye className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
                     See Examples
                   </Button>
                   <Button
                     onClick={() => setSelectedService(service)}
-                    className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-6 font-semibold"
+                    className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-5 sm:py-6 text-sm sm:text-base font-semibold"
                   >
-                    Buy Now <ArrowRight className="ml-2 w-5 h-5" />
+                    Buy Now <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                   </Button>
                 </CardFooter>
               </Card>
@@ -439,8 +439,8 @@ const Pricing = () => {
           </div>
         </div>
 
-        {/* Availability Status */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        {/* Availability Status - Mobile Optimized */}
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
           <Card className="bg-orange-50 border-orange-200">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-orange-600">

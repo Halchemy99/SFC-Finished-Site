@@ -93,79 +93,79 @@ const CaseStudies = () => {
       />
       <div className="min-h-screen bg-gray-50 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* Header - Mobile Optimized */}
         <div className="text-center mb-6">
-          <Badge className="bg-green-100 text-[#22C55E] mb-4">{t('caseStudies.badge')}</Badge>
-          <h1 className="text-5xl font-bold mb-6">
+          <Badge className="bg-green-100 text-[#22C55E] mb-4 text-xs sm:text-sm">{t('caseStudies.badge')}</Badge>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-2">
             {t('caseStudies.title')} <span className="text-[#22C55E]">{t('caseStudies.titleGreen')}</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2">
             {t('caseStudies.subtitle')}
           </p>
         </div>
 
-        {/* Case Studies */}
-        <div className="space-y-20">
+        {/* Case Studies - Mobile Optimized */}
+        <div className="space-y-12 sm:space-y-16 md:space-y-20">
           {caseStudies.map((study, idx) => (
             <div key={study.id} className={`flex flex-col ${
               idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-            } gap-12 items-center`}>
-              {/* Image */}
-              <div className="lg:w-1/2">
+            } gap-6 sm:gap-8 md:gap-12 items-center`}>
+              {/* Image - Mobile Optimized */}
+              <div className="w-full lg:w-1/2">
                 {study.pressLink ? (
                   <a 
                     href={study.pressLink} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300"
+                    className="block rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl hover:shadow-3xl transition-shadow duration-300"
                   >
                     <img 
                       src={study.image} 
                       alt={study.client}
-                      className="w-full h-96 object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-64 sm:h-80 md:h-96 object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </a>
                 ) : (
-                  <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl">
                     <img 
                       src={study.image} 
                       alt={study.client}
-                      className="w-full h-96 object-cover"
+                      className="w-full h-64 sm:h-80 md:h-96 object-cover"
                     />
                   </div>
                 )}
               </div>
 
-              {/* Content */}
-              <div className="lg:w-1/2">
-                <Badge className="bg-blue-100 text-blue-600 mb-4">{study.category}</Badge>
-                <h2 className="text-4xl font-bold mb-4">{study.client}</h2>
-                <p className="text-lg text-gray-600 mb-2">{study.industry}</p>
+              {/* Content - Mobile Optimized */}
+              <div className="w-full lg:w-1/2 px-2">
+                <Badge className="bg-blue-100 text-blue-600 mb-3 sm:mb-4 text-xs sm:text-sm">{study.category}</Badge>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">{study.client}</h2>
+                <p className="text-base sm:text-lg text-gray-600 mb-2">{study.industry}</p>
                 
-                <div className="mt-6 space-y-4">
+                <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                      <Target className="w-5 h-5 text-[#22C55E]" />
+                    <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2 text-sm sm:text-base">
+                      <Target className="w-4 h-4 sm:w-5 sm:h-5 text-[#22C55E]" />
                       {t('caseStudies.challenge')}
                     </h3>
-                    <p className="text-gray-700">{study.challenge}</p>
+                    <p className="text-sm sm:text-base text-gray-700">{study.challenge}</p>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                      <Award className="w-5 h-5 text-[#22C55E]" />
+                    <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2 text-sm sm:text-base">
+                      <Award className="w-4 h-4 sm:w-5 sm:h-5 text-[#22C55E]" />
                       {t('caseStudies.solution')}
                     </h3>
-                    <p className="text-gray-700">{study.solution}</p>
+                    <p className="text-sm sm:text-base text-gray-700">{study.solution}</p>
                   </div>
                 </div>
 
-                {/* Results */}
-                <div className={`mt-8 grid ${study.results.length === 4 ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-3'} gap-4`}>
+                {/* Results - Mobile Optimized */}
+                <div className={`mt-6 sm:mt-8 grid ${study.results.length === 4 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3'} gap-3 sm:gap-4`}>
                   {study.results.map((result, ridx) => (
-                    <div key={ridx} className="bg-green-50 p-4 rounded-xl text-center">
-                      <div className="text-3xl font-bold text-[#22C55E] mb-1">{result.value}</div>
-                      <div className="text-sm text-gray-600 mb-1">{result.metric}</div>
+                    <div key={ridx} className="bg-green-50 p-3 sm:p-4 rounded-lg sm:rounded-xl text-center">
+                      <div className="text-2xl sm:text-3xl font-bold text-[#22C55E] mb-1">{result.value}</div>
+                      <div className="text-xs sm:text-sm text-gray-600 mb-1">{result.metric}</div>
                       <div className="text-xs text-gray-500">{result.period}</div>
                     </div>
                   ))}
