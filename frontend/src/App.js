@@ -25,6 +25,7 @@ import Cookies from './pages/Cookies';
 import Team from './pages/Team';
 import Blog from './pages/Blog';
 import PaymentSuccess from './pages/PaymentSuccess';
+import RegionalLaunch from './pages/RegionalLaunch';
 import { Toaster } from './components/ui/toaster';
 import './App.css';
 
@@ -76,6 +77,9 @@ function App() {
             <Route path="/privacy" element={<PageLayout><Privacy /></PageLayout>} />
             <Route path="/terms" element={<PageLayout><Terms /></PageLayout>} />
             <Route path="/cookies" element={<PageLayout><Cookies /></PageLayout>} />
+            
+            {/* Regional Launch Pages */}
+            <Route path="/launch/:region" element={<RegionalLaunch />} />
           </Routes>
         </BrowserRouter>
         <Toaster />
