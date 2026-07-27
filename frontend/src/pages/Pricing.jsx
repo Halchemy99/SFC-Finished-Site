@@ -20,6 +20,7 @@ const Pricing = () => {
 
   const partnershipTiers = [
     {
+      id: 'starter-partnership',
       name: 'Starter Partnership',
       basePrice: '£650',
       period: '/month',
@@ -37,6 +38,7 @@ const Pricing = () => {
       badge: null
     },
     {
+      id: 'growth-partnership',
       name: 'Growth Partnership',
       basePrice: '£1,100',
       period: '/month',
@@ -55,6 +57,7 @@ const Pricing = () => {
       badge: 'Most Popular'
     },
     {
+      id: 'scale-partnership',
       name: 'Scale Partnership',
       basePrice: '£1,800',
       period: '/month',
@@ -73,6 +76,7 @@ const Pricing = () => {
       badge: null
     },
     {
+      id: 'pure-revenue-share',
       name: 'Pure Revenue Share',
       basePrice: '£0',
       period: 'base fee',
@@ -341,8 +345,8 @@ const Pricing = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {partnershipTiers.map((tier, idx) => (
-              <Card key={idx} className={`relative hover:shadow-2xl transition-all ${
+            {partnershipTiers.map((tier) => (
+              <Card key={tier.id} className={`relative hover:shadow-2xl transition-all ${
                 tier.popular ? 'border-2 border-[#22C55E] shadow-xl md:scale-105' : ''
               }`}>
                 {tier.badge && (
@@ -364,7 +368,7 @@ const Pricing = () => {
                 <CardContent className="pb-4">
                   <ul className="space-y-2 sm:space-y-3">
                     {tier.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
+                      <li key={`${tier.id}-feature-${i}`} className="flex items-start gap-2">
                         <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
                         <span className="text-xs sm:text-sm text-gray-600">{feature}</span>
                       </li>
@@ -398,8 +402,8 @@ const Pricing = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {oneOffServices.map((service, idx) => (
-              <Card key={idx} className="hover:shadow-xl transition-shadow">
+            {oneOffServices.map((service) => (
+              <Card key={service.packageId} className="hover:shadow-xl transition-shadow">
                 <CardHeader className="pb-3 sm:pb-4">
                   <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{service.icon}</div>
                   <CardTitle className="text-lg sm:text-xl">{service.name}</CardTitle>
@@ -411,7 +415,7 @@ const Pricing = () => {
                 <CardContent className="pb-3">
                   <ul className="space-y-2">
                     {service.scope.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2">
+                      <li key={`${service.packageId}-scope-${i}`} className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5 sm:mt-1" />
                         <span className="text-xs sm:text-sm text-gray-600">{item}</span>
                       </li>

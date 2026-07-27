@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Badge } from '../components/ui/badge';
 import { ExternalLink, Calendar, User } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import DOMPurify from 'dompurify';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -52,17 +53,11 @@ const Blog = () => {
   };
 
   const sanitizeHtml = (html) => {
-    // Create a temporary div to clean up the HTML
-    const tmp = document.createElement('div');
-    tmp.innerHTML = html;
-    
-    // Remove script tags
-    const scripts = tmp.getElementsByTagName('script');
-    for (let i = scripts.length - 1; i >= 0; i--) {
-      scripts[i].remove();
-    }
-    
-    return tmp.innerHTML;
+    // Use DOMPurify to sanitize HTML and prevent XSS attacks
+    return DOMPurify.sanitize(html, {
+      ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'a', 'img', 'blockquote', 'code', 'pre'],
+      ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'target', 'rel']
+    });
   };
 
   return (

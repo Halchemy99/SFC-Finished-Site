@@ -30,7 +30,7 @@ export const LanguageProvider = ({ children }) => {
     
     setCurrentLanguage(initialLang);
     i18n.changeLanguage(initialLang);
-  }, [i18n]);
+  }, [i18n]); // i18n is already the only needed dependency
 
   const changeLanguage = async (langCode) => {
     if (langCode === currentLanguage) return;
