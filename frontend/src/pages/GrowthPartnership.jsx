@@ -13,7 +13,7 @@ const GrowthPartnership = () => {
     { title: 'Aligned Incentives', desc: 'We only win when you win', icon: '🤝' },
     { title: 'Zero Risk Start', desc: 'Low base fee, pay for results', icon: '🛡️' },
     { title: 'Full Transparency', desc: 'Real-time performance dashboards', icon: '📊' },
-    { title: 'Dedicated Team', desc: 'Your own Amazon growth specialists', icon: '👥' }
+    { title: 'Dedicated Team', desc: 'Your own marketplace growth specialists', icon: '👥' }
   ];
 
   const pricingTiers = [

@@ -64,7 +64,7 @@ const Team = () => {
       <SEO 
         title="Meet Our Team | Superfly Commerce Amazon Marketing Experts"
         description="Meet the Amazon marketing experts behind Superfly Commerce. Our team specializes in PPC management, SEO optimization, and international marketplace expansion."
-        keywords="amazon marketing team, ecommerce experts, amazon ppc specialists, marketplace management experts"
+        keywords="amazon marketing team, ecommerce experts, amazon ppc management, marketplace growth specialists"
         canonical="https://www.superfly-commerce.com/team"
       />
       <div className="min-h-screen bg-gray-50 pt-16 pb-12">
@@ -76,7 +76,7 @@ const Team = () => {
             Meet the <span className="text-[#22C55E]">Collective</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're not your typical agency. We're Amazon specialists united by a mission: 
+            We're not your typical agency. We're marketplace growth specialists united by a mission: 
             transparent pricing, sustainable growth, and cutting through the bloat.
           </p>
         </div>
@@ -185,7 +185,7 @@ const Team = () => {
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-6">Want to Join the Collective?</h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              We're always looking for talented Amazon specialists who share our values.
+              We're always looking for talented marketplace growth specialists who share our values.
             </p>
           </div>
           

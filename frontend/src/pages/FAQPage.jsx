@@ -37,7 +37,7 @@ const FAQPage = () => {
         },
         {
           question: "Do you manage Amazon PPC in-house or outsource?",
-          answer: "All Amazon PPC management is handled 100% in-house by our certified team. We never outsource to third parties. Our PPC specialists are Amazon Ads certified and manage campaigns daily using proprietary optimization frameworks. You'll have a dedicated account manager who knows your brand inside-out and makes data-driven decisions to maximize your ROAS (Return on Ad Spend)."
+          answer: "All Amazon PPC management is handled 100% in-house by our team. We never outsource to third parties. Our PPC specialists manage campaigns daily using proven optimization frameworks. You'll have a dedicated account manager who knows your brand inside-out and makes data-driven decisions to maximize your ROAS (Return on Ad Spend)."
         },
         {
           question: "Can you help with international Amazon marketplaces?",

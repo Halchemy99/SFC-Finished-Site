@@ -102,9 +102,22 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the new Performance-Based Pricing implementation on the Superfly Commerce website"
+user_problem_statement: "Test Amazon Ads Partner Network compliance fixes - removal of 'Amazon specialists' phrase and unauthorized certification claims"
 
 frontend:
+  - task: "Amazon Compliance - Remove 'Amazon specialists' phrase"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/i18n/i18n.js, /app/frontend/src/pages/Team.jsx, /app/frontend/src/pages/GrowthPartnership.jsx"
+    stuck_count: 0
+    priority: "critical"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Replaced all instances of 'Amazon specialists' with 'marketplace growth specialists' across 4 files: i18n.js (3 instances), Team.jsx (2 instances), GrowthPartnership.jsx (1 instance). Also removed 'Amazon Ads certified' claim from FAQPage.jsx. User requested to use 'marketplace growth' terminology while keeping 'Amazon' where possible without claiming to be 'best'. This fix is required to maintain Amazon Ads Partner Network status - user has 7-14 days to comply."
+  
+  - task: "Performance-Based Partnerships Section"
   - task: "Performance-Based Partnerships Section"
     implemented: true
     working: true
@@ -188,17 +201,14 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Performance-Based Partnerships Section"
-    - "Partnership Tier Buttons Navigation"
-    - "One-Off Services Stripe Integration"
-    - "Navbar Tagline Implementation"
-    - "Marketplace Banner Site-wide Implementation"
-    - "Growth Partnership Pricing Update"
+    - "Amazon Compliance - Remove 'Amazon specialists' phrase"
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
+    - agent: "main"
+      message: "CRITICAL: Fixed Amazon Ads Partner Network compliance violation. Replaced all instances of 'Amazon specialists' with 'marketplace growth specialists' and removed 'Amazon Ads certified' claim. Changes made in: i18n.js (hero.feature2, about.description, about.feature1), Team.jsx (2 locations + SEO keywords), GrowthPartnership.jsx (benefits section), and FAQPage.jsx (PPC management answer). User has 7-14 days to comply to avoid losing partner status. REQUIRES TESTING AGENT to verify all instances are fixed across the entire site, including checking for any remaining unauthorized badges, logos, or certification claims."
     - agent: "testing"
       message: "Completed comprehensive testing of Performance-Based Pricing implementation. All features working as expected: 4 partnership tiers display correctly with proper badges, all partnership buttons navigate to /#contact, contact form is accessible, and one-off services maintain Stripe checkout functionality. No issues found."
     - agent: "testing"
