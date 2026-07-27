@@ -24,7 +24,7 @@ const Hero = () => {
               <div className="inline-flex items-center gap-1.5 md:gap-2 bg-white/30 backdrop-blur-md rounded-full px-3 md:px-6 py-2 md:py-3 border border-white/40 shadow-lg">
                 <Globe className="w-4 h-4 md:w-5 md:h-5" />
                 <span className="text-xs md:text-sm font-bold tracking-wide">
-                  Sustainable E-Commerce Solutions
+                  Sustainable <span className="text-[#FF9900]">Amazon</span> Solutions
                 </span>
               </div>
             </div>

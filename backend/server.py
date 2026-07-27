@@ -18,7 +18,7 @@ ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 # Import routes AFTER loading .env
-from routes import newsletter, contact, stripe_payments
+from routes import newsletter, contact, stripe_payments, regional_audit
 
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
@@ -82,6 +82,7 @@ app.include_router(api_router)
 app.include_router(newsletter.router)
 app.include_router(contact.router)
 app.include_router(stripe_payments.router)
+app.include_router(regional_audit.router)
 
 # Security Headers Middleware
 @app.middleware("http")

@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import SEO from '../components/SEO';
+import RegionalAuditForm from '../components/RegionalAuditForm';
 
 const RegionalLaunch = () => {
   const { region } = useParams();
@@ -37,7 +38,6 @@ const RegionalLaunch = () => {
         result: 'Launched in UK & achieved £25k/month in 90 days',
         quote: 'Superfly helped us navigate UK Amazon without the usual trial-and-error nightmare.'
       },
-      localPartner: 'Yadnesh Kulkarni - Our Indian Brand Lead based in Pune',
       seoTitle: 'Launch Indian Products on Amazon UK, EU & USA | Superfly Commerce',
       seoDescription: 'Expert Amazon launch services for Indian sellers. Navigate VAT, FBA, and international compliance. Launch in UK/EU/USA markets with proven strategies.'
     },
@@ -67,7 +67,6 @@ const RegionalLaunch = () => {
         result: 'Successfully launched in UK with £40k first quarter revenue',
         quote: 'Superfly made our European expansion seamless and profitable from day one.'
       },
-      localPartner: 'Fernando Clementin - LATAM & International Expansion Lead',
       seoTitle: 'UAE & MENA Sellers: Launch on Amazon UK, EU & USA | Superfly',
       seoDescription: 'Expand your MENA e-commerce brand to UK, EU, and USA Amazon markets. Expert guidance on compliance, FBA, and international growth strategies.'
     },
@@ -97,7 +96,6 @@ const RegionalLaunch = () => {
         result: 'Generated $60k/month in USA within 6 months',
         quote: 'Superfly understood both markets and helped us bridge the gap perfectly.'
       },
-      localPartner: 'Fernando Clementin - LATAM Lead & Account Manager',
       seoTitle: 'Launch Mexican Products on Amazon USA, UK & EU | Superfly',
       seoDescription: 'Expert Amazon launch services for Mexican sellers. Navigate USMCA, FBA, and cross-border compliance to succeed in USA, UK & EU markets.'
     }
@@ -330,35 +328,9 @@ const RegionalLaunch = () => {
             </div>
           </div>
 
-          {/* Local Partner */}
+          {/* Audit Request Form */}
           <div className="mb-16">
-            <Card className="bg-gradient-to-r from-gray-50 to-green-50">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-4">
-                  <Globe className="w-12 h-12 text-[#22C55E]" />
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Your Regional Partner</h3>
-                    <p className="text-gray-700">{data.localPartner}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* CTA */}
-          <div className="bg-gradient-to-r from-[#22C55E] to-[#16A34A] rounded-3xl p-12 text-center text-white">
-            <h2 className="text-4xl font-bold mb-4">
-              Ready to Launch from {data.name}?
-            </h2>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Book a free 30-minute strategy call. We'll discuss your products, target markets, and create a custom launch roadmap.
-            </p>
-            <a href="/#contact">
-              <Button size="lg" className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-12 py-6 text-xl font-semibold">
-                Book Your Free Strategy Call
-                <ArrowRight className="ml-2 w-6 h-6" />
-              </Button>
-            </a>
+            <RegionalAuditForm region={region} regionName={data.name} />
           </div>
 
         </div>
