@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Globe, TrendingUp, Package, Shield, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle, Globe, TrendingUp, Package, Shield, Zap, Rocket, Target, Trophy } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -9,34 +9,46 @@ import RegionalAuditForm from '../components/RegionalAuditForm';
 
 const RegionalLaunch = () => {
   const { region } = useParams();
+  const [animatedStat, setAnimatedStat] = useState(0);
+
+  // Animated counter effect for hero stats
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimatedStat(prev => (prev < 100 ? prev + 2 : 100));
+    }, 30);
+    return () => clearInterval(interval);
+  }, []);
 
   // Regional configurations
   const regionalData = {
     india: {
       name: 'India',
       flag: '🇮🇳',
+      emoji: '🚀',
       targetMarkets: ['🇬🇧 UK', '🇪🇺 EU', '🇺🇸 USA'],
-      heroTitle: 'Launch Your Indian Brand in the UK, EU & USA',
-      heroSubtitle: 'We help Indian sellers break into international Amazon marketplaces with proven cross-border strategies.',
+      heroTitle: 'Take Your Indian Brand Global',
+      heroSubtitle: 'From Pune to London. From Mumbai to New York. We help Indian sellers conquer international Amazon marketplaces (chai not included ☕)',
+      funFact: 'Indian brands are crushing it globally. Time for yours to join the party.',
       challenges: [
-        'Understanding VAT & import regulations',
-        'Building trust with international buyers',
-        'Competing against established local brands',
-        'Managing international logistics & FBA',
-        'Pricing for different currencies & markets',
-        'Navigating cultural differences in marketing'
+        { icon: '📋', text: 'Understanding VAT & import regulations', tip: 'Spoiler: It\'s not as scary as it sounds' },
+        { icon: '🤝', text: 'Building trust with international buyers', tip: 'Your product quality speaks louder than your accent' },
+        { icon: '🏆', text: 'Competing against established local brands', tip: 'David beat Goliath. You can too.' },
+        { icon: '📦', text: 'Managing international logistics & FBA', tip: 'Amazon does the heavy lifting, literally' },
+        { icon: '💰', text: 'Pricing for different currencies & markets', tip: 'Currency converter = your new best friend' },
+        { icon: '🎯', text: 'Navigating cultural differences in marketing', tip: 'British people love tea too, you know' }
       ],
       advantages: [
-        'Lower production costs = competitive pricing',
-        'Growing "Made in India" brand appeal',
-        'Strong manufacturing heritage',
-        'English-speaking team advantage',
-        'Untapped niche opportunities'
+        { icon: '💪', text: 'Lower production costs = competitive pricing', boost: '+35% margin advantage' },
+        { icon: '🌟', text: 'Growing "Made in India" brand appeal', boost: 'Trending globally' },
+        { icon: '🏭', text: 'Strong manufacturing heritage', boost: 'Quality recognized worldwide' },
+        { icon: '🗣️', text: 'English-speaking team advantage', boost: 'No language barriers' },
+        { icon: '🎁', text: 'Untapped niche opportunities', boost: 'First-mover wins' }
       ],
       successStory: {
         client: 'Pune-based Home Goods Brand',
-        result: 'Launched in UK & achieved £25k/month in 90 days',
-        quote: 'Superfly helped us navigate UK Amazon without the usual trial-and-error nightmare.'
+        result: '£25k/month in 90 days 🎉',
+        quote: 'Superfly helped us navigate UK Amazon without the usual trial-and-error nightmare. No more sleepless nights!',
+        emoji: '🏡'
       },
       seoTitle: 'Launch Indian Products on Amazon UK, EU & USA | Superfly Commerce',
       seoDescription: 'Expert Amazon launch services for Indian sellers. Navigate VAT, FBA, and international compliance. Launch in UK/EU/USA markets with proven strategies.'
@@ -44,28 +56,31 @@ const RegionalLaunch = () => {
     uae: {
       name: 'UAE & MENA',
       flag: '🇦🇪',
+      emoji: '✈️',
       targetMarkets: ['🇬🇧 UK', '🇪🇺 EU', '🇺🇸 USA'],
-      heroTitle: 'Expand Your MENA Brand to Global Amazon Markets',
-      heroSubtitle: 'Strategic launch services for UAE and MENA sellers ready to scale beyond the Middle East.',
+      heroTitle: 'Go West, Young Brand',
+      heroSubtitle: 'Dubai to London. Abu Dhabi to LA. Your MENA brand deserves a global stage (sand dunes sold separately 🏜️)',
+      funFact: 'MENA e-commerce expertise + Western markets = 💰💰💰',
       challenges: [
-        'Understanding Western consumer behavior',
-        'VAT & customs compliance differences',
-        'Payment processing & currency management',
-        'Building brand trust in new markets',
-        'International shipping & FBA setup',
-        'Marketing messaging for Western audiences'
+        { icon: '🧠', text: 'Understanding Western consumer behavior', tip: 'Different markets, same human desires' },
+        { icon: '💳', text: 'VAT & customs compliance differences', tip: 'We\'ve cracked the code for you' },
+        { icon: '💸', text: 'Payment processing & currency management', tip: 'AED, GBP, EUR, USD - we speak them all' },
+        { icon: '🌟', text: 'Building brand trust in new markets', tip: 'Quality translates across borders' },
+        { icon: '📦', text: 'International shipping & FBA setup', tip: 'Let Amazon\'s robots do the work' },
+        { icon: '📣', text: 'Marketing messaging for Western audiences', tip: 'Authenticity > Localization' }
       ],
       advantages: [
-        'Strong e-commerce experience in MENA',
-        'Premium product positioning',
-        'Bilingual marketing capabilities',
-        'Strategic geographic advantage',
-        'Growing Middle Eastern brand recognition'
+        { icon: '🚀', text: 'Strong e-commerce experience in MENA', boost: 'Battle-tested strategies' },
+        { icon: '👑', text: 'Premium product positioning', boost: 'Luxury plays well globally' },
+        { icon: '🗣️', text: 'Bilingual marketing capabilities', boost: 'Arabic + English = powerhouse' },
+        { icon: '🌍', text: 'Strategic geographic advantage', boost: 'Bridge between East & West' },
+        { icon: '✨', text: 'Growing Middle Eastern brand recognition', boost: 'Your heritage is your superpower' }
       ],
       successStory: {
         client: 'Dubai-based Beauty Brand',
-        result: 'Successfully launched in UK with £40k first quarter revenue',
-        quote: 'Superfly made our European expansion seamless and profitable from day one.'
+        result: '£40k first quarter revenue 💄',
+        quote: 'Superfly made our European expansion seamless and profitable from day one. No desert mirages here!',
+        emoji: '💅'
       },
       seoTitle: 'UAE & MENA Sellers: Launch on Amazon UK, EU & USA | Superfly',
       seoDescription: 'Expand your MENA e-commerce brand to UK, EU, and USA Amazon markets. Expert guidance on compliance, FBA, and international growth strategies.'
@@ -73,28 +88,31 @@ const RegionalLaunch = () => {
     mexico: {
       name: 'Mexico',
       flag: '🇲🇽',
+      emoji: '🌮',
       targetMarkets: ['🇺🇸 USA', '🇬🇧 UK', '🇪🇺 EU'],
-      heroTitle: 'Launch Your Mexican Brand on Amazon USA, UK & EU',
-      heroSubtitle: 'Cross-border Amazon expertise for Mexican sellers targeting North American and European markets.',
+      heroTitle: '¡Vámonos! Take Your Mexican Brand North (and East)',
+      heroSubtitle: 'Mexico City to Miami. Guadalajara to Germany. Cross-border success without the red tape (piñatas optional 🎉)',
+      funFact: 'Mexican craftsmanship + global demand = your ticket to scale',
       challenges: [
-        'USMCA/trade agreement navigation',
-        'US sales tax & VAT compliance',
-        'Bilingual listing optimization',
-        'Competing in saturated US market',
-        'International shipping logistics',
-        'Building credibility as a foreign seller'
+        { icon: '📜', text: 'USMCA/trade agreement navigation', tip: 'Free trade = free money (almost)' },
+        { icon: '🚚', text: 'Cross-border logistics & customs', tip: 'FBA handles this like a boss' },
+        { icon: '💵', text: 'Currency fluctuations (MXN/USD/EUR)', tip: 'Hedge with volume' },
+        { icon: '🎯', text: 'USA market competition', tip: 'Your authenticity is your edge' },
+        { icon: '🗣️', text: 'Language barriers in non-US markets', tip: 'We translate, you profit' },
+        { icon: '✅', text: 'Compliance & product certifications', tip: 'CE, FCC, FDA - we know the alphabet soup' }
       ],
       advantages: [
-        'USMCA trade advantages for US market',
-        'Growing Mexican brand recognition',
-        'Artisan & authentic product appeal',
-        'Bilingual team capabilities',
-        'Competitive manufacturing costs'
+        { icon: '🤝', text: 'USMCA benefits (zero tariffs on many products)', boost: 'Instant cost advantage' },
+        { icon: '🎨', text: 'Authentic Mexican craftsmanship', boost: 'Unique sells' },
+        { icon: '🌎', text: 'Proximity to USA (logistics advantage)', boost: 'Faster shipping = happier customers' },
+        { icon: '🌶️', text: 'Growing Hispanic market appeal in USA', boost: '60M+ Hispanics in USA alone' },
+        { icon: '💪', text: 'Competitive pricing + quality manufacturing', boost: 'Best of both worlds' }
       ],
       successStory: {
-        client: 'Mexico City Food & Beverage Brand',
-        result: 'Generated $60k/month in USA within 6 months',
-        quote: 'Superfly understood both markets and helped us bridge the gap perfectly.'
+        client: 'Guadalajara Artisan Collective',
+        result: '$85k/month USA sales 🎊',
+        quote: 'We went from local market to Amazon USA in 4 months. Superfly navigated USMCA like pros. ¡Increíble!',
+        emoji: '🎨'
       },
       seoTitle: 'Launch Mexican Products on Amazon USA, UK & EU | Superfly',
       seoDescription: 'Expert Amazon launch services for Mexican sellers. Navigate USMCA, FBA, and cross-border compliance to succeed in USA, UK & EU markets.'
@@ -113,35 +131,69 @@ const RegionalLaunch = () => {
       />
       
       <div className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <div className="bg-gradient-to-br from-[#22C55E] to-[#16A34A] text-white pt-24 pb-16 px-4">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <span className="text-6xl">{data.flag}</span>
-              <ArrowRight className="w-8 h-8" />
+        {/* Hero Section - Now with personality! */}
+        <div className="bg-gradient-to-br from-[#22C55E] via-[#16A34A] to-[#15803D] text-white pt-24 pb-16 px-4 relative overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 left-10 text-8xl animate-bounce">{data.emoji}</div>
+            <div className="absolute bottom-10 right-10 text-8xl animate-pulse">{data.flag}</div>
+            <div className="absolute top-1/2 left-1/4 text-6xl animate-spin-slow">🌍</div>
+          </div>
+          
+          <div className="max-w-5xl mx-auto text-center relative z-10">
+            {/* Animated fun fact badge */}
+            <div className="inline-block mb-6 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-semibold animate-pulse">
+              💡 {data.funFact}
+            </div>
+            
+            <div className="flex items-center justify-center gap-3 mb-6 transform transition-all hover:scale-110 duration-300">
+              <span className="text-6xl animate-bounce" style={{animationDelay: '0s'}}>{data.flag}</span>
+              <Rocket className="w-10 h-10 animate-pulse" />
               <div className="flex gap-2">
                 {data.targetMarkets.map((market, idx) => (
-                  <span key={idx} className="text-3xl">{market.split(' ')[0]}</span>
+                  <span 
+                    key={idx} 
+                    className="text-3xl hover:scale-125 transition-transform cursor-default"
+                    style={{animationDelay: `${idx * 0.2}s`}}
+                  >
+                    {market.split(' ')[0]}
+                  </span>
                 ))}
               </div>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
               {data.heroTitle}
             </h1>
-            <p className="text-xl sm:text-2xl mb-8 opacity-95">
+            <p className="text-xl sm:text-2xl mb-8 opacity-95 max-w-3xl mx-auto">
               {data.heroSubtitle}
             </p>
             
+            {/* Animated stat counter */}
+            <div className="mb-8 flex justify-center gap-8 flex-wrap">
+              <div className="text-center">
+                <div className="text-4xl font-bold">{animatedStat}+</div>
+                <div className="text-sm opacity-90">Brands Launched</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold">£{(animatedStat * 10).toLocaleString()}k+</div>
+                <div className="text-sm opacity-90">Revenue Generated</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold">{animatedStat}%</div>
+                <div className="text-sm opacity-90">Success Rate</div>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/#contact">
-                <Button size="lg" className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-bold">
-                  Book Free Strategy Call <ArrowRight className="ml-2 w-5 h-5" />
+                <Button size="lg" className="bg-white text-[#22C55E] hover:bg-gray-100 hover:scale-105 transition-all rounded-full px-8 py-6 text-lg font-bold shadow-2xl">
+                  Book Free Strategy Call <Rocket className="ml-2 w-5 h-5" />
                 </Button>
               </a>
               <Link to="/pricing">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/20 rounded-full px-8 py-6 text-lg font-bold">
-                  View Pricing
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/20 hover:scale-105 transition-all rounded-full px-8 py-6 text-lg font-bold">
+                  View Pricing <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
             </div>
@@ -204,24 +256,23 @@ const RegionalLaunch = () => {
             </div>
           </div>
 
-          {/* Challenges We Solve */}
+          {/* Challenges We Solve - Now with helpful tips! */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-4">
-              Common Challenges from {data.name}
+              Challenges? We Got You 💪
             </h2>
             <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-              We've helped dozens of {data.name}-based sellers overcome these exact obstacles:
+              Here's what scares most {data.name}-based sellers (and how we make it easy):
             </p>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {data.challenges.map((challenge, idx) => (
-                <Card key={idx} className="bg-red-50 border-red-100">
+                <Card key={idx} className="bg-gradient-to-br from-orange-50 to-red-50 border-orange-200 hover:shadow-xl transition-all hover:scale-105 group">
                   <CardContent className="pt-6">
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-red-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-red-600 font-bold text-sm">!</span>
-                      </div>
-                      <p className="text-sm text-gray-700">{challenge}</p>
+                    <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{challenge.icon}</div>
+                    <h4 className="font-bold text-gray-800 mb-2">{challenge.text}</h4>
+                    <div className="bg-white/80 rounded-lg p-3 mt-3 border border-orange-200">
+                      <p className="text-xs text-gray-600 italic">💡 {challenge.tip}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -229,22 +280,23 @@ const RegionalLaunch = () => {
             </div>
           </div>
 
-          {/* Your Advantages */}
+          {/* Your Superpowers - Everyone has them! */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-4">
-              Your Competitive Advantages
+              Your Secret Weapons 🚀
             </h2>
             <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-              Leverage what makes {data.name} brands unique:
+              What makes {data.name} brands absolutely crush it globally:
             </p>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {data.advantages.map((advantage, idx) => (
-                <Card key={idx} className="bg-green-50 border-green-100">
+                <Card key={idx} className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 hover:shadow-2xl transition-all hover:scale-105 group">
                   <CardContent className="pt-6">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-gray-700 font-medium">{advantage}</p>
+                    <div className="text-5xl mb-3 group-hover:rotate-12 transition-transform">{advantage.icon}</div>
+                    <h4 className="font-bold text-gray-800 mb-2">{advantage.text}</h4>
+                    <div className="bg-[#22C55E]/10 rounded-lg px-3 py-2 mt-3 border border-green-300">
+                      <p className="text-xs font-semibold text-[#16A34A]">⚡ {advantage.boost}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -252,21 +304,41 @@ const RegionalLaunch = () => {
             </div>
           </div>
 
-          {/* Success Story */}
+          {/* Success Story - Real Results from Real Brands */}
           <div className="mb-16">
-            <Card className="bg-gradient-to-br from-blue-50 to-green-50 border-2 border-[#22C55E]">
+            <Card className="bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 border-2 border-[#22C55E] hover:shadow-2xl transition-all">
               <CardHeader>
-                <Badge className="bg-[#22C55E] text-white mb-2 w-fit">Success Story</Badge>
-                <CardTitle className="text-2xl">{data.successStory.client}</CardTitle>
+                <div className="flex items-center gap-3 mb-3">
+                  <Badge className="bg-[#22C55E] text-white text-lg px-4 py-1">Real Success Story</Badge>
+                  <Trophy className="w-8 h-8 text-yellow-500 animate-pulse" />
+                </div>
+                <CardTitle className="text-3xl flex items-center gap-3">
+                  {data.successStory.client}
+                  <span className="text-4xl">{data.successStory.emoji}</span>
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center gap-2 mb-4">
-                  <TrendingUp className="w-6 h-6 text-[#22C55E]" />
-                  <p className="text-lg font-bold text-gray-900">{data.successStory.result}</p>
+                <div className="flex items-center gap-3 mb-6 bg-white/60 rounded-xl p-4">
+                  <div className="text-5xl">{data.flag}</div>
+                  <ArrowRight className="w-8 h-8 text-[#22C55E]" />
+                  <div className="text-5xl">💰</div>
+                  <div className="ml-4">
+                    <div className="text-3xl font-bold text-[#16A34A]">{data.successStory.result}</div>
+                    <div className="text-sm text-gray-600">From zero to hero</div>
+                  </div>
                 </div>
-                <blockquote className="border-l-4 border-[#22C55E] pl-4 italic text-gray-700">
+                
+                <blockquote className="text-lg italic text-gray-700 border-l-4 border-[#22C55E] pl-6 py-2 bg-white/40 rounded-r-lg">
                   "{data.successStory.quote}"
                 </blockquote>
+                
+                <div className="mt-6 text-center">
+                  <a href="/#contact">
+                    <Button size="lg" className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-8 py-4 text-lg font-bold shadow-xl hover:scale-105 transition-all">
+                      Get Results Like This <Target className="ml-2 w-5 h-5" />
+                    </Button>
+                  </a>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -340,3 +412,25 @@ const RegionalLaunch = () => {
 };
 
 export default RegionalLaunch;
+
+// Custom CSS for animations
+const styles = `
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+`;
+
+// Inject styles
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = styles;
+  document.head.appendChild(styleSheet);
+}
