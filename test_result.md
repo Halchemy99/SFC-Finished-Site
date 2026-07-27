@@ -116,6 +116,9 @@ frontend:
         - working: "NA"
           agent: "main"
           comment: "Replaced all instances of 'Amazon specialists' with 'marketplace growth specialists' across 4 files: i18n.js (3 instances), Team.jsx (2 instances), GrowthPartnership.jsx (1 instance). Also removed 'Amazon Ads certified' claim from FAQPage.jsx. User requested to use 'marketplace growth' terminology while keeping 'Amazon' where possible without claiming to be 'best'. This fix is required to maintain Amazon Ads Partner Network status - user has 7-14 days to comply."
+        - working: "NA"
+          agent: "main"
+          comment: "Testing agent found 3 CRITICAL missed instances: (1) i18n.js line 79 'Global Amazon Specialists' (used site-wide in Footer + Contact), (2) Privacy.jsx line 130 address text, (3) ExpertMatching.jsx line 45 hero title. Fixed all 3 instances. Ran comprehensive grep search - ZERO matches for 'amazon specialist' remain in codebase. Ready for final verification."
   
   - task: "Performance-Based Partnerships Section"
   - task: "Performance-Based Partnerships Section"
@@ -209,6 +212,8 @@ test_plan:
 agent_communication:
     - agent: "main"
       message: "CRITICAL: Fixed Amazon Ads Partner Network compliance violation. Replaced all instances of 'Amazon specialists' with 'marketplace growth specialists' and removed 'Amazon Ads certified' claim. Changes made in: i18n.js (hero.feature2, about.description, about.feature1), Team.jsx (2 locations + SEO keywords), GrowthPartnership.jsx (benefits section), and FAQPage.jsx (PPC management answer). User has 7-14 days to comply to avoid losing partner status. REQUIRES TESTING AGENT to verify all instances are fixed across the entire site, including checking for any remaining unauthorized badges, logos, or certification claims."
+    - agent: "main"
+      message: "CRITICAL UPDATE: Testing agent found 3 additional instances I missed. Fixed immediately: (1) i18n.js line 79 card4Desc: 'Global Amazon Specialists' → 'Global Marketplace Growth Specialists' (fixes Footer + Contact site-wide), (2) Privacy.jsx line 130 address, (3) ExpertMatching.jsx line 45 hero heading. Ran final grep check - ZERO matches for 'amazon specialist' found in entire frontend codebase. Total 7 files fixed across 10+ instances. Ready for final compliance verification."
     - agent: "testing"
       message: "Completed comprehensive testing of Performance-Based Pricing implementation. All features working as expected: 4 partnership tiers display correctly with proper badges, all partnership buttons navigate to /#contact, contact form is accessible, and one-off services maintain Stripe checkout functionality. No issues found."
     - agent: "testing"

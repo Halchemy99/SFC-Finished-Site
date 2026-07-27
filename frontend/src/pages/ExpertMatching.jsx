@@ -42,7 +42,7 @@ const ExpertMatching = () => {
           </div>
           
           <h1 className="text-5xl font-bold mb-6">
-            Work with Hand-Picked <span className="text-[#22C55E]">Amazon Specialists</span>
+            Work with Hand-Picked <span className="text-[#22C55E]">Marketplace Growth Specialists</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Skip the agency overhead. Get matched with vetted specialists who are experts in exactly what you need.

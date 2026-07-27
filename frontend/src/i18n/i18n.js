@@ -76,7 +76,7 @@ const resources = {
         card2Title: 'WhatsApp Us',
         card3Title: 'Email Us',
         card4Title: 'Location',
-        card4Desc: 'Global Amazon Specialists',
+        card4Desc: 'Global Marketplace Growth Specialists',
         formTitle: 'Book Your Discovery Call',
         formDesc: "Tell us about your Amazon business and we'll design a performance-based partnership for sustainable growth.",
         benefitsTitle: "What You'll Get on Our Call",

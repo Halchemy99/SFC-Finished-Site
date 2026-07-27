@@ -127,7 +127,7 @@ const Privacy = () => {
             <div className="mt-4 space-y-2 text-gray-600">
               <p><strong>Email:</strong> harry@superflycommerce.com</p>
               <p><strong>Phone:</strong> +44 7969 614703</p>
-              <p><strong>Address:</strong> Superfly Commerce, Global Amazon Specialists</p>
+              <p><strong>Address:</strong> Superfly Commerce, Global Marketplace Growth Specialists</p>
             </div>
           </section>
         </div>
