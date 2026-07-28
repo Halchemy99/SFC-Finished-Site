@@ -25,7 +25,7 @@ import Cookies from './pages/Cookies';
 import Team from './pages/Team';
 import Blog from './pages/Blog';
 import PaymentSuccess from './pages/PaymentSuccess';
-import RegionalLaunch from './pages/RegionalLaunch';
+import RegionalLaunchV2 from './pages/RegionalLaunchV2';
 import { Toaster } from './components/ui/toaster';
 import './App.css';
 
@@ -78,8 +78,8 @@ function App() {
             <Route path="/terms" element={<PageLayout><Terms /></PageLayout>} />
             <Route path="/cookies" element={<PageLayout><Cookies /></PageLayout>} />
             
-            {/* Regional Launch Pages */}
-            <Route path="/launch/:region" element={<RegionalLaunch />} />
+            {/* Regional Launch Pages - Interactive Diagnostic */}
+            <Route path="/launch/:region" element={<RegionalLaunchV2 />} />
           </Routes>
         </BrowserRouter>
         <Toaster />
