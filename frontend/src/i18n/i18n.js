@@ -524,20 +524,261 @@ const resources = {
         subtitle: 'Sin tarifas ocultas. Sin retenedores inflados. Solo precios honestos para crecimiento real.',
         oneOff: 'Servicios Únicos',
         partnerships: 'Asociaciones',
-        viewAll: 'Ver Todos los Servicios'
+        viewAll: 'Ver Todos los Servicios',
+        hero: {
+          title: 'Precios Transparentes',
+          subtitle: 'Elige Tu Camino de Crecimiento',
+          description: 'Precios claros, sin tarifas ocultas, sin trucos.'
+        },
+        partnerships: {
+          badge: 'ASOCIACIONES BASADAS EN RENDIMIENTO',
+          title: 'Crecemos cuando tú creces',
+          subtitle: 'Retenedores de participación en ingresos. Cuando tú ganas, nosotros ganamos.',
+          starter: {
+            name: 'Asociación Inicial',
+            price: '£1,500',
+            priceNote: '/mes + 3% de ventas',
+            description: 'Perfecto para marcas que comienzan su viaje en Amazon',
+            features: [
+              'Gestión completa de cuenta de Amazon',
+              'Optimización de listados y PPC',
+              'Llamadas de estrategia mensuales',
+              'Informes de rendimiento',
+              'Soporte por correo y chat'
+            ],
+            cta: 'Discutir Este Plan'
+          },
+          growth: {
+            name: 'Asociación de Crecimiento',
+            badge: 'MÁS POPULAR',
+            price: '£3,000',
+            priceNote: '/mes + 2% de ventas',
+            description: 'Para marcas establecidas listas para escalar',
+            features: [
+              'Todo en Inicial, más:',
+              'Contenido A+ y Tienda de Marca',
+              'Estrategias avanzadas de PPC',
+              'Revisiones trimestrales de negocio',
+              'Soporte prioritario',
+              'Gerente de cuenta dedicado'
+            ],
+            cta: 'Discutir Este Plan'
+          },
+          scale: {
+            name: 'Asociación de Escala',
+            price: '£5,000',
+            priceNote: '/mes + 1.5% de ventas',
+            description: 'Servicio premium para marcas ambiciosas',
+            features: [
+              'Todo en Crecimiento, más:',
+              'Soporte de expansión internacional',
+              'Analítica personalizada y automatización',
+              'Servicio de guante blanco',
+              'Acceso directo al fundador',
+              'Revisiones semanales de estrategia'
+            ],
+            cta: 'Discutir Este Plan'
+          }
+        },
+        revenueShare: {
+          badge: 'ALTO RIESGO/RECOMPENSA',
+          title: 'Participación Pura en Ingresos',
+          subtitle: 'Alto riesgo, alta recompensa - solo ganamos cuando tú ganas',
+          features: [
+            'Sin retenedor mensual',
+            '10% de todos los ingresos superiores a £10,000/mes',
+            'Mentalidad "comemos lo que cazamos"',
+            'Perfecto para startups ambiciosas',
+            'Sujeto a aprobación de solicitud'
+          ],
+          cta: 'Solicitar Participación en Ingresos'
+        },
+        oneOffServices: {
+          badge: 'SERVICIOS ÚNICOS',
+          title: 'Paquetes de Victoria Rápida',
+          subtitle: 'Sin compromiso. Paga una vez, obtén resultados.',
+          listing: {
+            name: 'Sprint de Optimización de Listados',
+            price: '£350',
+            features: [
+              'Hasta 5 listados de productos',
+              'Investigación de palabras clave y SEO',
+              'Entrega en 7-10 días hábiles'
+            ],
+            cta: 'Comprar Ahora'
+          },
+          aplus: {
+            name: 'Paquete de Contenido A+',
+            price: '£500',
+            features: [
+              'Hasta 3 módulos A+',
+              'Diseño profesional',
+              'Texto optimizado para conversión'
+            ],
+            cta: 'Comprar Ahora'
+          },
+          photography: {
+            name: 'Fotografía de Producto',
+            price: '£600',
+            features: [
+              '6 imágenes profesionales',
+              'Fondo blanco + estilo de vida',
+              'Listas para Amazon'
+            ],
+            cta: 'Comprar Ahora'
+          },
+          infographic: {
+            name: 'Set de Infografías de Amazon',
+            price: '£300',
+            features: [
+              '3 imágenes infográficas',
+              'Características destacadas',
+              'Optimizado para conversión'
+            ],
+            cta: 'Comprar Ahora'
+          },
+          brandStory: {
+            name: 'Elemento de Historia de Marca',
+            price: '£200',
+            features: [
+              'Módulo de historia de marca',
+              'Diseño personalizado',
+              'Texto de marca'
+            ],
+            cta: 'Comprar Ahora'
+          },
+          video: {
+            name: 'Video de Marca',
+            price: '£800',
+            features: [
+              'Video de 30 segundos',
+              'Edición profesional',
+              'Listo para Amazon'
+            ],
+            cta: 'Comprar Ahora'
+          },
+          copywriting: {
+            name: 'Redacción de Listados',
+            price: '£250',
+            features: [
+              'Título + viñetas + descripción',
+              'Optimizado para SEO',
+              'Enfocado en conversión'
+            ],
+            cta: 'Comprar Ahora'
+          },
+          ppcAudit: {
+            name: 'Auditoría y Configuración de PPC',
+            price: '£400',
+            features: [
+              'Auditoría completa de PPC',
+              'Configuración de campaña',
+              'Guía de optimización'
+            ],
+            cta: 'Comprar Ahora'
+          },
+          storefront: {
+            name: 'Escaparate de Marca',
+            price: '£700',
+            features: [
+              'Diseño de tienda completa',
+              'Hasta 5 páginas',
+              'Marca personalizada'
+            ],
+            cta: 'Comprar Ahora'
+          },
+          businessAnalysis: {
+            name: 'Análisis Completo de Negocio',
+            price: '£1,000',
+            features: [
+              'Auditoría profunda de 2 semanas',
+              'Hoja de ruta de crecimiento',
+              'Presentación ejecutiva'
+            ],
+            cta: 'Comprar Ahora'
+          }
+        },
+        modal: {
+          title: 'Ejemplo de Cliente Real',
+          challenge: 'El Desafío',
+          whatWeDid: 'Lo Que Hicimos',
+          results: 'Resultados',
+          conversionRate: 'Tasa de Conversión',
+          salesIncrease: 'Aumento de Ventas',
+          ranking: 'Ranking',
+          oneTime: 'único'
+        },
+        academy: {
+          badge: 'Actualmente LLENO hasta Mayo 2026',
+          cta: 'Unirse a Lista de Espera'
+        },
+        expertMatching: {
+          badge: 'Próximamente',
+          description: 'Acercando talento especializado en Amazon.',
+          cta: 'Más Información'
+        },
+        bottomCTA: {
+          title: '¿No Estás Seguro Cuál Elegir?',
+          description: 'Agenda una llamada de descubrimiento gratuita de 30 minutos y diseñaremos el plan perfecto para tu negocio.',
+          cta: 'Agendar Llamada de Descubrimiento Gratuita'
+        }
       },
       caseStudies: {
         badge: 'Historias de Éxito',
         title: 'Resultados Reales de',
         titleGreen: 'Marcas Reales',
-        subtitle: 'Así es como ayudamos a las marcas a crecer de manera sostenible en Amazon.'
+        subtitle: 'Así es como ayudamos a las marcas a crecer de manera sostenible en Amazon.',
+        cta: 'Obtener Resultados Similares',
+        bottomCTA: {
+          title: '¿Listo para Escribir Tu Historia de Éxito?',
+          description: 'Hablemos de cómo podemos ayudarte a lograr resultados similares.',
+          cta: 'Agendar Llamada Gratuita'
+        }
       },
       team: {
         badge: 'Nuestro Equipo',
         title: 'Conoce al Colectivo',
         subtitle: 'Especialistas globales en crecimiento de mercado, parte de tu equipo.',
-        joinTitle: '¿Quieres Unirte?',
-        joinDesc: 'Siempre buscamos especialistas talentosos en crecimiento de mercado que compartan nuestros valores.'
+        leadership: 'Equipo de Liderazgo',
+        values: {
+          title: 'Lo Que Defendemos',
+          transparency: {
+            title: 'Transparencia Primero',
+            description: 'Sin tarifas ocultas, sin retenedores inflados. Sabes exactamente lo que pagas y por qué.'
+          },
+          performance: {
+            title: 'Basado en Rendimiento',
+            description: 'Solo tenemos éxito cuando tú tienes éxito. Nuestros retenedores están vinculados a tu crecimiento.'
+          },
+          sustainable: {
+            title: 'Crecimiento Sostenible',
+            description: 'Pensamiento a largo plazo sobre trucos rápidos. Construimos marcas que duran.'
+          },
+          global: {
+            title: 'Colectivo Global',
+            description: 'Especialistas en todos los continentes trabajando como tu equipo extendido.'
+          }
+        },
+        mission: {
+          title: 'Nuestra Misión',
+          description: 'Eliminar las tarifas pesadas de agencias y hacer que el crecimiento experto en Amazon sea accesible para todas las marcas a través de precios transparentes basados en rendimiento.'
+        },
+        join: {
+          title: '¿Quieres Unirte al Colectivo?',
+          description: 'Siempre buscamos especialistas talentosos en crecimiento de mercado que compartan nuestros valores.',
+          form: {
+            name: 'Nombre',
+            email: 'Correo Electrónico',
+            linkedin: 'URL de Perfil de LinkedIn (revisaremos tu perfil en lugar de CV)',
+            why: '¿Por qué quieres unirte a Superfly?',
+            submit: 'Enviar Solicitud'
+          }
+        },
+        stats: {
+          specialists: 'Especialistas Globales',
+          revenue: 'Ingresos Impulsados',
+          continents: 'Continentes'
+        }
       }
     }
   }
