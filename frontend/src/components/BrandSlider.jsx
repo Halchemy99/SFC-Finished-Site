@@ -26,10 +26,10 @@ const BrandSlider = () => {
         {/* Heading */}
         <div className="text-center mb-12">
           <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
-            Trusted by Leading Brands
+            {t('brands.trustedBy')}
           </p>
           <h2 className="text-3xl font-bold text-gray-900">
-            Brands We've Helped <span className="text-[#22C55E]">Grow on Amazon</span>
+            {t('brands.title')} <span className="text-[#22C55E]">{t('brands.titleGreen')}</span>
           </h2>
         </div>
 
@@ -60,19 +60,19 @@ const BrandSlider = () => {
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <div className="text-3xl font-bold text-[#22C55E]">50+</div>
-            <div className="text-sm text-gray-600 mt-1">Brands Supported</div>
+            <div className="text-sm text-gray-600 mt-1">{t('brands.stat1')}</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-[#22C55E]">£12M+</div>
-            <div className="text-sm text-gray-600 mt-1">Revenue Generated</div>
+            <div className="text-sm text-gray-600 mt-1">{t('brands.stat2')}</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-[#22C55E]">200%</div>
-            <div className="text-sm text-gray-600 mt-1">Avg. Growth Rate</div>
+            <div className="text-sm text-gray-600 mt-1">{t('brands.stat3')}</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-[#22C55E]">98%</div>
-            <div className="text-sm text-gray-600 mt-1">Client Satisfaction</div>
+            <div className="text-sm text-gray-600 mt-1">{t('brands.stat4')}</div>
           </div>
         </div>
       </div>

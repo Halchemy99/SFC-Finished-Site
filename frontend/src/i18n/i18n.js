@@ -41,6 +41,15 @@ const resources = {
         contentCreative: 'CONTENT & CREATIVE',
         yourBrand: 'YOUR BRAND'
       },
+      brands: {
+        trustedBy: 'Trusted by Leading Brands',
+        title: 'Brands We\'ve Helped',
+        titleGreen: 'Grow on Amazon',
+        stat1: 'Brands Supported',
+        stat2: 'Revenue Generated',
+        stat3: 'Avg. Growth Rate',
+        stat4: 'Client Satisfaction'
+      },
       services: {
         title: 'Four Ways to Grow',
         titleGreen: 'Your Amazon Business',
@@ -401,6 +410,15 @@ const resources = {
         contentCreative: 'CONTENIDO Y CREATIVO',
         yourBrand: 'TU MARCA'
       },
+      brands: {
+        trustedBy: 'Confiado por Marcas Líderes',
+        title: 'Marcas que Hemos Ayudado a',
+        titleGreen: 'Crecer en Amazon',
+        stat1: 'Marcas Apoyadas',
+        stat2: 'Ingresos Generados',
+        stat3: 'Tasa de Crecimiento Promedio',
+        stat4: 'Satisfacción del Cliente'
+      },
       services: {
         title: 'Cuatro Formas de Crecer',
         titleGreen: 'Tu Negocio en Amazon',
@@ -449,12 +467,23 @@ const resources = {
         card4Title: 'Ubicación',
         card4Desc: 'Especialistas Globales en Crecimiento de Mercado',
         formTitle: 'Agenda Tu Llamada de Descubrimiento',
+        formDesc: 'Cuéntanos sobre tu negocio en Amazon y diseñaremos una asociación basada en rendimiento para crecimiento sostenible.',
+        benefitsTitle: 'Lo que Obtendrás en Nuestra Llamada',
+        benefit1: 'Evaluación gratuita de cuenta de Amazon',
+        benefit2: 'Opciones de retenedor basadas en rendimiento',
+        benefit3: 'Evaluación de descuento de sostenibilidad',
+        benefit4: 'Hoja de ruta de estrategia de crecimiento',
         nameLabel: 'Tu nombre',
         emailLabel: 'tu@email.com',
         companyLabel: 'Tu empresa',
         messageLabel: 'Comparte tus objetivos y desafíos...',
         interestedLabel: 'Interesado en',
-        submitButton: 'Enviar Solicitud'
+        submitButton: 'Enviar Solicitud',
+        placeholders: {
+          name: 'John Doe',
+          email: 'tu@email.com',
+          message: 'Cuéntanos sobre tu negocio en Amazon...'
+        }
       },
       newsletter: {
         title: '¡Mantente Informado!',
