@@ -26,6 +26,7 @@ import Team from './pages/Team';
 import Blog from './pages/Blog';
 import PaymentSuccess from './pages/PaymentSuccess';
 import RegionalLaunchV2 from './pages/RegionalLaunchV2';
+import MarketplaceLanding from './pages/MarketplaceLanding';
 import { Toaster } from './components/ui/toaster';
 import './App.css';
 
@@ -80,6 +81,9 @@ function App() {
             
             {/* Regional Launch Pages - Interactive Diagnostic */}
             <Route path="/launch/:region" element={<RegionalLaunchV2 />} />
+            
+            {/* Marketplace Landing Pages */}
+            <Route path="/marketplace/:platform" element={<MarketplaceLanding />} />
           </Routes>
         </BrowserRouter>
         <Toaster />
