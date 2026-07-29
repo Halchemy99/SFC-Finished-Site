@@ -24,13 +24,12 @@ export const LanguageProvider = ({ children }) => {
   const [isTranslating, setIsTranslating] = useState(false);
 
   useEffect(() => {
-    // Always default to English, only change if user explicitly selected a language
-    const savedLang = localStorage.getItem('selectedLanguage');
-    const initialLang = savedLang || 'en'; // Always default to 'en' if no saved preference
-    
-    setCurrentLanguage(initialLang);
-    i18n.changeLanguage(initialLang);
-  }, [i18n]); // i18n is already the only needed dependency
+    // Disabled - now using i18n LanguageDetector with localStorage
+    // const savedLang = localStorage.getItem('selectedLanguage');
+    // const initialLang = savedLang || 'en';
+    // setCurrentLanguage(initialLang);
+    // i18n.changeLanguage(initialLang);
+  }, [i18n]);
 
   const changeLanguage = async (langCode) => {
     if (langCode === currentLanguage) return;
