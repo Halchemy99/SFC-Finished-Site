@@ -221,9 +221,73 @@ const resources = {
         title: 'Choose Your',
         titleGreen: 'Growth Path',
         subtitle: 'Clear pricing, no hidden fees. Pick what works for your business stage.',
-        partnershipsTitle: 'Ongoing Partnerships',
-        partnershipsSubtitle: 'Monthly retainer for full-service Amazon management. Cancel anytime.',
-        partnershipsBadge: '💡 Best for brands committed to long-term growth',
+        partnershipsTitle: 'Performance-Based Partnerships',
+        partnershipsSubtitle: 'We grow when you grow. Choose a partnership model that aligns our success with yours.',
+        partnershipsBadge: 'Skin in the Game Pricing',
+        partnerships: {
+          starter: {
+            name: 'Starter Partnership',
+            price: '£650',
+            priceNote: '/month',
+            description: 'Perfect for brands ready to test performance-based growth',
+            features: [
+              'Base retainer: £650/month',
+              '+ % of monthly revenue growth',
+              'Full Amazon account management',
+              'Listing optimization & PPC',
+              'Monthly strategy calls',
+              'Performance reporting'
+            ],
+            cta: 'Discuss This Plan'
+          },
+          growth: {
+            name: 'Growth Partnership',
+            badge: 'Most Popular',
+            price: '£1,100',
+            priceNote: '/month',
+            description: 'For established brands scaling with skin in the game',
+            features: [
+              'Base retainer: £1,100/month',
+              '+ % of monthly revenue growth',
+              'Everything in Starter, plus:',
+              'A+ Content & Brand Store',
+              'Advanced PPC strategies',
+              'Quarterly business reviews',
+              'Priority support'
+            ],
+            cta: 'Discuss This Plan'
+          },
+          scale: {
+            name: 'Scale Partnership',
+            price: '£1,800',
+            priceNote: '/month',
+            description: 'Aggressive growth for brands doing £50k+ monthly revenue',
+            features: [
+              'Base retainer: £1,800/month',
+              '+ % of monthly revenue growth',
+              'Everything in Growth, plus:',
+              'Dedicated account manager',
+              'International expansion support',
+              'Custom analytics & automation',
+              'White-glove service'
+            ],
+            cta: 'Discuss This Plan'
+          }
+        },
+        revenueShare: {
+          badge: 'High Risk/Reward',
+          title: 'Pure Revenue Share',
+          subtitle: 'High risk, high reward - we only win when you win',
+          features: [
+            'No monthly retainer',
+            '10% of all revenue above £10,000/month',
+            'Full-service Amazon management',
+            'We eat what we kill mentality',
+            'Perfect for ambitious startups',
+            'Subject to application approval'
+          ],
+          cta: 'Apply for Revenue Share'
+        },
         oneOffTitle: 'One-Off Services',
         oneOffSubtitle: 'No commitment. Pay once, get results.',
         oneOffBadge: '🎯 Perfect for specific needs or testing our work',
