@@ -5,13 +5,14 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import SEO from '../components/SEO';
+import { quizContent } from '../data/regionalQuizContent';
 
 const RegionalLaunchV2 = () => {
   const { region } = useParams();
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
-  const [pageLang, setPageLang] = useState('en'); // Regional page language
+  const [pageLang, setPageLang] = useState('en');
 
   const regionalData = {
     india: {
@@ -19,106 +20,30 @@ const RegionalLaunchV2 = () => {
       flag: '🇮🇳',
       languages: { primary: 'en', secondary: 'hi', primaryFlag: '🇬🇧', secondaryFlag: '🇮🇳' },
       targetMarkets: 'UK, EU, USA',
-      heroTitle: 'Free Amazon Store Audit for Indian Sellers',
-      heroSubtitle: 'Find out where you\'re losing money before expanding to UK/EU/USA',
-      specificQuestion: {
-        question: 'Are you confident your VAT registration won\'t block your sales in UK/EU?',
-        issue: 'VAT compliance gaps',
-        pain: 'Most Indian sellers lose their first month of sales to VAT suspension'
-      }
+      seoTitle: 'Free Amazon Audit - Indian Sellers',
+      seoDescription: 'Free audit for Indian sellers expanding to UK/EU/USA'
     },
     uae: {
       name: 'UAE',
       flag: '🇦🇪',
       languages: { primary: 'en', secondary: 'ar', primaryFlag: '🇬🇧', secondaryFlag: '🇦🇪' },
       targetMarkets: 'UK, EU, USA',
-      heroTitle: 'Free Amazon Store Audit for UAE Sellers',
-      heroSubtitle: 'Find out where you\'re losing money before expanding to UK/EU/USA',
-      specificQuestion: {
-        question: 'Do you know if your products need CE marking for EU or FCC for USA?',
-        issue: 'Product compliance gaps',
-        pain: 'MENA sellers often get blocked within weeks due to missing certifications'
-      }
+      seoTitle: 'Free Amazon Audit - UAE Sellers',
+      seoDescription: 'Free audit for UAE sellers expanding to UK/EU/USA'
     },
     mexico: {
       name: 'Mexico',
       flag: '🇲🇽',
       languages: { primary: 'en', secondary: 'es', primaryFlag: '🇬🇧', secondaryFlag: '🇲🇽' },
       targetMarkets: 'USA, UK, EU',
-      heroTitle: 'Free Amazon Store Audit for Mexican Sellers',
-      heroSubtitle: 'Find out where you\'re losing money in USA/UK/EU markets',
-      specificQuestion: {
-        question: 'Are you actually using your USMCA zero-tariff benefits?',
-        issue: 'Missed trade advantages',
-        pain: 'Mexican sellers overpay thousands in tariffs they shouldn\'t be charged'
-      }
+      seoTitle: 'Free Amazon Audit - Mexican Sellers',
+      seoDescription: 'Free audit for Mexican sellers expanding to USA/UK/EU'
     }
   };
 
   const data = regionalData[region] || regionalData.india;
-
-  const questions = [
-    {
-      id: 'profit_tracking',
-      question: 'Are you tracking your TRUE profit after all Amazon fees?',
-      options: [
-        { value: 'yes', label: 'Yes, I track everything', score: 0 },
-        { value: 'mostly', label: 'Mostly, but not sure about all fees', score: 1 },
-        { value: 'no', label: 'No, I just look at gross sales', score: 2 }
-      ],
-      issue: 'Hidden fee bleed'
-    },
-    {
-      id: 'ppc_waste',
-      question: 'Do you know which keywords are burning budget with zero sales?',
-      options: [
-        { value: 'yes', label: 'Yes, I optimize weekly', score: 0 },
-        { value: 'sometimes', label: 'I check occasionally', score: 1 },
-        { value: 'no', label: 'I set it and forget it', score: 2 }
-      ],
-      issue: 'PPC waste'
-    },
-    {
-      id: 'compliance',
-      question: 'Have you checked if your listings are suppressed or have compliance issues?',
-      options: [
-        { value: 'daily', label: 'I monitor this daily', score: 0 },
-        { value: 'had_issues', label: 'I\'ve had issues before', score: 1 },
-        { value: 'no_idea', label: 'I don\'t know how to check', score: 2 }
-      ],
-      issue: 'Lost sales from technical issues'
-    },
-    {
-      id: 'storage_fees',
-      question: 'How much are storage fees eating into your margins?',
-      options: [
-        { value: 'optimized', label: 'I optimize inventory regularly', score: 0 },
-        { value: 'overage', label: 'I\'ve been charged overage fees', score: 1 },
-        { value: 'unsure', label: 'I\'m not sure', score: 2 }
-      ],
-      issue: 'Cash flow drain'
-    },
-    {
-      id: 'regional_specific',
-      question: data.specificQuestion.question,
-      options: [
-        { value: 'compliant', label: 'Yes, fully compliant', score: 0 },
-        { value: 'think_so', label: 'I think so', score: 1 },
-        { value: 'worried', label: 'I\'m worried about this', score: 2 }
-      ],
-      issue: data.specificQuestion.issue
-    },
-    {
-      id: 'partner_access',
-      question: 'Have you ever given a trusted partner read-only access to your Amazon account?',
-      options: [
-        { value: 'yes', label: 'Yes, I\'ve done this before', score: 0 },
-        { value: 'open', label: 'No, but I\'m open to it', score: 0 },
-        { value: 'unsure', label: 'I\'m not sure about this', score: 1 }
-      ],
-      issue: 'Access barrier'
-    }
-  ];
+  const content = quizContent[region]?.[pageLang] || quizContent.india.en;
+  const questions = content.questions;
 
   const handleAnswer = (questionId, value, score) => {
     setAnswers({ ...answers, [questionId]: { value, score } });
@@ -402,8 +327,8 @@ const RegionalLaunchV2 = () => {
           {currentStep === 0 && (
             <div className="text-center mb-12">
               <div className="text-6xl mb-4">{data.flag}</div>
-              <h1 className="text-4xl font-bold mb-4">{data.heroTitle}</h1>
-              <p className="text-xl text-gray-700 mb-6">{data.heroSubtitle}</p>
+              <h1 className="text-4xl font-bold mb-4">{content.heroTitle}</h1>
+              <p className="text-xl text-gray-700 mb-6">{content.heroSubtitle}</p>
               <Badge className="bg-orange-500 text-white px-4 py-2 text-sm">
                 Takes 2 minutes • 50+ sellers audited this week
               </Badge>
@@ -427,9 +352,12 @@ const RegionalLaunchV2 = () => {
           {/* Question Card */}
           <Card className="border-2 border-gray-200 shadow-xl">
             <CardContent className="pt-8 pb-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">
+              <h2 className="text-2xl font-bold mb-2 text-gray-900">
                 {currentQuestion.question}
               </h2>
+              {currentQuestion.subtext && (
+                <p className="text-sm text-gray-600 mb-6 italic">{currentQuestion.subtext}</p>
+              )}
               
               <div className="space-y-3">
                 {currentQuestion.options.map((option, idx) => (
