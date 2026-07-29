@@ -7,11 +7,9 @@ import { useTranslation } from 'react-i18next';
 const Navbar = () => {
   const { i18n, t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState('en');
 
   const toggleLanguage = () => {
-    const newLang = currentLang === 'en' ? 'es' : 'en';
-    setCurrentLang(newLang);
+    const newLang = i18n.language === 'en' ? 'es' : 'en';
     i18n.changeLanguage(newLang);
   };
 
@@ -56,8 +54,8 @@ const Navbar = () => {
               onClick={toggleLanguage}
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all text-sm font-semibold"
             >
-              <span className="text-lg">{currentLang === 'en' ? '🇺🇸' : '🇲🇽'}</span>
-              <span>{currentLang === 'en' ? 'EN' : 'ES'}</span>
+              <span className="text-lg">{i18n.language === 'en' ? '🇺🇸' : '🇲🇽'}</span>
+              <span>{i18n.language === 'en' ? 'EN' : 'ES'}</span>
             </button>
 
             {/* CTA Buttons */}
@@ -105,8 +103,8 @@ const Navbar = () => {
               onClick={toggleLanguage}
               className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gray-100 hover:bg-gray-200 transition-all font-semibold"
             >
-              <span className="text-xl">{currentLang === 'en' ? '🇺🇸' : '🇲🇽'}</span>
-              <span>{currentLang === 'en' ? 'English' : 'Español'}</span>
+              <span className="text-xl">{i18n.language === 'en' ? '🇺🇸' : '🇲🇽'}</span>
+              <span>{i18n.language === 'en' ? 'English' : 'Español'}</span>
             </button>
             
             <a href="/#contact" className="block">
