@@ -29,7 +29,17 @@ const resources = {
         stat4: 'Fought for Clients',
         badge2: 'AMAZON GROWTH',
         badge3: 'Sustainable & Fair',
-        sustainableBadge: 'Sustainable Amazon Solutions'
+        sustainableBadge: 'Sustainable Amazon Solutions',
+        stat1Label: 'Brands Supported',
+        stat2Label: 'Revenue Generated',
+        stat3Label: 'Avg. Growth Rate',
+        stat4Label: 'Client Satisfaction',
+        alsoOn: 'ALSO ON',
+        listingOpt: 'LISTING OPTIMIZATION',
+        brandStrategy: 'BRAND & STRATEGY',
+        ppcAds: 'PPC & ADVERTISING',
+        contentCreative: 'CONTENT & CREATIVE',
+        yourBrand: 'YOUR BRAND'
       },
       services: {
         title: 'Four Ways to Grow',
@@ -361,7 +371,8 @@ const resources = {
         caseStudies: 'Casos de Éxito',
         pricing: 'Precios',
         login: 'Iniciar Sesión',
-        bookCall: 'Agendar Llamada'
+        bookCall: 'Agendar Llamada',
+        team: 'Nuestro Equipo'
       },
       hero: {
         badge: 'Colectivo Sostenible de Amazon',
@@ -378,7 +389,17 @@ const resources = {
         stat4: 'Luchado por Clientes',
         badge2: 'CRECIMIENTO EN AMAZON',
         badge3: 'Sostenible y Justo',
-        sustainableBadge: 'Soluciones Sostenibles de Amazon'
+        sustainableBadge: 'Soluciones Sostenibles de Amazon',
+        stat1Label: 'Marcas Apoyadas',
+        stat2Label: 'Ingresos Generados',
+        stat3Label: 'Tasa de Crecimiento Promedio',
+        stat4Label: 'Satisfacción del Cliente',
+        alsoOn: 'TAMBIÉN EN',
+        listingOpt: 'OPTIMIZACIÓN DE LISTADOS',
+        brandStrategy: 'MARCA Y ESTRATEGIA',
+        ppcAds: 'PPC Y PUBLICIDAD',
+        contentCreative: 'CONTENIDO Y CREATIVO',
+        yourBrand: 'TU MARCA'
       },
       services: {
         title: 'Cuatro Formas de Crecer',
@@ -454,6 +475,8 @@ const resources = {
         caseStudies: 'Casos de Éxito',
         pricing: 'Precios',
         contact: 'Contacto',
+        team: 'Equipo',
+        blog: 'Blog',
         copyright: 'Superfly Commerce. Todos los derechos reservados.',
         privacy: 'Política de Privacidad',
         terms: 'Términos de Servicio',

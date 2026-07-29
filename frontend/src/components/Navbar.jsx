@@ -46,7 +46,7 @@ const Navbar = () => {
               {t('nav.pricing')}
             </Link>
             <Link to="/team" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
-              Our Team
+              {t('nav.team')}
             </Link>
 
             {/* Simple EN/ES Toggle */}
@@ -95,7 +95,7 @@ const Navbar = () => {
               {t('nav.pricing')}
             </Link>
             <Link to="/team" className="block text-gray-700 hover:text-[#22C55E] py-2 font-semibold">
-              Our Team
+              {t('nav.team')}
             </Link>
             
             {/* Mobile Language Toggle */}
