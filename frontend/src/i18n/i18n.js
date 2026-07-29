@@ -351,6 +351,78 @@ const resources = {
         }
       }
     }
+  },
+  es: {
+    translation: {
+      nav: {
+        services: 'Servicios',
+        about: 'Nosotros',
+        caseStudies: 'Casos de Éxito',
+        pricing: 'Precios',
+        login: 'Iniciar Sesión',
+        bookCall: 'Agendar Llamada'
+      },
+      hero: {
+        badge: 'Colectivo Sostenible de Amazon',
+        title: 'Crecimiento en Amazon Sin el Impuesto de Agencia',
+        subtitle: "Asociaciones basadas en rendimiento. Precios transparentes. Especialistas reales que conocen Amazon, no gerentes leyendo manuales.",
+        feature1: 'Paga por resultados altos, no por retenedores altos',
+        feature2: 'Acceso directo a especialistas en crecimiento de mercado',
+        feature3: 'Construido para crecimiento sostenible a largo plazo',
+        cta1: 'Comienza a Crecer Hoy',
+        cta2: 'Ver Precios Transparentes',
+        stat1: 'Marcas Apoyadas',
+        stat2: 'Ingresos en 6 Años',
+        stat3: 'Satisfacción',
+        stat4: 'Luchado por Clientes',
+        badge2: 'CRECIMIENTO EN AMAZON',
+        badge3: 'Sostenible y Justo'
+      },
+      about: {
+        badge: 'Colectivo Sostenible de Amazon',
+        title: "No Somos una Agencia.",
+        titleGreen: "Somos un Colectivo.",
+        description: "Somos especialistas en crecimiento de mercado que eliminan las tarifas pesadas de agencias con asociaciones transparentes basadas en rendimiento.",
+        feature1: 'Un colectivo global de especialistas en crecimiento de mercado, parte de tu equipo',
+        feature2: 'Retenedores vinculados a resultados. Crecemos cuando tú creces',
+        feature3: 'Tarifas con descuento para marcas sostenibles verificadas',
+        feature4: 'Gestión 360 de Amazon a una fracción del costo. Sin equipos inflados, sin contratos ultra largos',
+        feature5: 'Operadores de cuenta fraccionarios integrados en tu negocio',
+        feature6: "Elegimos con quién trabajamos. No trabajamos con marcas que se benefician del genocidio, explotación o abuso de derechos humanos"
+      },
+      contact: {
+        badge: 'Asóciate con Nosotros',
+        title: '¿Listo para Crecer de Manera Sostenible?',
+        description: 'Agenda una llamada de descubrimiento para explorar retenedores basados en rendimiento y descuentos de sostenibilidad. Sin charlas de ventas, solo consejos honestos sobre crecimiento sostenible en Amazon.',
+        card1Title: 'Agendar Llamada',
+        card1Desc: 'Programar vía Calendly',
+        card2Title: 'WhatsApp',
+        card3Title: 'Correo Electrónico',
+        card4Title: 'Ubicación',
+        card4Desc: 'Especialistas Globales en Crecimiento de Mercado',
+        formTitle: 'Agenda Tu Llamada de Descubrimiento'
+      },
+      footer: {
+        description: 'Colectivo Sostenible de Amazon eliminando tarifas pesadas con asociaciones transparentes basadas en rendimiento.',
+        servicesTitle: 'Servicios',
+        companyTitle: 'Empresa',
+        contactTitle: 'Contáctanos',
+        aboutUs: 'Sobre Nosotros',
+        caseStudies: 'Casos de Éxito',
+        pricing: 'Precios',
+        contact: 'Contacto',
+        copyright: 'Superfly Commerce. Todos los derechos reservados.',
+        privacy: 'Política de Privacidad',
+        terms: 'Términos de Servicio',
+        cookies: 'Política de Cookies'
+      },
+      toast: {
+        formSubmitted: '¡Formulario Enviado!',
+        formSuccess: "Te contactaremos pronto.",
+        subscribed: '¡Suscrito!',
+        subscribeSuccess: "Recibirás nuestros consejos de crecimiento pronto."
+      }
+    }
   }
 };
 

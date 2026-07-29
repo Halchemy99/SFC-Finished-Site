@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('en');
 
@@ -39,13 +39,13 @@ const Navbar = () => {
           {/* Desktop Navigation - Reordered */}
           <div className="hidden md:flex items-center gap-6">
             <a href="/#about" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
-              What we do
+              {t('nav.about')}
             </a>
             <Link to="/case-studies" className="text-gray-800 hover:text-[#22C55E] transition-all text-sm font-bold bg-gradient-to-r from-green-50 to-emerald-50 px-5 py-2.5 rounded-full shadow-sm hover:shadow-md border border-green-100">
-              Case Studies ✨
+              {t('nav.caseStudies')} ✨
             </Link>
             <Link to="/pricing" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
-              Pricing
+              {t('nav.pricing')}
             </Link>
             <Link to="/team" className="text-gray-800 hover:text-[#22C55E] transition-colors text-sm font-semibold hover:scale-105 transition-transform">
               Our Team
@@ -63,7 +63,7 @@ const Navbar = () => {
             {/* CTA Buttons */}
             <a href="/#contact">
               <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-7 py-2.5 text-sm font-bold shadow-md hover:shadow-lg transition-all hover:scale-105">
-                Book a Call
+                {t('nav.bookCall')}
               </Button>
             </a>
             <a href="/tiktok-offer">
@@ -94,7 +94,7 @@ const Navbar = () => {
               Case Studies ✨
             </Link>
             <Link to="/pricing" className="block text-gray-700 hover:text-[#22C55E] py-2 font-semibold">
-              Pricing
+              {t('nav.pricing')}
             </Link>
             <Link to="/team" className="block text-gray-700 hover:text-[#22C55E] py-2 font-semibold">
               Our Team
@@ -111,7 +111,7 @@ const Navbar = () => {
             
             <a href="/#contact" className="block">
               <Button className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full mt-4">
-                Book a Call
+                {t('nav.bookCall')}
               </Button>
             </a>
           </div>
