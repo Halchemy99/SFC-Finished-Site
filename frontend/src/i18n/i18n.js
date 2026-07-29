@@ -28,7 +28,8 @@ const resources = {
         stat3: 'Satisfaction',
         stat4: 'Fought for Clients',
         badge2: 'AMAZON GROWTH',
-        badge3: 'Sustainable & Fair'
+        badge3: 'Sustainable & Fair',
+        sustainableBadge: 'Sustainable Amazon Solutions'
       },
       services: {
         title: 'Four Ways to Grow',
@@ -376,7 +377,33 @@ const resources = {
         stat3: 'Satisfacción',
         stat4: 'Luchado por Clientes',
         badge2: 'CRECIMIENTO EN AMAZON',
-        badge3: 'Sostenible y Justo'
+        badge3: 'Sostenible y Justo',
+        sustainableBadge: 'Soluciones Sostenibles de Amazon'
+      },
+      services: {
+        title: 'Cuatro Formas de Crecer',
+        titleGreen: 'Tu Negocio en Amazon',
+        popular: 'MÁS POPULAR',
+        service1Title: 'Paquetes de Victoria Rápida',
+        service1Subtitle: 'Sprints de Amazon a Precio Fijo',
+        service1Feature1: 'Sprint de Optimización de Listados',
+        service1Feature2: 'Paquete de Contenido A+',
+        service1Button: 'Ver Victorias Rápidas',
+        service2Title: 'Emparejamiento de Expertos',
+        service2Subtitle: 'Especialistas Seleccionados a Mano',
+        service2Feature1: 'Red de especialistas verificados',
+        service2Feature2: 'Alcance de proyecto incluido',
+        service2Button: 'Conocer Especialistas',
+        service3Title: 'Asociación de Crecimiento Compartido',
+        service3Subtitle: 'Modelo Basado en Rendimiento',
+        service3Feature1: 'Retenedores de participación en ingresos',
+        service3Feature2: 'Incentivos alineados',
+        service3Button: 'Explorar Asociación',
+        service4Title: 'Academia de Maestría en Amazon',
+        service4Subtitle: 'Capacitación y Asesoría',
+        service4Feature1: 'Talleres dirigidos por expertos',
+        service4Feature2: 'Soporte continuo',
+        service4Button: 'Comenzar a Aprender'
       },
       about: {
         badge: 'Colectivo Sostenible de Amazon',
@@ -400,7 +427,23 @@ const resources = {
         card3Title: 'Correo Electrónico',
         card4Title: 'Ubicación',
         card4Desc: 'Especialistas Globales en Crecimiento de Mercado',
-        formTitle: 'Agenda Tu Llamada de Descubrimiento'
+        formTitle: 'Agenda Tu Llamada de Descubrimiento',
+        nameLabel: 'Tu nombre',
+        emailLabel: 'tu@email.com',
+        companyLabel: 'Tu empresa',
+        messageLabel: 'Comparte tus objetivos y desafíos...',
+        interestedLabel: 'Interesado en',
+        submitButton: 'Enviar Solicitud'
+      },
+      newsletter: {
+        title: '¡Mantente Informado!',
+        description: 'Recibe consejos exclusivos de crecimiento en Amazon, perspectivas de sostenibilidad y actualizaciones de la industria en tu bandeja de entrada.',
+        feature1: 'Consejos de crecimiento sostenible',
+        feature2: 'Perspectivas de Amazon',
+        feature3: 'Sin spam, solo valor',
+        emailTitle: 'Ingresa tu correo para consejos de crecimiento',
+        joinButton: 'Únete Ahora',
+        placeholder: 'tu@email.com'
       },
       footer: {
         description: 'Colectivo Sostenible de Amazon eliminando tarifas pesadas con asociaciones transparentes basadas en rendimiento.',
@@ -421,6 +464,27 @@ const resources = {
         formSuccess: "Te contactaremos pronto.",
         subscribed: '¡Suscrito!',
         subscribeSuccess: "Recibirás nuestros consejos de crecimiento pronto."
+      },
+      pricing: {
+        badge: 'Precios Transparentes',
+        title: 'Precios que Tienen Sentido',
+        subtitle: 'Sin tarifas ocultas. Sin retenedores inflados. Solo precios honestos para crecimiento real.',
+        oneOff: 'Servicios Únicos',
+        partnerships: 'Asociaciones',
+        viewAll: 'Ver Todos los Servicios'
+      },
+      caseStudies: {
+        badge: 'Historias de Éxito',
+        title: 'Resultados Reales de',
+        titleGreen: 'Marcas Reales',
+        subtitle: 'Así es como ayudamos a las marcas a crecer de manera sostenible en Amazon.'
+      },
+      team: {
+        badge: 'Nuestro Equipo',
+        title: 'Conoce al Colectivo',
+        subtitle: 'Especialistas globales en crecimiento de mercado, parte de tu equipo.',
+        joinTitle: '¿Quieres Unirte?',
+        joinDesc: 'Siempre buscamos especialistas talentosos en crecimiento de mercado que compartan nuestros valores.'
       }
     }
   }
