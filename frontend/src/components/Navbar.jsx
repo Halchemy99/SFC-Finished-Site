@@ -1,40 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, User, Globe, Menu, X, Loader2 } from 'lucide-react';
+import { ShoppingCart, User, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTranslation } from 'react-i18next';
-import { useLanguage, languages } from '../context/LanguageContext';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from './ui/dropdown-menu';
 
 const Navbar = () => {
-  const { t } = useTranslation();
-  const { currentLanguage, changeLanguage, isTranslating } = useLanguage();
+  const { i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState('en');
 
-  const currentLangData = languages.find(lang => lang.code === currentLanguage);
-
-  // Localized loading messages
-  const loadingMessages = {
-    'en': 'Loading...',
-    'zh': '加载中...',
-    'ar': 'جار التحميل...',
-    'hi': 'लोड हो रहा है...',
-    'es': 'Cargando...',
-    'pt': 'Carregando...',
-    'nl': 'Laden...',
-    'de': 'Wird geladen...',
-    'it': 'Caricamento...',
-    'fr': 'Chargement...',
-    'ru': 'Загрузка...'
-  };
-
-  const handleLanguageChange = (langCode) => {
-    changeLanguage(langCode);
+  const toggleLanguage = () => {
+    const newLang = currentLang === 'en' ? 'es' : 'en';
+    setCurrentLang(newLang);
+    i18n.changeLanguage(newLang);
   };
 
   const scrollToAbout = (e) => {
@@ -73,39 +51,19 @@ const Navbar = () => {
               Our Team
             </Link>
 
-            {/* Language Selector - Enhanced */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1.5 text-gray-800 hover:text-[#22C55E] transition-colors outline-none bg-gray-50 px-3 py-2 rounded-full hover:bg-gray-100">
-                {isTranslating ? (
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                ) : (
-                  <Globe className="w-4 h-4" />
-                )}
-                <span className="text-lg">{currentLangData.emoji}</span>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="max-h-96 overflow-y-auto">
-                {languages.map((lang) => (
-                  <DropdownMenuItem
-                    key={lang.code}
-                    onClick={() => handleLanguageChange(lang.code)}
-                    className={`cursor-pointer flex items-center gap-2 ${
-                      currentLanguage === lang.code ? 'bg-green-50 font-semibold' : ''
-                    }`}
-                  >
-                    <span className="text-xl">{lang.emoji}</span>
-                    <span>{lang.name}</span>
-                    {currentLanguage === lang.code && (
-                      <span className="ml-auto text-[#22C55E]">✓</span>
-                    )}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Simple EN/ES Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all text-sm font-semibold"
+            >
+              <span className="text-lg">{currentLang === 'en' ? '🇺🇸' : '🇲🇽'}</span>
+              <span>{currentLang === 'en' ? 'EN' : 'ES'}</span>
+            </button>
 
-            {/* CTA Buttons - Enhanced */}
+            {/* CTA Buttons */}
             <a href="/#contact">
               <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full px-7 py-2.5 text-sm font-bold shadow-md hover:shadow-lg transition-all hover:scale-105">
-                {t('nav.bookCall')}
+                Book a Call
               </Button>
             </a>
             <a href="/tiktok-offer">
@@ -142,35 +100,20 @@ const Navbar = () => {
               Our Team
             </Link>
             
-            {/* Mobile Language Selector */}
-            <div className="py-2">
-              <select
-                value={currentLanguage}
-                onChange={(e) => handleLanguageChange(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                disabled={isTranslating}
-              >
-                {languages.map((lang) => (
-                  <option key={lang.code} value={lang.code}>
-                    {lang.name}
-                  </option>
-                ))}
-              </select>
-            </div>
+            {/* Mobile Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gray-100 hover:bg-gray-200 transition-all font-semibold"
+            >
+              <span className="text-xl">{currentLang === 'en' ? '🇺🇸' : '🇲🇽'}</span>
+              <span>{currentLang === 'en' ? 'English' : 'Español'}</span>
+            </button>
             
-            <Button className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full mt-4">
-              {t('nav.bookCall')}
-            </Button>
-          </div>
-        </div>
-      )}
-      
-      {/* Translation Loading Overlay with localized message */}
-      {isTranslating && (
-        <div className="fixed top-0 left-0 right-0 z-50 bg-[#22C55E] text-white py-2 text-center font-semibold shadow-lg">
-          <div className="flex items-center justify-center gap-2">
-            <Loader2 className="w-4 h-4 animate-spin" />
-            <span>{loadingMessages[currentLanguage] || 'Loading...'}</span>
+            <a href="/#contact" className="block">
+              <Button className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full mt-4">
+                Book a Call
+              </Button>
+            </a>
           </div>
         </div>
       )}

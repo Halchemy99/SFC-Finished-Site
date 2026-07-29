@@ -11,11 +11,13 @@ const RegionalLaunchV2 = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
+  const [pageLang, setPageLang] = useState('en'); // Regional page language
 
   const regionalData = {
     india: {
       name: 'India',
       flag: '🇮🇳',
+      languages: { primary: 'en', secondary: 'hi', primaryFlag: '🇬🇧', secondaryFlag: '🇮🇳' },
       targetMarkets: 'UK, EU, USA',
       heroTitle: 'Free Amazon Store Audit for Indian Sellers',
       heroSubtitle: 'Find out where you\'re losing money before expanding to UK/EU/USA',
@@ -28,6 +30,7 @@ const RegionalLaunchV2 = () => {
     uae: {
       name: 'UAE',
       flag: '🇦🇪',
+      languages: { primary: 'en', secondary: 'ar', primaryFlag: '🇬🇧', secondaryFlag: '🇦🇪' },
       targetMarkets: 'UK, EU, USA',
       heroTitle: 'Free Amazon Store Audit for UAE Sellers',
       heroSubtitle: 'Find out where you\'re losing money before expanding to UK/EU/USA',
@@ -40,6 +43,7 @@ const RegionalLaunchV2 = () => {
     mexico: {
       name: 'Mexico',
       flag: '🇲🇽',
+      languages: { primary: 'en', secondary: 'es', primaryFlag: '🇬🇧', secondaryFlag: '🇲🇽' },
       targetMarkets: 'USA, UK, EU',
       heroTitle: 'Free Amazon Store Audit for Mexican Sellers',
       heroSubtitle: 'Find out where you\'re losing money in USA/UK/EU markets',
@@ -150,6 +154,17 @@ const RegionalLaunchV2 = () => {
         
         <div className="min-h-screen bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 pt-20 pb-16 px-4">
           <div className="max-w-3xl mx-auto">
+            
+            {/* Language Toggle */}
+            <div className="flex justify-end mb-4">
+              <button
+                onClick={() => setPageLang(pageLang === 'en' ? data.languages.secondary : 'en')}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-gray-50 transition-all shadow-md text-sm font-semibold border border-gray-200"
+              >
+                <span className="text-lg">{pageLang === 'en' ? data.languages.primaryFlag : data.languages.secondaryFlag}</span>
+                <span>{pageLang === 'en' ? 'EN' : data.languages.secondary.toUpperCase()}</span>
+              </button>
+            </div>
             
             {/* Results Header */}
             <div className="text-center mb-8">
@@ -371,6 +386,17 @@ const RegionalLaunchV2 = () => {
       
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 pt-20 pb-16 px-4">
         <div className="max-w-2xl mx-auto">
+          
+          {/* Language Toggle */}
+          <div className="flex justify-end mb-4">
+            <button
+              onClick={() => setPageLang(pageLang === 'en' ? data.languages.secondary : 'en')}
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-gray-50 transition-all shadow-md text-sm font-semibold border border-gray-200"
+            >
+              <span className="text-lg">{pageLang === 'en' ? data.languages.primaryFlag : data.languages.secondaryFlag}</span>
+              <span>{pageLang === 'en' ? 'EN' : data.languages.secondary.toUpperCase()}</span>
+            </button>
+          </div>
           
           {/* Hero */}
           {currentStep === 0 && (
