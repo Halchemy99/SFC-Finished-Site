@@ -38,7 +38,7 @@ class TestNewsletterAPI:
         
         if response.status_code in [200, 201]:
             data = response.json()
-            assert data.get("success") is True  # Pythonic boolean comparison
+            assert data.get("success") == True  # Value comparison
             assert "message" in data
     
     def test_newsletter_subscribe_invalid_email(self):
@@ -84,7 +84,7 @@ class TestContactFormAPI:
         
         if response.status_code == 200:
             data = response.json()
-            assert data.get("success") is True  # Pythonic boolean comparison
+            assert data.get("success") == True  # Value comparison
             assert "message" in data
     
     def test_contact_form_missing_required_fields(self):

@@ -98,8 +98,8 @@ const Team = () => {
         <div className="mb-20">
           <h2 className="text-4xl font-bold text-center mb-12">{t('team.leadership')}</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {teamMembers.map((member, idx) => (
-              <Card key={idx} className="border-2 border-gray-200 hover:shadow-xl transition-shadow">
+            {teamMembers.map((member) => (
+              <Card key={member.name} className="border-2 border-gray-200 hover:shadow-xl transition-shadow">
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div>
@@ -148,8 +148,8 @@ const Team = () => {
         <div className="mb-12 bg-white rounded-3xl p-12">
           <h2 className="text-4xl font-bold text-center mb-8">{t('team.values.title')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, idx) => (
-              <div key={idx} className="text-center">
+            {values.map((value) => (
+              <div key={value.title} className="text-center">
                 <div className="text-6xl mb-4">{value.icon}</div>
                 <h3 className="text-xl font-bold mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.desc}</p>

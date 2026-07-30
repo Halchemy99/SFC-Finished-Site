@@ -60,8 +60,8 @@ const TikTokOffer = () => {
             </CardHeader>
             <CardContent>
               <ul className="space-y-4">
-                {benefits.map((benefit, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
+                {benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-4 h-4 text-green-600" />
                     </div>
@@ -101,8 +101,8 @@ const TikTokOffer = () => {
               <div className="border-t border-gray-200 pt-6 mb-6">
                 <h4 className="font-semibold text-gray-900 mb-4">{t('tiktok.requirements')}</h4>
                 <ul className="space-y-3">
-                  {requirements.map((req, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
+                  {requirements.map((req) => (
+                    <li key={req} className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check className="w-4 h-4 text-blue-600" />
                       </div>
@@ -125,8 +125,8 @@ const TikTokOffer = () => {
         <div className="mb-16">
           <h2 className="text-4xl font-bold text-center mb-12">{t('tiktok.howItWorks')}</h2>
           <div className="grid md:grid-cols-4 gap-8">
-            {steps.map((item, idx) => (
-              <div key={idx} className="text-center">
+            {steps.map((item) => (
+              <div key={item.step} className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
                   {item.step}
                 </div>
