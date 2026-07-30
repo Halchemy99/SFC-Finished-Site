@@ -80,10 +80,10 @@ function App() {
             <Route path="/cookies" element={<PageLayout><Cookies /></PageLayout>} />
             
             {/* Regional Launch Pages - Interactive Diagnostic */}
-            <Route path="/launch/:region" element={<RegionalLaunchV2 />} />
+            <Route path="/launch/:region" element={<PageLayout><RegionalLaunchV2 /></PageLayout>} />
             
             {/* Marketplace Landing Pages */}
-            <Route path="/marketplace/:platform" element={<MarketplaceLanding />} />
+            <Route path="/marketplace/:platform" element={<PageLayout><MarketplaceLanding /></PageLayout>} />
           </Routes>
         </BrowserRouter>
         <Toaster />
