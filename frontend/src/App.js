@@ -31,6 +31,19 @@ import { Toaster } from './components/ui/toaster';
 import './App.css';
 
 const Home = () => {
+  React.useEffect(() => {
+    // Handle hash navigation for contact form
+    const hash = window.location.hash;
+    if (hash === '#contact') {
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />

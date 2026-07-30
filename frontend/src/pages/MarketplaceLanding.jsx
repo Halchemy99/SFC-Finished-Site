@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Package, TrendingUp, Shield, Zap } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
@@ -10,6 +10,20 @@ import { useTranslation } from 'react-i18next';
 const MarketplaceLanding = () => {
   const { platform } = useParams();
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  
+  const scrollToContact = () => {
+    // If already on homepage, just scroll
+    if (window.location.pathname === '/') {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // Navigate to homepage with hash
+      window.location.href = '/#contact';
+    }
+  };
   
   const marketplaceData = {
     walmart: {
@@ -95,11 +109,13 @@ const MarketplaceLanding = () => {
               <span className="text-5xl font-bold">{mp.pricing}</span>
               <span className="text-xl opacity-90">{mp.pricingNote}</span>
             </div>
-            <a href="/#contact">
-              <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-8 py-6 rounded-full shadow-2xl">
-                {mp.cta} <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
+            <Button 
+              onClick={scrollToContact}
+              size="lg" 
+              className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-8 py-6 rounded-full shadow-2xl"
+            >
+              {mp.cta} <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
           </div>
         </div>
 
@@ -151,8 +167,8 @@ const MarketplaceLanding = () => {
             <Card className="border-2" style={{ borderColor: mp.color }}>
               <CardContent className="pt-8 pb-8">
                 <div className="space-y-4">
-                  {mp.what.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-4 py-2">
+                  {mp.what.map((item) => (
+                    <div key={item} className="flex items-center gap-4 py-2">
                       <div className="w-8 h-8 rounded-full flex items-center justify-center text-white" style={{ backgroundColor: mp.color }}>
                         <Zap className="w-4 h-4" />
                       </div>
@@ -177,11 +193,13 @@ const MarketplaceLanding = () => {
                 <span className="text-6xl font-bold">{mp.pricing}</span>
                 <span className="text-2xl opacity-90">{mp.pricingNote}</span>
               </div>
-              <a href="/#contact">
-                <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-10 py-6 rounded-full shadow-2xl">
-                  {t('nav.bookCall')} <ArrowRight className="ml-2 w-6 h-6" />
-                </Button>
-              </a>
+              <Button 
+                onClick={scrollToContact}
+                size="lg" 
+                className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-10 py-6 rounded-full shadow-2xl"
+              >
+                {t('nav.bookCall')} <ArrowRight className="ml-2 w-6 h-6" />
+              </Button>
             </CardContent>
           </Card>
 
