@@ -83,147 +83,147 @@ const Pricing = () => {
       ]
     },
     {
-      name: 'A+ Content Package',
+      name: t('pricing.services.aPlusContent.name'),
       price: '£300',
       packageId: 'a-plus-content',
-      description: 'Professional A+ content for one product',
-      detailedDescription: 'Complete A+ content module design for a single Amazon product listing.',
+      description: t('pricing.services.aPlusContent.description'),
+      detailedDescription: t('pricing.services.aPlusContent.detailedDescription'),
       icon: '🎨',
       scope: [
-        '1 product A+ content only',
-        '5 custom modules maximum',
-        'Up to 2 design revisions',
-        'Mobile-optimized layout',
-        '7-10 business days delivery',
-        'Source files included'
+        t('pricing.services.aPlusContent.scope1'),
+        t('pricing.services.aPlusContent.scope2'),
+        t('pricing.services.aPlusContent.scope3'),
+        t('pricing.services.aPlusContent.scope4'),
+        t('pricing.services.aPlusContent.scope5'),
+        t('pricing.services.aPlusContent.scope6')
       ]
     },
     {
-      name: 'Product Photography',
+      name: t('pricing.services.photography.name'),
       price: '£500',
       packageId: 'product-photography',
-      description: 'Professional product shoot',
-      detailedDescription: 'Studio product photography session with professional editing.',
+      description: t('pricing.services.photography.description'),
+      detailedDescription: t('pricing.services.photography.detailedDescription'),
       icon: '📸',
       scope: [
-        'Up to 10 edited images',
-        'White background shots only',
-        '1 product, multiple angles',
-        'High-resolution files (300 DPI)',
-        'Amazon-compliant formatting',
-        '14 business days turnaround'
+        t('pricing.services.photography.scope1'),
+        t('pricing.services.photography.scope2'),
+        t('pricing.services.photography.scope3'),
+        t('pricing.services.photography.scope4'),
+        t('pricing.services.photography.scope5'),
+        t('pricing.services.photography.scope6')
       ]
     },
     {
-      name: 'Amazon Infographic Set',
+      name: t('pricing.services.infographics.name'),
       price: '£175',
       packageId: 'infographic-set',
-      description: 'Up to 6 custom infographics',
-      detailedDescription: 'Professional infographic design for Amazon listings (not photography).',
+      description: t('pricing.services.infographics.description'),
+      detailedDescription: t('pricing.services.infographics.detailedDescription'),
       icon: '📊',
       scope: [
-        'Up to 6 custom infographics',
-        'Product feature highlights',
-        'Comparison charts',
-        'Lifestyle mockups',
-        'Amazon size requirements',
-        '7-10 business days delivery'
+        t('pricing.services.infographics.scope1'),
+        t('pricing.services.infographics.scope2'),
+        t('pricing.services.infographics.scope3'),
+        t('pricing.services.infographics.scope4'),
+        t('pricing.services.infographics.scope5'),
+        t('pricing.services.infographics.scope6')
       ]
     },
     {
-      name: 'Brand Story Element',
+      name: t('pricing.services.brandStory.name'),
       price: '£125',
       packageId: 'brand-story',
-      description: 'Goes above A+ content',
-      detailedDescription: 'Premium brand story module that sits above your A+ content.',
+      description: t('pricing.services.brandStory.description'),
+      detailedDescription: t('pricing.services.brandStory.detailedDescription'),
       icon: '📖',
       scope: [
-        '1 brand story module',
-        'Custom brand narrative',
-        'Professional design',
-        'Mobile-optimized',
-        '5-7 business days delivery',
-        'Includes copywriting'
+        t('pricing.services.brandStory.scope1'),
+        t('pricing.services.brandStory.scope2'),
+        t('pricing.services.brandStory.scope3'),
+        t('pricing.services.brandStory.scope4'),
+        t('pricing.services.brandStory.scope5'),
+        t('pricing.services.brandStory.scope6')
       ]
     },
     {
-      name: 'Brand Video',
+      name: t('pricing.services.brandVideo.name'),
       price: '£400',
       packageId: 'brand-video',
-      description: 'Up to 45 seconds',
-      detailedDescription: 'Professional video editing from your supplied files (non-studio).',
+      description: t('pricing.services.brandVideo.description'),
+      detailedDescription: t('pricing.services.brandVideo.detailedDescription'),
       icon: '🎬',
       scope: [
-        'Up to 45 seconds final video',
-        'Editing from YOUR supplied files',
-        'No studio filming included',
-        'Music & transitions',
-        'Amazon video specs',
-        '10-14 business days delivery'
+        t('pricing.services.brandVideo.scope1'),
+        t('pricing.services.brandVideo.scope2'),
+        t('pricing.services.brandVideo.scope3'),
+        t('pricing.services.brandVideo.scope4'),
+        t('pricing.services.brandVideo.scope5'),
+        t('pricing.services.brandVideo.scope6')
       ]
     },
     {
-      name: 'Listing Copywriting',
+      name: t('pricing.services.copywriting.name'),
       price: '£150',
       packageId: 'listing-copywriting',
-      description: 'SEO-optimized title, bullets, and description',
-      detailedDescription: 'Comprehensive listing copy for one product with keyword optimization.',
+      description: t('pricing.services.copywriting.description'),
+      detailedDescription: t('pricing.services.copywriting.detailedDescription'),
       icon: '✍️',
       scope: [
-        '1 product listing only',
-        'Title optimization (200 chars)',
-        '5 bullet points',
-        'Product description',
-        'Backend search terms',
-        '3-5 business days delivery'
+        t('pricing.services.copywriting.scope1'),
+        t('pricing.services.copywriting.scope2'),
+        t('pricing.services.copywriting.scope3'),
+        t('pricing.services.copywriting.scope4'),
+        t('pricing.services.copywriting.scope5'),
+        t('pricing.services.copywriting.scope6')
       ]
     },
     {
-      name: 'PPC Audit & Setup',
+      name: t('pricing.services.ppcAudit.name'),
       price: '£400',
       packageId: 'ppc-audit',
-      description: 'Complete PPC audit with campaign setup',
-      detailedDescription: 'Comprehensive PPC audit and initial campaign configuration.',
+      description: t('pricing.services.ppcAudit.description'),
+      detailedDescription: t('pricing.services.ppcAudit.detailedDescription'),
       icon: '🎯',
       scope: [
-        'Current campaign audit',
-        'Up to 3 new campaigns setup',
-        'Keyword research (50 keywords)',
-        'Bid strategy recommendations',
-        'Does NOT include ad spend',
-        '5-7 business days delivery'
+        t('pricing.services.ppcAudit.scope1'),
+        t('pricing.services.ppcAudit.scope2'),
+        t('pricing.services.ppcAudit.scope3'),
+        t('pricing.services.ppcAudit.scope4'),
+        t('pricing.services.ppcAudit.scope5'),
+        t('pricing.services.ppcAudit.scope6')
       ]
     },
     {
-      name: 'Brand Storefront',
+      name: t('pricing.services.brandStorefront.name'),
       price: '£800',
       packageId: 'brand-storefront',
-      description: 'Custom Amazon Storefront design',
-      detailedDescription: 'Complete Amazon Brand Store design with up to 5 pages.',
+      description: t('pricing.services.brandStorefront.description'),
+      detailedDescription: t('pricing.services.brandStorefront.detailedDescription'),
       icon: '🏪',
       scope: [
-        'Up to 5 storefront pages',
-        'Custom page layouts',
-        'Brand story integration',
-        'Product category sections',
-        '2 rounds of revisions',
-        '14-21 business days delivery'
+        t('pricing.services.brandStorefront.scope1'),
+        t('pricing.services.brandStorefront.scope2'),
+        t('pricing.services.brandStorefront.scope3'),
+        t('pricing.services.brandStorefront.scope4'),
+        t('pricing.services.brandStorefront.scope5'),
+        t('pricing.services.brandStorefront.scope6')
       ]
     },
     {
-      name: 'Full Business Analysis',
+      name: t('pricing.services.businessAnalysis.name'),
       price: '£1,500',
       packageId: 'business-analysis',
-      description: 'Deloitte-level strategic report',
-      detailedDescription: 'Comprehensive business analysis with detailed report and strategy call.',
+      description: t('pricing.services.businessAnalysis.description'),
+      detailedDescription: t('pricing.services.businessAnalysis.detailedDescription'),
       icon: '📈',
       scope: [
-        '15-20 page detailed report',
-        '3-hour strategy process call',
-        'Market analysis & insights',
-        'Growth opportunities',
-        'Competitive benchmarking',
-        '14-21 business days delivery'
+        t('pricing.services.businessAnalysis.scope1'),
+        t('pricing.services.businessAnalysis.scope2'),
+        t('pricing.services.businessAnalysis.scope3'),
+        t('pricing.services.businessAnalysis.scope4'),
+        t('pricing.services.businessAnalysis.scope5'),
+        t('pricing.services.businessAnalysis.scope6')
       ]
     }
   ];

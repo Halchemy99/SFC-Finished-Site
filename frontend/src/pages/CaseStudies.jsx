@@ -19,10 +19,10 @@ const CaseStudies = () => {
       challenge: t('caseStudies.pachakuti.challenge'),
       solution: t('caseStudies.pachakuti.solution'),
       results: [
-        { metric: 'Revenue', value: '£50k', period: '60 days' },
-        { metric: 'Category Ranking', value: 'Top 4', period: 'Cacao' },
-        { metric: 'CTR Increase', value: '5x', period: 'post-optimization' },
-        { metric: 'TROAS', value: '13.00', period: '2.5 months' }
+        { metric: t('caseStudies.metrics.revenue'), value: '£50k', period: '60 days' },
+        { metric: t('caseStudies.metrics.categoryRanking'), value: 'Top 4', period: 'Cacao' },
+        { metric: t('caseStudies.metrics.ctrIncrease'), value: '5x', period: 'post-optimization' },
+        { metric: t('caseStudies.metrics.troas'), value: '13.00', period: '2.5 months' }
       ],
       image: 'https://customer-assets.emergentagent.com/job_design-75/artifacts/mt1i9td5_Pachakuti.jpg',
       pressLink: 'https://www.confectioneryproduction.com/news/57201/ecuadorian-and-uk-cacao-firm-pachakuti-reports-online-success/',
@@ -37,9 +37,9 @@ const CaseStudies = () => {
       challenge: t('caseStudies.hairGuru.challenge'),
       solution: t('caseStudies.hairGuru.solution'),
       results: [
-        { metric: 'Revenue', value: '£25k', period: '30 days' },
-        { metric: 'CTR Improvement', value: '5x', period: 'immediate' },
-        { metric: 'Category Ranking', value: 'Top 4', period: 'haircare' }
+        { metric: t('caseStudies.metrics.revenue'), value: '£25k', period: '30 days' },
+        { metric: t('caseStudies.metrics.ctrImprovement'), value: '5x', period: 'immediate' },
+        { metric: t('caseStudies.metrics.categoryRanking'), value: 'Top 4', period: 'haircare' }
       ],
       image: 'https://customer-assets.emergentagent.com/job_design-75/artifacts/orz3hp50_Jamie%20Shepard%20hair%20Guru.jpg',
       pressLink: null,
@@ -54,9 +54,9 @@ const CaseStudies = () => {
       challenge: t('caseStudies.leon.challenge'),
       solution: t('caseStudies.leon.solution'),
       results: [
-        { metric: 'Fresh Trial', value: 'Sold Out', period: '3 weeks' },
-        { metric: 'Planned Duration', value: '12 weeks', period: 'exceeded' },
-        { metric: 'Next Phase', value: 'New Products', period: 'ready meals' }
+        { metric: t('caseStudies.metrics.freshTrial'), value: 'Sold Out', period: '3 weeks' },
+        { metric: t('caseStudies.metrics.plannedDuration'), value: '12 weeks', period: 'exceeded' },
+        { metric: t('caseStudies.metrics.nextPhase'), value: 'New Products', period: 'ready meals' }
       ],
       image: 'https://customer-assets.emergentagent.com/job_design-75/artifacts/vdymt266_LEON.jpg',
       pressLink: null,
@@ -71,10 +71,10 @@ const CaseStudies = () => {
       challenge: t('caseStudies.reborn.challenge'),
       solution: t('caseStudies.reborn.solution'),
       results: [
-        { metric: 'Buy Box Share', value: '99%', period: 'from 65%' },
-        { metric: 'FBA/FBM', value: 'Optimized', period: 'by SKU' },
-        { metric: 'US Market', value: 'Ready', period: 'roadmap built' },
-        { metric: 'Sustainability', value: 'Certified', period: 'Climate Pledge' }
+        { metric: t('caseStudies.metrics.buyBoxShare'), value: '99%', period: 'from 65%' },
+        { metric: t('caseStudies.metrics.fbaFbm'), value: 'Optimized', period: 'by SKU' },
+        { metric: t('caseStudies.metrics.usMarket'), value: 'Ready', period: 'roadmap built' },
+        { metric: t('caseStudies.metrics.sustainability'), value: 'Certified', period: 'Climate Pledge' }
       ],
       image: 'https://customer-assets.emergentagent.com/job_design-75/artifacts/i714ugcm_Reborn%20Team.jpeg',
       pressLink: 'https://www.housewaresnews.net/amazon-selects-reborn-for-its-sustainability-accelerator/',
@@ -173,7 +173,7 @@ const CaseStudies = () => {
 
                 {/* Testimonial */}
                 <div className="mt-8 bg-white p-6 rounded-xl border-l-4 border-[#22C55E]">
-                  <p className="text-gray-700 italic mb-3">"{study.testimonial}"</p>
+                  <p className="text-gray-700 italic mb-3">&ldquo;{study.testimonial}&rdquo;</p>
                   <p className="text-sm font-semibold text-gray-900">{study.author}</p>
                 </div>
 

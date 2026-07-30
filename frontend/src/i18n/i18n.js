@@ -177,6 +177,20 @@ const resources = {
         ctaTitle: 'Ready to Write Your Success Story?',
         ctaSubtitle: 'Let us discuss how we can help you achieve similar results for your Amazon business.',
         ctaButton: 'Book Discovery Call',
+        metrics: {
+          revenue: 'Revenue',
+          categoryRanking: 'Category Ranking',
+          ctrIncrease: 'CTR Increase',
+          troas: 'TROAS',
+          ctrImprovement: 'CTR Improvement',
+          freshTrial: 'Fresh Trial',
+          plannedDuration: 'Planned Duration',
+          nextPhase: 'Next Phase',
+          buyBoxShare: 'Buy Box Share',
+          fbaFbm: 'FBA/FBM',
+          usMarket: 'US Market',
+          sustainability: 'Sustainability'
+        },
         pachakuti: {
           category: 'Amazon Launch',
           client: 'Pachakuti',
@@ -406,6 +420,28 @@ const resources = {
             scope4: 'Amazon-ready dimensions',
             scope5: 'Source files included',
             scope6: '5-7 business days delivery'
+          },
+          brandStory: {
+            name: 'Brand Story Element',
+            description: 'Goes above A+ content',
+            detailedDescription: 'Premium brand story module that sits above your A+ content.',
+            scope1: '1 brand story module',
+            scope2: 'Custom brand narrative',
+            scope3: 'Professional design',
+            scope4: 'Mobile-optimized',
+            scope5: '5-7 business days delivery',
+            scope6: 'Includes copywriting'
+          },
+          brandVideo: {
+            name: 'Brand Video',
+            description: 'Up to 45 seconds',
+            detailedDescription: 'Professional video editing from your supplied files (non-studio).',
+            scope1: 'Up to 45 seconds final video',
+            scope2: 'Editing from YOUR supplied files',
+            scope3: 'No studio filming included',
+            scope4: 'Music & transitions',
+            scope5: 'Amazon video specs',
+            scope6: '10-14 business days delivery'
           },
           copywriting: {
             name: 'Expert Copywriting',
@@ -909,6 +945,118 @@ const resources = {
           ],
           cta: 'Solicitar Participación en Ingresos'
         },
+        services: {
+          listingOptimization: {
+            name: 'Sprint de Optimización de Listados',
+            description: 'Optimización completa de un listado',
+            detailedDescription: 'Optimización exhaustiva de un solo listado de producto de Amazon.',
+            scope1: 'Solo 1 listado de producto',
+            scope2: 'Optimización de título (200 caracteres)',
+            scope3: 'Bullets mejorados (5 puntos)',
+            scope4: 'Descripción del producto',
+            scope5: 'Términos de búsqueda backend',
+            scope6: 'Entrega en 5-7 días hábiles'
+          },
+          aPlusContent: {
+            name: 'Paquete de Contenido A+',
+            description: 'Contenido A+ profesional para un producto',
+            detailedDescription: 'Diseño completo de módulo de contenido A+ para un solo listado de producto de Amazon.',
+            scope1: 'Solo contenido A+ de 1 producto',
+            scope2: 'Máximo 5 módulos personalizados',
+            scope3: 'Hasta 2 revisiones de diseño',
+            scope4: 'Diseño optimizado para móvil',
+            scope5: 'Entrega en 7-10 días hábiles',
+            scope6: 'Archivos fuente incluidos'
+          },
+          photography: {
+            name: 'Fotografía de Producto',
+            description: 'Sesión fotográfica profesional de producto',
+            detailedDescription: 'Sesión de fotografía de producto en estudio con edición profesional.',
+            scope1: 'Hasta 10 imágenes editadas',
+            scope2: 'Solo tomas con fondo blanco',
+            scope3: '1 producto, múltiples ángulos',
+            scope4: 'Archivos de alta resolución (300 DPI)',
+            scope5: 'Formato compatible con Amazon',
+            scope6: 'Entrega en 14 días hábiles'
+          },
+          infographics: {
+            name: 'Set de Infografías de Amazon',
+            description: 'Hasta 6 infografías personalizadas',
+            detailedDescription: 'Diseño profesional de infografías para listados de Amazon (no fotografía).',
+            scope1: 'Hasta 6 infografías personalizadas',
+            scope2: 'Destacados de características del producto',
+            scope3: 'Gráficos de comparación',
+            scope4: 'Dimensiones listas para Amazon',
+            scope5: 'Archivos fuente incluidos',
+            scope6: 'Entrega en 5-7 días hábiles'
+          },
+          brandStory: {
+            name: 'Elemento de Historia de Marca',
+            description: 'Va encima del contenido A+',
+            detailedDescription: 'Módulo premium de historia de marca que se sitúa encima de tu contenido A+.',
+            scope1: '1 módulo de historia de marca',
+            scope2: 'Narrativa de marca personalizada',
+            scope3: 'Diseño profesional',
+            scope4: 'Optimizado para móvil',
+            scope5: 'Entrega en 5-7 días hábiles',
+            scope6: 'Incluye redacción'
+          },
+          brandVideo: {
+            name: 'Video de Marca',
+            description: 'Hasta 45 segundos',
+            detailedDescription: 'Edición de video profesional a partir de tus archivos proporcionados (sin estudio).',
+            scope1: 'Hasta 45 segundos de video final',
+            scope2: 'Edición de TUS archivos proporcionados',
+            scope3: 'No incluye filmación en estudio',
+            scope4: 'Música y transiciones',
+            scope5: 'Especificaciones de video de Amazon',
+            scope6: 'Entrega en 10-14 días hábiles'
+          },
+          copywriting: {
+            name: 'Redacción Experta',
+            description: 'Copia enfocada en conversión para 1 listado',
+            detailedDescription: 'Redacción profesional de listados de Amazon enfocada en conversión.',
+            scope1: 'Solo 1 listado de producto',
+            scope2: 'Integración de palabras clave SEO',
+            scope3: 'Título y viñetas',
+            scope4: 'Descripción del producto',
+            scope5: 'Términos de búsqueda backend',
+            scope6: 'Entrega en 3-5 días hábiles'
+          },
+          ppcAudit: {
+            name: 'Auditoría y Configuración de PPC',
+            description: 'Auditoría completa de PPC con configuración de campaña',
+            detailedDescription: 'Auditoría exhaustiva de PPC y configuración inicial de campaña.',
+            scope1: 'Auditoría de campaña actual',
+            scope2: 'Configuración de hasta 3 campañas nuevas',
+            scope3: 'Investigación de palabras clave (50 palabras clave)',
+            scope4: 'Recomendaciones de estrategia de oferta',
+            scope5: 'NO incluye gasto publicitario',
+            scope6: 'Entrega en 5-7 días hábiles'
+          },
+          brandStorefront: {
+            name: 'Escaparate de Marca',
+            description: 'Diseño personalizado de Escaparate de Amazon',
+            detailedDescription: 'Diseño completo de Tienda de Marca de Amazon con hasta 5 páginas.',
+            scope1: 'Hasta 5 páginas de escaparate',
+            scope2: 'Diseños de página personalizados',
+            scope3: 'Integración de historia de marca',
+            scope4: 'Secciones de categorías de productos',
+            scope5: '2 rondas de revisiones',
+            scope6: 'Entrega en 14-21 días hábiles'
+          },
+          businessAnalysis: {
+            name: 'Análisis Completo de Negocio',
+            description: 'Informe estratégico nivel Deloitte',
+            detailedDescription: 'Análisis exhaustivo de negocio con informe detallado y llamada de estrategia.',
+            scope1: 'Informe detallado de 15-20 páginas',
+            scope2: 'Llamada de proceso de estrategia de 3 horas',
+            scope3: 'Análisis de mercado e insights',
+            scope4: 'Oportunidades de crecimiento',
+            scope5: 'Benchmarking competitivo',
+            scope6: 'Entrega en 14-21 días hábiles'
+          }
+        },
         oneOffServices: {
           badge: 'SERVICIOS ÚNICOS',
           title: 'Paquetes de Victoria Rápida',
@@ -1039,13 +1187,62 @@ const resources = {
         title: 'Resultados Reales de',
         titleGreen: 'Marcas Reales',
         subtitle: 'Así es como ayudamos a las marcas a crecer de manera sostenible en Amazon.',
-        cta: 'Obtener Resultados Similares',
-        bottomCTA: {
-          title: '¿Listo para Escribir Tu Historia de Éxito?',
-          description: 'Hablemos de cómo podemos ayudarte a lograr resultados similares.',
-          cta: 'Agendar Llamada Gratuita'
-        }
-      },
+        challenge: 'Desafío',
+        solution: 'Solución',
+        getResults: 'Obtener Resultados Similares',
+        ctaTitle: '¿Listo para Escribir Tu Historia de Éxito?',
+        ctaSubtitle: 'Hablemos de cómo podemos ayudarte a lograr resultados similares para tu negocio de Amazon.',
+        ctaButton: 'Agendar Llamada de Descubrimiento',
+        metrics: {
+          revenue: 'Ingresos',
+          categoryRanking: 'Ranking de Categoría',
+          ctrIncrease: 'Aumento de CTR',
+          troas: 'TROAS',
+          ctrImprovement: 'Mejora de CTR',
+          freshTrial: 'Prueba Fresh',
+          plannedDuration: 'Duración Planificada',
+          nextPhase: 'Siguiente Fase',
+          buyBoxShare: 'Cuota de Buy Box',
+          fbaFbm: 'FBA/FBM',
+          usMarket: 'Mercado de EE.UU.',
+          sustainability: 'Sostenibilidad'
+        },
+        pachakuti: {
+          category: 'Lanzamiento en Amazon',
+          client: 'Pachakuti',
+          industry: 'Cacao Ceremonial',
+          challenge: 'Entrar en Amazon UK sin historial de ventas, bajo conteo de reseñas, y precios premium en una categoría de cacao altamente competitiva dominada por marcas establecidas. El cacao ceremonial directamente de la Amazonía ecuatoriana necesitaba destacarse.',
+          solution: 'Lanzamiento estructurado en UK vía FBA, construcción de listado basado en palabras clave, creación de contenido A+, creación de tienda de marca, y pruebas controladas de PPC para validar conversión antes de escalar. Enfoque estratégico en ranking para palabras clave subapreciadas.',
+          testimonial: 'Superfly nos ayudó a lanzar nuestro cacao ceremonial de la Amazonía ecuatoriana y llegar al Top 4 en una de las categorías más competitivas de Amazon UK.',
+          author: 'Equipo Pachakuti'
+        },
+        hairGuru: {
+          category: 'Rebranding y Recuperación de Marca',
+          client: 'Hair Guru',
+          industry: 'Cuidado del Cabello',
+          challenge: 'Recuperar una marca de cuidado capilar con contenido desactualizado, empaques inconsistentes y mezcla FBA/FBM que confundía a compradores. Necesitaban refrescarse sin perder momentum.',
+          solution: 'Rebranding completo de listados, optimización de imágenes, consolidación de SKUs, transición FBA completa, y PPC estructurado para recuperar rankings.',
+          testimonial: 'Nuestro CTR mejoró 5x inmediatamente después de que Superfly reconstruyera nuestros listados. Los resultados hablan por sí mismos.',
+          author: 'Jamie Shepard, Hair Guru'
+        },
+        leon: {
+          category: 'Lanzamiento en Amazon Fresh',
+          client: 'LEON',
+          industry: 'Alimentos Preparados',
+          challenge: 'Lanzar la comida rápida saludable de LEON en Amazon Fresh UK - un terreno completamente nuevo para la marca. Posicionamiento premium en entrega de comida de mismo día.',
+          solution: 'Estrategia de lanzamiento de Fresh, configuración logística, pruebas de conversión de listados, y coordinación de inventario JIT. Todo el stock de prueba se agotó en 3 semanas.',
+          testimonial: 'Superfly gestionó nuestro lanzamiento en Amazon Fresh. Se agotó en 3 semanas cuando planeamos 12. Ahora escalando a nuevos productos.',
+          author: 'Equipo LEON'
+        },
+        reborn: {
+          category: 'Expansión Internacional & Sostenibilidad',
+          client: 'Reborn Coffee',
+          industry: 'Café Sostenible',
+          challenge: 'Marca de café sostenible luchaba con cuota de Buy Box inconsistente, estrategia FBA/FBM no optimizada, y sin camino claro hacia el mercado de EE.UU.',
+          solution: 'Optimización de estrategia FBA/FBM por SKU, recuperación de cuota de Buy Box al 99%, hoja de ruta de expansión a EE.UU., y calificación para el Acelerador de Sostenibilidad de Amazon.',
+          testimonial: 'Superfly nos ayudó a recuperar nuestra cuota de Buy Box y construyó nuestra hoja de ruta para EE.UU. Ahora somos parte del Acelerador de Sostenibilidad de Amazon.',
+          author: 'Equipo Reborn Coffee'
+        },
       team: {
         badge: 'Nuestro Equipo',
         title: 'Conoce al',
