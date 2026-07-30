@@ -5,107 +5,64 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import SEO from '../components/SEO';
+import { useTranslation } from 'react-i18next';
 
 const MarketplaceLanding = () => {
   const { platform } = useParams();
+  const { t } = useTranslation();
   
   const marketplaceData = {
     walmart: {
-      name: 'Walmart',
+      name: t('marketplace.walmart.name'),
       icon: '🏪',
       color: '#0071CE',
       bgGradient: 'from-blue-600 to-blue-700',
-      pricing: '£300+',
-      pricingNote: 'per month',
-      description: 'Walmart Marketplace management in synthesis with your Amazon strategy',
-      why: [
-        '120M+ monthly US shoppers',
-        'Lower competition than Amazon',
-        'Higher profit margins (lower fees)',
-        'Complements Amazon sales perfectly'
-      ],
-      what: [
-        'Listing optimization & content',
-        'Inventory sync with Amazon',
-        'Walmart Fulfillment Services setup',
-        'Cross-platform PPC strategy',
-        'Performance reporting'
-      ],
-      synthesis: 'We manage Walmart while optimizing your Amazon presence. Same inventory, double the revenue channels.',
-      cta: 'Start Selling on Walmart'
+      pricing: t('marketplace.walmart.pricing'),
+      pricingNote: t('marketplace.walmart.pricingNote'),
+      description: t('marketplace.walmart.description'),
+      why: t('marketplace.walmart.why', { returnObjects: true }),
+      what: t('marketplace.walmart.what', { returnObjects: true }),
+      synthesis: t('marketplace.walmart.synthesis'),
+      cta: t('marketplace.walmart.cta')
     },
     mercadolibre: {
-      name: 'Mercado Libre',
+      name: t('marketplace.mercadolibre.name'),
       icon: '🛒',
       color: '#FFE600',
       bgGradient: 'from-yellow-400 to-yellow-500',
-      pricing: '£300+',
-      pricingNote: 'per month',
-      description: 'Mercado Libre management for Latin America expansion',
-      why: [
-        '900M+ users across Latin America',
-        'Dominate Mexico, Brazil, Argentina',
-        'Lower advertising costs',
-        'Perfect Amazon complement for LATAM'
-      ],
-      what: [
-        'Multi-country listing management',
-        'Mercado Envios logistics',
-        'Local payment processing',
-        'Portuguese & Spanish optimization',
-        'Cross-border compliance'
-      ],
-      synthesis: 'Expand beyond Amazon USA into Latin America. We handle local complexities while you scale.',
-      cta: 'Launch in Latin America'
+      pricing: t('marketplace.mercadolibre.pricing'),
+      pricingNote: t('marketplace.mercadolibre.pricingNote'),
+      description: t('marketplace.mercadolibre.description'),
+      why: t('marketplace.mercadolibre.why', { returnObjects: true }),
+      what: t('marketplace.mercadolibre.what', { returnObjects: true }),
+      synthesis: t('marketplace.mercadolibre.synthesis'),
+      cta: t('marketplace.mercadolibre.cta')
     },
     temu: {
-      name: 'Temu',
+      name: t('marketplace.temu.name'),
       icon: '🎁',
       color: '#FF6B00',
       bgGradient: 'from-orange-500 to-red-500',
-      pricing: '£300+',
-      pricingNote: 'per month',
-      description: 'Temu marketplace management for explosive growth',
-      why: [
-        'Fastest-growing marketplace in USA',
-        '50M+ active US users',
-        'Lower entry barriers',
-        'Complements Amazon perfectly'
-      ],
-      what: [
-        'Product listing & optimization',
-        'Temu-specific content strategy',
-        'Pricing & promotion management',
-        'Customer service coordination',
-        'Performance analytics'
-      ],
-      synthesis: 'Diversify beyond Amazon. Temu shoppers are different - we know how to convert them.',
-      cta: 'Start on Temu'
+      pricing: t('marketplace.temu.pricing'),
+      pricingNote: t('marketplace.temu.pricingNote'),
+      description: t('marketplace.temu.description'),
+      why: t('marketplace.temu.why', { returnObjects: true }),
+      what: t('marketplace.temu.what', { returnObjects: true }),
+      synthesis: t('marketplace.temu.synthesis'),
+      cta: t('marketplace.temu.cta')
     },
     shopify: {
-      name: 'Shopify',
+      name: t('marketplace.shopify.name'),
       icon: '🛍️',
       color: '#96BF48',
       bgGradient: 'from-green-500 to-green-600',
-      pricing: '£500',
-      pricingNote: 'per month flat',
-      description: 'Full Shopify store management + Amazon integration',
-      why: [
-        'Own your customer data',
-        'Higher margins (no marketplace fees)',
-        'Build brand equity',
-        'Syncs with Amazon inventory'
-      ],
-      what: [
-        'Complete store setup & design',
-        'Product catalog management',
-        'Shopify-Amazon inventory sync',
-        'Email marketing automation',
-        'Conversion optimization',
-        'Monthly performance reports'
-      ],
-      synthesis: 'Amazon brings traffic. Shopify builds your brand. We manage both so they work together seamlessly.',
-      cta: 'Build Your Shopify Store',
+      pricing: t('marketplace.shopify.pricing'),
+      pricingNote: t('marketplace.shopify.pricingNote'),
+      description: t('marketplace.shopify.description'),
+      why: t('marketplace.shopify.why', { returnObjects: true }),
+      what: t('marketplace.shopify.what', { returnObjects: true }),
+      synthesis: t('marketplace.shopify.synthesis'),
+      cta: t('marketplace.shopify.cta'),
       special: true
     }
   };
@@ -126,7 +83,7 @@ const MarketplaceLanding = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="text-7xl mb-6">{mp.icon}</div>
             <Badge className="bg-white/20 text-white text-sm px-4 py-2 mb-6">
-              Growing in Synthesis with Amazon
+              {t('marketplace.growthSynthesis')}
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {mp.name} Management
@@ -158,7 +115,7 @@ const MarketplaceLanding = () => {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold mb-3">Growing in Synthesis with Amazon</h2>
+                  <h2 className="text-2xl font-bold mb-3">{t('marketplace.synthesisTitle')}</h2>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     {mp.synthesis}
                   </p>
@@ -170,7 +127,7 @@ const MarketplaceLanding = () => {
           {/* Why This Marketplace */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-8">
-              Why {mp.name}?
+              {t('marketplace.whyTitle')} {mp.name}?
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {mp.why.map((point, idx) => (
@@ -189,7 +146,7 @@ const MarketplaceLanding = () => {
           {/* What We Do */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-8">
-              What's Included
+              {t('marketplace.whatsIncluded')}
             </h2>
             <Card className="border-2" style={{ borderColor: mp.color }}>
               <CardContent className="pt-8 pb-8">
@@ -211,10 +168,10 @@ const MarketplaceLanding = () => {
           <Card className={`mb-16 bg-gradient-to-br ${mp.bgGradient} text-white border-0`}>
             <CardContent className="pt-12 pb-12 text-center">
               <h2 className="text-3xl font-bold mb-4">
-                Ready to expand beyond Amazon?
+                {t('marketplace.readyTitle')}
               </h2>
               <p className="text-xl opacity-95 mb-8 max-w-2xl mx-auto">
-                {mp.special ? 'Flat monthly fee. No surprises. Full store management.' : 'Performance-based pricing. We grow when you grow.'}
+                {mp.special ? t('marketplace.specialNote') : t('marketplace.performanceNote')}
               </p>
               <div className="flex items-baseline justify-center gap-2 mb-8">
                 <span className="text-6xl font-bold">{mp.pricing}</span>
@@ -222,7 +179,7 @@ const MarketplaceLanding = () => {
               </div>
               <a href="/#contact">
                 <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-10 py-6 rounded-full shadow-2xl">
-                  Book Strategy Call <ArrowRight className="ml-2 w-6 h-6" />
+                  {t('nav.bookCall')} <ArrowRight className="ml-2 w-6 h-6" />
                 </Button>
               </a>
             </CardContent>
@@ -230,7 +187,7 @@ const MarketplaceLanding = () => {
 
           {/* Other Marketplaces */}
           <div className="mb-16 text-center">
-            <h3 className="text-xl font-semibold mb-6">We Also Manage</h3>
+            <h3 className="text-xl font-semibold mb-6">{t('marketplace.weAlsoManage')}</h3>
             <div className="flex flex-wrap justify-center gap-4">
               {Object.keys(marketplaceData).filter(key => key !== platform).map(key => (
                 <Link key={key} to={`/marketplace/${key}`}>

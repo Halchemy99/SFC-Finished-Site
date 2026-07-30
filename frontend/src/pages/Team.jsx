@@ -3,58 +3,61 @@ import { Linkedin, Mail, MapPin } from 'lucide-react';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import SEO from '../components/SEO';
+import { useTranslation } from 'react-i18next';
 
 const Team = () => {
+  const { t } = useTranslation();
+  
   const teamMembers = [
     {
-      name: 'Harry Allen',
-      role: 'Founder',
-      location: 'Global',
+      name: t('team.harry.name'),
+      role: t('team.harry.role'),
+      location: t('team.harry.location'),
       linkedin: 'https://www.linkedin.com/in/harry-allen-91bb311bb/',
       email: 'harry@superflycommerce.com',
-      bio: 'Founder of Superfly Commerce with a vision to democratize Amazon success through transparent, performance-based partnerships. Harry believes in cutting through agency bloat and aligning incentives with sustainable growth.'
+      bio: t('team.harry.bio')
     },
     {
-      name: 'Fernando Clementin',
-      role: 'LATAM Lead & Account Manager',
-      location: 'Latin America',
+      name: t('team.fernando.name'),
+      role: t('team.fernando.role'),
+      location: t('team.fernando.location'),
       linkedin: 'https://www.linkedin.com/in/fernando-clementin-periodista-traductor/',
-      bio: 'Leading our Latin American expansion and managing key client accounts. With expertise in cross-border commerce and multilingual operations, Fernando bridges brands with global markets.'
+      bio: t('team.fernando.bio')
     },
     {
-      name: 'John Lawrence',
-      role: 'Operations Lead',
-      location: 'Global',
+      name: t('team.john.name'),
+      role: t('team.john.role'),
+      location: t('team.john.location'),
       linkedin: 'https://www.linkedin.com/in/lawrence-angeles/',
-      bio: 'Streamlining operations and ensuring smooth delivery across all client engagements. John brings systems thinking and operational excellence to every project.'
+      bio: t('team.john.bio')
     },
     {
-      name: 'Yadnesh Kulkarni',
-      role: 'Indian Brand Lead',
-      location: 'Pune, India',
-      bio: 'Based in Pune, Yadnesh is our integral link between Indian brands and the wider market. He specializes in helping Indian sellers navigate international Amazon marketplaces with cultural insight and local expertise.'
+      name: t('team.yadnesh.name'),
+      role: t('team.yadnesh.role'),
+      location: t('team.yadnesh.location'),
+      bio: t('team.yadnesh.bio')
     }
   ];
 
   const values = [
     {
-      title: 'Transparency First',
-      desc: 'No hidden fees, no inflated retainers. Every pound accounted for.',
+      title: t('team.values.transparency.title'),
+      desc: t('team.values.transparency.description'),
       icon: '🔍'
     },
     {
-      title: 'Performance-Based',
-      desc: 'We only succeed when you succeed. Aligned incentives, shared wins.',
+      title: t('team.values.performance.title'),
+      desc: t('team.values.performance.description'),
       icon: '📈'
     },
     {
-      title: 'Sustainable Growth',
-      desc: 'Long-term thinking over quick hacks. Building brands, not just sales spikes.',
+      title: t('team.values.sustainable.title'),
+      desc: t('team.values.sustainable.description'),
       icon: '🌱'
     },
     {
-      title: 'Global Collective',
-      desc: 'Specialists across continents, united by expertise and commitment.',
+      title: t('team.values.global.title'),
+      desc: t('team.values.global.description'),
       icon: '🌍'
     }
   ];
@@ -71,13 +74,12 @@ const Team = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-6">
-          <Badge className="bg-green-100 text-[#22C55E] mb-4">Our Team</Badge>
+          <Badge className="bg-green-100 text-[#22C55E] mb-4">{t('team.badge')}</Badge>
           <h1 className="text-5xl font-bold mb-6">
-            Meet the <span className="text-[#22C55E]">Collective</span>
+            {t('team.title')} <span className="text-[#22C55E]">{t('team.titleGreen')}</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're not your typical agency. We're marketplace growth specialists united by a mission: 
-            transparent pricing, sustainable growth, and cutting through the bloat.
+            {t('team.subtitle')}
           </p>
         </div>
 
@@ -94,7 +96,7 @@ const Team = () => {
 
         {/* Team Members */}
         <div className="mb-20">
-          <h2 className="text-4xl font-bold text-center mb-12">Leadership Team</h2>
+          <h2 className="text-4xl font-bold text-center mb-12">{t('team.leadership')}</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {teamMembers.map((member, idx) => (
               <Card key={idx} className="border-2 border-gray-200 hover:shadow-xl transition-shadow">
@@ -144,7 +146,7 @@ const Team = () => {
 
         {/* Our Values */}
         <div className="mb-12 bg-white rounded-3xl p-12">
-          <h2 className="text-4xl font-bold text-center mb-8">What We Stand For</h2>
+          <h2 className="text-4xl font-bold text-center mb-8">{t('team.values.title')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, idx) => (
               <div key={idx} className="text-center">
@@ -158,24 +160,22 @@ const Team = () => {
 
         {/* Mission Statement */}
         <div className="bg-gradient-to-r from-[#22C55E] to-[#16A34A] rounded-3xl p-12 text-center text-white">
-          <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
+          <h2 className="text-4xl font-bold mb-6">{t('team.mission.title')}</h2>
           <p className="text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
-            To democratize Amazon success by providing transparent, performance-based partnerships 
-            that cut through heavy agency fees. We believe in sustainable growth, aligned incentives, 
-            and building long-term success for brands worldwide.
+            {t('team.mission.description')}
           </p>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             <div>
-              <div className="text-5xl font-bold mb-2">50+</div>
-              <div className="text-lg opacity-90">Global Specialists</div>
+              <div className="text-5xl font-bold mb-2">{t('team.mission.stat1')}</div>
+              <div className="text-lg opacity-90">{t('team.mission.stat1Label')}</div>
             </div>
             <div>
-              <div className="text-5xl font-bold mb-2">£1M+</div>
-              <div className="text-lg opacity-90">Revenue Driven</div>
+              <div className="text-5xl font-bold mb-2">{t('team.mission.stat2')}</div>
+              <div className="text-lg opacity-90">{t('team.mission.stat2Label')}</div>
             </div>
             <div>
-              <div className="text-5xl font-bold mb-2">4</div>
-              <div className="text-lg opacity-90">Continents</div>
+              <div className="text-5xl font-bold mb-2">{t('team.mission.stat3')}</div>
+              <div className="text-lg opacity-90">{t('team.mission.stat3Label')}</div>
             </div>
           </div>
         </div>
@@ -183,9 +183,9 @@ const Team = () => {
         {/* CTA with Career Application Form */}
         <div className="mt-16">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-6">Want to Join the Collective?</h2>
+            <h2 className="text-3xl font-bold mb-6">{t('team.join.title')}</h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              We're always looking for talented marketplace growth specialists who share our values.
+              {t('team.join.subtitle')}
             </p>
           </div>
           
@@ -225,53 +225,53 @@ const Team = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Name <span className="text-red-500">*</span>
+                    {t('team.join.nameLabel')} <span className="text-red-500">{t('team.join.required')}</span>
                   </label>
                   <input
                     type="text"
                     name="name"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#22C55E] focus:border-transparent"
-                    placeholder="Your full name"
+                    placeholder={t('team.join.namePlaceholder')}
                   />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email <span className="text-red-500">*</span>
+                    {t('team.join.emailLabel')} <span className="text-red-500">{t('team.join.required')}</span>
                   </label>
                   <input
                     type="email"
                     name="email"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#22C55E] focus:border-transparent"
-                    placeholder="your@email.com"
+                    placeholder={t('team.join.emailPlaceholder')}
                   />
                 </div>
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  LinkedIn Profile URL (we'll check your profile instead of CV)
+                  {t('team.join.linkedinLabel')}
                 </label>
                 <input
                   type="url"
                   name="linkedin"
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#22C55E] focus:border-transparent"
-                  placeholder="https://linkedin.com/in/yourprofile"
+                  placeholder={t('team.join.linkedinPlaceholder')}
                 />
               </div>
               
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Why do you want to join Superfly? <span className="text-red-500">*</span>
+                  {t('team.join.messageLabel')} <span className="text-red-500">{t('team.join.required')}</span>
                 </label>
                 <textarea
                   name="message"
                   required
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#22C55E] focus:border-transparent"
-                  placeholder="Tell us about your Amazon experience, what you specialize in (PPC, listings, creative, etc.), and why you'd be a great fit for the collective..."
+                  placeholder={t('team.join.messagePlaceholder')}
                 />
               </div>
               
@@ -279,7 +279,7 @@ const Team = () => {
                 type="submit"
                 className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors"
               >
-                Submit Application
+                {t('team.join.submitButton')}
               </button>
             </form>
           </div>

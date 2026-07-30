@@ -434,6 +434,178 @@ const resources = {
             scope6: '14-21 business days delivery'
           }
         }
+      },
+      team: {
+        badge: 'Our Team',
+        title: 'Meet the',
+        titleGreen: 'Collective',
+        subtitle: "We're not your typical agency. We're marketplace growth specialists united by a mission: transparent pricing, sustainable growth, and cutting through the bloat.",
+        leadership: 'Leadership Team',
+        ourTeam: 'Our Team',
+        meetCollective: 'Meet the Collective',
+        harry: {
+          name: 'Harry Allen',
+          role: 'Founder',
+          location: 'Global',
+          bio: 'Founder of Superfly Commerce with a vision to democratize Amazon success through transparent, performance-based partnerships. Harry believes in cutting through agency bloat and aligning incentives with sustainable growth.'
+        },
+        fernando: {
+          name: 'Fernando Clementin',
+          role: 'LATAM Lead & Account Manager',
+          location: 'Latin America',
+          bio: 'Leading our Latin American expansion and managing key client accounts. With expertise in cross-border commerce and multilingual operations, Fernando bridges brands with global markets.'
+        },
+        john: {
+          name: 'John Lawrence',
+          role: 'Operations Lead',
+          location: 'Global',
+          bio: 'Streamlining operations and ensuring smooth delivery across all client engagements. John brings systems thinking and operational excellence to every project.'
+        },
+        yadnesh: {
+          name: 'Yadnesh Kulkarni',
+          role: 'Indian Brand Lead',
+          location: 'Pune, India',
+          bio: 'Based in Pune, Yadnesh is our integral link between Indian brands and the wider market. He specializes in helping Indian sellers navigate international Amazon marketplaces with cultural insight and local expertise.'
+        },
+        values: {
+          title: 'What We Stand For',
+          transparency: {
+            title: 'Transparency First',
+            description: 'No hidden fees, no inflated retainers. Every pound accounted for.'
+          },
+          performance: {
+            title: 'Performance-Based',
+            description: 'We only succeed when you succeed. Aligned incentives, shared wins.'
+          },
+          sustainable: {
+            title: 'Sustainable Growth',
+            description: 'Long-term thinking over quick hacks. Building brands, not just sales spikes.'
+          },
+          global: {
+            title: 'Global Collective',
+            description: 'Specialists across continents, united by expertise and commitment.'
+          }
+        },
+        mission: {
+          title: 'Our Mission',
+          description: 'To democratize Amazon success by providing transparent, performance-based partnerships that cut through heavy agency fees. We believe in sustainable growth, aligned incentives, and building long-term success for brands worldwide.',
+          stat1: '50+',
+          stat1Label: 'Global Specialists',
+          stat2: '£1M+',
+          stat2Label: 'Revenue Driven',
+          stat3: '4',
+          stat3Label: 'Continents'
+        },
+        join: {
+          title: 'Want to Join the Collective?',
+          subtitle: "We're always looking for talented marketplace growth specialists who share our values.",
+          formTitle: 'Career Application',
+          nameLabel: 'Name',
+          namePlaceholder: 'Your full name',
+          emailLabel: 'Email',
+          emailPlaceholder: 'your@email.com',
+          linkedinLabel: "LinkedIn Profile URL (we'll check your profile instead of CV)",
+          linkedinPlaceholder: 'https://linkedin.com/in/yourprofile',
+          messageLabel: 'Why do you want to join Superfly?',
+          messagePlaceholder: 'Tell us about your Amazon experience, what you specialize in (PPC, listings, creative, etc.), and why you\'d be a great fit for the collective...',
+          submitButton: 'Submit Application',
+          required: '*'
+        }
+      },
+      marketplace: {
+        growthSynthesis: 'Growing in Synthesis with Amazon',
+        synthesisTitle: 'Growing in Synthesis with Amazon',
+        whyTitle: 'Why',
+        whatsIncluded: "What's Included",
+        readyTitle: 'Ready to expand beyond Amazon?',
+        weAlsoManage: 'We Also Manage',
+        walmart: {
+          name: 'Walmart',
+          description: 'Walmart Marketplace management in synthesis with your Amazon strategy',
+          pricing: '£300+',
+          pricingNote: 'per month',
+          why: [
+            '120M+ monthly US shoppers',
+            'Lower competition than Amazon',
+            'Higher profit margins (lower fees)',
+            'Complements Amazon sales perfectly'
+          ],
+          what: [
+            'Listing optimization & content',
+            'Inventory sync with Amazon',
+            'Walmart Fulfillment Services setup',
+            'Cross-platform PPC strategy',
+            'Performance reporting'
+          ],
+          synthesis: 'We manage Walmart while optimizing your Amazon presence. Same inventory, double the revenue channels.',
+          cta: 'Start Selling on Walmart'
+        },
+        mercadolibre: {
+          name: 'Mercado Libre',
+          description: 'Mercado Libre management for Latin America expansion',
+          pricing: '£300+',
+          pricingNote: 'per month',
+          why: [
+            '900M+ users across Latin America',
+            'Dominate Mexico, Brazil, Argentina',
+            'Lower advertising costs',
+            'Perfect Amazon complement for LATAM'
+          ],
+          what: [
+            'Multi-country listing management',
+            'Mercado Envios logistics',
+            'Local payment processing',
+            'Portuguese & Spanish optimization',
+            'Cross-border compliance'
+          ],
+          synthesis: 'Expand beyond Amazon USA into Latin America. We handle local complexities while you scale.',
+          cta: 'Launch in Latin America'
+        },
+        temu: {
+          name: 'Temu',
+          description: 'Temu marketplace management for explosive growth',
+          pricing: '£300+',
+          pricingNote: 'per month',
+          why: [
+            'Fastest-growing marketplace in USA',
+            '50M+ active US users',
+            'Lower entry barriers',
+            'Complements Amazon perfectly'
+          ],
+          what: [
+            'Product listing & optimization',
+            'Temu-specific content strategy',
+            'Pricing & promotion management',
+            'Customer service coordination',
+            'Performance analytics'
+          ],
+          synthesis: 'Diversify beyond Amazon. Temu shoppers are different - we know how to convert them.',
+          cta: 'Start on Temu'
+        },
+        shopify: {
+          name: 'Shopify',
+          description: 'Full Shopify store management + Amazon integration',
+          pricing: '£500',
+          pricingNote: 'per month flat',
+          why: [
+            'Own your customer data',
+            'Higher margins (no marketplace fees)',
+            'Build brand equity',
+            'Syncs with Amazon inventory'
+          ],
+          what: [
+            'Complete store setup & design',
+            'Product catalog management',
+            'Shopify-Amazon inventory sync',
+            'Email marketing automation',
+            'Conversion optimization',
+            'Monthly performance reports'
+          ],
+          synthesis: 'Amazon brings traffic. Shopify builds your brand. We manage both so they work together seamlessly.',
+          cta: 'Build Your Shopify Store'
+        },
+        specialNote: 'Flat monthly fee. No surprises. Full store management.',
+        performanceNote: 'Performance-based pricing. We grow when you grow.'
       }
     }
   },
@@ -587,7 +759,7 @@ const resources = {
         title: 'Precios que Tienen Sentido',
         subtitle: 'Sin tarifas ocultas. Sin retenedores inflados. Solo precios honestos para crecimiento real.',
         oneOff: 'Servicios Únicos',
-        partnerships: 'Asociaciones',
+        partnershipsLabel: 'Asociaciones',
         viewAll: 'Ver Todos los Servicios',
         hero: {
           title: 'Precios Transparentes',
@@ -801,48 +973,175 @@ const resources = {
       },
       team: {
         badge: 'Nuestro Equipo',
-        title: 'Conoce al Colectivo',
-        subtitle: 'Especialistas globales en crecimiento de mercado, parte de tu equipo.',
+        title: 'Conoce al',
+        titleGreen: 'Colectivo',
+        subtitle: 'No somos una agencia típica. Somos especialistas en crecimiento de mercado unidos por una misión: precios transparentes, crecimiento sostenible y eliminación de la burocracia.',
         leadership: 'Equipo de Liderazgo',
+        ourTeam: 'Nuestro Equipo',
+        meetCollective: 'Conoce al Colectivo',
+        harry: {
+          name: 'Harry Allen',
+          role: 'Fundador',
+          location: 'Global',
+          bio: 'Fundador de Superfly Commerce con una visión de democratizar el éxito en Amazon a través de asociaciones transparentes basadas en rendimiento. Harry cree en eliminar la burocracia de las agencias y alinear incentivos con crecimiento sostenible.'
+        },
+        fernando: {
+          name: 'Fernando Clementin',
+          role: 'Líder LATAM y Gerente de Cuenta',
+          location: 'América Latina',
+          bio: 'Liderando nuestra expansión en América Latina y gestionando cuentas clave de clientes. Con experiencia en comercio transfronterizo y operaciones multilingües, Fernando conecta marcas con mercados globales.'
+        },
+        john: {
+          name: 'John Lawrence',
+          role: 'Líder de Operaciones',
+          location: 'Global',
+          bio: 'Optimizando operaciones y asegurando una entrega fluida en todos los compromisos con clientes. John aporta pensamiento sistemático y excelencia operativa a cada proyecto.'
+        },
+        yadnesh: {
+          name: 'Yadnesh Kulkarni',
+          role: 'Líder de Marcas Indias',
+          location: 'Pune, India',
+          bio: 'Con sede en Pune, Yadnesh es nuestro vínculo integral entre marcas indias y el mercado más amplio. Se especializa en ayudar a vendedores indios a navegar mercados internacionales de Amazon con perspicacia cultural y experiencia local.'
+        },
         values: {
           title: 'Lo Que Defendemos',
           transparency: {
             title: 'Transparencia Primero',
-            description: 'Sin tarifas ocultas, sin retenedores inflados. Sabes exactamente lo que pagas y por qué.'
+            description: 'Sin tarifas ocultas, sin retenedores inflados. Cada libra contabilizada.'
           },
           performance: {
             title: 'Basado en Rendimiento',
-            description: 'Solo tenemos éxito cuando tú tienes éxito. Nuestros retenedores están vinculados a tu crecimiento.'
+            description: 'Solo tenemos éxito cuando tú tienes éxito. Incentivos alineados, victorias compartidas.'
           },
           sustainable: {
             title: 'Crecimiento Sostenible',
-            description: 'Pensamiento a largo plazo sobre trucos rápidos. Construimos marcas que duran.'
+            description: 'Pensamiento a largo plazo sobre trucos rápidos. Construyendo marcas, no solo picos de ventas.'
           },
           global: {
             title: 'Colectivo Global',
-            description: 'Especialistas en todos los continentes trabajando como tu equipo extendido.'
+            description: 'Especialistas en todos los continentes, unidos por experiencia y compromiso.'
           }
         },
         mission: {
           title: 'Nuestra Misión',
-          description: 'Eliminar las tarifas pesadas de agencias y hacer que el crecimiento experto en Amazon sea accesible para todas las marcas a través de precios transparentes basados en rendimiento.'
+          description: 'Democratizar el éxito en Amazon proporcionando asociaciones transparentes basadas en rendimiento que eliminan las tarifas pesadas de agencias. Creemos en el crecimiento sostenible, incentivos alineados y construir éxito a largo plazo para marcas en todo el mundo.',
+          stat1: '50+',
+          stat1Label: 'Especialistas Globales',
+          stat2: '£1M+',
+          stat2Label: 'Ingresos Impulsados',
+          stat3: '4',
+          stat3Label: 'Continentes'
         },
         join: {
           title: '¿Quieres Unirte al Colectivo?',
-          description: 'Siempre buscamos especialistas talentosos en crecimiento de mercado que compartan nuestros valores.',
-          form: {
-            name: 'Nombre',
-            email: 'Correo Electrónico',
-            linkedin: 'URL de Perfil de LinkedIn (revisaremos tu perfil en lugar de CV)',
-            why: '¿Por qué quieres unirte a Superfly?',
-            submit: 'Enviar Solicitud'
-          }
-        },
-        stats: {
-          specialists: 'Especialistas Globales',
-          revenue: 'Ingresos Impulsados',
-          continents: 'Continentes'
+          subtitle: 'Siempre buscamos especialistas talentosos en crecimiento de mercado que compartan nuestros valores.',
+          formTitle: 'Solicitud de Carrera',
+          nameLabel: 'Nombre',
+          namePlaceholder: 'Tu nombre completo',
+          emailLabel: 'Correo Electrónico',
+          emailPlaceholder: 'tu@email.com',
+          linkedinLabel: 'URL de Perfil de LinkedIn (revisaremos tu perfil en lugar de CV)',
+          linkedinPlaceholder: 'https://linkedin.com/in/tuperfil',
+          messageLabel: '¿Por qué quieres unirte a Superfly?',
+          messagePlaceholder: 'Cuéntanos sobre tu experiencia en Amazon, en qué te especializas (PPC, listados, creativo, etc.), y por qué serías una gran incorporación al colectivo...',
+          submitButton: 'Enviar Solicitud',
+          required: '*'
         }
+      },
+      marketplace: {
+        growthSynthesis: 'Creciendo en Síntesis con Amazon',
+        synthesisTitle: 'Creciendo en Síntesis con Amazon',
+        whyTitle: '¿Por Qué',
+        whatsIncluded: 'Qué Está Incluido',
+        readyTitle: '¿Listo para expandirse más allá de Amazon?',
+        weAlsoManage: 'También Gestionamos',
+        walmart: {
+          name: 'Walmart',
+          description: 'Gestión del Mercado de Walmart en síntesis con tu estrategia de Amazon',
+          pricing: '£300+',
+          pricingNote: 'por mes',
+          why: [
+            'Más de 120M de compradores mensuales en EE.UU.',
+            'Menor competencia que Amazon',
+            'Mayores márgenes de ganancia (tarifas más bajas)',
+            'Complementa las ventas de Amazon perfectamente'
+          ],
+          what: [
+            'Optimización de listados y contenido',
+            'Sincronización de inventario con Amazon',
+            'Configuración de Servicios de Cumplimiento de Walmart',
+            'Estrategia de PPC multiplataforma',
+            'Informes de rendimiento'
+          ],
+          synthesis: 'Gestionamos Walmart mientras optimizamos tu presencia en Amazon. Mismo inventario, doble canal de ingresos.',
+          cta: 'Comenzar a Vender en Walmart'
+        },
+        mercadolibre: {
+          name: 'Mercado Libre',
+          description: 'Gestión de Mercado Libre para expansión en América Latina',
+          pricing: '£300+',
+          pricingNote: 'por mes',
+          why: [
+            'Más de 900M de usuarios en América Latina',
+            'Domina México, Brasil, Argentina',
+            'Costos de publicidad más bajos',
+            'Complemento perfecto de Amazon para LATAM'
+          ],
+          what: [
+            'Gestión de listados multi-país',
+            'Logística Mercado Envíos',
+            'Procesamiento de pagos locales',
+            'Optimización en portugués y español',
+            'Cumplimiento transfronterizo'
+          ],
+          synthesis: 'Expande más allá de Amazon EE.UU. hacia América Latina. Nosotros manejamos las complejidades locales mientras tú escalas.',
+          cta: 'Lanzar en América Latina'
+        },
+        temu: {
+          name: 'Temu',
+          description: 'Gestión del mercado de Temu para crecimiento explosivo',
+          pricing: '£300+',
+          pricingNote: 'por mes',
+          why: [
+            'Mercado de más rápido crecimiento en EE.UU.',
+            'Más de 50M de usuarios activos en EE.UU.',
+            'Barreras de entrada más bajas',
+            'Complementa Amazon perfectamente'
+          ],
+          what: [
+            'Listado y optimización de productos',
+            'Estrategia de contenido específica para Temu',
+            'Gestión de precios y promociones',
+            'Coordinación de servicio al cliente',
+            'Análisis de rendimiento'
+          ],
+          synthesis: 'Diversifica más allá de Amazon. Los compradores de Temu son diferentes - sabemos cómo convertirlos.',
+          cta: 'Comenzar en Temu'
+        },
+        shopify: {
+          name: 'Shopify',
+          description: 'Gestión completa de tienda Shopify + integración con Amazon',
+          pricing: '£500',
+          pricingNote: 'por mes fijo',
+          why: [
+            'Posee los datos de tus clientes',
+            'Márgenes más altos (sin tarifas de mercado)',
+            'Construye equidad de marca',
+            'Se sincroniza con el inventario de Amazon'
+          ],
+          what: [
+            'Configuración y diseño completo de tienda',
+            'Gestión de catálogo de productos',
+            'Sincronización de inventario Shopify-Amazon',
+            'Automatización de marketing por correo',
+            'Optimización de conversión',
+            'Informes de rendimiento mensuales'
+          ],
+          synthesis: 'Amazon trae tráfico. Shopify construye tu marca. Gestionamos ambos para que funcionen juntos sin problemas.',
+          cta: 'Construir Tu Tienda Shopify'
+        },
+        specialNote: 'Tarifa mensual fija. Sin sorpresas. Gestión completa de tienda.',
+        performanceNote: 'Precios basados en rendimiento. Crecemos cuando tú creces.'
       }
     }
   }
