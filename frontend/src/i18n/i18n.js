@@ -1242,7 +1242,8 @@ const resources = {
           solution: 'Optimización de estrategia FBA/FBM por SKU, recuperación de cuota de Buy Box al 99%, hoja de ruta de expansión a EE.UU., y calificación para el Acelerador de Sostenibilidad de Amazon.',
           testimonial: 'Superfly nos ayudó a recuperar nuestra cuota de Buy Box y construyó nuestra hoja de ruta para EE.UU. Ahora somos parte del Acelerador de Sostenibilidad de Amazon.',
           author: 'Equipo Reborn Coffee'
-        },
+        }
+      },
       team: {
         badge: 'Nuestro Equipo',
         title: 'Conoce al',
