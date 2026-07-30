@@ -1,7 +1,8 @@
 # Environment variables
-.env
-*.env
-!.env.example
+# .env files are INCLUDED for deployment
+# !.env
+# !*.env
+.env.example
 
 # Dependencies
 node_modules/
@@ -39,66 +40,11 @@ logs/
 # Test files
 test_reports/
 -e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment and credential files
-.env
-.env.*
-*.env
+# Environment files - COMMENTED OUT FOR DEPLOYMENT
+# *.env
+# *.env.*
+
+# Credentials (keep these private)
 credentials.json
 *.pem
 *.key
