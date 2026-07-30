@@ -272,7 +272,7 @@ const Pricing = () => {
       setCaseStudyModal({ isOpen: true, service, caseStudy });
     } else {
       // No case study available yet
-      alert('Case study coming soon! Contact us to see examples.');
+      alert(t('pricing.caseStudySoon'));
     }
   };
 
@@ -305,12 +305,12 @@ const Pricing = () => {
         {/* Performance-Based Partnerships Section - Mobile Optimized */}
         <div className="mb-8">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Performance-Based Partnerships</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">{t('pricing.partnershipsTitle')}</h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-2">
-              We grow when you grow. Choose a partnership model that aligns our success with yours.
+              {t('pricing.partnershipsSubtitle')}
             </p>
             <Badge className="bg-orange-100 text-orange-600 mt-4 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm">
-              Skin in the Game Pricing
+              {t('pricing.partnershipsBadge')}
             </Badge>
           </div>
 
@@ -399,13 +399,13 @@ const Pricing = () => {
                     className="w-full border-2 border-[#22C55E] text-[#22C55E] hover:bg-green-50 rounded-full py-4 sm:py-5 text-sm sm:text-base font-semibold"
                   >
                     <Eye className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
-                    See Examples
+                    {t('pricing.seeExamples')}
                   </Button>
                   <Button
                     onClick={() => setSelectedService(service)}
                     className="w-full bg-[#22C55E] hover:bg-[#16A34A] text-white rounded-full py-5 sm:py-6 text-sm sm:text-base font-semibold"
                   >
-                    Buy Now <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+                    {t('pricing.buyNow')} <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                   </Button>
                 </CardFooter>
               </Card>
@@ -419,14 +419,14 @@ const Pricing = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-orange-600">
                 <AlertCircle className="w-5 h-5" />
-                Amazon Academy
+                {t('pricing.amazonAcademy.title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-700">Currently <strong>FULL</strong> until May 2026. Join waiting list for next cohort.</p>
+              <p className="text-gray-700">{t('pricing.amazonAcademy.status')}</p>
               <Link to="/services/amazon-academy">
                 <Button variant="outline" className="mt-4 border-orange-300 text-orange-600 hover:bg-orange-100">
-                  Join Waiting List
+                  {t('pricing.amazonAcademy.cta')}
                 </Button>
               </Link>
             </CardContent>
@@ -436,14 +436,14 @@ const Pricing = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-blue-600">
                 <Zap className="w-5 h-5" />
-                Expert Matching
+                {t('pricing.expertMatching.title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-700"><strong>Coming Soon</strong> - Bringing specialized Amazon talent closer within reach.</p>
+              <p className="text-gray-700">{t('pricing.expertMatching.status')}</p>
               <Link to="/services/expert-matching">
                 <Button variant="outline" className="mt-4 border-blue-300 text-blue-600 hover:bg-blue-100">
-                  Learn More
+                  {t('pricing.expertMatching.cta')}
                 </Button>
               </Link>
             </CardContent>
@@ -452,13 +452,13 @@ const Pricing = () => {
 
         {/* CTA */}
         <div className="bg-gradient-to-r from-[#22C55E] to-[#16A34A] rounded-3xl p-12 text-center text-white">
-          <h2 className="text-4xl font-bold mb-4">Not Sure Which to Choose?</h2>
+          <h2 className="text-4xl font-bold mb-4">{t('pricing.finalCta.title')}</h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Book a free 30-minute discovery call and we'll recommend the best path for your business.
+            {t('pricing.finalCta.subtitle')}
           </p>
           <a href="/#contact">
             <Button size="lg" className="bg-white text-[#22C55E] hover:bg-gray-100 rounded-full px-12 py-6 text-xl font-semibold">
-              Book Free Discovery Call
+              {t('pricing.finalCta.button')}
             </Button>
           </a>
         </div>

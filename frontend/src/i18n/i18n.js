@@ -224,6 +224,24 @@ const resources = {
         partnershipsTitle: 'Performance-Based Partnerships',
         partnershipsSubtitle: 'We grow when you grow. Choose a partnership model that aligns our success with yours.',
         partnershipsBadge: 'Skin in the Game Pricing',
+        seeExamples: 'See Examples',
+        buyNow: 'Buy Now',
+        caseStudySoon: 'Case study coming soon! Contact us to see examples.',
+        amazonAcademy: {
+          title: 'Amazon Academy',
+          status: 'Currently FULL until May 2026. Join waiting list for next cohort.',
+          cta: 'Join Waiting List'
+        },
+        expertMatching: {
+          title: 'Expert Matching',
+          status: 'Coming Soon - Bringing specialized Amazon talent closer within reach.',
+          cta: 'Learn More'
+        },
+        finalCta: {
+          title: 'Not Sure Which to Choose?',
+          subtitle: "Book a free 30-minute discovery call and we'll recommend the best path for your business.",
+          button: 'Book Free Discovery Call'
+        },
         partnerships: {
           starter: {
             name: 'Starter Partnership',
@@ -606,6 +624,51 @@ const resources = {
         },
         specialNote: 'Flat monthly fee. No surprises. Full store management.',
         performanceNote: 'Performance-based pricing. We grow when you grow.'
+      },
+      tiktok: {
+        badge: '🎉 Limited Time Offer',
+        title: 'Free TikTok Management',
+        titleGradient: 'For 4 Months',
+        subtitle: 'Launch your brand on TikTok with zero management fees. You only pay for ads, content, and UGC.',
+        worth: 'Worth £3,000+ in management fees',
+        whatYouGet: 'What You Get FREE',
+        whatYouGetDesc: 'Full-service TikTok management for 4 months',
+        benefits: [
+          'Full TikTok account management',
+          'Content strategy & planning',
+          'UGC content coordination',
+          'Ad campaign setup & optimization',
+          'Analytics & performance reporting',
+          'Weekly strategy calls'
+        ],
+        normalValue: '💰 Normal Value: £750/month × 4 months = £3,000',
+        youPay: 'You pay: £0 management fees',
+        yourInvestment: 'Your Investment',
+        investmentDesc: 'What you need to commit',
+        minBudget: '£1,000',
+        minBudgetDesc: 'Minimum budget for ads + content + UGC',
+        requirements: 'Requirements:',
+        requirementsList: [
+          'Minimum £1,000 budget for ads/content/UGC',
+          'Commitment to 4-month program',
+          'Product must be TikTok-suitable',
+          'Willingness to test & iterate'
+        ],
+        budgetBreakdown: 'Budget Breakdown: Your £1,000+ covers TikTok ads, content creation, and UGC creators. We manage everything for FREE.',
+        howItWorks: 'How It Works',
+        steps: [
+          { step: '01', title: 'Apply', desc: 'Fill out our TikTok interest form' },
+          { step: '02', title: 'Strategy Call', desc: 'We plan your 4-month TikTok launch' },
+          { step: '03', title: 'Launch', desc: 'We execute content, ads, and UGC' },
+          { step: '04', title: 'Scale', desc: 'Optimize based on performance data' }
+        ],
+        cta: {
+          title: 'Ready to Dominate TikTok?',
+          subtitle: 'Limited spots available. This offer is for serious brands ready to invest in TikTok growth.',
+          apply: 'Apply Now - Free Management',
+          viewTikTok: 'View Our TikTok',
+          footer: '⚡ Spots are limited • 🎯 First-come, first-served • 💎 Worth £3,000'
+        }
       }
     }
   },
@@ -756,15 +819,32 @@ const resources = {
       },
       pricing: {
         badge: 'Precios Transparentes',
-        title: 'Precios que Tienen Sentido',
-        subtitle: 'Sin tarifas ocultas. Sin retenedores inflados. Solo precios honestos para crecimiento real.',
-        oneOff: 'Servicios Únicos',
-        partnershipsLabel: 'Asociaciones',
-        viewAll: 'Ver Todos los Servicios',
-        hero: {
-          title: 'Precios Transparentes',
-          subtitle: 'Elige Tu Camino de Crecimiento',
-          description: 'Precios claros, sin tarifas ocultas, sin trucos.'
+        title: 'Elige Tu',
+        titleGreen: 'Camino de Crecimiento',
+        subtitle: 'Precios claros, sin tarifas ocultas. Elige lo que funciona para tu etapa de negocio.',
+        partnershipsTitle: 'Asociaciones Basadas en Rendimiento',
+        partnershipsSubtitle: 'Crecemos cuando tú creces. Elige un modelo de asociación que alinee nuestro éxito con el tuyo.',
+        partnershipsBadge: 'Precios con Piel en el Juego',
+        oneOffTitle: 'Servicios Únicos',
+        oneOffSubtitle: 'Sin compromiso. Paga una vez, obtén resultados.',
+        oneOffBadge: '🎯 Perfecto para necesidades específicas o probar nuestro trabajo',
+        seeExamples: 'Ver Ejemplos',
+        buyNow: 'Comprar Ahora',
+        caseStudySoon: '¡Caso de estudio próximamente! Contáctanos para ver ejemplos.',
+        amazonAcademy: {
+          title: 'Amazon Academy',
+          status: 'Actualmente LLENO hasta Mayo 2026. Únete a la lista de espera para el próximo grupo.',
+          cta: 'Unirse a Lista de Espera'
+        },
+        expertMatching: {
+          title: 'Emparejamiento de Expertos',
+          status: 'Próximamente - Acercando talento especializado de Amazon.',
+          cta: 'Saber Más'
+        },
+        finalCta: {
+          title: '¿No Estás Seguro Cuál Elegir?',
+          subtitle: 'Agenda una llamada de descubrimiento gratuita de 30 minutos y recomendaremos el mejor camino para tu negocio.',
+          button: 'Agendar Llamada de Descubrimiento Gratuita'
         },
         partnerships: {
           badge: 'ASOCIACIONES BASADAS EN RENDIMIENTO',
@@ -947,11 +1027,6 @@ const resources = {
         academy: {
           badge: 'Actualmente LLENO hasta Mayo 2026',
           cta: 'Unirse a Lista de Espera'
-        },
-        expertMatching: {
-          badge: 'Próximamente',
-          description: 'Acercando talento especializado en Amazon.',
-          cta: 'Más Información'
         },
         bottomCTA: {
           title: '¿No Estás Seguro Cuál Elegir?',
@@ -1142,6 +1217,51 @@ const resources = {
         },
         specialNote: 'Tarifa mensual fija. Sin sorpresas. Gestión completa de tienda.',
         performanceNote: 'Precios basados en rendimiento. Crecemos cuando tú creces.'
+      },
+      tiktok: {
+        badge: '🎉 Oferta por Tiempo Limitado',
+        title: 'Gestión Gratuita de TikTok',
+        titleGradient: 'Durante 4 Meses',
+        subtitle: 'Lanza tu marca en TikTok con cero tarifas de gestión. Solo pagas por anuncios, contenido y UGC.',
+        worth: 'Vale más de £3,000 en tarifas de gestión',
+        whatYouGet: 'Lo Que Obtienes GRATIS',
+        whatYouGetDesc: 'Gestión completa de TikTok durante 4 meses',
+        benefits: [
+          'Gestión completa de cuenta de TikTok',
+          'Estrategia y planificación de contenido',
+          'Coordinación de contenido UGC',
+          'Configuración y optimización de campañas publicitarias',
+          'Análisis e informes de rendimiento',
+          'Llamadas de estrategia semanales'
+        ],
+        normalValue: '💰 Valor Normal: £750/mes × 4 meses = £3,000',
+        youPay: 'Tú pagas: £0 tarifas de gestión',
+        yourInvestment: 'Tu Inversión',
+        investmentDesc: 'Lo que necesitas comprometer',
+        minBudget: '£1,000',
+        minBudgetDesc: 'Presupuesto mínimo para anuncios + contenido + UGC',
+        requirements: 'Requisitos:',
+        requirementsList: [
+          'Presupuesto mínimo de £1,000 para anuncios/contenido/UGC',
+          'Compromiso al programa de 4 meses',
+          'El producto debe ser adecuado para TikTok',
+          'Disposición para probar e iterar'
+        ],
+        budgetBreakdown: 'Desglose del Presupuesto: Tus £1,000+ cubren anuncios de TikTok, creación de contenido y creadores de UGC. Nosotros gestionamos todo GRATIS.',
+        howItWorks: 'Cómo Funciona',
+        steps: [
+          { step: '01', title: 'Aplicar', desc: 'Completa nuestro formulario de interés en TikTok' },
+          { step: '02', title: 'Llamada de Estrategia', desc: 'Planificamos tu lanzamiento de TikTok de 4 meses' },
+          { step: '03', title: 'Lanzamiento', desc: 'Ejecutamos contenido, anuncios y UGC' },
+          { step: '04', title: 'Escalar', desc: 'Optimizar basado en datos de rendimiento' }
+        ],
+        cta: {
+          title: '¿Listo para Dominar TikTok?',
+          subtitle: 'Lugares limitados disponibles. Esta oferta es para marcas serias listas para invertir en crecimiento de TikTok.',
+          apply: 'Aplicar Ahora - Gestión Gratuita',
+          viewTikTok: 'Ver Nuestro TikTok',
+          footer: '⚡ Lugares limitados • 🎯 Por orden de llegada • 💎 Vale £3,000'
+        }
       }
     }
   }
