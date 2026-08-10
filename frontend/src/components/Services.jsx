@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from './ui/badge';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import Reveal from './Reveal';
 
 const Services = () => {
   const { t } = useTranslation();
@@ -78,19 +79,20 @@ const Services = () => {
     <section id="services" className="py-12 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-10">
+        <Reveal className="text-center mb-10">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             {t('services.title')}{' '}
             <span className="text-[#22C55E]">{t('services.titleGreen')}</span>
           </h2>
-        </div>
+        </Reveal>
 
         {/* Service Cards */}
         <div className="grid md:grid-cols-2 gap-8">
-          {services.map((service) => {
+          {services.map((service, i) => {
             const IconComponent = service.icon;
             return (
-              <Card key={service.id} className="border border-gray-200 hover:shadow-xl transition-shadow duration-300 bg-white relative">
+              <Reveal key={service.id} delay={i * 90} y={30}>
+                <Card className="border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white relative h-full">
                 {service.badge && (
                   <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#22C55E] text-white px-4 py-1 rounded-full">
                     {service.badge}
@@ -125,7 +127,8 @@ const Services = () => {
                     </Button>
                   </Link>
                 </CardFooter>
-              </Card>
+                </Card>
+              </Reveal>
             );
           })}
         </div>

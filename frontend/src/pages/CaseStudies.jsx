@@ -6,6 +6,7 @@ import { Badge } from '../components/ui/badge';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
+import Reveal from '../components/Reveal';
 
 const CaseStudies = () => {
   const { t } = useTranslation();
@@ -94,7 +95,7 @@ const CaseStudies = () => {
       <div className="min-h-screen bg-gray-50 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header - Mobile Optimized */}
-        <div className="text-center mb-6">
+        <Reveal className="text-center mb-6">
           <Badge className="bg-green-100 text-[#22C55E] mb-4 text-xs sm:text-sm">{t('caseStudies.badge')}</Badge>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-2">
             {t('caseStudies.title')} <span className="text-[#22C55E]">{t('caseStudies.titleGreen')}</span>
@@ -102,12 +103,13 @@ const CaseStudies = () => {
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2">
             {t('caseStudies.subtitle')}
           </p>
-        </div>
+        </Reveal>
 
         {/* Case Studies - Mobile Optimized */}
         <div className="space-y-12 sm:space-y-16 md:space-y-20">
           {caseStudies.map((study, idx) => (
-            <div key={study.id} className={`flex flex-col ${
+            <Reveal key={study.id} y={40}>
+              <div className={`flex flex-col ${
               idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
             } gap-6 sm:gap-8 md:gap-12 items-center`}>
               {/* Image - Mobile Optimized */}
@@ -183,12 +185,13 @@ const CaseStudies = () => {
                   </Button>
                 </a>
               </div>
-            </div>
+              </div>
+            </Reveal>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="mt-20 bg-gradient-to-r from-[#22C55E] to-[#16A34A] rounded-3xl p-12 text-center text-white">
+        <Reveal className="mt-20 bg-gradient-to-r from-[#22C55E] to-[#16A34A] rounded-3xl p-12 text-center text-white">
           <h2 className="text-4xl font-bold mb-4">{t('caseStudies.ctaTitle')}</h2>
           <p className="text-xl mb-8 opacity-90">
             {t('caseStudies.ctaSubtitle')}
@@ -198,7 +201,7 @@ const CaseStudies = () => {
               {t('caseStudies.ctaButton')} <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </a>
-        </div>
+        </Reveal>
       </div>
     </div>
     </>

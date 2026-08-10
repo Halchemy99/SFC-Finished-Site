@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import ServiceCheckout from '../components/ServiceCheckout';
 import ServiceCaseStudyModal from '../components/ServiceCaseStudyModal';
 import SEO from '../components/SEO';
+import Reveal from '../components/Reveal';
 
 const Pricing = () => {
   const { t } = useTranslation();
@@ -315,8 +316,9 @@ const Pricing = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {partnershipTiers.map((tier) => (
-              <Card key={tier.id} className={`relative hover:shadow-2xl transition-all ${
+            {partnershipTiers.map((tier, i) => (
+              <Reveal key={tier.id} delay={i * 90} y={30}>
+              <Card className={`relative h-full hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ${
                 tier.popular ? 'border-2 border-[#22C55E] shadow-xl md:scale-105' : ''
               }`}>
                 {tier.badge && (
@@ -355,6 +357,7 @@ const Pricing = () => {
                   </a>
                 </CardFooter>
               </Card>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -372,8 +375,9 @@ const Pricing = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {oneOffServices.map((service) => (
-              <Card key={service.packageId} className="hover:shadow-xl transition-shadow">
+            {oneOffServices.map((service, i) => (
+              <Reveal key={service.packageId} delay={i * 80} y={28}>
+              <Card className="h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <CardHeader className="pb-3 sm:pb-4">
                   <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{service.icon}</div>
                   <CardTitle className="text-lg sm:text-xl">{service.name}</CardTitle>
@@ -409,6 +413,7 @@ const Pricing = () => {
                   </Button>
                 </CardFooter>
               </Card>
+              </Reveal>
             ))}
           </div>
         </div>
