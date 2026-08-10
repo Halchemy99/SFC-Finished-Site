@@ -131,15 +131,18 @@ async def submit_regional_audit(request: RegionalAuditRequest):
             <p><strong>MongoDB ID:</strong> {str(result.inserted_id)}</p>
             """
         
-        # Send via Resend
+        # Send via Resend (best-effort — do not fail submission if email breaks)
         params = {
             "from": os.getenv("SENDER_EMAIL", "onboarding@resend.dev"),
             "to": ["harry@superflycommerce.com"],
             "subject": f"🔥 New {region.upper()} Audit Request - {company}",
             "html": html_content
         }
-        
-        resend.Emails.send(params)
+
+        try:
+            resend.Emails.send(params)
+        except Exception as admin_email_error:
+            print(f"Admin notification email failed: {admin_email_error}")
 
         # Confirmation + partner authorization guide to the lead
         try:
@@ -154,18 +157,19 @@ async def submit_regional_audit(request: RegionalAuditRequest):
                 <h2 style="color: #16A34A;">Your free Amazon audit is confirmed ✅</h2>
                 <p>Hi {contact},</p>
                 <p>Thanks for requesting your audit. We'll be in touch within 24 hours.</p>
-                <p><strong>Want your audit started today?</strong> Add us as a user on your Amazon account — it takes 2 minutes:</p>
+                <p><strong>Want your audit started today?</strong> Add us as an Authorized Partner on your Amazon account — it takes 2 minutes:</p>
                 <ol style="line-height: 1.9;">
-                    <li>Open <a href="{home_url}" style="color: #16A34A;"><strong>User Permissions in {home_label} Seller Central</strong></a>
+                    <li>Open <a href="{home_url}" style="color: #16A34A;"><strong>Settings → User Permissions in {home_label} Seller Central</strong></a>
                         (or <a href="https://sellercentral.amazon.co.uk/gp/account-manager/home.html" style="color: #16A34A;">Amazon UK</a> /
                         <a href="https://sellercentral.amazon.com/gp/account-manager/home.html" style="color: #16A34A;">Amazon USA</a>)</li>
-                    <li>Click <strong>"Add a new user"</strong></li>
-                    <li>Enter: <strong>Harry Allen</strong> — <strong>harry@superflycommerce.com</strong> and send the invite</li>
+                    <li>Open the <strong>"Authorized Partners"</strong> tab and click <strong>"Add Authorized Partner"</strong></li>
+                    <li>Copy the one-time invitation link Amazon generates and reply to this email with it
+                        (contact: <strong>Harry Allen</strong> — <strong>harry@superflycommerce.com</strong>, company: <strong>Superfly Commerce</strong>)</li>
                 </ol>
                 <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 12px 16px; margin: 16px 0;">
-                    <p style="margin: 0; font-size: 14px;">🔒 We only need <strong>View</strong> permissions. You stay in full control and can revoke access anytime from the same page.</p>
+                    <p style="margin: 0; font-size: 14px;">🔒 Amazon's Authorized Partner access is read-only for auditing. You stay in full control and can revoke access anytime from the same page.</p>
                 </div>
-                <p>Once we accept the invite, we start your audit within a few hours instead of days.</p>
+                <p>Once we accept the invitation link, we start your audit within a few hours instead of days.</p>
                 <p>Questions? Just reply to this email.</p>
                 <p>— Harry Allen<br>Superfly Commerce</p>
             </div>
@@ -197,6 +201,7 @@ class InviteSentRequest(BaseModel):
     contact_name: Optional[str] = None
     company_name: Optional[str] = None
     region: Optional[str] = None
+    invite_link: Optional[str] = None
 
 
 @router.post("/regional-audit/invite-sent")
@@ -205,7 +210,10 @@ async def invite_sent(request: InviteSentRequest):
         client = AsyncIOMotorClient(MONGO_URL)
         db = client[DB_NAME]
 
-        update = {"$set": {"status": "invite_sent", "invite_sent_at": datetime.now(timezone.utc)}}
+        set_fields = {"status": "invite_sent", "invite_sent_at": datetime.now(timezone.utc)}
+        if request.invite_link:
+            set_fields["invite_link"] = request.invite_link
+        update = {"$set": set_fields}
         if request.audit_id:
             from bson import ObjectId
             try:
@@ -220,25 +228,39 @@ async def invite_sent(request: InviteSentRequest):
         contact = request.contact_name or "A seller"
         company = request.company_name or "Unknown company"
         region = (request.region or "unknown").upper()
+        link_html = ""
+        if request.invite_link:
+            safe_link = request.invite_link.replace('"', '&quot;')
+            link_html = (
+                f'<p style="background:#ecfdf5;padding:12px;border-left:4px solid #22c55e;">'
+                f'<strong>🔗 Invitation link (paste into Seller Central to accept):</strong><br>'
+                f'<a href="{safe_link}">{safe_link}</a></p>'
+            )
+        subject_tag = "LINK ATTACHED" if request.invite_link else "ACCEPT NOW"
         html = f"""
         <h2>🚀 ACTION NEEDED: Seller Central invite sent!</h2>
-        <p><strong>{contact}</strong> from <strong>{company}</strong> ({region}) just clicked
-        "I've sent the invite" on the partner authorization guide.</p>
+        <p><strong>{contact}</strong> from <strong>{company}</strong> ({region}) just submitted their Authorized Partner invitation.</p>
+        {link_html}
         <ul>
             <li><strong>Email:</strong> {request.email or 'Not provided'}</li>
             <li><strong>Audit ID:</strong> {request.audit_id or 'Not provided'}</li>
             <li><strong>Time:</strong> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}</li>
         </ul>
-        <p><strong>Next step:</strong> Check your Seller Central invitations and accept it ASAP so the audit can start today.</p>
+        <p><strong>Next step:</strong> {'Open the invitation link above and accept it.' if request.invite_link else 'Check your Seller Central invitations and accept it ASAP so the audit can start today.'}</p>
         """
-        resend.Emails.send({
-            "from": os.getenv("SENDER_EMAIL", "onboarding@resend.dev"),
-            "to": ["harry@superflycommerce.com"],
-            "subject": f"🚀 ACCEPT NOW: {contact} ({company}) sent their Seller Central invite",
-            "html": html
-        })
+        email_sent = True
+        try:
+            resend.Emails.send({
+                "from": os.getenv("SENDER_EMAIL", "onboarding@resend.dev"),
+                "to": ["harry@superflycommerce.com"],
+                "subject": f"🚀 {subject_tag}: {contact} ({company}) sent their Seller Central invite",
+                "html": html
+            })
+        except Exception as email_err:
+            email_sent = False
+            print(f"Resend email failed (tracking still saved): {email_err}")
 
-        return {"success": True}
+        return {"success": True, "email_sent": email_sent}
     except Exception as e:
         print(f"Error in invite-sent tracking: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
