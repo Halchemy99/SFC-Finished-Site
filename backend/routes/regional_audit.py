@@ -140,6 +140,45 @@ async def submit_regional_audit(request: RegionalAuditRequest):
         }
         
         resend.Emails.send(params)
+
+        # Confirmation + partner authorization guide to the lead
+        try:
+            sc_links = {
+                "india": ("Amazon India", "https://sellercentral.amazon.in/gp/account-manager/home.html"),
+                "uae": ("Amazon UAE", "https://sellercentral.amazon.ae/gp/account-manager/home.html"),
+                "mexico": ("Amazon Mexico", "https://sellercentral.amazon.com.mx/gp/account-manager/home.html"),
+            }
+            home_label, home_url = sc_links.get((region or "").lower(), ("Amazon UK", "https://sellercentral.amazon.co.uk/gp/account-manager/home.html"))
+            lead_html = f"""
+            <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; color: #1f2937;">
+                <h2 style="color: #16A34A;">Your free Amazon audit is confirmed ✅</h2>
+                <p>Hi {contact},</p>
+                <p>Thanks for requesting your audit. We'll be in touch within 24 hours.</p>
+                <p><strong>Want your audit started today?</strong> Add us as a user on your Amazon account — it takes 2 minutes:</p>
+                <ol style="line-height: 1.9;">
+                    <li>Open <a href="{home_url}" style="color: #16A34A;"><strong>User Permissions in {home_label} Seller Central</strong></a>
+                        (or <a href="https://sellercentral.amazon.co.uk/gp/account-manager/home.html" style="color: #16A34A;">Amazon UK</a> /
+                        <a href="https://sellercentral.amazon.com/gp/account-manager/home.html" style="color: #16A34A;">Amazon USA</a>)</li>
+                    <li>Click <strong>"Add a new user"</strong></li>
+                    <li>Enter: <strong>Harry Allen</strong> — <strong>harry@superflycommerce.com</strong> and send the invite</li>
+                </ol>
+                <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 12px 16px; margin: 16px 0;">
+                    <p style="margin: 0; font-size: 14px;">🔒 We only need <strong>View</strong> permissions. You stay in full control and can revoke access anytime from the same page.</p>
+                </div>
+                <p>Once we accept the invite, we start your audit within a few hours instead of days.</p>
+                <p>Questions? Just reply to this email.</p>
+                <p>— Harry Allen<br>Superfly Commerce</p>
+            </div>
+            """
+            resend.Emails.send({
+                "from": os.getenv("SENDER_EMAIL", "onboarding@resend.dev"),
+                "to": [request.email],
+                "reply_to": "harry@superflycommerce.com",
+                "subject": "Your Amazon audit is confirmed — 1 quick step to fast-track it",
+                "html": lead_html
+            })
+        except Exception as lead_email_error:
+            print(f"Lead confirmation email failed: {lead_email_error}")
         
         return {
             "success": True,

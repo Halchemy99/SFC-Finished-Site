@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
+import PartnerAccessGuide from './PartnerAccessGuide';
 
 const RegionalAuditForm = ({ region, regionName }) => {
   const [formData, setFormData] = useState({
@@ -102,6 +103,7 @@ const RegionalAuditForm = ({ region, regionName }) => {
               </li>
             </ul>
           </div>
+          <PartnerAccessGuide region={region} />
         </CardContent>
       </Card>
     );

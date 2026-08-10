@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import SEO from '../components/SEO';
+import PartnerAccessGuide from '../components/PartnerAccessGuide';
 import { quizContent } from '../data/regionalQuizContent';
 
 const RegionalLaunchV2 = () => {
@@ -12,6 +13,7 @@ const RegionalLaunchV2 = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const [pageLang, setPageLang] = useState('en');
 
   const regionalData = {
@@ -129,6 +131,24 @@ const RegionalLaunchV2 = () => {
             </Card>
 
             {/* Partner Access Pitch */}
+            {formSubmitted ? (
+              <div data-testid="quiz-form-success" className="mb-8">
+                <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-[#22C55E]">
+                  <CardContent className="pt-10 pb-10 text-center">
+                    <div className="w-16 h-16 bg-[#22C55E] rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="w-10 h-10 text-white" />
+                    </div>
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-900">
+                      You're in! We'll be in touch within 24 hours
+                    </h2>
+                    <p className="text-lg text-gray-700 max-w-xl mx-auto">
+                      Check your email for confirmation. Want to skip the wait? Do the one step below and we'll start your audit today.
+                    </p>
+                  </CardContent>
+                </Card>
+                <PartnerAccessGuide region={region} />
+              </div>
+            ) : (
             <Card className="mb-8 bg-white border-2 border-green-500">
               <CardHeader className="bg-green-50">
                 <CardTitle className="text-2xl">To fix these, we need to look inside your account</CardTitle>
@@ -213,8 +233,7 @@ const RegionalLaunchV2 = () => {
                       });
                       
                       if (response.ok) {
-                        alert('Audit request submitted! Check your email for next steps.');
-                        e.target.reset();
+                        setFormSubmitted(true);
                       } else {
                         alert('Something went wrong. Email us: harry@superflycommerce.com');
                       }
@@ -287,6 +306,7 @@ const RegionalLaunchV2 = () => {
                 </form>
               </CardContent>
             </Card>
+            )}
 
             {/* Footer Note */}
             <p className="text-center text-sm text-gray-600">

@@ -1,0 +1,42 @@
+# Superfly Commerce — PRD
+
+## Original Problem Statement
+Pixel-perfect, fully functional marketing agency platform (Superfly Commerce). React + FastAPI + MongoDB. Includes: pricing tiers, EN/ES real-time translation (react-i18next), case studies, team, blog, Stripe LIVE checkout, Resend LIVE contact/lead emails, regional landing pages (India /launch/india, UAE /launch/uae, Mexico /launch/mexico) with interactive diagnostic audit quizzes and bilingual toggles (EN/HI, EN/AR, EN/ES), marketplace landing pages (Walmart, Mercado Libre, Shopify), Make.com automations, Amazon Ads Partner Network compliance.
+
+## Key Contacts / Constants
+- Partner authorization email: **harry@superflycommerce.com** / **Harry Allen**
+- Production domain: superfly-commerce.com (user checks fixes there — requires deployment)
+
+## Architecture
+- Frontend: /app/frontend (React, Tailwind, react-i18next, react-router)
+  - Critical: /app/frontend/src/i18n/i18n.js — EN/ES dictionary; syntax errors crash whole UI (recurred 2x)
+  - /app/frontend/src/pages/RegionalLaunchV2.jsx — quiz + results + lead form (route /launch/:region)
+  - /app/frontend/src/components/RegionalAuditForm.jsx — long-form audit form
+  - /app/frontend/src/components/PartnerAccessGuide.jsx — NEW: seamless Amazon partner authorization guide
+- Backend: /app/backend (FastAPI, Motor, Resend, Stripe)
+  - /app/backend/routes/regional_audit.py — POST /api/regional-audit/submit (saves to Mongo, emails harry + lead)
+  - /app/backend/routes/stripe_payments.py
+- DB: MongoDB `superfly_production` (regional_audits collection)
+- Integrations (LIVE): Stripe, Resend, MongoDB Atlas, Make.com (user-managed). Keys in /app/CREDENTIALS_VAULT.md
+
+## Implemented (history)
+- Full EN/ES translation wiring across all pages (Pricing, CaseStudies, Team, TikTokOffer, Marketplace)
+- Regional quiz pages with bilingual toggles; marketplace landing pages with pricing (£300 Walmart/MercadoLibre, £500 Shopify)
+- Fixed 404s (PageLayout wrappers), CTA smooth-scroll to /#contact, code quality fixes, deployment blockers (CORS=*, .gitignore)
+- 2026-06 (this session): **Seamless Partner Authorization flow** —
+  - PartnerAccessGuide component: one-tap copy of harry@superflycommerce.com, region-aware Seller Central User Permissions deep links (IN/AE/MX/UK/US), 3-step guide, "I've sent the invite" confirmation
+  - Shown after quiz form submit (RegionalLaunchV2, replaced alert with success state) and after RegionalAuditForm submit
+  - Backend now also emails the LEAD a confirmation with the same authorization steps (reply-to harry@), wrapped in try/except
+  - Verified e2e on preview: quiz → submit → guide renders, copy + confirm work, backend 200, no email errors
+
+## Pending / Backlog
+- P0: **Deploy to production** — user sees 404s on superfly-commerce.com because live site runs old code. All fixes verified on preview.
+- P1: Refactor large components (Pricing.jsx 479L, RegionalLaunchV2.jsx ~430L, Contact.jsx, Hero.jsx, RegionalAuditForm.jsx)
+- P2: Backend cyclomatic complexity (regional_audit.py submit, stripe_payments.py)
+- P2: Font swap to "Axiforma" (awaiting user font files); Make.com Scenario 2 (Claude AI draft responses)
+- P3: Real blog content; real case study data for ServiceCaseStudyModal (blocked on user data); "De-AI" main site copy (in progress)
+
+## Notes / Learnings
+- i18n.js: EN/ES key structures must match exactly; lint after every edit
+- Old 500s in backend logs on /api/contact/submit and stripe checkout-status with invalid ids are from prior test iterations
+- Edits can occasionally be reverted between checkpoints — re-grep after search_replace batches on this repo
