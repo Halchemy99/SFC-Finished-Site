@@ -34,10 +34,14 @@ Pixel-perfect, fully functional marketing agency platform (Superfly Commerce). R
   - WhatsApp Nudge: /app/backend/services/whatsapp_nudge.py — hourly asyncio loop (startup hook in server.py), finds regional_audits >24h old, status!=invite_sent, nudge_sent!=True → Twilio WhatsApp send, marks nudge_sent. Graceful skip if Twilio env missing.
   - Twilio creds added to backend/.env + CREDENTIALS_VAULT.md (SID ACca9b3..., token, FROM=+14155238886 sandbox). ⚠️ Twilio account is TRIAL: no WhatsApp sender registered; sandbox only reaches joined numbers. Real delivery needs account upgrade + WABA sender registration, then update TWILIO_WHATSAPP_FROM.
   - Production deployment triggered via deployer agent.
+- 2026-06 (continued 2): **Second Nudge + sender activation attempt**
+  - whatsapp_nudge.py: second pass — 72h after first nudge, still no invite → WhatsApp with Calendly booking link (https://calendly.com/superflycommerce), marks second_nudge_sent/second_nudged_at. Tested with seeded lead: query+marking verified (send blocked only by Twilio KYC).
+  - TWILIO_WHATSAPP_FROM updated to +15554283639 (registered "Superfly Commerce" sender, Online).
+  - Deployed to production: https://design-75.emergent.host (launch pages verified live, no 404). NOTE: production predates second-nudge code + new sender env → redeploy after KYC.
 
 ## Pending / Backlog
-- P0: Verify production deployment (triggered) — user to confirm 404 fixes + new flows on superfly-commerce.com
-- P0 (user side): Upgrade Twilio account + register WhatsApp sender → update TWILIO_WHATSAPP_FROM for real nudge delivery
+- P0 (user side): Complete Twilio Trust Hub KYC (compliance profile) — currently blocks ALL WhatsApp sends (error 20003). Sender +15554283639 "Superfly Commerce" is registered & Online. After KYC: test send again (freeform may need approved WhatsApp Content Templates for business-initiated msgs — register via Content Template Builder if 63016 errors appear), then REDEPLOY so production gets new sender env + second nudge code.
+- P0 (user side): Custom domain superfly-commerce.com points to VERCEL (old broken build → 404s). Working deploy is at design-75.emergent.host. Fix: link custom domain to Emergent deployment (or redeploy latest to Vercel).
 - P1: Refactor large components (Pricing.jsx 479L, RegionalLaunchV2.jsx ~430L, Contact.jsx, Hero.jsx, RegionalAuditForm.jsx)
 - P2: Backend cyclomatic complexity (regional_audit.py submit, stripe_payments.py)
 - P2: Font swap to "Axiforma" (awaiting user font files); Make.com Scenario 2 (Claude AI draft responses)
