@@ -189,3 +189,56 @@ async def submit_regional_audit(request: RegionalAuditRequest):
     except Exception as e:
         print(f"Error in regional audit submission: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+class InviteSentRequest(BaseModel):
+    audit_id: Optional[str] = None
+    email: Optional[EmailStr] = None
+    contact_name: Optional[str] = None
+    company_name: Optional[str] = None
+    region: Optional[str] = None
+
+
+@router.post("/regional-audit/invite-sent")
+async def invite_sent(request: InviteSentRequest):
+    try:
+        client = AsyncIOMotorClient(MONGO_URL)
+        db = client[DB_NAME]
+
+        update = {"$set": {"status": "invite_sent", "invite_sent_at": datetime.now(timezone.utc)}}
+        if request.audit_id:
+            from bson import ObjectId
+            try:
+                await db.regional_audits.update_one({"_id": ObjectId(request.audit_id)}, update)
+            except Exception:
+                pass
+        elif request.email:
+            await db.regional_audits.find_one_and_update(
+                {"email": request.email}, update, sort=[("createdAt", -1)]
+            )
+
+        contact = request.contact_name or "A seller"
+        company = request.company_name or "Unknown company"
+        region = (request.region or "unknown").upper()
+        html = f"""
+        <h2>🚀 ACTION NEEDED: Seller Central invite sent!</h2>
+        <p><strong>{contact}</strong> from <strong>{company}</strong> ({region}) just clicked
+        "I've sent the invite" on the partner authorization guide.</p>
+        <ul>
+            <li><strong>Email:</strong> {request.email or 'Not provided'}</li>
+            <li><strong>Audit ID:</strong> {request.audit_id or 'Not provided'}</li>
+            <li><strong>Time:</strong> {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}</li>
+        </ul>
+        <p><strong>Next step:</strong> Check your Seller Central invitations and accept it ASAP so the audit can start today.</p>
+        """
+        resend.Emails.send({
+            "from": os.getenv("SENDER_EMAIL", "onboarding@resend.dev"),
+            "to": ["harry@superflycommerce.com"],
+            "subject": f"🚀 ACCEPT NOW: {contact} ({company}) sent their Seller Central invite",
+            "html": html
+        })
+
+        return {"success": True}
+    except Exception as e:
+        print(f"Error in invite-sent tracking: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))

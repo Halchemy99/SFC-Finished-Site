@@ -28,9 +28,16 @@ Pixel-perfect, fully functional marketing agency platform (Superfly Commerce). R
   - Shown after quiz form submit (RegionalLaunchV2, replaced alert with success state) and after RegionalAuditForm submit
   - Backend now also emails the LEAD a confirmation with the same authorization steps (reply-to harry@), wrapped in try/except
   - Verified e2e on preview: quiz → submit → guide renders, copy + confirm work, backend 200, no email errors
+- 2026-06 (continued): **Guide translations + tracking + WhatsApp nudge**
+  - PartnerAccessGuide translated EN/HI/AR/ES (T dict, lang prop from pageLang, dir=rtl for Arabic). Verified HI + ES visually.
+  - Invite Tracking: POST /api/regional-audit/invite-sent — updates Mongo status='invite_sent', emails harry "ACCEPT NOW" alert. Frontend fires it on "I've sent the invite" click with lead context (auditId captured from submit response). Verified: 200 + email.
+  - WhatsApp Nudge: /app/backend/services/whatsapp_nudge.py — hourly asyncio loop (startup hook in server.py), finds regional_audits >24h old, status!=invite_sent, nudge_sent!=True → Twilio WhatsApp send, marks nudge_sent. Graceful skip if Twilio env missing.
+  - Twilio creds added to backend/.env + CREDENTIALS_VAULT.md (SID ACca9b3..., token, FROM=+14155238886 sandbox). ⚠️ Twilio account is TRIAL: no WhatsApp sender registered; sandbox only reaches joined numbers. Real delivery needs account upgrade + WABA sender registration, then update TWILIO_WHATSAPP_FROM.
+  - Production deployment triggered via deployer agent.
 
 ## Pending / Backlog
-- P0: **Deploy to production** — user sees 404s on superfly-commerce.com because live site runs old code. All fixes verified on preview.
+- P0: Verify production deployment (triggered) — user to confirm 404 fixes + new flows on superfly-commerce.com
+- P0 (user side): Upgrade Twilio account + register WhatsApp sender → update TWILIO_WHATSAPP_FROM for real nudge delivery
 - P1: Refactor large components (Pricing.jsx 479L, RegionalLaunchV2.jsx ~430L, Contact.jsx, Hero.jsx, RegionalAuditForm.jsx)
 - P2: Backend cyclomatic complexity (regional_audit.py submit, stripe_payments.py)
 - P2: Font swap to "Axiforma" (awaiting user font files); Make.com Scenario 2 (Claude AI draft responses)

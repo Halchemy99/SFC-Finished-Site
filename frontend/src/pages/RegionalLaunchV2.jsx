@@ -14,6 +14,7 @@ const RegionalLaunchV2 = () => {
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submittedLead, setSubmittedLead] = useState(null);
   const [pageLang, setPageLang] = useState('en');
 
   const regionalData = {
@@ -146,7 +147,7 @@ const RegionalLaunchV2 = () => {
                     </p>
                   </CardContent>
                 </Card>
-                <PartnerAccessGuide region={region} />
+                <PartnerAccessGuide region={region} lang={pageLang} lead={submittedLead} />
               </div>
             ) : (
             <Card className="mb-8 bg-white border-2 border-green-500">
@@ -233,6 +234,13 @@ const RegionalLaunchV2 = () => {
                       });
                       
                       if (response.ok) {
+                        const resJson = await response.json().catch(() => ({}));
+                        setSubmittedLead({
+                          auditId: resJson.id || null,
+                          email: auditData.email,
+                          name: auditData.contact_name,
+                          company: auditData.company_name
+                        });
                         setFormSubmitted(true);
                       } else {
                         alert('Something went wrong. Email us: harry@superflycommerce.com');

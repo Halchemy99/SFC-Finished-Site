@@ -19,6 +19,8 @@ load_dotenv(ROOT_DIR / '.env')
 
 # Import routes AFTER loading .env
 from routes import newsletter, contact, stripe_payments, regional_audit
+from services.whatsapp_nudge import nudge_loop
+import asyncio
 
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
@@ -83,6 +85,10 @@ app.include_router(newsletter.router)
 app.include_router(contact.router)
 app.include_router(stripe_payments.router)
 app.include_router(regional_audit.router)
+
+@app.on_event("startup")
+async def start_whatsapp_nudge_scheduler():
+    asyncio.create_task(nudge_loop())
 
 # Security Headers Middleware
 @app.middleware("http")

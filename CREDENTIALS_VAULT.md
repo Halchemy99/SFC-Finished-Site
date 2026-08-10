@@ -345,3 +345,9 @@ Meta Pixel,https://business.facebook.com,[email],[password],Pixel ID: 9161725279
 
 **End of Credentials Vault**  
 **Store this file securely. Never commit to version control.**
+
+## Twilio (WhatsApp Nudge)
+- Account SID: ACca9b3ddde8f8b7d6a8b02398af33d599
+- Auth Token: 21507ad78fd1036b1ec4c8ee29df1e30
+- WhatsApp FROM: +14155238886 (Twilio Sandbox — swap for approved WABA sender when ready)
+- Status: TRIAL account. Sandbox only reaches numbers that joined via "join <code>" to +1 415 523 8886. For real lead nudges: upgrade account + register WhatsApp sender in Twilio Console (Messaging → Senders → WhatsApp senders).

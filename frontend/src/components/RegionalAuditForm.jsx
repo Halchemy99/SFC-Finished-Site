@@ -20,6 +20,7 @@ const RegionalAuditForm = ({ region, regionName }) => {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [auditId, setAuditId] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -57,6 +58,8 @@ const RegionalAuditForm = ({ region, regionName }) => {
       });
 
       if (response.ok) {
+        const resJson = await response.json().catch(() => ({}));
+        setAuditId(resJson.id || null);
         setSubmitted(true);
       } else {
         alert('Something went wrong. Please try again or email us directly at harry@superflycommerce.com');
@@ -103,7 +106,7 @@ const RegionalAuditForm = ({ region, regionName }) => {
               </li>
             </ul>
           </div>
-          <PartnerAccessGuide region={region} />
+          <PartnerAccessGuide region={region} lead={{ auditId, email: formData.email, name: formData.contactName, company: formData.companyName }} />
         </CardContent>
       </Card>
     );
